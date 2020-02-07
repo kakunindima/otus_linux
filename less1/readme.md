@@ -45,7 +45,7 @@ sudo package-cleanup --oldkernels --count=1 -y
 
 Чистим систему
 yum clean all
-sudo yum grouremove "Development toosls"
+sudo yum grouremove "Development tools"
 sudo yum remove ncurces-devel kernel-devel gcc openssl-devel flex bison libssl-dev pkg-config ncurces-devel libcurces-dev
 
 Пакуем образ vagrant.
