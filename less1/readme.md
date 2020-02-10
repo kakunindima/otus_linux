@@ -1,19 +1,19 @@
 # Home task otus linux
 ## lesson 1
 ### Обновление ядра базовой системы.
-_ДЗ выплнено на уровень_ ```*```
-__Собран образ__ _Centos7_ __с собранным из исходников ядра__ _5.5.1_
+__ДЗ выплнено на уровень__ ```*```
+_Собран образ_ __Centos7__ _с собранным из исходников ядра_ __5.5.1__
 
-_Детальный листинг:_
+__Детальный листинг:__
 
-_Обновление системы + установка всякого Очень нужного для дальнейдшего билда ядра_
+__Обновление системы + установка всякого Очень нужного для дальнейдшего билда ядра__
 ```bash
     sudo yum update -y
     sudo yum groupinstall "Develoment tools"
     sudo yum install yum-utils ncurses-devel make kernel-devel bc gcc openssl-devel flex bison libssl-dev pkg-config ncurses-devel libncurses-dev openssl-devel elfutils-libelf-devel perl wget -y
 ```
 
-_Получение исходников ядра + распаковка_
+__Получение исходников ядра + распаковка__
 ```bash
     sudo mkdir /usr/src/kernel_sources
     cd /usr/src/kernel_sources
@@ -21,46 +21,46 @@ _Получение исходников ядра + распаковка_
     sudo tar xf linux*
     cd linux*
 ```
-_Подготовка к билду:_
-__копирование настроек из конфига для старого ядра__
+__Подготовка к билду:__
+_копирование настроек из конфига для старого ядра_
 ```bash
     sudo cp /boot/config-`uname -r` /usr/src/kernel_sources/linux-5.5.1/.config
 ```
-__тоже копирование (возможно и не понадобилось) на всяк случай)__
+_тоже копирование (возможно и не понадобилось) на всяк случай)_
 ```bash
     sudo yes "" | make oldconfig
 ```
-_Билдим ядро и модули - распаралеливаем на 4 потока моего проца Intel i3_
+__Билдим ядро и модули - распаралеливаем на 4 потока моего проца Intel i3__
 ```bash
     sudo make -j 5 && make -j 5 modules
 ```
 
-_Инсталируем модули и ядро_
+__Инсталируем модули и ядро__
 ```bash
     sudo make -j 5 modules_install && sudo make -j 5 install
 ```
-_Обновляем конфиг загрузчика grub добавляя новое собранное ядро_
+__Обновляем конфиг загрузчика grub добавляя новое собранное ядро__
 ```bash
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 ```
-_Указываем новое ядро дефолтным._
+__Указываем новое ядро дефолтным.__
 ```bash
     sudo grub2-set-default 0
 ```
-_Готово...._
-_Ребутим машину и выполняем очистку и упаковку образа для vagrant_
+__Готово....__
+__Ребутим машину и выполняем очистку и упаковку образа для vagrant__
 ```bash
     sudo reboot
 ```
-_Удаляем старые ядра, оставив только свеже-собранное_
+__Удаляем старые ядра, оставив только свеже-собранное__
 ```bash
     sudo package-cleanup --oldkernels --count=1 -y
 ```
-_Чистим систему_
+__Чистим систему__
 ```bash
     yum clean all
     sudo yum grouremove "Development tools"
     sudo yum remove ncurces-devel kernel-devel gcc openssl-devel flex bison libssl-dev pkg-config ncurces-devel libcurces-dev
 ```
-_Пакуем образ vagrant._
-_Далее тестируем образ.
+__Пакуем образ vagrant.__
+__Далее тестируем образ.__
