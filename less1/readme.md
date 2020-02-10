@@ -22,7 +22,7 @@ __Получение исходников ядра + распаковка__
     sudo tar xf linux*
     cd linux*
 ```
-__Подготовка к билду:__
+__Подготовка к билду:__ 
 
 _копирование настроек из конфига для старого ядра_
 ```bash
@@ -65,5 +65,5 @@ __Чистим систему__
     sudo yum grouremove "Development tools"
     sudo yum remove ncurces-devel kernel-devel gcc openssl-devel flex bison libssl-dev pkg-config ncurces-devel libcurces-dev
 ```
-__Пакуем образ vagrant.__
+__Пакуем образ vagrant.__ 
 __Далее тестируем образ.__
