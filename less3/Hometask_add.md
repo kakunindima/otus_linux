@@ -1,6 +1,6 @@
 # Otus-linux Hometask
 ## Less3 additional hometask *
-### Установка btrfs
+### 1.Установка btrfs
 __btrfs будем устанавливать на доступные диски - sdb,sdc,sdd,sde
 выводим список:__
 ``` 
@@ -126,6 +126,7 @@ Label: none  uuid: a8383377-ba69-40fe-b6c0-c0c862eed531
 	devid    1 size 10.00GiB used 2.02GiB path /dev/sdb
 	devid    2 size 2.00GiB used 0.00B path /dev/sdc
 ```
+### 2.Перенос папки /var/opt на смонтированый том c btrfs /dev/sdb
 __Перенесем на смонтированый раздел папку /vat/opt__
 
 ```	
@@ -182,4 +183,7 @@ sdb                       8:16   0   10G  0 disk /var/opt
 sdc                       8:32   0    2G  0 disk 
 sdd                       8:48   0    1G  0 disk 
 sde                       8:64   0    1G  0 disk 
+```
+### 3.Работа со снапшотами на оставшихся дисках /dev/sdd, /dev/sde
+```
 ```
