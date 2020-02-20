@@ -3,7 +3,8 @@
 ### Установка btrfs
 btrfs будем устанавливать на доступные диски - sdb,sdc,sdd,sde
 выводим список:
-``` [vagrant@lvm ~]$ lsblk
+``` 
+[vagrant@lvm ~]$ __lsblk__
 
 NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda                       8:0    0   40G  0 disk 
@@ -16,7 +17,9 @@ sdb                       8:16   0   10G  0 disk
 sdc                       8:32   0    2G  0 disk 
 sdd                       8:48   0    1G  0 disk 
 sde                       8:64   0    1G  0 disk 
-
+```
+Создаем ФС на дисках sdb,sdc,sdd,sde.
+```
 [root@lvm vagrant]# mkfs.btrfs /dev/sdb
 btrfs-progs v4.9.1
 See http://btrfs.wiki.kernel.org for more information.
@@ -67,9 +70,9 @@ tmpfs                              120692   4600    116092   4% /run
 tmpfs                              120692      0    120692   0% /sys/fs/cgroup
 /dev/sda2                         1038336  64076    974260   7% /boot
 tmpfs                               24140      0     24140   0% /run/user/1000
-[root@lvm vagrant]# df -l[Kmkdir /mnt/sdb
-[root@lvm vagrant]# mount /dev/sdb/ [K[K /mnt/sdb/
-[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kdf -h
+[root@lvm vagrant]# mkdir /mnt/sdb
+[root@lvm vagrant]# mount /dev/sdb/ /mnt/sdb/
+[root@lvm vagrant]# df -h
 Filesystem                       Size  Used Avail Use% Mounted on
 /dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /
 devtmpfs                         109M     0  109M   0% /dev
@@ -274,7 +277,8 @@ Label: none  uuid: a8383377-ba69-40fe-b6c0-c0c862eed531
 	devid    1 size 10.00GiB used 2.02GiB path /dev/sdb
 	devid    2 size 2.00GiB used 0.00B path /dev/sdc
 
-]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs filesystem show --mounted[3Pdevice stats /mnt/sdb/[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clsblk[Kdf -h
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs filesystem show --mounted[3Pdevice stats /mnt/sdb/[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Clsblk[Kdf -h
 Filesystem                       Size  Used Avail Use% Mounted on
 /dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /
 devtmpfs                         109M     0  109M   0% /dev
@@ -290,7 +294,11 @@ total 0
 total 16
 drwxr-xr-x. 1 root root  0 Feb 19 09:11 [0m[38;5;27m.[0m
 drwxr-xr-x. 3 root root 17 Feb 19 09:12 [38;5;27m..[0m
-]0;root@lvm:/home/vagrant[root@lvm vagrant]# [K[root@lvm vagrant]# [K[root@lvm vagrant]# ls -la /mnt/sdb/[K[K[root@lvm vagrant]# [K[root@lvm vagrant]# иек[K[K[Kbtrfs[K[K[K[K[K,[Kmkfs.btrfs [K[K[K[K[K[K[K[K[K[K[Kls -l /var/opt/
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# 
+[K[root@lvm vagrant]# 
+[K[root@lvm vagrant]# ls -la /mnt/sdb/[K
+[K[root@lvm vagrant]# 
+[K[root@lvm vagrant]# иек[K[K[Kbtrfs[K[K[K[K[K,[Kmkfs.btrfs [K[K[K[K[K[K[K[K[K[K[Kls -l /var/opt/
 total 0
 ]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /var/opt/[Kmkdir /dev/sdb/opt
 mkdir: cannot create directory ‘/dev/sdb/opt’: Not a directory
@@ -357,7 +365,9 @@ total 0
 -rw-r--r--. 1 root root 0 Feb 19 11:10 file8
 -rw-r--r--. 1 root root 0 Feb 19 11:10 file9
 drwxr-xr-x. 1 root root 0 Feb 19 11:05 [0m[38;5;27mopt[0m
-]0;root@lvm:/var/opt[root@lvm opt]# [K[root@lvm opt]# [K[root@lvm opt]# fd -f
+]0;root@lvm:/var/opt[root@lvm opt]# 
+[K[root@lvm opt]# 
+[K[root@lvm opt]# fd -f
 bash: fd: command not found
 ]0;root@lvm:/var/opt[root@lvm opt]# fd -f[1P -f[1P -fd -ff -f
 df: invalid option -- 'f'
@@ -840,9 +850,12 @@ Use --help as an argument for information on a specific group or command.
 ERROR: target path already exists: /dev/sdd
 ]0;root@lvm:/var/opt[root@lvm opt]# btrfs subvolume create /dev/sdd/subvol1
 ERROR: cannot access /dev/sdd/subvol1: Not a directory
-]0;root@lvm:/var/opt[root@lvm opt]# btrfs subvolume create /dev/sdd/subvol1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kbtrfs subvolume create /dev/sdd/subvol1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmount /dev/sdd /mnt/sdd
+]0;root@lvm:/var/opt[root@lvm opt]# btrfs subvolume create /dev/sdd/subvol1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kbtrfs subvolume create /dev/sdd/subvol1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmount /dev/sdd /mnt/sdd
 mount: mount point /mnt/sdd does not exist
-]0;root@lvm:/var/opt[root@lvm opt]# mount /dev/sdd /mnt/sdd[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmkdir /mnt.[K/d[Ksdd
+]0;root@lvm:/var/opt[root@lvm opt]# mount /dev/sdd /mnt/sdd
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmkdir /mnt.[K/d[Ksdd
 ]0;root@lvm:/var/opt[root@lvm opt]# mkdir /mnt/sdd[Ke
 ]0;root@lvm:/var/opt[root@lvm opt]# mkdir /mnt/sded[9@ount /dev/sdd[C[C[C[C[C[C[C[C[C
 mount: wrong fs type, bad option, bad superblock on /dev/sdd,
@@ -1511,7 +1524,9 @@ See http://btrfs.wiki.kernel.org for more information.
 
 ERROR: mount check: cannot open /dev/sdd: Permission denied
 ERROR: cannot check mount status of /dev/sdd: Permission denied
-]0;vagrant@lvm:~[vagrant@lvm ~]$ mkfs.btrfs /dev/sdd -f[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmkfs.btrfs /dev/sdd -f[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ksudo -s 
+]0;vagrant@lvm:~[vagrant@lvm ~]$ mkfs.btrfs /dev/sdd -f
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmkfs.btrfs /dev/sdd -f
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ksudo -s 
 ]0;root@lvm:/home/vagrant[?1034h[root@lvm vagrant]# exitdmesg -T[4Pexit[Kmkfs.br[Ktrfs /dev/sdd
 btrfs-progs v4.9.1
 See http://btrfs.wiki.kernel.org for more information.
@@ -1563,7 +1578,8 @@ total 0
 -rw-r--r--. 1 root root 0 Feb 19 11:10 file8
 -rw-r--r--. 1 root root 0 Feb 19 11:10 file9
 drwxr-xr-x. 1 root root 0 Feb 19 11:05 [0m[38;5;27mopt[0m
-]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /mnt/sdb[9Pdf -hmount /dev/sdb /mnt/sdb[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -h[Kls -l /mnt/sdb[Kls -l /mnt/sdb[9Pdf -h
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /mnt/sdb[9Pdf -hmount /dev/sdb /mnt/sdb
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -h[Kls -l /mnt/sdb[Kls -l /mnt/sdb[9Pdf -h
 Filesystem                       Size  Used Avail Use% Mounted on
 /dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /
 devtmpfs                         109M     0  109M   0% /dev
@@ -1579,14 +1595,17 @@ mount: wrong fs type, bad option, bad superblock on /dev/sdd,
 
        In some cases useful info is found in syslog - try
        dmesg | tail or so.
-]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sdd /mnt/sdd[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -h[Kls -l /mnt/sdb[9Pdf -hmount /dev/sdb /mnt/sdbe /mnt/sde[4Pkfs.btrfs /dev/sddount /dev/sde /mnt/sdeb /mnt/sdb[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -h[Kls -l /mnt/sdb[K[K[K[K[K[K[K[K[K[K[K[K[K[K,kdir [K[K[K[K[K[Kmkdir /test/
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sdd /mnt/sdd
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -h[Kls -l /mnt/sdb[9Pdf -hmount /dev/sdb /mnt/sdbe /mnt/sde[4Pkfs.btrfs /dev/sddount /dev/sde /mnt/sdeb /mnt/sdb
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -h[Kls -l /mnt/sdb[K[K[K[K[K[K[K[K[K[K[K[K[K[K,kdir [K[K[K[K[K[Kmkdir /test/
 ]0;root@lvm:/home/vagrant[root@lvm vagrant]# mkdir /test/ount /dev/sdd /mnt/sdd[K[K[K[K[K[K[Ktrst[K[K[Kest/
 mount: wrong fs type, bad option, bad superblock on /dev/sdd,
        missing codepage or helper program, or other error
 
        In some cases useful info is found in syslog - try
        dmesg | tail or so.
-]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sdd /test/[9Pkdir[C[C[C[C[C[C[Count /dev/sdd /mnt/sdd[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -h[Kls -l /mnt/sdb[9Pdf -hmount /dev/sdb /mnt/sdbe /mnt/sde[4Pkfs.btrfs /dev/sddexit[Kmkfs.btrfs /dev/sdd -f
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sdd /test/[9Pkdir[C[C[C[C[C[C[Count /dev/sdd /mnt/sdd
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -h[Kls -l /mnt/sdb[9Pdf -hmount /dev/sdb /mnt/sdbe /mnt/sde[4Pkfs.btrfs /dev/sddexit[Kmkfs.btrfs /dev/sdd -f
 btrfs-progs v4.9.1
 See http://btrfs.wiki.kernel.org for more information.
 
@@ -1632,7 +1651,8 @@ Devices:
    ID        SIZE  PATH
     1     1.00GiB  /dev/sde
 
-]0;root@lvm:/home/vagrant[root@lvm vagrant]# mkfs.btrfs /dev/sde -fc[C[C[C[1Pount /dev/sdd /test/kfs.btrfs /dev/sdc -fe[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kumount /test/
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mkfs.btrfs /dev/sde -fc[C[C[C[1Pount /dev/sdd /test/kfs.btrfs /dev/sdc -fe[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kumount /test/
 ]0;root@lvm:/home/vagrant[root@lvm vagrant]# umount /test/mkfs.btrfs /dev/sde -fc[C[C[C[1Pount /dev/sdd /test/[K[K[K[K[Kmnt/sdd
 ]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sdd /mnt/sdd[1P /mnt/sddc /mnt/sdd[C[C[C[C[C[C[C[C[C[Kc
 mount: mount point /mnt/sdc does not exist
@@ -1649,7 +1669,11 @@ tmpfs                             24M     0   24M   0% /run/user/1000
 /dev/sdb                          12G   17M   10G   1% /var/opt
 /dev/sdd                         1.0G   17M  905M   2% /mnt/sdd
 /dev/sde                         1.0G   17M  905M   2% /mnt/sde
-]0;root@lvm:/home/vagrant[root@lvm vagrant]# [K[root@lvm vagrant]# [K[root@lvm vagrant]# [K[root@lvm vagrant]# [K[root@lvm vagrant]# touch file{}1}.}.}1}0}0}[C /dev/sdd
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# 
+[K[root@lvm vagrant]# 
+[K[root@lvm vagrant]# 
+[K[root@lvm vagrant]# 
+[K[root@lvm vagrant]# touch file{}1}.}.}1}0}0}[C /dev/sdd
 ]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /dev/sdd
 brw-rw----. 1 root disk 8, 48 Feb 19 13:53 [0m[48;5;232;38;5;11m/dev/sdd[0m
 ]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /dev/sdd/
@@ -1657,7 +1681,8 @@ ls: cannot access /dev/sdd/: Not a directory
 ]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /dev/sdd/[K/[K[K[K[K[K[K[K[Kmnt/sdd
 total 0
 ]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /mnt/sdddev/sdd/[K[13@touch file{1..100}[C[C[C[C[C[C[C[C[C[1P/sdd[1P/sdd[1P/sddm/sddn/sddt/sdd
-]0;root@lvm:/home/vagrant[root@lvm vagrant]# touch file{1..100} /mnt/sdd[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pls -l[C[C[C[C[C[C[C[C[C
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# touch file{1..100} /mnt/sdd
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pls -l[C[C[C[C[C[C[C[C[C
 total 0
 ]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /mnt/sdda /mnt/sdd
 total 16
@@ -1924,13 +1949,16 @@ btrfs receive --dump [options]
 Use --help as an argument for information on a specific group or command.
 ]0;vagrant@lvm:~[vagrant@lvm ~]$ btrfs snapshot /dev/sdd /dev/sde[C[1@s[1@u[1@b[1@v[1@o[1@ [1@l[1@u[1@m[1@e[C[C[C[C
 ERROR: not a subvolume: /dev/sdd
-]0;vagrant@lvm:~[vagrant@lvm ~]$ [K[vagrant@lvm ~]$ [K[vagrant@lvm ~]$ htop
+]0;vagrant@lvm:~[vagrant@lvm ~]$ 
+[K[vagrant@lvm ~]$ 
+[K[vagrant@lvm ~]$ htop
 -bash: htop: command not found
 ]0;vagrant@lvm:~[vagrant@lvm ~]$ exi
 -bash: exi: command not found
 ]0;vagrant@lvm:~[vagrant@lvm ~]$ exit
 logout
-Connection to 127.0.0.1 closed.
+Connection to 127.0.0.1 closed.
+
 ]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvmroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# exit
 exit
 
