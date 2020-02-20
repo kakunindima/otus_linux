@@ -1,9 +1,9 @@
 # Otus-linux Hometask
 ## Less3 additional hometask *
 ### Установка btrfs
-btrfsбудем устанавливать на доступные диски - sdb,sdc,sdd,sde
+btrfs будем устанавливать на доступные диски - sdb,sdc,sdd,sde
 выводим список:
-[vagrant@lvm ~]$ lsblk
+``` [vagrant@lvm ~]$ lsblk
 
 NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda                       8:0    0   40G  0 disk 
@@ -1935,3 +1935,4 @@ Connection to 127.0.0.1 closed.
 exit
 
 Script done on 2020-02-19 17:09:10+02:00 [COMMAND_EXIT_CODE="127"]
+```
