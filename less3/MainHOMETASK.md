@@ -1,9 +1,9 @@
 # Otus-linux hometask
 ## Lesson 3
 ### LVM
-__Main part: lvm__
-__1.Уменьшение размера тома до 8G__
-
+### Main part: lvm
+### 1.Уменьшение размера тома до 8G
+```
 [vagrant@lvm ~]$ lsblk
 NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda                       8:0    0   40G  0 disk 
@@ -16,8 +16,9 @@ sdb                       8:16   0   10G  0 disk
 sdc                       8:32   0    2G  0 disk 
 sdd                       8:48   0    1G  0 disk 
 sde                       8:64   0    1G  0 disk 
-
+```
 __создаем временный том для root__
+```
 [vagrant@lvm ~]$ pvcreate /dev/sdb/
 [root@lvm vagrant]# vgcreate vg_root /dev/sdb
    Volume group "new_root" successfully created
@@ -36,9 +37,9 @@ sdb                       8:16   0   10G  0 disk
 sdc                       8:32   0    2G  0 disk 
 sdd                       8:48   0    1G  0 disk 
 sde                       8:64   0    1G  0 disk 
-
+```
 __Создаем фс, переносим данные__
-
+```
 [root@lvm vagrant]# mkfs.xfs /dev/new_root/-lv_root
 meta-data=/dev/new_root/lv_root  isize=512    agcunt=4, agsize=655104 blks
          =                       sectsz=512   attr=2, projid32bit=1
@@ -75,14 +76,14 @@ dr-xr-x---.  3 root    root     149 Feb 18 07:56 [38;5;27mroot[0m
 drwxr-xr-x.  2 root    root       6 May 12  2018 [38;5;27mrun[0m
 lrwxrwxrwx.  1 root    root       8 Feb 18 08:07 [38;5;51msbin[0m -> [38;5;27musr/sbin[0m
 drwxr-xr-x.  2 root    root       6 Apr 11  2018 [38;5;27msrv[0m
-drwxr-xr-x.  2 root    root       6 May 12  2018 [38;5;27msys[0m
-drwxrwxrwt.  8 root    root     256 Feb 18 08:06 [48;5;10;38;5;16mtmp[0m
-drwxr-xr-x. 13 root    root     155 May 12  2018 [38;5;27musr[0m
-drwxr-xr-x.  3 vagrant vagrant   54 Feb 18 07:54 [38;5;27mvagrant[0m
-drwxr-xr-x. 18 root    root     254 Feb 18 07:55 [38;5;27mvar[0m
-
+drwxr-xr-x.  2 root    root       6 May 12  2018 
+drwxrwxrwt.  8 root    root     256 Feb 18 08:06 
+drwxr-xr-x. 13 root    root     155 May 12  2018 
+drwxr-xr-x.  3 vagrant vagrant   54 Feb 18 07:54 
+drwxr-xr-x. 18 root    root     254 Feb 18 07:55 
+```
 __Перекоонфигурируем grub__
-
+```
 [root@lvm vagrant]# for i in /proc/ /sys/ /dev/ /run/ /boot/; do mount --bind $i /mnt/$i; done
 [root@lvm vagrant]# chroot /mnt/
 [root@lvm /]#  grub2-mkconfig -o /boot/grub2/grub.cfg
@@ -98,9 +99,9 @@ done
 
 [root@lvm boot]# vi /boot/grub2/grub.cfg 
 [root@lvm vagrant]# reboot
-
+```
 __после перезгрузки удаляем радел и уменьшаем его размер до 8Гб__
-
+```
 [vagrant@lvm ~]$ lsblk
 NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda                       8:0    0   40G  0 disk 
@@ -151,6 +152,9 @@ sdb                       8:16   0   10G  0 disk
 sdc                       8:32   0    2G  0 disk 
 sdd                       8:48   0    1G  0 disk 
 sde                       8:64   0    1G  0 disk 
+```
+__Создаем файловую систему, монтируем, переносим данные, обновляем загрузчик__
+```
 [root@lvm vagrant]# mkfs.xfs /dev/VolGroup00/LogVol00
 [root@lvm vagrant]# mount /dev/VolGroup00/LogVol00 /mnt/
 
@@ -172,7 +176,6 @@ done
 
 *** Creating image file done ***
 *** Creating initramfs image file '/boot/initramfs-3.10.0-862.2.3.el7.x86_64.img' done ***
-
 [root@lvm boot]# lsblk
 NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
 sda                       8:0    0   40G  0 disk 
@@ -186,9 +189,10 @@ sdb                       8:16   0   10G  0 disk
 sdc                       8:32   0    2G  0 disk 
 sdd                       8:48   0    1G  0 disk 
 sde                       8:64   0    1G  0 disk 
-
-__Перенос каталога /home__
-
+```
+### 2.Перенос каталога /home
+__Создаем раздел__
+```
 [root@lvm boot]# pvcreate /dev/sdc /dev/sdd
   Physical volume "/dev/sdc" successfully created.
   Physical volume "/dev/sdd" successfully created.
@@ -239,17 +243,24 @@ sde                        8:64   0    1G  0 disk
 
 [root@lvm boot]# mkfs.ext4 /dev/vg_var/lv_var
 Writing superblocks and filesystem accounting information: 0/8 done
-
+```
+__Монтируем и переносим данные с var__
+```
 [root@lvm boot]# mount /dev/vg_var/lv_var /mnt/
 
 [root@lvm boot]# cp -aR/var/* /mnt/
-
+```
+__Удаляем старый каталог__
+```
 [root@lvm boot]# mkdir /tmp/oldvar && mv /var/* /tmp/oldvar
 [root@lvm boot]# umount /mnt
 [root@lvm boot]# ls -l /var/
 total 0
 
 [root@lvm boot]# umount /mnt
+```
+__монтируем ноый каталог__
+```
 [root@lvm boot]#  mount /dev/vg_var/lv_var /var
 [root@lvm vagrant]#ls -la /var/
 total 84
@@ -276,7 +287,9 @@ drwxr-xr-x.  8 root root  4096 May 12  2018 [38;5;27mspool[0m
 drwxrwxrwt.  4 root root  4096 Feb 18 08:19 [48;5;10;38;5;16mtmp[0m
 drwxr-xr-x.  2 root root  4096 Apr 11  2018 [38;5;27myp[0m
 [root@lvm boot]# echo "`blkid | grep var: | awk '{print $2}'` /var ext4 defaults 0 0" >> /etc/fstab
-
+```
+__Удаляем временный том созданный при уменьшении основного рут раздела__
+```
 [root@lvm boot]# reboot
 [root@lvm vagrant]# lvremove /dev/vg_root/lv_root
 Do you really want to remove active logical volume new_root/lv_root? [y/n]: y
@@ -355,7 +368,10 @@ pvs
   /dev/sda3  VolGroup00 lvm2 a--   <38.97g <29.47g
   /dev/sdc   vg_var     lvm2 a--    <2.00g   1.06g
   /dev/sdd   vg_var     lvm2 a--  1020.00m  64.00m
-
+```
+__Создание снапшота с директории home__
+__Создаем новыцй раздел и монтируем home__
+```
 [root@lvm vagrant]# lvcreate -n LogVol_Home -L 2G /dev/VolGroup00
   Logical volume "LogVol_Home" created.
 
@@ -392,6 +408,9 @@ total 0
 
 [root@lvm vagrant]# mount /dev/VolGroup00/LogVol_Home /home/
 [root@lvm vagrant]# echo "`blkid | grep Home | awk '{print $2}'` /home xfs defaults 0 0" >> /etc/fstab
+```
+__Создаем файлы, делаем снапшот, удаляем данные, восстанавливаем__
+```
 [root@lvm vagrant]# touch /home/file{1..40}
 [root@lvm vagrant]#ls -la /home/
 -rw-r--r--. 1 root    root     0 Feb 18 09:40 file1
@@ -441,7 +460,9 @@ total 0
   LogVol01    VolGroup00 -wi-ao----   1.50g                                                    
   LogVol_Home VolGroup00 -wi-ao----   2.00g                                                    
   lv_var      vg_var     rwi-aor--- 952.00m                                    100.00          
-
+```
+__Создаем снапшот__
+```
 [root@lvm vagrant]#  lvcreate -L 100MB -s -n home_snap /dev/VolGroup00/LogVol_Home
   Rounding up size to full physical extent 128.00 MiB
   Logical volume "home_snap" created.
@@ -454,7 +475,9 @@ total 0
   LogVol_Home VolGroup00 owi-aos---   2.00g                                                         
   home_snap   VolGroup00 swi-a-s--- 128.00m      LogVol_Home 0.00                                   
   lv_var      vg_var     rwi-aor--- 952.00m                                         100.00          
-
+```
+__Удаляем файлы__
+```
 [root@lvm vagrant]#  rm -f /home/file{11..40}
 [root@lvm vagrant]#ls -l /home/
 total 0
@@ -479,7 +502,9 @@ total 0
 [root@lvm vagrant]#  lvconvert --merge /dev/VolGroup00/home_snap
   Merging of volume VolGroup00/home_snap started.
   VolGroup00/LogVol_Home: Merged: 100.00%
-
+```
+__Восстанавливаем фанные из снапшота__
+```
 [root@lvm vagrant]# umount /home
 
 [root@lvm vagrant]# lvconvert --merge /dev/VolGroup00/home_snap
