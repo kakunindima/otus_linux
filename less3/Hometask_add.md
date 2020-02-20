@@ -183,3 +183,3897 @@ sdc                       8:32   0    2G  0 disk
 sdd                       8:48   0    1G  0 disk 
 sde                       8:64   0    1G  0 disk 
 ```
+```
+Script started on 2020-02-20 09:35:21+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvmroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#  vagrant ssh 
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kh
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvmroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# vagrant ssh[K[K[Kup
+[0mBringing machine 'lvm' up with 'virtualbox' provider...[0m
+[1m==> lvm: Checking if box 'centos/7' version '1804.02' is up to date...[0m
+[1m==> lvm: Clearing any previously set forwarded ports...[0m
+[1m==> lvm: Clearing any previously set network interfaces...[0m
+[1m==> lvm: Preparing network interfaces based on configuration...[0m
+[0m    lvm: Adapter 1: nat[0m
+[0m    lvm: Adapter 2: hostonly[0m
+[1m==> lvm: Forwarding ports...[0m
+[0m    lvm: 22 (guest) => 2222 (host) (adapter 1)[0m
+[1m==> lvm: Running 'pre-boot' VM customizations...[0m
+[1m==> lvm: Booting VM...[0m
+[1m==> lvm: Waiting for machine to boot. This may take a few minutes...[0m
+[0m    lvm: SSH address: 127.0.0.1:2222[0m
+[0m    lvm: SSH username: vagrant[0m
+[0m    lvm: SSH auth method: private key[0m
+[1m==> lvm: Machine booted and ready![0m
+[1m==> lvm: Checking for guest additions in VM...[0m
+[0m    lvm: No guest additions were detected on the base box for this VM! Guest
+    lvm: additions are required for forwarded ports, shared folders, host only
+    lvm: networking, and more. If SSH fails on this machine, please install
+    lvm: the guest additions and repackage the box to continue.
+    lvm: 
+    lvm: This is not an error message; everything may continue to work properly,
+    lvm: in which case you may ignore this message.[0m
+[1m==> lvm: Setting hostname...[0m
+[1m==> lvm: Configuring and enabling network interfaces...[0m
+[1m==> lvm: Rsyncing folder: /home/pengwinn/Project/otus-linux/stands-03-lvm/ => /vagrant[0m
+[1m==> lvm: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> lvm: flag to force provisioning. Provisioners marked to run always will still run.[0m
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvmroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# vagrant upssh
+Last login: Thu Feb 20 06:49:35 2020 from 10.0.2.2
+
+]0;vagrant@lvm:~[?1034h[vagrant@lvm ~]$ df -l[Kh
+Filesystem                       Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /
+devtmpfs                         109M     0  109M   0% /dev
+tmpfs                            118M     0  118M   0% /dev/shm
+tmpfs                            118M  4.5M  114M   4% /run
+tmpfs                            118M     0  118M   0% /sys/fs/cgroup
+/dev/sda2                       1014M   63M  952M   7% /boot
+tmpfs                             24M     0   24M   0% /run/user/1000
+]0;vagrant@lvm:~[vagrant@lvm ~]$ lsblk
+NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                       8:0    0   40G  0 disk 
+├─sda1                    8:1    0    1M  0 part 
+├─sda2                    8:2    0    1G  0 part /boot
+└─sda3                    8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /
+  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+sdb                       8:16   0   10G  0 disk 
+sdc                       8:32   0    2G  0 disk 
+sdd                       8:48   0    1G  0 disk 
+sde                       8:64   0    1G  0 disk 
+]0;vagrant@lvm:~[vagrant@lvm ~]$ mount /sdd [K[K[K[Kdev/sdd /mnt/sdd
+mount: only root can do that
+]0;vagrant@lvm:~[vagrant@lvm ~]$ sudo -s 
+]0;root@lvm:/home/vagrant[?1034h[root@lvm vagrant]# mount /dev/sdd /mnt/sdd
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sdd /mnt/sdd[Kc[1P /mnt/sdcw /mnt/sdc[1P /mnt/sdce /mnt/sdc[C[C[C[C[C[C[C[C[C[Ke
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sde /mnt/sded /mnt/sdd
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K[2Plltouch file{1..100}ll[Kexitmount /dev/sdd /mnt/sdde /mnt/sde
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmount /dev/sde /mnt/sde[C[1P /mnt/sdeb /mnt/sde[C[C[C[C[C[C[C[C[C[Kb
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sdb /mnt/sdbe /mnt/sded /mnt/sdd
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[K[2Plltouch file{1..100}ll[Kcd /mnt/sddll[Ktouch file{1..100}ll[Kexitmount /dev/sdd /mnt/sdde /mnt/sdeb /mnt/sdb
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kdf -h
+Filesystem                       Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /
+devtmpfs                         109M     0  109M   0% /dev
+tmpfs                            118M     0  118M   0% /dev/shm
+tmpfs                            118M  4.5M  114M   4% /run
+tmpfs                            118M     0  118M   0% /sys/fs/cgroup
+/dev/sda2                       1014M   63M  952M   7% /boot
+tmpfs                             24M     0   24M   0% /run/user/1000
+/dev/sdd                         1.0G   17M  905M   2% /mnt/sdd
+/dev/sde                         1.0G   17M  905M   2% /mnt/sde
+/dev/sdb                          12G   17M   10G   1% /mnt/sdb
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# umount de[K[K/dev/sdd
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# umount /dev/sdd[Kc
+umount: /dev/sdc: not mounted
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# umount /dev/sdcd[Ke
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume create 
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pumount /dev/sdecd[10Pdf -hmount /dev/sdb /mnt/sdbe /mnt/sde
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sde /mnt/sde
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pumount /dev/sdecd[10Pdf -hmount /dev/sdb /mnt/sdbe /mnt/sded /mnt/sdd
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sdd /mnt/sdde /mnt/sded /mnt/sdd
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmount /dev/sdd /mnt/sdde /mnt/sde
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pumount /dev/sdecdcemount /dev/sde /mnt/sded /mnt/sdd
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kbtrfs subvolume ce[Kreate /mnt/sdd/subv_1
+Create subvolume '/mnt/sdd/subv_1'
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume create /mnt/sdd/subv_1[K2
+Create subvolume '/mnt/sdd/subv_2'
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume create /mnt/sdd/subv_2[1P/subv_2c/subv_2
+ERROR: cannot access '/mnt/sdc': No such file or directory
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume create /mnt/sdc/subv_2[1P/subv_2e/subv_2
+Create subvolume '/mnt/sde/subv_2'
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume create /mnt/sde/subv_2[K1
+Create subvolume '/mnt/sde/subv_1'
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume list
+btrfs subvolume list: too few arguments
+usage: btrfs subvolume list [options] [-G [+|-]value] [-C [+|-]value] [--sort=gen,ogen,rootid,path] <path>
+
+    List subvolumes (and snapshots)
+
+    -p           print parent ID
+    -a           print all the subvolumes in the filesystem and
+                 distinguish absolute and relative path with respect
+                 to the given <path>
+    -c           print the ogeneration of the subvolume
+    -g           print the generation of the subvolume
+    -o           print only subvolumes below specified path
+    -u           print the uuid of subvolumes (and snapshots)
+    -q           print the parent uuid of the snapshots
+    -R           print the uuid of the received snapshots
+    -t           print the result as a table
+    -s           list snapshots only in the filesystem
+    -r           list readonly subvolumes (including snapshots)
+    -d           list deleted subvolumes that are not yet cleaned
+    -G [+|-]value
+                 filter the subvolumes by generation
+                 (+value: >= value; -value: <= value; value: = value)
+    -C [+|-]value
+                 filter the subvolumes by ogeneration
+                 (+value: >= value; -value: <= value; value: = value)
+    --sort=gen,ogen,rootid,path
+                 list the subvolume in order of gen, ogen, rootid or path
+                 you also can add '+' or '-' in front of each items.
+                 (+:ascending, -:descending, ascending default)
+
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume list /mnt/sdd
+ID 256 gen 11 top level 5 path subv_1
+ID 257 gen 12 top level 5 path subv_2
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume list /mnt/sdd[Kc
+ERROR: cannot access '/mnt/sdc': No such file or directory
+ERROR: can't access '/mnt/sdc'
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume list /mnt/sdc[Ke
+ID 256 gen 8 top level 5 path subv_2
+ID 257 gen 9 top level 5 path subv_1
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /dev/sdd[K[K[K[K[K[K[K,[Kmnt/sdd
+total 0
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file1
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file10
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file100
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file11
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file12
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file13
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file14
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file15
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file16
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file17
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file18
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file19
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file2
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file20
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file21
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file22
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file23
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file24
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file25
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file26
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file27
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file28
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file29
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file3
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file30
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file31
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file32
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file33
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file34
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file35
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file36
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file37
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file38
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file39
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file4
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file40
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file41
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file42
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file43
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file44
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file45
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file46
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file47
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file48
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file49
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file5
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file50
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file51
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file52
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file53
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file54
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file55
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file56
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file57
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file58
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file59
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file6
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file60
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file61
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file62
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file63
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file64
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file65
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file66
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file67
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file68
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file69
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file7
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file70
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file71
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file72
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file73
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file74
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file75
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file76
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file77
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file78
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file79
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file8
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file80
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file81
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file82
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file83
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file84
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file85
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file86
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file87
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file88
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file89
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file9
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file90
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file91
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file92
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file93
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file94
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file95
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file96
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file97
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file98
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file99
+drwxr-xr-x. 1 root root 0 Feb 20 07:41 [0m[38;5;27msubv_1[0m
+drwxr-xr-x. 1 root root 0 Feb 20 07:41 [38;5;27msubv_2[0m
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /mnt/sdd[Kmv /mnt/sdd/file{}1}.}.}1}0}0}[C /mnt/sdd/subv_1
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mv /mnt/sdd/file{1..100} /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[26Pls -l /mnt/sdd
+total 0
+drwxr-xr-x. 1 root root 1184 Feb 20 07:43 [0m[38;5;27msubv_1[0m
+drwxr-xr-x. 1 root root    0 Feb 20 07:41 [38;5;27msubv_2[0m
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /mnt/sdd/subv_1
+total 0
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file1
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file10
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file100
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file11
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file12
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file13
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file14
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file15
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file16
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file17
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file18
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file19
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file2
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file20
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file21
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file22
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file23
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file24
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file25
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file26
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file27
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file28
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file29
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file3
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file30
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file31
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file32
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file33
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file34
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file35
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file36
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file37
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file38
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file39
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file4
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file40
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file41
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file42
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file43
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file44
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file45
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file46
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file47
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file48
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file49
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file5
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file50
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file51
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file52
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file53
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file54
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file55
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file56
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file57
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file58
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file59
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file6
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file60
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file61
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file62
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file63
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file64
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file65
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file66
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file67
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file68
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file69
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file7
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file70
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file71
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file72
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file73
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file74
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file75
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file76
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file77
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file78
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file79
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file8
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file80
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file81
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file82
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file83
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file84
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file85
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file86
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file87
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file88
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file89
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file9
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file90
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file91
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file92
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file93
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file94
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file95
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file96
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file97
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file98
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file99
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# btrfs subvolume snapshit[K[Kot /mnt/s[Kd[Ksdd/subv_1 /mnt/sdd/subv_2
+Create a snapshot of '/mnt/sdd/subv_1' in '/mnt/sdd/subv_2/subv_1'
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l ,[K/mnt/sdd/subv_2/subv_1/
+total 0
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file1
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file10
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file100
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file11
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file12
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file13
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file14
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file15
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file16
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file17
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file18
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file19
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file2
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file20
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file21
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file22
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file23
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file24
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file25
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file26
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file27
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file28
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file29
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file3
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file30
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file31
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file32
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file33
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file34
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file35
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file36
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file37
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file38
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file39
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file4
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file40
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file41
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file42
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file43
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file44
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file45
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file46
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file47
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file48
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file49
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file5
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file50
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file51
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file52
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file53
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file54
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file55
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file56
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file57
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file58
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file59
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file6
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file60
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file61
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file62
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file63
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file64
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file65
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file66
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file67
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file68
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file69
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file7
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file70
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file71
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file72
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file73
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file74
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file75
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file76
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file77
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file78
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file79
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file8
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file80
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file81
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file82
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file83
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file84
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file85
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file86
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file87
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file88
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file89
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file9
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file90
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file91
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file92
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file93
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file94
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file95
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file96
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file97
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file98
+-rw-r--r--. 1 root root 0 Feb 19 13:54 file99
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /mnt/sdd/subv_2/subv_1/[K[K[K[K[K[K[K
+total 0
+drwxr-xr-x. 1 root root 1184 Feb 20 07:43 [0m[38;5;27msubv_1[0m
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# rm -rf /mnt/sdd/subv_1
+rm: cannot remove ‘/mnt/sdd/subv_1’: Operation not permitted
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# rm -rf /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Krm -rf /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P/mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1m /mnt/sdd/subv_1v /mnt/sdd/subv_1
+mv: missing destination file operand after ‘/mnt/sdd/subv_1’
+Try 'mv --help' for more information.
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mv /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1r /mnt/sdd/subv_1m /mnt/sdd/subv_1
+rm: cannot remove ‘/mnt/sdd/subv_1’: Is a directory
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# rm /mnt/sdd/subv_1[C/fi[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kmv /mnt/sdd/subv_1[4@rm -rf[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C/file{}1}.}.}5}0}
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# rm -rf /mnt/sdd/subv_1/file{1..50}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Krm -rf /mnt/sdd/subv_1/file{1..50}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmv /mnt/sdd/subv_1[4@rm -rf[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pmv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Krm -rf /mnt/sdd/subv_1/file{1..50}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kl -[K[Ks -l /mnt/sd
+sdb/ sdd/ sde/ 
+[root@lvm vagrant]# ls -l /mnt/sdd/subv_1
+total 0
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /mnt/sdd/subv_1/
+total 0
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -l /mnt/sdd/subv_1/a /mnt/sdd/subv_1/
+total 16
+drwxr-xr-x. 1 root root  0 Feb 20 07:49 [0m[38;5;27m.[0m
+drwxr-xr-x. 1 root root 24 Feb 20 07:43 [38;5;27m..[0m
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -la /mnt/sdd/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kumount /mnt/d[Ksd
+sdb/ sdd/ sde/ 
+[root@lvm vagrant]# umount /mnt/sdd/subv_1
+umount: /mnt/sdd/subv_1: not mounted
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# umount /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kumount /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kumount /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -la /mnt/sdd/subv_1/[1P /mnt/sdd/subv_1/[Krm -rf /mnt/sdd/subv_1/file{1..50}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmv /mnt/sdd/subv_1[4@rm -rf[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -l /mnt/sdd/subv_2/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbtrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sdd/subv_2
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[35Pls -l /mnt/sdd/subv_1[Kmv /mnt/sdd/file{1..100} /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[26Pls -l /mnt/sddmv /mnt/sdd/file{1..100} /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[26Pls -l /mnt/sddbtrfs subvolume list /mnt/sde
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pls -l /mnt/sddmv /mnt/sdd/file{1..100} /mnt/sdd/subv_1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P/mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1t /mnt/sdd/subv_1o /mnt/sdd/subv_1u /mnt/sdd/subv_1c /mnt/sdd/subv_1h /mnt/sdd/subv_1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C /mnt/sdd/subv_1f /mnt/sdd/subv_1i /mnt/sdd/subv_1l /mnt/sdd/subv_1e /mnt/sdd/subv_1{ /mnt/sdd/subv_1} /mnt/sdd/subv_1[1@1[1@.[1@.[1@1[1@0[1@0
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# touch file{1..100} /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pumount[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -la /mnt/sdd/subv_1/
+total 16
+drwxr-xr-x. 1 root root  0 Feb 20 07:52 [0m[38;5;27m.[0m
+drwxr-xr-x. 1 root root 24 Feb 20 07:43 [38;5;27m..[0m
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# ls -la /mnt/sdd/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kcd /mnt/sdd/subv_1
+]0;root@lvm:/mnt/sdd/subv_1[root@lvm subv_1]# ll
+total 0
+]0;root@lvm:/mnt/sdd/subv_1[root@lvm subv_1]# llcd /mnt/sdd/subv_1ls -la /mnt/sdd/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctouch file{1..100} /mnt/sdd/subv_1[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K
+]0;root@lvm:/mnt/sdd/subv_1[root@lvm subv_1]# k[Kll
+total 0
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file1
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file10
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file100
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file11
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file12
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file13
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file14
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file15
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file16
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file17
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file18
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file19
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file2
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file20
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file21
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file22
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file23
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file24
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file25
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file26
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file27
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file28
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file29
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file3
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file30
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file31
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file32
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file33
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file34
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file35
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file36
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file37
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file38
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file39
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file4
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file40
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file41
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file42
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file43
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file44
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file45
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file46
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file47
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file48
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file49
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file5
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file50
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file51
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file52
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file53
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file54
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file55
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file56
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file57
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file58
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file59
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file6
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file60
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file61
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file62
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file63
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file64
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file65
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file66
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file67
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file68
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file69
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file7
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file70
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file71
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file72
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file73
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file74
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file75
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file76
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file77
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file78
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file79
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file8
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file80
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file81
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file82
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file83
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file84
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file85
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file86
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file87
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file88
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file89
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file9
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file90
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file91
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file92
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file93
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file94
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file95
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file96
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file97
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file98
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file99
+]0;root@lvm:/mnt/sdd/subv_1[root@lvm subv_1]# cd /
+]0;root@lvm:/[root@lvm /]# cd /[2Plltouch file{1..100}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cll[Kcd /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -la /mnt/sdd/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctouch file{1..100} /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[11Pls -la /mnt/sdd/subv_1/
+total 16
+drwxr-xr-x. 1 root root 1184 Feb 20 07:53 [0m[38;5;27m.[0m
+drwxr-xr-x. 1 root root   24 Feb 20 07:43 [38;5;27m..[0m
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file1
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file10
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file100
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file11
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file12
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file13
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file14
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file15
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file16
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file17
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file18
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file19
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file2
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file20
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file21
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file22
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file23
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file24
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file25
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file26
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file27
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file28
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file29
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file3
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file30
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file31
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file32
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file33
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file34
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file35
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file36
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file37
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file38
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file39
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file4
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file40
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file41
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file42
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file43
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file44
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file45
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file46
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file47
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file48
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file49
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file5
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file50
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file51
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file52
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file53
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file54
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file55
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file56
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file57
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file58
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file59
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file6
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file60
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file61
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file62
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file63
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file64
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file65
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file66
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file67
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file68
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file69
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file7
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file70
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file71
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file72
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file73
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file74
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file75
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file76
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file77
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file78
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file79
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file8
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file80
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file81
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file82
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file83
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file84
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file85
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file86
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file87
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file88
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file89
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file9
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file90
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file91
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file92
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file93
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file94
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file95
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file96
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file97
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file98
+-rw-r--r--. 1 root root    0 Feb 20 07:53 file99
+]0;root@lvm:/[root@lvm /]# ls -la /mnt/sdd/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /[K[2Plltouch file{1..100}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cll[Kcd /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -la /mnt/sdd/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctouch file{1..100} /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pumount[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -la /mnt/sdd/subv_1/[1P /mnt/sdd/subv_1/[K
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm -rf /mnt/sdd/subv_1/file{1..50}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmv /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4@rm -rf[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -l /mnt/sdd/subv_2/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbtrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sdd/subv_2
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[35Pls -l /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbtrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sdd/subv_2[K[K[K[K[K[K[K[Ke/subv_1
+Create a snapshot of '/mnt/sdd/subv_1' in '/mnt/sde/subv_1/subv_1'
+ERROR: cannot snapshot '/mnt/sdd/subv_1': Invalid cross-device link
+]0;root@lvm:/[root@lvm /]# btrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sde/subv_1[K2
+Create a snapshot of '/mnt/sdd/subv_1' in '/mnt/sde/subv_2/subv_1'
+ERROR: cannot snapshot '/mnt/sdd/subv_1': Invalid cross-device link
+]0;root@lvm:/[root@lvm /]# btrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sde/subv_2[K[K[K[K[K[K[K[K[Kdd/subv_2
+Create a snapshot of '/mnt/sdd/subv_1' in '/mnt/sdd/subv_2/subv_1'
+ERROR: cannot snapshot '/mnt/sdd/subv_1': File exists
+]0;root@lvm:/[root@lvm /]# btrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sdd/subv_211111[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kumount /dev/sdd
+]0;root@lvm:/[root@lvm /]# umount /dev/sdd[Ke
+]0;root@lvm:/[root@lvm /]# mount /dev/sd
+sda   sda1  sda2  sda3  sdb   sdc   sdd   sde   
+[root@lvm /]# mount /dev/sdd [K [K/sws[K[K[K[K[K[K[K[K[K[K[K[K[Kumount /dev/sdede[10Pmountumount /dev/sdedbtrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sdd/subv_2e/subv_21
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[33Pls -la /mnt/sdd/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /[K[2Plltouch file{1..100}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cll[Kcd /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -la /mnt/sdd/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctouch file{1..100} /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[12Pumount[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -la /mnt/sdd/subv_1/[1P /mnt/sdd/subv_1/[K
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm -rf /mnt/sdd/subv_1/file{1..50}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kmv /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4@rm -rf[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -l /mnt/sdd/subv_2/subv_1/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbtrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sdd/subv_2
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[35Pls -l /mnt/sdd/subv_1[Kmv /mnt/sdd/file{1..100} /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[26Pls -l /mnt/sddbtrfs subvolume list /mnt/sdecd[Kcreate /mnt/sde/subv_12c/subv_2d/subv_21
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[15Pmount /dev/sdd /mnt/sdde /mnt/sded /mnt/sdd
+]0;root@lvm:/[root@lvm /]# mount /dev/sdd /mnt/sdd[Ke[1P /mnt/sdee /mnt/sde
+]0;root@lvm:/[root@lvm /]# ls -l /dev/sdd [K[K[K[K[K[K[K[Kmnt/sdd/subv_1
+total 0
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file1
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file10
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file100
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file11
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file12
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file13
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file14
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file15
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file16
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file17
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file18
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file19
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file2
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file20
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file21
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file22
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file23
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file24
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file25
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file26
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file27
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file28
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file29
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file3
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file30
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file31
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file32
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file33
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file34
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file35
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file36
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file37
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file38
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file39
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file4
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file40
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file41
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file42
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file43
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file44
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file45
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file46
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file47
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file48
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file49
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file5
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file50
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file51
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file52
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file53
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file54
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file55
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file56
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file57
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file58
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file59
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file6
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file60
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file61
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file62
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file63
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file64
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file65
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file66
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file67
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file68
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file69
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file7
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file70
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file71
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file72
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file73
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file74
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file75
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file76
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file77
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file78
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file79
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file8
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file80
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file81
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file82
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file83
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file84
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file85
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file86
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file87
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file88
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file89
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file9
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file90
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file91
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file92
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file93
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file94
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file95
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file96
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file97
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file98
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file99
+]0;root@lvm:/[root@lvm /]# rm -rf /mnt/d[Ksdd/subv_1/file{}1}.}.}1}0}0}[1P}[1P}[1P}5}0}
+]0;root@lvm:/[root@lvm /]# rm -rf /mnt/sdd/subv_1/file{1..50}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pls -l /mnt/sdd/subv_1
+total 0
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file100
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file51
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file52
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file53
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file54
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file55
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file56
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file57
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file58
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file59
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file60
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file61
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file62
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file63
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file64
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file65
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file66
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file67
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file68
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file69
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file70
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file71
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file72
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file73
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file74
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file75
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file76
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file77
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file78
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file79
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file80
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file81
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file82
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file83
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file84
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file85
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file86
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file87
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file88
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file89
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file90
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file91
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file92
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file93
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file94
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file95
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file96
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file97
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file98
+-rw-r--r--. 1 root root 0 Feb 20 07:53 file99
+]0;root@lvm:/[root@lvm /]# ls -l /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm -rf /mnt/sdd/subv_1/file{1..50}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pls -l /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm -rf /mnt/sdd/subv_1/file{1..50}
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[13Pls -l /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmount /dev/sde /mnt/sded /mnt/sdd
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pumount /dev/sdedbtrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sdd/subv_2[1P /mnt/sdd/subv_22 /mnt/sdd/subv_2/ /mnt/sdd/subv_2subv_1/ /mnt/sdd/subv_2[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K1
+Create a snapshot of '/mnt/sdd/subv_2/subv_1/' in '/mnt/sdd/subv_1/subv_1'
+]0;root@lvm:/[root@lvm /]# rm[K[Kmv /s[Kmnt/sdd/subv_1
+mv: missing destination file operand after ‘/mnt/sdd/subv_1’
+Try 'mv --help' for more information.
+]0;root@lvm:/[root@lvm /]# mv /mnt/sdd/subv_1[1P /mnt/sdd/subv_1[1P /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[Cr /mnt/sdd/subv_1m /mnt/sdd/subv_1[C /mnt/sdd/subv_1- /mnt/sdd/subv_1r /mnt/sdd/subv_1f /mnt/sdd/subv_1
+rm: cannot remove ‘/mnt/sdd/subv_1/subv_1’: Operation not permitted
+]0;root@lvm:/[root@lvm /]# rm -rf /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pmv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C /mnt/su[K[Ksdd/subv_1.old
+]0;root@lvm:/[root@lvm /]# mv /mnt/sdd/subv_1 /mnt/sdd/subv_1.old
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[16Prm -rf /mnt/sdd/subv_1
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[4Pmv[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[46@btrfs subvolume snapshot /mnt/sdd/subv_2/subv_1/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Create a snapshot of '/mnt/sdd/subv_2/subv_1/' in '/mnt/sdd/subv_1'
+]0;root@lvm:/[root@lvm /]# ls -l [Ka /mnt/sdd/subv_1
+total 16
+drwxr-xr-x. 1 root root 1184 Feb 20 07:43 [0m[38;5;27m.[0m
+drwxr-xr-x. 1 root root   44 Feb 20 08:01 [38;5;27m..[0m
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file1
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file10
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file100
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file11
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file12
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file13
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file14
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file15
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file16
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file17
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file18
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file19
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file2
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file20
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file21
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file22
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file23
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file24
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file25
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file26
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file27
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file28
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file29
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file3
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file30
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file31
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file32
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file33
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file34
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file35
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file36
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file37
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file38
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file39
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file4
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file40
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file41
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file42
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file43
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file44
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file45
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file46
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file47
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file48
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file49
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file5
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file50
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file51
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file52
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file53
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file54
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file55
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file56
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file57
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file58
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file59
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file6
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file60
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file61
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file62
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file63
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file64
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file65
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file66
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file67
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file68
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file69
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file7
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file70
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file71
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file72
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file73
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file74
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file75
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file76
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file77
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file78
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file79
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file8
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file80
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file81
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file82
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file83
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file84
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file85
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file86
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file87
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file88
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file89
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file9
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file90
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file91
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file92
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file93
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file94
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file95
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file96
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file97
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file98
+-rw-r--r--. 1 root root    0 Feb 19 13:54 file99
+]0;root@lvm:/[root@lvm /]# exit
+exit
+]0;vagrant@lvm:~[vagrant@lvm ~]$ exit
+logout
+Connection to 127.0.0.1 closed.
+
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvmroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# 
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvmroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# mc
+[?1049h[22;0;0t[1;38r[4l[38;1H(B[m[37m[40m(B[m[39;49m
+[K
+[?1049l[23;0;0t[?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[2;141H[1K [37m[44m┐[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[36;1H[39m[49mHint: Want your plain shell? Press C-o, and get back to MC with C-o again.[36;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[1;1H[30m[46m  Left     File     Command     Options     Right[K
+[37m[44m┌<─[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [37m[44m─────────────.[^]>┐┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>
+│[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m│[4;1H│[30m[46m/..                                             │UP--DIR│лют 17 12:34[37m[44m││[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m│[5;1H│[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m│[6;1H│[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m│[7;1H│ README.md                                      │    109│лют 17 12:34││ README.md                                      │    109│лют 17 12:34│[8;1H│ Vagrantfile                                    │   2437│лют 17 14:37││ Vagrantfile                                    │   2437│лют 17 14:37│[9;1H│ type                                           │ 118464│лют 19 17:09││ type                                           │ 118464│лют 19 17:09│[10;1H│ typescript                                     │  57344│лют 20 10:01││ typescript                                     │  57344│лют 20 10:01│[11;1H│                                                │       │            ││                                                │       │            │[12;1H│                                                │       │            ││                                                │       │            │[13;1H│                                                │       │            ││                                                │       │            │[14;1H│                                                │       │            ││                                                │       │            │[15;1H│                                                │       │            ││                                                │       │            │[16;1H│                                                │       │            ││                                                │       │            │[17;1H│                                                │       │            ││                                                │       │            │[18;1H│                                                │       │            ││                                                │       │            │[19;1H│                                                │       │            ││                                                │       │            │[20;1H│                                                │       │            ││                                                │       │            │[21;1H│                                                │       │            ││                                                │       │            │[22;1H│                                                │       │            ││                                                │       │            │[23;1H│                                                │       │            ││                                                │       │            │[24;1H│                                                │       │            ││                                                │       │            │[25;1H│                                                │       │            ││                                                │       │            │[26;1H│                                                │       │            ││                                                │       │            │[27;1H│                                                │       │            ││                                                │       │            │[28;1H│                                                │       │            ││                                                │       │            │[29;1H│                                                │       │            ││                                                │       │            │[30;1H│                                                │       │            ││                                                │       │            │[31;1H│                                                │       │            ││                                                │       │            │[32;1H│                                                │       │            ││                                                │       │            │[33;1H├─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────┤[34;1H│UP--DIR                                                              ││UP--DIR                                                              │[35;1H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[37;1H[39m[49mroot@pengwinn-home:~#[118C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[37;23H[37;20H[39m[49m/home/pengwinn/Project/otus-linux/stands-03-lvm#[72C[37;69H[4;2H[97m[44m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[5;2H[30m[46m/.git                                           │   4096│лют 17 12:34[34;2H[37m[44m/.git  [37;69H[5;2H[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[6;2H[30m[46m/.vagrant                                       │   4096│лют 17 12:35[34;4H[37m[44mvagrant[37;69H[6;2H[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[7;2H[30m[46m README.md                                      │    109│лют 17 12:34[34;2H[37m[44m README.md[37;69H[7;2H README.md                                      │    109│лют 17 12:34[8;2H[30m[46m Vagrantfile                                    │   2437│лют 17 14:37[34;3H[37m[44mVagrantfile[37;69H[8;2H Vagrantfile                                    │   2437│лют 17 14:37[9;2H[30m[46m type                                           │ 118464│лют 19 17:09[34;3H[37m[44mtype       [37;69H[9;2H type                                           │ 118464│лют 19 17:09[10;2H[30m[46m typescript                                     │  57344│лют 20 10:01[34;7H[37m[44mscript[37;69H[1;1H[30m[46m/home/pengwinn/Project/otus-linux/stands-03-lvm/typescript[57C2430/69632[15C3%[2;1H[37m[44mScript started on 2020-02-20 09:35:21+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"][K
+.]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvm.root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#  v[4;1Hagrant ssh[K
+.[A.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[6;1H[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[C.[Kh[K
+.]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvm.root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# va[8;1Hgrant ssh..[K..[K..[Kup[K
+.[0mBringing machine 'lvm' up with 'virtualbox' provider....[0m[K
+.[1m==> lvm: Checking if box 'centos/7' version '1804.02' is up to date....[0m[K
+.[1m==> lvm: Clearing any previously set forwarded ports....[0m[K
+.[1m==> lvm: Clearing any previously set network interfaces....[0m[K
+.[1m==> lvm: Preparing network interfaces based on configuration....[0m[K
+.[0m    lvm: Adapter 1: nat.[0m[K
+.[0m    lvm: Adapter 2: hostonly.[0m[K
+.[1m==> lvm: Forwarding ports....[0m[K
+.[0m    lvm: 22 (guest) => 2222 (host) (adapter 1).[0m[K
+.[1m==> lvm: Running 'pre-boot' VM customizations....[0m[K
+.[1m==> lvm: Booting VM....[0m[K
+.[1m==> lvm: Waiting for machine to boot. This may take a few minutes....[0m[K
+.[0m    lvm: SSH address: 127.0.0.1:2222.[0m[K
+.[0m    lvm: SSH username: vagrant.[0m[K
+.[0m    lvm: SSH auth method: private key.[0m[K
+.[1m==> lvm: Machine booted and ready!.[0m[K
+.[1m==> lvm: Checking for guest additions in VM....[0m[K
+.[0m    lvm: No guest additions were detected on the base box for this VM! Guest[K
+    lvm: additions are required for forwarded ports, shared folders, host only[K
+    lvm: networking, and more. If SSH fails on this machine, please install[K
+    lvm: the guest additions and repackage the box to continue.[K
+    lvm:[K
+    lvm: This is not an error message; everything may continue to work properly,[K
+    lvm: in which case you may ignore this message..[0m[K
+.[1m==> lvm: Setting hostname....[0m[K
+.[1m==> lvm: Configuring and enabling network interfaces....[0m[K
+.[1m==> lvm: Rsyncing folder: /home/pengwinn/Project/otus-linux/stands-03-lvm/ => /vagrant.[0m[K
+.[1m==> lvm: Machine already provisioned. Run `vagrant provision` or use the `--provision`[K
+==> lvm: flag to force provisioning. Provisioners marked to run always will still run..[0m[K[38;17H[30m[46mUnWrap[8CQuit[10CHex [10CGoto[11C      [8CSearch[8CRaw   [8CFormat[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m572[37;1H[37m[44m.]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvm.root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# va[1;142H[39m[49m[2;37r[2;1H[1L[1;38r[1;117H[30m[46m430
+[37m[44mScript started on 2020-02-20 09:35:21+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"][K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m572[37;1H[37m[44m.]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvm.root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# va[1;142H
+[30m[46m  Left     File     Command     Options     Right[K
+[37m[44m┌<─[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [37m[44m─────────────.[^]>┐┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐[3;1H│[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m│[4;1H│[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m│[5;1H│[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m│[6;1H│[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m│[7;1H│ README.md            [26C│    109│лют 17 12:34││ README.md[38C│    109│лют 17 12:34│[8;1H│ Vagrantfile                                    │   2437│лют 17 14:37││ Vagrantfile[36C│   2437│лют 17 14:37│[9;1H│ type                                           │ 118464│лют 19 17:09││ type [42C│ 118464│лют 19 17:09│[10;1H│[30m[46m typescript                                     │  57344│лют 20 10:01[37m[44m││ typescript[37C│  57344│лют 20 10:01│[11;1H│                                                │       │            ││[48C│[7C│[12C│[12;1H│                                                │       │            ││[48C│[7C│[12C│[13;1H│                              [18C│[7C│[12C││[48C│[7C│[12C│[14;1H│                                   [13C│[7C│[12C││[48C│[7C│[12C│[15;1H│                                   [13C│[7C│[12C││[48C│[7C│[12C│[16;1H│                                                │       │[12C││[48C│[7C│[12C│[17;1H│                                                │       │[12C││[48C│[7C│[12C│[18;1H│                             [19C│[7C│[12C││[48C│[7C│[12C│[19;1H│                                                │       │            ││    [44C│[7C│[12C│[20;1H│                                           [5C│[7C│[12C││[48C│[7C│[12C│[21;1H│                                     [11C│[7C│[12C││[48C│[7C│[12C│[22;1H│                                                │[7C│[12C││[48C│[7C│[12C│[23;1H│                                         [7C│[7C│[12C││[48C│[7C│[12C│[24;1H│                                                │       │[12C││[48C│[7C│[12C│[25;1H│                                                │       │            ││        [40C│[7C│[12C│[26;1H│                                                │       │            ││      [42C│[7C│[12C│[27;1H│                                                │       │            ││   [45C│[7C│[12C│[28;1H│                                                │       │     [7C││[48C│[7C│[12C│[29;1H│       [41C│[7C│[12C││[48C│[7C│[12C│[30;1H│                                                │       │            ││        [40C│[7C│[12C│[31;1H│                                                │       │[12C││[48C│[7C│[12C│[32;1H│                                   [13C│[7C│[12C││[48C│[7C│[12C│[33;1H├─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────┤[34;1H│ typescript                                                          ││UP--DIR               [47C│[35;1H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[36;1H[39m[49mHint: Want your plain shell? Press C-o, and get back to MC with C-o again.[K
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#                                                                        [37m[44m[^][38;17H[30m[46mMenu  [8CView[10CEdit[10CCopy[11CRenMov[8CMkdir [8CDelete[8CPullDn[37;69H[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1006l[?1002l[?1001r[?2004l[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t>[?1049h[22;0;0t[1;38r[4l[38;1H(B[m[37m[40m(B[m[39;49m
+[K
+[?1049l[23;0;0t[?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[1;1H[30m[46m/home/pengwinn/Project/otus-linux/stands-03-lvm/typescript   [----]  0 L:[  1+ 0   1/1013] *(0   /77824b) 0083 0x053                    [*][X][2;1H[37m[44mScript started on 2020-02-20 09:35:21+02:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"][K
+[39m[49m^[[37m[44m]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvm[39m[49m^G[37m[44mroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[K
+[39m[49m^[[37m[44m]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvm[39m[49m^G[37m[44mroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[K
+[39m[49m^[[37m[44m[0mBringing machine 'lvm' up with 'virtualbox' provider...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Checking if box 'centos/7' version '1804.02' is up to date...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Clearing any previously set forwarded ports...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Clearing any previously set network interfaces...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Preparing network interfaces based on configuration...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[0m    lvm: Adapter 1: nat[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[0m    lvm: Adapter 2: hostonly[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Forwarding ports...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[0m    lvm: 22 (guest) => 2222 (host) (adapter 1)[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Running 'pre-boot' VM customizations...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Booting VM...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Waiting for machine to boot. This may take a few minutes...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[0m    lvm: SSH address: 127.0.0.1:2222[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[0m    lvm: SSH username: vagrant[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[0m    lvm: SSH auth method: private key[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Machine booted and ready![39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Checking for guest additions in VM...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[0m    lvm: No guest additions were detected on the base box for this VM! Guest[39m[49m^M[37m[44m[K
+    lvm: additions are required for forwarded ports, shared folders, host only[39m[49m^M[37m[44m[K
+    lvm: networking, and more. If SSH fails on this machine, please install[39m[49m^M[37m[44m[K
+    lvm: the guest additions and repackage the box to continue.[39m[49m^M[37m[44m[K
+    lvm: [39m[49m^M[37m[44m[K
+    lvm: This is not an error message; everything may continue to work properly,[39m[49m^M[37m[44m[K
+    lvm: in which case you may ignore this message.[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Setting hostname...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Configuring and enabling network interfaces...[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Rsyncing folder: /home/pengwinn/Project/otus-linux/stands-03-lvm/ => /vagrant[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m[1m==> lvm: Machine already provisioned. Run `vagrant provision` or use the `--provision`[39m[49m^M[37m[44m[K
+==> lvm: flag to force provisioning. Provisioners marked to run always will still run.[39m[49m^[[37m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvm[39m[49m^G[37m[44mroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[K
+Last login: Thu Feb 20 06:49:35 2020 from 10.0.2.2[39m[49m^M^M[37m[44m[K
+[39m[49m^[[37m[44m]0;vagrant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ df -l[39m[49m^H^[[37m[44m[Kh[39m[49m^M[37m[44m[K
+Filesystem                       Size  Used Avail Use% Mounted on[39m[49m^M[37m[44m[K
+[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mSave        [97m[40m 3[30m[46mMark        [97m[40m 4[30m[46mReplac      [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mMove        [97m[40m 7[30m[46mSearch      [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[2;1H[1;80H1   2[9C109[12C27 0x01B
+
+[1;80H2   3[9C5
+
+
+[1;80H3   4[9C676
+
+
+
+[1;80H4   5[9C741[6;1H[1;80H5   6[9C82[7;1H[1;80H6   7[10C86[8;1H[1;80H7   8[9C954[9;1H[1;80H8   9[9C1027[10;1H[1;80H9  10[11C60[11;1H[1;79H10  11[11C98[12;1H[1;80H1  12[10C136[13;1H[1;80H2  13[11C92[14;1H[1;80H3  14[10C250[15;1H[1;80H4  15[11C82[16;1H[1;80H5  16[10C360[17;1H[1;80H6  17[10C406[18;1H[1;80H7  18[11C4[19;1H[1;80H8  19[11C93[20;1H[1;80H9  20[10C537[21;1H[1;79H20  21[11C93[22;1H[1;80H1  22[10C675[11C32 0x020[23;1H[1;80H2  23[10C75[24;1H[1;80H3  24[10C832[25;1H[1;80H4  25[11C97[26;1H[1;80H5  26[10C908[27;1H[1;80H6  27[11C90[28;1H[1;80H7  28[9C2047[11C27 0x01B[29;1H[1;80H8  29[11C85[30;1H[1;80H9  30[10C150[31;1H[1;79H30  31[10C246[32;1H[1;80H1  32[10C338[11C61 0x03D[33;1H[1;80H2  33[10C430[11C27 0x01B[34;1H[1;80H3  34[10C587[11C76 0x04C[35;1H[1;80H4  35[10C640[11C27 0x01B[36;1H[1;80H5  36[11C95[11C70 0x046[37;1H[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[10C762[11C47 0x02F[37;1H[37m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M[37m[44m[K
+[39m[49m[3;37r[3;1H[1M[1;38r[1;77H[30m[46m3[6C8[10C820[10C100 0x064[37;1H[37m[44mdevtmpfs                         109M     0  109M   0% /dev[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[11C81[11C16 0x07[37;1H[37m[44mtmpfs                            118M     0  118M   0% /dev/shm[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C40[10C946[37;1H[37m[44mtmpfs                            118M  4.5M  114M   4% /run[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[9C3007[37;1H[37m[44mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[11C78[10C047 0x02F[37;1H[37m[44m/dev/sda2                       1014M   63M  952M   7% /boot[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[10C140[10C116 0x074[37;1H[37m[44mtmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[10C211[10C027 0x01B[37;1H[39m[49m^[[37m[44m]0;vagrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m10[6C5[11C53[11C78 0x04E[37;1H[37m[44mNAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[10C314[10C115 0x073[37;1H[37m[44msda                       8:0    0   40G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[11C65[9C9500 0x251C[37;1H[37m[44m├─sda1                    8:1    0    1M  0 part [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[10C420[37;1H[37m[44m├─sda2                    8:2    0    1G  0 part /boot[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[11C8[11C492[6C4[37;1H[37m[44m└─sda3                    8:3    0   39G  0 part [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C50[10C535[9C0032 0x020 [37;1H[37m[44m  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[11C91[37;1H[37m[44m  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP][39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[10C652[10C115 0x073[37;1H[37m[44msdb                       8:16   0   10G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[10C703[37;1H[37m[44msdc                       8:32   0    2G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[11C54[37;1H[37m[44msdd                       8:48   0    1G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m20[6C5[10C805[37;1H[37m[44msde                       8:64   0    1G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[11C56[10C027 0x01B[37;1H[39m[49m^[[37m[44m]0;vagrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ mount /sdd [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Kdev/sd[39m[49m^G[37m[44md /mnt/sd[39m[49m^G[37m[44md[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[10C938[10C109 0x06D[37;1H[37m[44mmount: only root can do that[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[11C6[11C027 0x01B[37;1H[39m[49m^[[37m[44m]0;vagrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ sudo -s [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[9C4013[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G^[[37m[44m[?1034h[root@lvm vagrant]# mou[39m[49m^G[37m[44mnt /dev/[39m[49m^G[37m[44ms[39m[49m^G[37m[44md[39m[49m^G[37m[44md /mnt/s[39m[49m^G[37m[44mdd[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C60[11C98[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdd /mnt/sdd[39m[49m^H^[[37m[44m[Kc[39m[49m^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P /mnt/sdc[39m[49m^H^H^H^H^H^H^H^H^H[37m[44mw /mnt/sdc[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[10C301[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sde /mnt/sde[39m[49m^H^H^H^H^H^H^H^H^H^H[37m[44md /mnt/sdd[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37;1H[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[10C753[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb[39m[49m^H^H^H^H^H^H^H^H^H^H[37m[44me /mnt/sde[39m[49m^H^H^H^H^H^H^H^H^H^H[37m[44md /mnt/sdd[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[37;1H[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[9C5212[11C70 0x046[37;1H[37m[44mFilesystem                       Size  Used Avail Use% Mounted on[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[11C79[11C47 0x02F[37;1H[37m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m30[6C5[10C337[10C100 0x064[37;1H[37m[44mdevtmpfs                         109M     0  109M   0% /dev[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[11C98[11C16 0x07[37;1H[37m[44mtmpfs                            118M     0  118M   0% /dev/shm[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[10C463[37;1H[37m[44mtmpfs                            118M  4.5M  114M   4% /run[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[10C524[37;1H[37m[44mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[11C95[10C047 0x02F[37;1H[37m[44m/dev/sda2                       1014M   63M  952M   7% /boot[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C70[10C657[10C116 0x074[37;1H[37m[44mtmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[10C728[10C047 0x02F[37;1H[37m[44m/dev/sdd                         1.0G   17M  905M   2% /mnt/sdd[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[11C93[37;1H[37m[44m/dev/sde                         1.0G   17M  905M   2% /mnt/sde[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[10C858[37;1H[37m[44m/dev/sdb                          12G   17M   10G   1% /mnt/sdb[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[10C923[11C2[5C1B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# umount de[39m[49m^G^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K/[39m[49m^G[37m[44mdev/s[39m[49m^G[37m[44mdd[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m40[6C5[9C6000[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# umount /dev/sdd[39m[49m^H^[[37m[44m[Kc[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[11C69[10C11[5C75[37;1H[37m[44mumount: /dev/sdc: not mounted[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[10C100[10C02[5C1B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# umount /dev/sdc[39m[49m^H[37m[44md[39m[49m^H^[[37m[44m[Ke[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[11C71[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfs su[39m[49m^G[37m[44mbvolume create [39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37;1H[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[10C40[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sde /mnt/sde[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[37;1H[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C80[10C650[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdd /mnt/sdd[39m[49m^H^H^H^H^H^H^H^H^H^H[37m[44me /mnt/sde[39m[49m^H^H^H^H^H^H^H^H^H^H[37m[44md /mnt/sdd[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[37;1H[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[9C7138[11C6[5C43[37;1H[37m[44mCreate subvolume '/mnt/sdd/subv_1'[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[11C74[11C2[5C1B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfs subvolume create /mnt/sdd/subv_1[39m[49m^H^[[37m[44m[K2[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[10C266[11C6[5C43[37;1H[37m[44mCreate subvolume '/mnt/sdd/subv_2'[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[10C302[11C2[5C1B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfs subvolume create /mnt/sdd/subv_2[39m[49m^H^H^H^H^H^H^H^H^[[37m[44m[1P/subv_2[39m[49m^H^H^H^H^H^H^H[37m[44mc/subv_2[39m[49m^H^H[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m50[6C5[10C430[11C69 0x045[37;1H[37m[44mERROR: cannot access '/mnt/sdc': No such file or directory[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[11C9[12C27 0x01B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfs subvolume create /mnt/sdc/subv_2[39m[49m^H^H^H^H^H^H^H^H^[[37m[44m[1P/subv_2[39m[49m^H^H^H^H^H^H^H[37m[44me/subv_2[39m[49m^H^H[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[10C618[11C6[5C43[37;1H[37m[44mCreate subvolume '/mnt/sde/subv_2'[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[11C54[11C2[5C1B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfs subvolume create /mnt/sde/subv_2[39m[49m^H^[[37m[44m[K1[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[10C746[11C6[5C43[37;1H[37m[44mCreate subvolume '/mnt/sde/subv_1'[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C90[11C82[11C2[5C1B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btr[39m[49m^G[37m[44mfs s[39m[49m^G^G^G[37m[44mu[39m[49m^G^G[37m[44mbvo[39m[49m^G^G[37m[44mlume list[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[10C859[11C98 0x062[37;1H[37m[44mbtrfs subvolume list: too few arguments[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[10C900[10C117 0x075[37;1H[37m[44musage: btrfs subvolume list [options] [-G [+|-]value] [-C [+|-]value] [--sort=gen,ogen,rootid,path] <path>[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[9C8008[10C013 0x00D[37;1H[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[11C10[11C32 0x020[37;1H[37m[44m    List subvolumes (and snapshots)[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m60[6C5[11C47[11C13 0x00D[37;1H[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[12C9[11C32 0x020[37;1H[37m[44m    -p           print parent ID[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[11C83[37;1H[37m[44m    -a           print all the subvolumes in the filesystem and[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[10C148[37;1H[37m[44m                 distinguish absolute and relative path with respect[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[10C21[37;1H[37m[44m                 to the given <path>[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5+35 100[11C56[37;1H[37m[44m    -c           print the ogeneration of the subvolume[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[10C313[37;1H[37m[44m    -g           print the generation of the subvolume[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[11C69[37;1H[37m[44m    -o           print only subvolumes below specified path[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[10C430[37;1H[37m[44m    -u           print the uuid of subvolumes (and snapshots)[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[11C93[37;1H[37m[44m    -q           print the parent uuid of the snapshots[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m70[6C5[10C550[37;1H[37m[44m    -R           print the uuid of the received snapshots[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[10C609[37;1H[37m[44m    -t           print the result as a table[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[11C55[37;1H[37m[44m    -s           list snapshots only in the filesystem[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[10C711[37;1H[37m[44m    -r           list readonly subvolumes (including snapshots)[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[11C76[37;1H[37m[44m    -d           list deleted subvolumes that are not yet cleaned[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C10[10C843[37;1H[37m[44m    -G [+|-]value[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[11C62[37;1H[37m[44m                 filter the subvolumes by generation[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[10C916[37;1H[37m[44m                 (+value: >= value; -value: <= value; value: = value)[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[11C87[37;1H[37m[44m    -C [+|-]value[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[9C9006[37;1H[37m[44m                 filter the subvolumes by ogeneration[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m80[6C5[11C61[37;1H[37m[44m                 (+value: >= value; -value: <= value; value: = value)[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[10C132[37;1H[37m[44m    --sort=gen,ogen,rootid,path[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[11C65[37;1H[37m[44m                 list the subvolume in order of gen, ogen, rootid or path[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[10C240[37;1H[37m[44m                 you also can add '+' or '-' in front of each items.[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[10C31[37;1H[37m[44m                 (+:ascending, -:descending, ascending default)[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C20[11C75[11C13 0x00D[37;1H[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[12C7[11C27 0x01B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfs subvolume list /mnt/s[39m[49m^G[37m[44mdd[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[10C456[11C73 0x049[37;1H[37m[44mID 256 gen 11 top level 5 path subv_1[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[11C95[37;1H[37m[44mID 257 gen 12 top level 5 path subv_2[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[10C534[11C27 0x01B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfs subvolume list /mnt/sdd[39m[49m^H^[[37m[44m[Kc[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m90[6C5[10C617[11C69 0x045[37;1H[37m[44mERROR: cannot access '/mnt/sdc': No such file or directory[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[11C7[37;1H[37m[44mERROR: can't access '/mnt/sdc'[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[10C709[11C27 0x01B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfs subvolume list /mnt/sdc[39m[49m^H^[[37m[44m[Ke[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[11C92[11C73 0x049[37;1H[37m[44mID 256 gen 8 top level 5 path subv_2[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[10C830[37;1H[37m[44mID 257 gen 9 top level 5 path subv_1[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C30[11C68[11C27 0x01B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# ls -l /dev/sdd[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K,[39m[49m^H^[[37m[44m[Kmnt/sd[39m[49m^G[37m[44md[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[10C972[10C116 0x074[37;1H[37m[44mtotal 0[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[11C81[10C045 0x02D[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file1[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[9C10027/77824b) 0045 0x02D[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file10[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[12C74[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file100[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m100[6C5[11C122[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file11[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[12C69[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file12[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[11C216[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file13[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[12C63[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file14[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[11C310[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file15[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C40[12C57[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file16[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[11C404[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file17[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[12C51[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file18[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[12C98[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file19[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[11C545[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file2[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m10[6C5[12C91[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file20[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[11C638[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file21[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[12C85[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file22[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[11C732[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file23[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[12C79[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file24[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C50[11C826[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file25[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[12C73[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file26[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[11C920[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file27[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[12C67[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file28[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[10C1014[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file29[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m20[6C5[12C61[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file3[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[11C107[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file30[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[12C54[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file31[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[11C201[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file32[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[12C48[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file33[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C60[12C95[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file34[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[11C342[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file35[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[12C89[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file36[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[11C436[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file37[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[12C83[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file38[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m30[6C5[11C530[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file39[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[12C77[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file4[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[11C623[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file40[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[12C70[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file41[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[11C717[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file42[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C70[12C64[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file43[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[11C811[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file44[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[12C58[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file45[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[11C905[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file46[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[12C52[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file47[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m40[6C5[12C99[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file48[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[10C2046[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file49[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[12C93[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file5[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[11C139[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file50[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[12C86[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file51[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C80[11C233[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file52[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[12C80[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file53[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[11C327[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file54[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[12C74[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file55[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[11C421[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file56[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m50[6C5[12C68[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file57[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[11C515[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file58[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[12C62[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file59[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[11C609[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file6[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[12C55[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file60[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C90[11C702[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file61[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[12C49[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file62[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[12C96[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file63[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[11C843[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file64[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[12C90[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file65[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m60[6C5[11C937[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file66[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[12C84[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file67[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[10C3031[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file68[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[12C78[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file69[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[11C125[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file7[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5+35 200[12C71[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file70[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[11C218[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file71[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[12C65[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file72[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[11C312[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file73[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[12C59[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file74[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m70[6C5[11C406[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file75[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[12C53[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file76[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[11C500[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file77[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[12C47[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file78[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[12C94[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file79[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C10[11C641[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file8[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[12C87[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file80[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m7[6C2[11C734[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file81[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m8[6C3[12C81[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file82[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m9[6C4[11C828[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file83[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m80[6C5[12C75[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file84[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m1[6C6[11C922[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file85[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m2[6C7[12C69[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file86[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m3[6C8[10C4016[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file87[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m4[6C9[12C63[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file88[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m5[5C20[11C110[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file89[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;77H[30m[46m6[6C1[12C57[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file9[39m[49m^M[37m[44m[K
+[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?2004l[?1006l[?1002l[?1001r[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t[39;49m
+[?1001s[?1002h[?1006h[?2004h]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[1;1H[30m[46m  Left     File     Command     Options     Right[K
+[37m[44m┌<─[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [37m[44m─────────────.[^]>┐┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐[3;1H│[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m│[4;1H│[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m│[5;1H│[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m│[6;1H│[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m│[7;1H│ README.md                                      │    109│лют 17 12:34││ README.md                                      │    109│лют 17 12:34│[8;1H│ Vagrantfile                                    │   2437│лют 17 14:37││ Vagrantfile                                    │   2437│лют 17 14:37│[9;1H│ type                                           │ 118464│лют 19 17:09││ type                                           │ 118464│лют 19 17:09│[10;1H│[30m[46m typescript                                     │ 114688│лют 20 10:01[37m[44m││ typescript                                     │ 114688│лют 20 10:01│[11;1H│                                                │       │            ││                                                │       │            │[12;1H│                                                │       │            ││                                                │       │            │[13;1H│                                                │       │            ││                                                │       │            │[14;1H│                                                │       │            ││                                                │       │            │[15;1H│                                                │       │            ││                                                │       │            │[16;1H│                                                │       │            ││                                                │       │            │[17;1H│                                                │       │            ││                                                │       │            │[18;1H│                                                │       │            ││                                                │       │            │[19;1H│                                                │       │            ││                                                │       │            │[20;1H│                                                │       │            ││                                                │       │            │[21;1H│                                                │       │            ││                                                │       │            │[22;1H│                                                │       │            ││                                                │       │            │[23;1H│                                                │       │            ││                                                │       │            │[24;1H│                                                │       │            ││                                                │       │            │[25;1H│                                                │       │            ││                                                │       │            │[26;1H│                                                │       │            ││                                                │       │            │[27;1H│                                                │       │            ││                                                │       │            │[28;1H│                                                │       │            ││                                                │       │            │[29;1H│                                                │       │            ││                                                │       │            │[30;1H│                                                │       │            ││                                                │       │            │[31;1H│                                                │       │            ││                                                │       │            │[32;1H│                                                │       │            ││                                                │       │            │[33;1H├─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────┤[34;1H│ typescript                                                          ││UP--DIR                                                              │[35;1H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[36;1H[39m[49mHint: Want your plain shell? Press C-o, and get back to MC with C-o again.
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[72C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[2;142H[10;53H22880[37;69H[9;2H type                                           │ 118464│лют 19 17:09[10;2H[37m[44m typescript                                     │ 122880│лют 20 10:01[34;7H      [37;69H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[2;4H /home/pengwinn/Project/otus-linux/stands-03-lvm [22C[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [4;73H[46m/..                                             │UP--DIR│лют 17 12:34[9;2H[37m[44m type                                           │ 118464│лют 19 17:09[37;69H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux>[2;109H[30m[47m [37m[44m──────────────[4;73H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют  1 11:34[5;74Hhometask[53C4 12:11[6;74Hmanual_kernel_update[40C 6 18:40[7;73H/otus-linux                                     [37m│[97m   4096[37m│[97mлют 14 12:11[8;73H[30m[46m/stands-03-lvm                                  │   4096│лют 20 08:47[9;73H[97m[44m/test                                           [37m│[97m   4096[37m│[97mлют  7 18:22[10;73H/test2                                          [37m│[97m   4096[37m│[97mлют  7 17:57[34;73H[37m/stands-03-lvm[37;69H[37;53H[39m[49m#              [72C[37;55H[7;73H[30m[46m/otus-linux                                     │   4096│лют 14 12:11[8;73H[97m[44m/stands-03-lvm                                  [37m│[97m   4096[37m│[97mлют 20 08:47[34;74H[37motus-linux   [37;55H[6;73H[30m[46m/manual_kernel_update                           │   4096│лют  6 18:40[7;73H[97m[44m/otus-linux                                     [37m│[97m   4096[37m│[97mлют 14 12:11[34;74H[37mmanual_kernel_update[37;55H[5;73H[30m[46m/hometask                                       │   4096│лют 14 12:11[6;73H[97m[44m/manual_kernel_update                           [37m│[97m   4096[37m│[97mлют  6 18:40[34;74H[37mhometask            [37;55H[4;73H[30m[46m/..                                             │UP--DIR│лют  1 11:34[5;73H[97m[44m/hometask                                       [37m│[97m   4096[37m│[97mлют 14 12:11[34;73H[37mUP--DIR  [37;55H[4;73H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют  1 11:34[5;73H[30m[46m/hometask                                       │   4096│лют 14 12:11[34;73H[37m[44m/hometask[37;55H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask>[2;109H[30m[47m/hometask [4;73H[46m/..                                             │UP--DIR│лют 17 12:34[5;73H[97m[44m/.git                                           [37m│[97m   4096[37m│[97mлют 13 18:29[6;74Hless1               [40C10 21:19[7;74Hless2     [51C3 18:29[8;74Hless3        [47C18 16:54[9;73H[37m readme.md                                      │     60│лют  7 18:19[10;73H                                                │       │            [34;73HUP--DIR  [37;55H[37;53H[39m[49m/hometask#[77C[37;64H[4;73H[97m[44m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[5;73H[30m[46m/.git                                           │   4096│лют 13 18:29[34;73H[37m[44m/.git  [37;64H[5;73H[97m/.git                                           [37m│[97m   4096[37m│[97mлют 13 18:29[6;73H[30m[46m/less1                                          │   4096│лют 10 21:19[34;74H[37m[44mless1[37;64H[6;73H[97m/less1                                          [37m│[97m   4096[37m│[97mлют 10 21:19[7;73H[30m[46m/less2                                          │   4096│лют 13 18:29[34;78H[37m[44m2[37;64H[7;73H[97m/less2                                          [37m│[97m   4096[37m│[97mлют 13 18:29[8;73H[30m[46m/less3                                          │   4096│лют 18 16:54[34;78H[37m[44m3[37;64H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[2;118H[30m[47m/less3 [4;73H[46m/..                                             │UP--DIR│лют 14 12:11[5;73H[37m[44m MainHOMETASK.md                                │  26726│лют 18 16:54[6;73H README.md                                      │     43│лют 14 12:12[7;73H                                                │       │            [8;73H                                                │       │            [9;74H         [44C  │            [34;73HUP--DIR[37;64H[37;62H[39m[49m/less3#[71C[37;70H[4;73H[97m[44m/..                                             [37m│[97mUP--DIR[37m│[97mлют 14 12:11[5;73H[30m[46m MainHOMETASK.md                                │  26726│лют 18 16:54[34;73H[37m[44m MainHOMETASK.md[37;70H[5;73H MainHOMETASK.md                                │  26726│лют 18 16:54[6;73H[30m[46m README.md                                      │     43│лют 14 12:12[34;74H[37m[44mREADME.md      [37;70H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[2;4H[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [22C[37m[44m /home/pengwinn/Project/otus-linux/hometask/less3 [6;73H README.md                                      │     43│лют 14 12:12[9;2H[30m[46m type                                           │ 118464│лют 19 17:09[37;70H[37;54H[39m[49mstands-03-lvm# [71C[37;69H[11;38H[30m[47m                                                                    [12;38H ┌─────────────────────────────[34m Copy [30m─────────────────────────────┐ [13;38H │ Copy file "type" with source mask:                             │ [14;38H │ [90m[46m*                                                          [37m[44m[^][30m[47m │ [15;38H │                                [x] [34mU[30msing shell patterns        │ [16;38H │ to:                                                            │ [17;38H │ [90m[46m/home/pengwinn/Project/otus-linux/hometask/less3/          [37m[44m[^][30m[47m │ [18;38H ├────────────────────────────────────────────────────────────────┤ [19;38H │ [ ] Follow [34ml[30minks               [ ] Di[34mv[30me into subdir if exists  │ [20;38H │ [x] Preserve [34ma[30mttributes        [ ] [34mS[30mtable symlinks             │ [21;38H ├────────────────────────────────────────────────────────────────┤ [22;38H │               [< [34mO[30mK >] [ [34mB[30mackground ] [ [34mC[30mancel ]               │ [23;38H └────────────────────────────────────────────────────────────────┘ [24;38H                                                                    [17;90H[17;41H[46m/home/pengwinn/Project/otus-linux/hometask/less3/          [17;90HHometSK*.[17;41Hask/less3/HometSK*.M                                      [17;61HD*.MD [17;57H*.MD [17;56Ha*.MD[17;57Hs*.MD[17;58Hk*.MD[17;59H[17;60H[17;61H[17;62H[17;63H  md[11;38H[37m[44m            │       │            ││                                 [12;38H            │       │            ││                                 [13;38H            │       │            ││                                 [14;25H[30m[47m                                                                                              [15;25H ┌──────────────────────────────────────────[34m Copy [30m──────────────────────────────────────────┐ [16;25H │ Source          [60C             │ [17;25H │ type                                                                                     │ [18;25H │ Target                                                                                   │ [19;25H │ /home/pengwinn/Project/otus-linux/hometask/less3/Hometasktype.md                         │ [20;25H │                                     [8C                   [13C             │ [21;25H │                                                                                          │ [22;25H ├──────────────────────────────────────────────────────────────────────────────────────────┤ [23;25H │                              [46m[ [34mS[30mkip ][47m [ S[34mu[30mspend ] [ [34mA[30mbort ]                              │ [24;25H └──────────────────────────────────────────────────────────────────────────────────────────┘ [25;25H                                                                                              [19;92H[20;31H[[75C]   0%[2;142H[37m[44m|[2;142H[20;31H[[97m[40m                                                                           [30m[47m] 10[20;113H[2;142H[37m[44m┐[2;142H[14;25H                         │       │            ││                                              [15;25H                         │       │            ││                                              [16;25H                         │       │            ││                                              [17;25H                         │       │            ││                                              [18;25H                         │       │            ││                                              [19;25H                         │       │            ││                                              [20;25H                         │       │            ││                                              [21;25H                         │       │            ││                                              [22;25H                         │       │            ││                                              [23;25H                         │       │            ││                                              [24;25H                         │       │            ││                                              [25;25H                         │       │            ││                                              [2;142H[5;74HHometasktype[37C118464[6C9 17:09[6;74HMainHOMETASK.md[35C26726[6C8 16:54[7;74HREADME.md[44C43│лют 14 12:12[10;53H35168[12C2[37;69H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[2;4H /home/pengwinn/Project/otus-linux/stands-03-lvm [22C[30m[47m /home/pengwinn/Project/otus-linux/hometask/less3 [7;73H[46m README.md                                      │     43│лют 14 12:12[9;2H[37m[44m type                                           │ 118464│лют 19 17:09[37;69H[37;54H[39m[49mhometask/less3#[71C[37;70H[6;73H[30m[46m MainHOMETASK.md                                │  26726│лют 18 16:54[7;73H[37m[44m README.md                                      │     43│лют 14 12:12[34;74HMainHOMETASK.md[37;70H[5;73H[30m[46m Hometasktype.md                                │ 118464│лют 19 17:09[6;73H[37m[44m MainHOMETASK.md                                │  26726│лют 18 16:54[34;74HHometasktype[37;70H[11;60H[97m[41m                        [12;60H ┌──────[93m Delete [97m──────┐ [13;60H │    Delete file     │ [14;60H │ "Hometasktype.md"? │ [15;60H ├────────────────────┤ [16;60H │  [30m[47m[ [93mY[30mes ][97m[41m  [ [93mN[97mo ]   │ [17;60H └────────────────────┘ [18;60H                        [16;66H[39m[49m[11;23r[11;1H[8M[1;38r[16;1H[37m[44m│                       [30m[47m                                                                                              [37m[44m  │       │            │[17;1H│                       [30m[47m ┌─────────────────────────────────────────[34m Delete [30m─────────────────────────────────────────┐ [37m[44m  │       │            │[18;1H│                       [30m[47m │ /home/pengwinn/Project/otus-linux/hometask/less3/Hometasktype.md                         │ [37m[44m  │       │            │[19;1H│                       [30m[47m │ Files processed: 1                                                                       │ [37m[44m  │       │            │[20;1H│                       [30m[47m ├──────────────────────────────────────────────────────────────────────────────────────────┤ [37m[44m  │       │            │[21;1H│                       [30m[47m │                              [46m[ [34mS[30mkip ][47m [ S[34mu[30mspend ] [ [34mA[30mbort ]                              │ [37m[44m  │       │            │[22;1H│                       [30m[47m └──────────────────────────────────────────────────────────────────────────────────────────┘ [37m[44m  │       │            │[23;1H│                       [30m[47m                                                                                              [37m[44m  │       │            │[19;46H[16;25H                         │       │            ││                                              [17;25H                         │       │            ││                                              [18;25H                         │       │            ││                                              [19;25H                         │       │            ││                                              [20;25H                         │       │            ││                                              [21;25H                         │       │            ││                                              [22;25H                         │       │            ││                                              [23;25H                         │       │            ││                                              [2;142H[5;74H[30m[46mMainHOMETASK[37C 26726[6C8 16:54[6;74H[37m[44mREADME.md      [35C   43[6C4 12:12[7;74H         [44C  │            [10;54H9264[34;74HMainHOMETASK[37;70H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[2;4H[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [22C[37m[44m /home/pengwinn/Project/otus-linux/hometask/less3 [5;73H MainHOMETASK.md                                │  26726│лют 18 16:54[9;2H[30m[46m type                                           │ 118464│лют 19 17:09[37;70H[37;54H[39m[49mstands-03-lvm# [71C[37;69H[11;38H[30m[47m                                                                    [12;38H ┌─────────────────────────────[34m Copy [30m─────────────────────────────┐ [13;38H │ Copy file "type" with source mask:                             │ [14;38H │ [90m[46m*                                                          [37m[44m[^][30m[47m │ [15;38H │                                [x] [34mU[30msing shell patterns        │ [16;38H │ to:                                                            │ [17;38H │ [90m[46m/home/pengwinn/Project/otus-linux/hometask/less3/          [37m[44m[^][30m[47m │ [18;38H ├────────────────────────────────────────────────────────────────┤ [19;38H │ [ ] Follow [34ml[30minks               [ ] Di[34mv[30me into subdir if exists  │ [20;38H │ [x] Preserve [34ma[30mttributes        [ ] [34mS[30mtable symlinks             │ [21;38H ├────────────────────────────────────────────────────────────────┤ [22;38H │               [< [34mO[30mK >] [ [34mB[30mackground ] [ [34mC[30mancel ]               │ [23;38H └────────────────────────────────────────────────────────────────┘ [24;38H                                                                    [17;90H[17;41H[46m/home/pengwinn/Project/otus-linux/hometask/less3/          [17;90HHometask* '[17;41Hask/less3/Hometask''                                      [17;61H*'[17;62H.    _add.md[11;38H[37m[44m            │       │            ││                                 [12;38H            │       │            ││                                 [13;38H            │       │            ││                                 [14;25H[30m[47m                                                                                              [15;25H ┌──────────────────────────────────────────[34m Copy [30m──────────────────────────────────────────┐ [16;25H │ Source          [60C             │ [17;25H │ type                                                                                     │ [18;25H │ Target                                                                                   │ [19;25H │ /home/pengwinn/Project/otus-linux/hometask/less3/Hometask_add.md                         │ [20;25H │                                     [8C                   [13C             │ [21;25H │                                                                                          │ [22;25H ├──────────────────────────────────────────────────────────────────────────────────────────┤ [23;25H │                              [46m[ [34mS[30mkip ][47m [ S[34mu[30mspend ] [ [34mA[30mbort ]                              │ [24;25H └──────────────────────────────────────────────────────────────────────────────────────────┘ [25;25H                                                                                              [19;92H[20;31H[[75C]   0%[2;142H[37m[44m/[2;142H[20;31H[[97m[40m                                                                           [30m[47m] 10[20;113H[2;142H[37m[44m┐[2;142H[14;25H                         │       │            ││                                              [15;25H                         │       │            ││                                              [16;25H                         │       │            ││                                              [17;25H                         │       │            ││                                              [18;25H                         │       │            ││                                              [19;25H                         │       │            ││                                              [20;25H                         │       │            ││                                              [21;25H                         │       │            ││                                              [22;25H                         │       │            ││                                              [23;25H                         │       │            ││                                              [24;25H                         │       │            ││                                              [25;25H                         │       │            ││                                              [2;142H[5;74HHometask_add[37C118464[6C9 17:09[6;74HMainHOMETASK.md[35C26726[6C8 16:54[7;74HREADME.md[44C43│лют 14 12:12[10;53H43360[37;69H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[2;4H /home/pengwinn/Project/otus-linux/stands-03-lvm [22C[30m[47m /home/pengwinn/Project/otus-linux/hometask/less3 [6;73H[46m MainHOMETASK.md                                │  26726│лют 18 16:54[9;2H[37m[44m type                                           │ 118464│лют 19 17:09[37;69H[37;54H[39m[49mhometask/less3#[71C[37;70H[5;73H[30m[46m Hometask_add.md                                │ 118464│лют 19 17:09[6;73H[37m[44m MainHOMETASK.md                                │  26726│лют 18 16:54[34;74HHometask_add[37;70H[4;73H[30m[46m/..                                             │UP--DIR│лют 14 12:11[5;73H[37m[44m Hometask_add.md                                │ 118464│лют 19 17:09[34;73HUP--DIR         [37;70H[4;73H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 14 12:11[5;73H[30m[46m Hometask_add.md                                │ 118464│лют 19 17:09[34;73H[37m[44m Hometask_add.md[37;70H[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1006l[?1002l[?1001r[?2004l[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t>[?1049h[22;0;0t[1;38r[4l[38;1H(B[m[37m[40m(B[m[39;49m
+[K
+[?1049l[23;0;0t[?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[1;1H[30m[46m/home/pengwinn/Project/otus-linux/hometask/less3/Hometask_add.md   [----]  0 L:[  1+ 0   1/1965] *(0   /118464b) 0083 0x053             [*][X][2;1H[37m[44mScript started on 2020-02-19 11:07:31+02:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="142" LINES="38"][K
+[39m[49m^[[37m[44m]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvm[39m[49m^G[37m[44mroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[K
+Last login: Wed Feb 19 09:07:27 2020 from 10.0.2.2[39m[49m^M^M[37m[44m[K
+[39m[49m^[[37m[44m]0;vagrant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[39m[49m^M[37m[44m[K
+sda                       8:0    0   40G  0 disk [39m[49m^M[37m[44m[K
+├─sda1                    8:1    0    1M  0 part [39m[49m^M[37m[44m[K
+├─sda2                    8:2    0    1G  0 part /boot[39m[49m^M[37m[44m[K
+└─sda3                    8:3    0   39G  0 part [39m[49m^M[37m[44m[K
+  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /[39m[49m^M[37m[44m[K
+  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP][39m[49m^M[37m[44m[K
+sdb                       8:16   0   10G  0 disk [39m[49m^M[37m[44m[K
+sdc                       8:32   0    2G  0 disk [39m[49m^M[37m[44m[K
+sdd                       8:48   0    1G  0 disk [39m[49m^M[37m[44m[K
+sde                       8:64   0    1G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m]0;vagrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+Loaded plugins: fastestmirror[39m[49m^M[37m[44m[K
+You need to be root to perform this command.[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m]0;vagrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ sudo -s [39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G^[[37m[44m[?1034h[root@lvm vagrant]# yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+Loaded plugins: fastestmirror[39m[49m^M[37m[44m[K
+Loading mirror speeds from cached hostfile[39m[49m^M[37m[44m[K
+ [93m*[37m base: mirrors.bytes.ua[39m[49m^M[37m[44m[K
+ [93m*[37m extras: mirrors.bytes.ua[39m[49m^M[37m[44m[K
+ [93m*[37m updates: mirrors.bytes.ua[39m[49m^M[37m[44m[K
+Package btrfs-progs-4.9.1-1.el7.x86_64 already installed and latest version[39m[49m^M[37m[44m[K
+Nothing to do[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+./             ../            .bash_history  .bash_logout   .bash_profile  .bashrc        .ssh/          [39m[49m^M[37m[44m[K
+[root@lvm vagrant]# mkfs.btrfs sdb .[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^G^G^G^M[37m[44m[K
+btrfs-progs v4.9.1[39m[49m^M[37m[44m[K
+See http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+ERROR: failed to check size for sdb: No such file or directory[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[37;1H[37m[44mbtrfs-progs v4.9.1[39m[49m^M[37m[44m[K
+[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mSave        [97m[40m 3[30m[46mMark        [97m[40m 4[30m[46mReplac      [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mMove        [97m[40m 7[30m[46mSearch      [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[2;1H[1;86H1   2[9C110[13C27 0x01B
+
+[1;86H0   1[9C0  [13C83 0x053
+[39m[49m[2;37r[2;1H[1M[1;38r[1;70H[30m[46mM[24C4[12C35[6C27 0x01B[37;1H[37m[44mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K[2;1H[39m[49m[2;37r[2;1H[1M[1;38r[1;95H[30m[46m3[12C193[5C76 0x04C[37;1H[39m[49m^M[37m[44m[K[2;1H[39m[49m[2;37r[2;1H[1M[1;38r[1;95H[30m[46m2[13C40[5C27 0x01B[37;1H[37m[44mLabel:              (null)[39m[49m^M[37m[44m[K[2;1H[1;109H[30m[46m39[5C93 0x05D
+[37m[44m]0;vagrant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[5C48 0x030
+[37m[44m0;vagrant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[5C59[5CB
+[37m[44m;vagrant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6b) 0118 0x076
+[37m[44mvagrant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0097 0x061
+[37m[44magrant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0103[5C7
+[37m[44mgrant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3[5C14 0x072
+[37m[44mrant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2b) 0097 0x061
+[37m[44mant@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1b) 0110[5CE
+[37m[44mnt@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[6C6 0x074
+[37m[44mt@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;109H[30m[46m29b) 0064 0x040
+[37m[44m@lvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8b) 0108 0x06C
+[37m[44mlvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[5C1[5C76
+[37m[44mvm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[5C09 0x06D
+[37m[44mm:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0058 0x03A
+[37m[44m:~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0126 0x07E
+[37m[44m~[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0007 0x007
+[39m[49m^G^[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2[5C2[5C1B[2;2H[39m[49m[[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[5C91 0x05
+[37m[44m[?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K[14;3H[93m[42m][2;1H[1;110H[30m[46m0[5C63 0x03F
+[37m[44m?1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K[14;3H][2;1H[1;109H[30m[46m19[5C49[5C1
+[37m[44m1034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[6C8[5C0
+[37m[44m034h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[5C51[5C3
+[37m[44m34h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[6C2[5C4
+[37m[44m4h[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0104 0x068
+[37m[44mh[vagrant@lvm ~]$ lsblk[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0091 0x05B
+[37m[44m[vagrant@lvm ~[93m[42m][37m[44m$ lsblk[39m[49m^M[37m[44m[K
+[1;76H[30m[46m1[23C1[14C118 0x076[2;15H[37m[44m][2;2H[1;76H[30m[46m2[23C2[14C097 0x061[2;3H[1;76H3[23C3[14C103[5C7[2;4H[1;76H4[23C4[15C14 0x072[2;5H[1;76H5[23C5[14C097 0x061[2;6H[1;76H6[23C6[14C110[5CE[2;7H[1;76H7[23C7[16C6 0x074[2;8H[1;76H8[23C8[14C064 0x040[2;9H[1;76H9[23C9[14C108 0x06C[2;10H[1;75H10[23C10[14C1[5C76[2;11H[1;76H1[24C1[14C09 0x06D[2;12H[1;76H2[24C2[13C032 0x020[2;13H[1;76H3[24C3[13C126 0x07E[2;14H[1;76H4[24C4[13C093 0x05D
+[93m[42m[[2;15H[1;76H[30m[46m5[24C5[14C36 0x024
+[37m[44m[[2;16H[1;76H[30m[46m6[24C6[15C2[5C0[2;17H[1;76H7[24C7[13C108 0x06C[2;18H[1;76H8[24C8[14C15 0x073[2;19H[1;76H9[24C9[13C098 0x062[2;20H[1;75H20[23C20[13C10[6CC[2;21H[1;76H1[24C1[15C7[5CB[2;22H[1;76H2[24C2[13C013 0x00D[2;23H[1;110H3[6C0[5CA[2;23H[37m[44m[K[1;86H[30m[46m1   2[9C45[14C32 0x020[3;23H[1;86H0   1[9C22[14C10 0x00A[2;23H[39m[49m[3;37r[3;1H[1L[1;38r[1;75H[30m[46m 0[9C1   2/1963[5C3[8C4
+
+[37m[44m[K[1;86H[30m[46m0   1[9C0 [14C91 0x05B[2;15H[93m[42m]
+[1;76H[30m[46m1[23C1[9C5
+[37m[44m\[vagrant@lvm ~[93m[42m][37m[44m$ lsblk[2;2H[1;76H[30m[46m0[23C0[9C4
+[37m[44m[vagrant@lvm ~[93m[42m][37m[44m$ lsblk[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;86H[30m[46m1   2/1964] *(1[9C5
+[37m[44m[K
+[1;86H[30m[46m0   1[9C0[15C10 0x00A[3;15H[37m[44m][2;1H[1;76H[30m[46m1[23C1[9C6
+[91m[44m#[1;76H[30m[46m2[23C2[9C7[2;2H[91m[44m#[1;76H[30m[46m1[23C1[9C6[2;2H[37m[44m[K[1;76H[30m[46m2[23C2[9C7[2;2H[91m[44mH[1;76H[30m[46m1[23C1[9C6[2;2H[37m[44m[K[1;76H[30m[46m2[23C2[9C7[2;2H[91m[44mO[1;76H[30m[46m3[23C3[9C8[2;3H[91m[44mt[1;76H[30m[46m4[23C4[9C9[2;4H[91m[44mu[1;76H[30m[46m5[23C5[8C20[2;5H[91m[44ms[1;76H[30m[46m6[23C6[9C1[2;6H[91m[44m-[1;76H[30m[46m7[23C7[9C2[2;7H[91m[44ml[1;76H[30m[46m8[23C8[9C3[2;8H[91m[44mi[1;76H[30m[46m9[23C9[9C4[2;9H[91m[44mn[1;75H[30m[46m10[23C10[8C5[2;10H[91m[44mu[1;76H[30m[46m1[24C1[8C6[2;11H[91m[44mx[1;76H[30m[46m2[24C2[8C7[2;12H[94m[44m.[1;76H[30m[46m3[24C3[8C8[2;12H[91m[44m H[1;76H[30m[46m4[24C4[8C9[2;14H[91m[44mo[1;76H[30m[46m5[24C5[7C30[2;15H[91m[44mm[1;76H[30m[46m6[24C6[8C1[2;16H[91m[44me[1;76H[30m[46m7[24C7[8C2[2;17H[91m[44mt[1;76H[30m[46m8[24C8[8C3[2;18H[91m[44ma[1;76H[30m[46m9[24C9[8C4[2;19H[91m[44ms[1;75H[30m[46m20[23C20[8C5[2;20H[91m[44mk[39m[49m[3;37r[3;1H[1L[1;38r[1;75H[30m[46m [10C1   2/1965[5C1[8C6
+
+[37m[44m[K[1;76H[30m[46m1[24C2[8C7
+
+[91m[44m#[1;76H[30m[46m2[24C3[8C8[3;2H[91m[44m#[1;86H[30m[46m0   1[10C [13C116 0x074[2;3H[1;76H1[23C1[14C079 0x04F[2;2H[1;76H2[23C2[9C9[2;2H[91m[44m Otus-linux Hometask[2;3H[1;76H[30m[46m3[23C3[14C116 0x074[2;4H[1;76H2[9C1   2[9C24[13C010 0x00A[3;3H[1;76H3[24C5[7C40[3;3H[94m[44m.[1;76H[30m[46m4[24C6[8C1[3;3H[91m[44m L[1;76H[30m[46m5[24C7[8C2[3;5H[91m[44me[1;76H[30m[46m6[24C8[8C3[3;6H[91m[44ms[1;76H[30m[46m7[24C9[8C4[3;7H[91m[44ms[1;76H[30m[46m8[23C30[8C5[3;8H[91m[44m3[1;76H[30m[46m9[24C1[8C6[3;9H[94m[44m.[1;75H[30m[46m10[24C2[8C7[3;9H[91m[44m a[1;76H[30m[46m1[24C3[8C8[3;11H[91m[44md[1;76H[30m[46m2[24C4[8C9[3;12H[91m[44md[1;76H[30m[46m3[24C5[7C50[3;13H[91m[44mi[1;76H[30m[46m4[24C6[8C1[3;14H[91m[44mt[1;76H[30m[46m5[24C7[8C2[3;15H[91m[44mi[1;76H[30m[46m6[24C8[8C3[3;16H[91m[44mo[1;76H[30m[46m7[24C9[8C4[3;17H[91m[44mn[1;76H[30m[46m8[23C40[8C5[3;18H[91m[44ma[1;76H[30m[46m9[24C1[8C6[3;19H[91m[44ml[1;75H[30m[46m20[24C2[8C7[3;20H[94m[44m.[1;76H[30m[46m1[24C3[8C8[3;20H[91m[44m h[1;76H[30m[46m2[24C4[8C9[3;22H[91m[44mo[1;76H[30m[46m3[24C5[7C60[3;23H[91m[44mm[1;76H[30m[46m4[24C6[8C1[3;24H[91m[44me[1;76H[30m[46m5[24C7[8C2[3;25H[91m[44mt[1;76H[30m[46m6[24C8[8C3[3;26H[91m[44ma[1;76H[30m[46m7[24C9[8C4[3;27H[91m[44ms[1;76H[30m[46m8[23C50[8C5[3;28H[91m[44mk[1;76H[30m[46m9[24C1[8C6[3;29H[94m[44m.[1;75H[30m[46m30[24C2[8C7[3;29H[91m[44m 8[1;75H[30m[46m29[24C1[8C6[3;29H[94m[44m.[37m[K[1;75H[30m[46m30[24C2[8C7[3;29H[91m[44m *[39m[49m[4;37r[4;1H[1L[1;38r[1;75H[30m[46m [10C2   3/1966[5C3[8C8
+
+
+[37m[44m[K[1;76H[30m[46m1[24C4[8C9
+
+
+[91m[44m#[1;76H[30m[46m2[24C5[7C70[4;2H[91m[44m#[1;76H[30m[46m3[24C6[8C1[4;3H[91m[44m#[1;76H[30m[46m4[24C7[8C2[4;4H[94m[44m.[1;76H[30m[46m5[24C9[8C4[4;4H[91m[44m У[1;76H[30m[46m6[23C61[8C6[4;6H[91m[44mс[1;76H[30m[46m7[24C3[8C8[4;7H[91m[44mт[1;76H[30m[46m8[24C5[7C80[4;8H[91m[44mа[1;76H[30m[46m9[24C7[8C2[4;9H[91m[44mн[1;75H[30m[46m10[24C9[8C4[4;10H[91m[44mо[1;76H[30m[46m1[23C71[8C6[4;11H[91m[44mв[1;76H[30m[46m2[24C3[8C8[4;12H[91m[44mк[1;76H[30m[46m3[24C5[7C90[4;13H[91m[44mа[1;76H[30m[46m4[24C6[8C1[4;14H[94m[44m.[1;76H[30m[46m5[24C7[8C2[4;14H[91m[44m b[1;76H[30m[46m6[24C8[8C3[4;16H[91m[44mt[1;76H[30m[46m7[24C9[8C4[4;17H[91m[44mr[1;76H[30m[46m8[23C80[8C5[4;18H[91m[44mf[1;76H[30m[46m9[24C1[8C6[4;19H[91m[44ms[1;86H[30m[46m3   4[9C101[13C98 0x062[5;20H[1;86H2   3[9C81 [13C10 0x00A[4;20H[39m[49m[5;37r[5;1H[1L[1;38r[1;75H[30m[46m 0[9C3   4/1967[5C2[8C7
+
+
+
+[37m[44m[K[1;76H[30m[46m1[24C3[8C8
+
+
+
+[37m[44mb[1;76H[30m[46m2[24C4[8C9[5;2H[37m[44mt[1;76H[30m[46m3[24C5[6C200[5;3H[37m[44mr[1;76H[30m[46m4[24C6[8C1[5;4H[37m[44mf[1;76H[30m[46m5[24C7[8C2[5;5H[37m[44ms[1;76H[30m[46m6[24C9[8C4[5;6H[37m[44mб[1;76H[30m[46m7[23C91[8C6[5;7H[37m[44mу[1;76H[30m[46m8[24C3[8C8[5;8H[37m[44mд[1;76H[30m[46m9[24C5[7C10[5;9H[37m[44mе[1;75H[30m[46m10[24C7[8C2[5;10H[37m[44mм[1;76H[30m[46m1[24C8[8C3[5;11H[94m[44m.[1;76H[30m[46m2[23C100[7C5[5;11H[37m[44m у[1;76H[30m[46m3[25C2[7C7[5;13H[37m[44mс[1;76H[30m[46m4[25C4[7C9[5;14H[37m[44mт[1;76H[30m[46m5[25C6[6C21[5;15H[37m[44mа[1;76H[30m[46m6[25C8[7C3[5;16H[37m[44mн[1;76H[30m[46m7[24C10[7C5[5;17H[37m[44mа[1;76H[30m[46m8[25C2[7C7[5;18H[37m[44mв[1;76H[30m[46m9[25C4[7C9[5;19H[37m[44mл[1;75H[30m[46m20[25C6[6C31[5;20H[37m[44mи[1;76H[30m[46m1[25C8[7C3[5;21H[37m[44mв[1;76H[30m[46m2[24C20[7C5[5;22H[37m[44mа[1;76H[30m[46m3[25C2[7C7[5;23H[37m[44mт[1;76H[30m[46m4[25C4[7C9[5;24H[37m[44mь[1;76H[30m[46m5[25C5[6C40[5;25H[94m[44m.[1;76H[30m[46m6[25C7[7C2[5;25H[37m[44m н[1;76H[30m[46m7[25C8[7C3[5;27H[94m[44m.[1;76H[30m[46m6[25C7[7C2[5;27H[37m[44m[K[1;76H[30m[46m7[25C9[7C4[5;27H[37m[44mа[1;76H[30m[46m8[24C30[7C5[5;28H[94m[44m.[1;76H[30m[46m9[25C2[7C7[5;28H[37m[44m д[1;75H[30m[46m30[25C4[7C9[5;30H[37m[44mо[1;76H[30m[46m1[25C6[6C51[5;31H[37m[44mс[1;76H[30m[46m2[25C8[7C3[5;32H[37m[44mт[1;76H[30m[46m3[24C40[7C5[5;33H[37m[44mу[1;76H[30m[46m4[25C2[7C7[5;34H[37m[44mп[1;76H[30m[46m5[25C4[7C9[5;35H[37m[44mн[1;76H[30m[46m6[25C6[6C61[5;36H[37m[44mы[1;76H[30m[46m7[25C8[7C3[5;37H[37m[44mе[1;76H[30m[46m8[25C9[7C4[5;38H[94m[44m.[1;76H[30m[46m9[24C51[7C6[5;38H[37m[44m д[1;75H[30m[46m40[25C3[7C8[5;40H[37m[44mи[1;76H[30m[46m1[25C5[6C70[5;41H[37m[44mс[1;76H[30m[46m2[25C7[7C2[5;42H[37m[44mк[1;76H[30m[46m3[25C9[7C4[5;43H[37m[44mи[1;76H[30m[46m4[24C60[7C5[5;44H[94m[44m.[1;76H[30m[46m5[25C1[7C6[5;44H[37m[44m -[1;76H[30m[46m6[25C2[7C7[5;46H[94m[44m.[1;76H[30m[46m7[25C3[7C8[5;46H[37m[44m s[1;76H[30m[46m8[25C4[7C9[5;48H[37m[44md[1;76H[30m[46m9[25C5[6C80[5;49H[37m[44mb[1;75H[30m[46m50[25C6[7C1[5;50H[37m[44m,[1;76H[30m[46m1[25C7[7C2[5;51H[37m[44ms[1;76H[30m[46m2[25C8[7C3[5;52H[37m[44md[1;76H[30m[46m3[25C9[7C4[5;53H[37m[44mc[1;76H[30m[46m4[24C70[7C5[5;54H[37m[44m,[1;76H[30m[46m5[25C1[7C6[5;55H[37m[44ms[1;76H[30m[46m6[25C2[7C7[5;56H[37m[44md[1;76H[30m[46m7[25C3[7C8[5;57H[37m[44md[1;76H[30m[46m8[25C4[7C9[5;58H[37m[44m,[1;76H[30m[46m9[25C5[6C90[5;59H[37m[44ms[1;75H[30m[46m60[25C6[7C1[5;60H[37m[44md[1;76H[30m[46m1[25C7[7C2[5;61H[37m[44me[39m[49m[6;37r[6;1H[1L[1;38r[1;75H[30m[46m 0[9C4   5/1968[6C8[7C3[6;1H[37m[44m[K[1;76H[30m[46m1[24C80[7C5[6;1H[37m[44mв[1;76H[30m[46m2[25C2[7C7[6;2H[37m[44mы[1;76H[30m[46m3[25C4[7C9[6;3H[37m[44mв[1;76H[30m[46m4[25C6[5C301[6;4H[37m[44mк[1;76H[30m[46m3[25C4[5C299[6;4H[37m[44m[K[1;76H[30m[46m4[25C6[5C301[6;4H[37m[44mе[1;76H[30m[46m5[25C8[7C3[6;5H[37m[44mд[1;76H[30m[46m4[25C6[7C1[6;5H[37m[44m[K[1;76H[30m[46m3[25C4[5C299[6;4H[37m[44m[K[1;76H[30m[46m4[25C6[5C301[6;4H[37m[44mо[1;76H[30m[46m5[25C8[7C3[6;5H[37m[44mд[1;76H[30m[46m6[24C90[7C5[6;6H[37m[44mи[1;76H[30m[46m7[25C2[7C7[6;7H[37m[44mм[1;76H[30m[46m8[25C3[7C8[6;8H[94m[44m.[1;76H[30m[46m9[25C5[6C10[6;8H[37m[44m с[1;75H[30m[46m10[25C7[7C2[6;10H[37m[44mп[1;76H[30m[46m1[25C9[7C4[6;11H[37m[44mи[1;76H[30m[46m2[23C201[7C6[6;12H[37m[44mс[1;76H[30m[46m3[25C3[7C8[6;13H[37m[44mо[1;76H[30m[46m4[25C5[6C20[6;14H[37m[44mк[1;76H[30m[46m5[25C6[7C1[6;15H[37m[44m6[1;76H[30m[46m4[25C5[7C0[6;15H[37m[44m[K[1;76H[30m[46m5[25C6[7C1[6;15H[37m[44m,[1;76H[30m[46m4[25C5[7C0[6;15H[37m[44m[K[1;76H[30m[46m5[25C6[7C1[6;15H[37m[44m:[1;76H[30m[46m4[25C5[7C0[6;15H[37m[44m[K[1;76H[30m[46m5[25C6[7C1[6;15H[37m[44m:[1;86H[30m[46m5   6[10C22[13C36 0x024[7;16H[1;75H 0[9C6   7[10C30[13C10 0x00A[8;1H[1;75H15[9C7   8[10C46[13C32 0x020[9;16H[1;86H8   9[9C307[10;16H[1;86H9  10[10C62[11;16H[1;85H10  11[9C417[12;16H[1;86H1  12[10C7[13;16H[1;86H2  13[9C532[13C76 0x04C[14;16H[1;86H3  14[10C88[15;16H[1;86H4  15[9C645[13C32 0x020[16;16H[1;86H5  16[10C96[17;16H[1;86H6  17[9C747[18;16H[1;86H7  18[10C98[19;16H[1;86H8  19[9C84[13C109 0x06D[20;16H[1;86H9  20[9C912[12C032 0x020[21;16H[1;85H20  21[10C43[12C114 0x072[22;16H[1;86H1  22[10C88[13C09 0x06D[23;16H[1;86H2  23[9C1033[13C4[5C8[24;16H[1;76H4[26C2[11C047 0x02F[24;15H[1;86H1  22[9C987 [11C118 0x076[23;15H[1;86H0  21[10C42[12C032 0x020[22;15H[1;85H19  20[10C11[13C58 0x03A[21;15H[1;86H8  19[9C847[12C11[5C76[20;15H[1;76H3[25C6[13C0[5C6C[20;14H[1;76H2[25C5[12C064 0x040[20;13H[1;76H1[25C4[12C116 0x074[20;12H[1;76H0[25C3[14C0 0x06E[20;11H[1;75H 9[25C2[12C097[5C1[20;10H[1;76H8[25C1[12C114 0x072[20;9H[1;76H7[25C0[13C03 0x067[20;8H[1;76H6[24C39[12C097[5C1[20;7H[1;76H5[25C8[12C118 0x076[20;6H[1;76H4[25C7[12C059 0x03B[20;5H[1;76H3[25C6[13C48[5C0[20;4H[1;76H2[25C5[13C93 0x05D[20;3H[1;76H0[25C4[13C27 0x01B[20;1H[39m[49m[20;37r[20;1H[1L[1;38r[1;86H[30m[46m9  20/1969[6C5[7C2[20;1H[37m[44m[K
+[1;110H[30m[46m1[5C93 0x05D[21;1H[37m[44m]0;vagrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[5C48 0x030[21;1H[37m[44m0;vagrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;109H[30m[46m19[5C59[5CB[21;1H[37m[44m;vagrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8b) 0118 0x076[21;1H[37m[44mvagrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7b) 0097 0x061[21;1H[37m[44magrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6b) 0103[5C7[21;1H[37m[44mgrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5[5C14 0x072[21;1H[37m[44mrant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0097 0x061[21;1H[37m[44mant@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0110[5CE[21;1H[37m[44mnt@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2[6C6 0x074[21;1H[37m[44mt@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1b) 0064 0x040[21;1H[37m[44m@lvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0b) 0108 0x06C[21;1H[37m[44mlvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;109H[30m[46m09[5C1[5C76[21;1H[37m[44mvm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[5C09 0x06D[21;1H[37m[44mm:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7b) 0058 0x03A[21;1H[37m[44m:~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6b) 0126 0x07E[21;1H[37m[44m~[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0007 0x007[21;1H[39m[49m^G[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4[5C91 0x05B[21;1H[37m[44m[vagrant@lvm ~[93m[42m][37m[44m$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0118 0x076[21;1H[37m[44mvagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;76H[30m[46m1[25C7[7C5[21;1H[37m[44mхvagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[21;2H[1;76H[30m[46m0[25C5[7C3[21;1H[37m[44mvagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;76H[30m[46m1[25C7[7C5[21;1H[37m[44mХvagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[21;2H[1;76H[30m[46m0[25C5[7C3[21;1H[37m[44mvagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[37m[44m[K
+[1;76H[30m[46m1[25C6[7C4[21;1H[37m[44m[vagrant@lvm ~]$ yum install btrfs-progs -y[39m[49m^M[21;2H[1;76H[30m[46m2[25C7[12C097 0x061[21;3H[1;76H3[25C8[12C103[5C7[21;4H[1;76H4[25C9[13C14 0x072[21;5H[1;76H5[24C40[12C097 0x061[21;6H[1;76H6[25C1[12C110[5CE[21;7H[1;76H7[25C2[14C6 0x074[21;8H[1;76H8[25C3[12C064 0x040[21;9H[1;76H9[25C4[12C108 0x06C[21;10H[1;75H10[25C5[13C1[5C76[21;11H[1;76H1[25C6[13C09 0x06D[21;12H[1;76H2[25C7[12C032 0x020[21;13H[1;76H3[25C8[12C126 0x07E[21;14H[1;76H4[25C9[12C093 0x05D[21;1H[93m[42m[[21;15H[1;76H[30m[46m5[24C50[13C36 0x024[21;1H[37m[44m[[21;16H[1;76H[30m[46m6[25C1[14C2[5C0[21;17H[1;76H7[25C2[12C121 0x079[21;18H[1;76H8[25C3[13C17[5C5[21;19H[1;76H9[25C4[13C09 0x06D[21;20H[1;75H20[25C5[12C032 0x020[21;21H[1;76H1[25C6[12C105 0x069[21;22H[1;76H2[25C7[13C10[5CE[21;23H[1;76H3[25C8[14C5 0x073[21;24H[1;76H4[25C9[14C6[5C4[21;25H[1;76H5[24C60[12C097 0x061[21;26H[1;76H6[25C1[12C108[5CC[21;27H[1;76H7[25C2[21;28H[1;76H8[25C3[12C032 0x020[21;29H[1;76H9[25C4[13C98 0x062[21;30H[1;75H30[25C5[12C116 0x074[21;31H[1;76H1[25C6[14C4[5C2[21;32H[1;76H2[25C7[13C02 0x066[21;33H[1;76H3[25C8[13C15 0x073[21;34H[1;76H4[25C9[12C04[5C2D[21;35H[1;76H5[24C70[12C112 0x070[21;36H[1;76H6[25C1[14C4[5C2[21;37H[1;76H7[25C2[14C1 0x06F[21;38H[1;76H8[25C3[13C03[5C7[21;39H[1;76H9[25C4[13C15 0x073[21;40H[1;75H40[25C5[12C032 0x020[21;41H[1;76H1[25C6[13C45[5CD[21;42H[1;76H2[25C7[12C121 0x079[21;43H[1;76H3[25C8[12C013 0x00D[21;44H[1;110H3[6C0[5CA[21;44H[37m[44m[K[1;75H[30m[46m 0[9C8  19[10C34[20;1H[39m[49m[21;37r[21;1H[1L[1;38r[1;86H[30m[46m9  20/1970[6C5[7C4[21;1H[37m[44m[K[1;76H[30m[46m1[25C7[7C6[21;1H[37m[44mИ[1;76H[30m[46m2[25C9[7C8[21;2H[37m[44mн[1;76H[30m[46m3[24C41[6C10[21;3H[37m[44mс[1;76H[30m[46m4[25C3[7C2[21;4H[37m[44mт[1;76H[30m[46m5[25C5[7C4[21;5H[37m[44mа[1;76H[30m[46m6[25C7[7C6[21;6H[37m[44mл[1;76H[30m[46m7[25C9[7C8[21;7H[37m[44mи[1;76H[30m[46m8[24C51[6C20[21;8H[37m[44mр[1;76H[30m[46m9[25C3[7C2[21;9H[37m[44mу[1;75H[30m[46m10[25C5[7C4[21;10H[37m[44mе[1;76H[30m[46m1[25C7[7C6[21;11H[37m[44mм[1;76H[30m[46m2[25C8[7C7[21;12H[94m[44m.[1;76H[30m[46m3[24C60[7C9[21;12H[37m[44m н[1;76H[30m[46m4[25C2[6C31[21;14H[37m[44mе[1;76H[30m[46m5[25C4[7C3[21;15H[37m[44mо[1;76H[30m[46m6[25C6[7C5[21;16H[37m[44mб[1;76H[30m[46m7[25C8[7C7[21;17H[37m[44mх[1;76H[30m[46m8[24C70[7C9[21;18H[37m[44mд[1;76H[30m[46m7[24C68[7C7[21;18H[37m[44m[K[1;76H[30m[46m8[24C70[7C9[21;18H[37m[44mо[1;76H[30m[46m9[25C2[6C41[21;19H[37m[44mд[1;75H[30m[46m20[25C4[7C3[21;20H[37m[44mи[1;76H[30m[46m1[25C6[7C5[21;21H[37m[44mм[1;76H[30m[46m2[25C8[7C7[21;22H[37m[44mы[1;76H[30m[46m3[24C80[7C9[21;23H[37m[44mе[1;76H[30m[46m4[25C1[6C50[21;24H[94m[44m.[1;76H[30m[46m5[25C3[7C2[21;24H[37m[44m у[1;76H[30m[46m6[25C5[7C4[21;26H[37m[44mт[1;76H[30m[46m7[25C7[7C6[21;27H[37m[44mи[1;76H[30m[46m8[25C9[7C8[21;28H[37m[44mл[1;76H[30m[46m9[24C91[6C60[21;29H[37m[44mи[1;75H[30m[46m30[25C3[7C2[21;30H[37m[44mт[1;76H[30m[46m1[25C5[7C4[21;31H[37m[44mы[1;76H[30m[46m2[25C6[7C5[21;32H[94m[44m.[1;76H[30m[46m1[25C5[7C4[21;32H[37m[44m[K[1;76H[30m[46m2[25C6[7C5[21;32H[94m[44m.[1;76H[30m[46m3[25C8[7C7[21;32H[37m[44m и[1;76H[30m[46m4[25C9[7C8[21;34H[94m[44m.[1;76H[30m[46m3[25C8[7C7[21;34H[37m[44m[K[1;76H[30m[46m2[25C6[7C5[21;32H[94m[44m.[37m[K[1;76H[30m[46m1[25C5[7C4[21;32H[37m[44m[K[1;76H[30m[46m2[25C6[7C5[21;32H[37m[44m;[1;76H[30m[46m1[25C5[7C4[21;32H[37m[44m[K[1;76H[30m[46m2[25C6[7C5[21;32H[37m[44m:[1;85H[30m[46m20  21[9C929[12C102 0x066[22;33H[1;76H1[9C1  22[10C71[12C010 0x00A[23;32H[1;75H29[25C0[7C4[23;30H[37m[44m[K[1;76H[30m[46m8[24C69[12C114 0x072[23;29H[1;76H7[25C8[14C1 0x06F[23;28H[1;76H6[25C7[14C4 0x072[23;27H[1;76H5[25C6[23;26H[1;76H4[25C5[13C05 0x069[23;25H[1;76H3[25C4[14C9[5CD[23;24H[1;76H2[25C3[13C16 0x074[23;23H[1;76H1[25C2[14C5[5C3[23;22H[1;76H0[25C1[13C01 0x065[23;21H[1;75H19[25C0[13C16 0x074[23;20H[1;76H8[24C59[14C5[5C3[23;19H[1;76H7[25C8[12C097 0x061[23;18H[1;76H6[25C7[12C102[5C6[23;17H[1;76H5[25C6[12C03[5C20[23;16H[1;76H4[25C5[13C58 0x03A[23;15H[1;76H3[25C4[12C115 0x073[23;14H[1;76H2[25C3[14C0 0x06E[23;13H[1;76H1[25C2[13C05[5C9[23;12H[1;76H0[25C1[14C3[5C7[23;11H[1;75H 9[25C0[13C17 0x075[23;10H[1;76H8[24C49[13C08 0x06C[23;9H[1;76H7[25C8[13C12 0x070[23;8H[1;76H6[25C7[12C03[5C2[23;7H[1;76H5[25C6[12C100 0x064[23;6H[1;76H4[25C5[14C1[5C5[23;5H[1;76H3[25C4[14C0[5C4[23;4H[1;76H2[25C3[12C097[5C1[23;3H[1;76H1[25C2[12C111[5CF[23;2H[1;76H0[25C1[12C076 0x04C[23;1H[39m[49m[23;37r[23;1H[1M[1;38r[1;94H[30m[46m69[13C3[6C89 0x059[37;1H[37m[44mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K[23;1H[39m[49m[23;37r[23;1H[1M[1;38r[1;95H[30m[46m8[12C288[5C27 0x01B[37;1H[39m[49m^M[37m[44m[K[23;1H[39m[49m[23;37r[23;1H[1M[1;38r[1;95H[30m[46m7[13C43[37;1H[37m[44mERROR: failed to check size for sdb: No such file or directory[39m[49m^M[37m[44m[K[23;1H[39m[49m[23;37r[23;1H[1M[1;38r[1;95H[30m[46m6[12C160[5C76 0x04C[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[23;1H[1;86H[30m[46m0  21[9C897[13C91 0x05B[22;15H[93m[42m]
+[1;85H[30m[46m19  20[10C35[11C1048 0x418[22;15H[37m[44m][21;1H[39m[49m[22;37r[22;1H[1M[1;38r[1;95H[30m[46m5[12C098b) 0091 0x05B[21;1H[37m[44m[vagrant@lvm ~[93m[42m][37m[44m$ yum install btrfs-progs -y[37;1Hbtrfs-progs v4.9.1[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m4[13C54[5C76 0x04C[37;1H[37m[44mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m3[13C23[37;1H[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m2[11C7979[5C32 0x020[37;1H[37m[44mLabel:              (null)[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m1[13C52[37;1H[37m[44mUUID:               a8383377-ba69-40fe-b6c0-c0c862eed531[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m0[13C23[37;1H[37m[44mNode size:          16384[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;94H[30m[46m59[12C89[6C80 0x05[37;1H[37m[44mSector size:        4096[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m8[13C16[5C78 0x04E[37;1H[37m[44mFilesystem size:    10.00GiB[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m7[13C01[5C27 0x01B[37;1H[37m[44mBlock group profiles:[39m[49m^M[37m[44m[K[21;1H[1;69H[30m[46mB[5C51[9C4  15[9C680[13C10 0x00A[16;52H[1;69H-[16;52H[39m[49m[17;37r[17;1H[1M[1;38r[1;95H[30m[46m6[14C0b) 0115 0x073[16;52H[37m[44msdc[23C8:32   0    2G  0 disk [39m[49m^M[37;1H[37m[44m  Data:             single            8.00MiB[39m[49m^M[37m[44m[K[16;52H[1;108H[30m[46m799[5C00 0x064[16;52H[37m[44mdc [22C8:32   0    2G  0 disk [39m[49m^M[37m[44m[K[16;52H[39m[49m[17;37r[17;1H[1L[1;38r[1;75H[30m[46m 0[9C5  16/1957[6C1[5C800[16;52H[37m[44m[K
+dc                       8:32   0    2G  0 disk [39m[49m^M[37m[44m[K
+[1;76H[30m[46m1[25C3[7C2[17;1H[37m[44mыdc[22C 8:32   0    2G  0 disk [39m[49m^M[17;2H[1;76H[30m[46m0[25C1[7C0[17;1H[37m[44mdc [22C8:32   0    2G  0 disk [39m[49m^M[37m[44m[K
+[1;76H[30m[46m1[25C2[7C1[17;1H[37m[44msdc[22C 8:32   0    2G  0 disk [39m[49m^M[17;2H[1;86H[30m[46m6  17[9C733[18;2H[1;86H7  18[10C84[19;2H[1;76H0[9C8  19[9C83[13C01[5C0A[20;1H[1;86H9  20[11C5[13C27 0x01B[21;1H[1;110H0[5C93 0x05D[21;1H[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;108H[30m[46m799[5C48 0x030[21;1H[37m[44m0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m8[5C59[5CB[21;1H[37m[44m;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m7b) 0114 0x072[21;1H[37m[44mroot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m6[6C1 0x06F[21;1H[37m[44moot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m5[21;2H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m4[6C6 0x074[21;1H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m3b) 0064 0x040[21;1H[37m[44m@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m2b) 0108 0x06C[21;1H[37m[44mlvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m1[5C1[5C76[21;1H[37m[44mvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m0[5C09 0x06D[21;1H[37m[44mm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;109H[30m[46m89b) 0058 0x03A[21;1H[37m[44m:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m8[5C47 0x02F[21;1H[37m[44m/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m7b) 0104 0x068[21;1H[37m[44mhome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m6[5C11[5CF[21;1H[37m[44mome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m5[5C09[5CD[21;1H[37m[44mme/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m4[6C1[5C5[21;1H[37m[44me/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m3b) 0047 0x02F[21;1H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m2b) 0118 0x076[21;1H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m1b) 0097 0x061[21;1H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m0b) 0103[5C7[21;1H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;109H[30m[46m79[5C14 0x072[21;1H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m8b) 0097 0x061[21;1H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m7b) 0110[5CE[21;1H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m6[6C6 0x074[21;1H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m5b) 0007 0x007[21;1H[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m4[5C91 0x05B[21;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;110H[30m[46m3b) 0114 0x072[21;1H[37m[44mroot@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K
+[1;76H[30m[46m1[25C6[7C4[21;1H[37m[44m[root@lvm vagrant]# mkfs.btrfs sd[39m[49m^G[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[21;2H[1;76H[30m[46m2[25C7[14C1 0x06F[21;3H[1;76H3[25C8[21;4H[1;76H4[25C9[14C6 0x074[21;5H[1;76H5[24C40[12C064 0x040[21;6H[1;76H6[25C1[12C108 0x06C[21;7H[1;76H7[25C2[13C1[5C76[21;8H[1;76H8[25C3[13C09 0x06D[21;9H[1;76H9[25C4[12C032 0x020[21;10H[1;75H10[25C5[12C118 0x076[21;11H[1;76H1[25C6[12C097 0x061[21;12H[1;76H2[25C7[12C103[5C7[21;13H[1;76H3[25C8[13C14 0x072[21;14H[1;76H4[25C9[12C097 0x061[21;15H[1;76H5[24C50[12C110[5CE[21;16H[1;76H6[25C1[14C6 0x074[21;17H[1;76H7[25C2[12C093 0x05D[21;1H[93m[42m[[21;18H[1;76H[30m[46m8[25C3[13C35 0x023[21;1H[37m[44m[[21;19H[1;76H[30m[46m9[25C4[14C2[5C0[21;20H[1;75H20[25C5[12C109 0x06D[21;21H[1;76H1[25C6[14C7[5CB[21;22H[1;76H2[25C7[14C2[5C6[21;23H[1;76H3[25C8[13C15 0x073[21;24H[1;76H4[25C9[12C046 0x02E[21;25H[1;76H5[24C60[13C98 0x062[21;26H[1;76H6[25C1[12C116 0x074[21;27H[1;76H7[25C2[14C4[5C2[21;28H[1;76H8[25C3[13C02 0x066[21;29H[1;76H9[25C4[13C15 0x073[21;30H[1;75H30[25C5[12C032 0x020[21;31H[1;76H1[25C6[12C115 0x073[21;32H[1;76H2[25C7[13C00 0x064[21;33H[1;76H3[25C8[12C007 0x007[21;34H[1;110H3[5C98 0x062[21;34H[37m[44mb[39m[49m^G[37m[44m [39m[49m^G[37m[44m.[39m[49m^G^M[37m[44m[K[21;34H[1;76H[30m[46m4[25C9[13C07 0x007[21;35H[1;76H3[25C8[13C98 0x062[21;34H[1;76H2[25C7[12C100[5C4[21;33H[1;76H1[25C6[13C15 0x073[21;32H[1;76H0[25C5[12C032 0x020[21;31H[1;75H29[25C4[12C115 0x073[21;30H[1;76H8[25C3[13C02 0x066[21;29H[1;76H7[25C2[13C14 0x072[21;28H[1;76H6[25C1[14C6[5C4[21;27H[1;76H5[25C0[12C098 0x062[21;26H[1;76H4[24C59[13C46 0x02E[21;25H[1;76H3[25C8[12C115 0x073[21;24H[1;76H2[25C7[13C02 0x066[21;23H[1;76H1[25C6[14C7[5CB[21;22H[1;76H0[25C5[14C9[5CD[21;21H[1;75H19[25C4[12C032 0x020[21;20H[1;76H8[25C3[14C5[5C3[21;19H[1;76H7[25C2[13C93 0x05D[21;1H[93m[42m[[21;18H[1;76H[30m[46m6[25C1[12C116 0x074[21;1H[37m[44m[[21;17H[1;76H[30m[46m5[25C0[14C0 0x06E[21;16H[1;76H4[24C49[12C097[5C1[21;15H[1;76H3[25C8[12C114 0x072[21;14H[1;76H2[25C7[13C03 0x067[21;13H[1;76H1[25C6[12C097[5C1[21;12H[1;76H0[25C5[12C118 0x076[21;11H[1;75H 9[25C4[12C032 0x020[21;10H[1;76H8[25C3[12C109 0x06D[21;9H[1;76H7[25C2[13C18 0x076[21;8H[1;76H6[25C1[13C0[5C6C[21;7H[1;76H5[25C0[12C064 0x040[21;6H[1;76H4[24C39[12C116 0x074[21;5H[1;76H3[25C8[14C1 0x06F[21;4H[1;76H2[25C7[21;3H[1;76H1[25C6[14C4 0x072[21;2H[1;76H0[25C5[12C091 0x05B[21;18H[93m[42m]
+[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m6[13C32[5C46 0x02E[37;1H[37m[44m  Data:             single            8.00MiB[39m[49m^M[37m[44m[K[21;1H[39m[49m[22;37r[22;1H[1M[1;38r[1;95H[30m[46m5[12C625[5C91 0x05B[21;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# mkfs.btrfs sdb .[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^G^G^G^M[37m[44m[K[37;1H  Metadata:         DUP               1.00GiB[39m[49m^M[37m[44m[K[21;1H[1;76H[30m[46m1[25C6[12C114 0x072[21;18H[37m[44m][21;2H[1;76H[30m[46m2[25C7[14C1 0x06F[21;3H[1;76H3[25C8[21;4H[1;76H4[25C9[14C6 0x074[21;5H[1;76H5[24C40[12C064 0x040[21;6H[1;76H6[25C1[12C108 0x06C[21;7H[1;76H7[25C2[13C1[5C76[21;8H[1;76H8[25C3[13C09 0x06D[21;9H[1;76H9[25C4[12C032 0x020[21;10H[1;75H10[25C5[12C118 0x076[21;11H[1;76H1[25C6[12C097 0x061[21;12H[1;76H2[25C7[12C103[5C7[21;13H[1;76H3[25C8[13C14 0x072[21;14H[1;76H4[25C9[12C097 0x061[21;15H[1;76H5[24C50[12C110[5CE[21;16H[1;76H6[25C1[14C6 0x074[21;17H[1;76H7[25C2[12C093 0x05D[21;1H[93m[42m[[21;18H[1;76H[30m[46m8[25C3[13C35 0x023[21;1H[37m[44m[[21;19H[1;76H[30m[46m9[25C4[14C2[5C0[21;20H[1;75H20[25C5[12C109 0x06D[21;21H[1;76H1[25C6[14C7[5CB[21;22H[1;76H2[25C7[14C2[5C6[21;23H[1;76H3[25C8[13C15 0x073[21;24H[1;76H4[25C9[12C046 0x02E[21;25H[1;76H5[24C60[13C98 0x062[21;26H[1;76H6[25C1[12C116 0x074[21;27H[1;76H7[25C2[14C4[5C2[21;28H[1;76H8[25C3[13C02 0x066[21;29H[1;76H9[25C4[13C15 0x073[21;30H[1;75H30[25C5[12C032 0x020[21;31H[1;76H1[25C6[12C115 0x073[21;32H[1;76H2[25C7[13C00 0x064[21;33H[1;76H3[25C8[12C098[5C2[21;34H[1;76H4[25C9[13C32 0x020[21;35H[1;76H5[24C70[13C46[5CE[21;36H[1;76H6[25C1[13C08 0x008[21;37H[1;76H5[25C0[13C46 0x02E[21;36H[1;76H4[24C69[13C32[5C0[21;35H[1;110H4[5C46[5CE[21;35H[37m[44m.[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^G^G^G^M[37m[44m[K[21;35H[1;110H[30m[46m3[5C08 0x008[21;35H[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^G^G^G^M[37m[44m[K[21;35H[1;110H[30m[46m2[5C27 0x01B[21;36H[39m[49m[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^G[5CM[37m[44m[K[21;35H[1;110H[30m[46m1[5C91 0x05[21;35H[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^G[5CM[37m[44m[K[21;35H[1;110H[30m[46m0[5C75 0x04[21;35H[37m[44mK[39m[49m^H^[[37m[44m[K[39m[49m^G^G^G^M[37m[44m[K[21;35H[1;109H[30m[46m19[5C08 0x008[21;35H[39m[49m^H^[[37m[44m[K[39m[49m^G^G^G^M[37m[44m[K[21;35H[1;110H[30m[46m8[5C27 0x01B[21;36H[39m[49m[[37m[44m[K[39m[49m^G[5CM[37m[44m[K[21;35H[1;110H[30m[46m7[5C91 0x05[21;35H[37m[44m[K[39m[49m^G[5CM[37m[44m[K[26;3H[93m[42m][21;35H[1;110H[30m[46m6[5C75 0x04[21;35H[37m[44mK[39m[49m^G^G^G^M[37m[44m[K[26;3H][21;35H[1;110H[30m[46m5[5C07 0x007[21;35H[39m[49m^G^G^G^M[37m[44m[K[21;35H[1;110H[30m[46m4[21;40H[39m[49mM[37m[44m[K[21;35H[1;110H[30m[46m3[21;38H[39m[49mM[37m[44m[K[21;35H[1;110H[30m[46m2[5C13[5CD[21;36H[39m[49mM[37m[44m[K[21;35H[1;110H[30m[46m1[6C0[5CA[21;35H[37m[44m[K[39m[49m[22;37r[22;1H[1M[1;38r[1;95H[30m[46m4[14C0[5C98 0x062[21;35H[37m[44mbtrfs-progs v4.9.1[39m[49m^M[37;1H[37m[44m  System:           DUP               8.00MiB[39m[49m^M[37m[44m[K[21;35H[39m[49m[22;37r[22;1H[1L[1;38r[1;75H[30m[46m 0[8C20  21/1955[5C70[7C1[21;35H[37m[44m[K
+btrfs-progs v4.9.1[39m[49m^M[37m[44m[K
+[1;86H[30m[46m1  22[10C9[14C83 0x053[23;1H[1;86H2  23[9C946[13C1[5C0D[24;1H[39m[49m[24;37r[24;1H[1M[1;38r[1;95H[30m[46m4[13C09[5C69 0x045[37;1H[37m[44m  System:           DUP               8.00MiB[39m[49m^M[37m[44m[K[24;1H[1;86H[30m[46m1  22[9C890[13C83 0x053[23;1H[1;86H0  21[10C7[14C98 0x062[22;1H[1;85H19  20[10C35[14C1 0x05B[21;18H[93m[42m]
+[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m3[12C574[6C8 0x062[37;1H[37m[44mSSD detected:       no[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m2[13C5[6C83 0x053[37;1H[37m[44mIncompat features:  extref, skinny-metadata[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m1[12C498[5C69 0x045[37;1H[37m[44mNumber of devices:  1[39m[49m^M[37m[44m[K[21;1H[39m[49m[21;37r[21;1H[1M[1;38r[1;95H[30m[46m0[13C34[5C27 0x01B[37;1H[37m[44mDevices:[39m[49m^M[37m[44m[K[21;1H[1;110H[30m[46m3[5C93 0x05D[21;1H[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H
+[1;110H[30m[46m2[5C48 0x030[21;1H[37m[44m0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H[37m[44m[K
+[1;110H[30m[46m1[5C59[5CB[21;1H[37m[44m;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H[21;1H[1;110H[30m[46m0b) 0114 0x072[21;1H[37m[44mroot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H[37m[44m[K
+[1;109H[30m[46m29[6C1 0x06F[21;1H[37m[44moot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[21;1H[1;110H[30m[46m8[21;2H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m7[6C6 0x074[21;1H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m6b) 0064 0x040[21;1H[37m[44m@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m5b) 0108 0x06C[21;1H[37m[44mlvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m4[5C1[5C76[21;1H[37m[44mvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m3[5C09 0x06D[21;1H[37m[44mm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m2b) 0058 0x03A[21;1H[37m[44m:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m1[5C47 0x02F[21;1H[37m[44m/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m0b) 0104 0x068[21;1H[37m[44mhome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;109H[30m[46m19[5C11[5CF[21;1H[37m[44mome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m8[5C09[5CD[21;1H[37m[44mme/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m7[6C1[5C5[21;1H[37m[44me/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m6b) 0047 0x02F[21;1H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m5b) 0118 0x076[21;1H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m4b) 0097 0x061[21;1H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m3b) 0103[5C7[21;1H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m2[5C14 0x072[21;1H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m1b) 0097 0x061[21;1H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m0b) 0110[5CE[21;1H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;109H[30m[46m09[6C6 0x074[21;1H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m8b) 0007 0x007[21;1H[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K
+[1;110H[30m[46m7[5C91 0x05B[21;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# mkfs.btrfs sdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K
+[1;76H[30m[46m1[25C6[12C114 0x072[21;18H[37m[44m][21;2H[1;76H[30m[46m2[25C7[14C1 0x06F[21;3H[1;76H3[25C8[21;4H[1;76H4[25C9[14C6 0x074[21;5H[1;76H5[24C40[12C064 0x040[21;6H[1;76H6[25C1[12C108 0x06C[21;7H[1;76H7[25C2[13C1[5C76[21;8H[1;76H8[25C3[13C09 0x06D[21;9H[1;76H9[25C4[12C032 0x020[21;10H[1;75H10[25C5[12C118 0x076[21;11H[1;76H1[25C6[12C097 0x061[21;12H[1;76H2[25C7[12C103[5C7[21;13H[1;76H3[25C8[13C14 0x072[21;14H[1;76H4[25C9[12C097 0x061[21;15H[1;76H5[24C50[12C110[5CE[21;16H[1;76H6[25C1[14C6 0x074[21;17H[1;76H7[25C2[12C093 0x05D[21;1H[93m[42m[[21;18H[1;76H[30m[46m8[25C3[13C35 0x023[21;1H[37m[44m[[21;19H[1;76H[30m[46m9[25C4[14C2[5C0[21;20H[1;75H20[25C5[12C109 0x06D[21;21H[1;76H1[25C6[14C7[5CB[21;22H[1;76H2[25C7[14C2[5C6[21;23H[1;76H3[25C8[13C15 0x073[21;24H[1;76H4[25C9[12C046 0x02E[21;25H[1;76H5[24C60[13C98 0x062[21;26H[1;76H6[25C1[12C116 0x074[21;27H[1;76H7[25C2[14C4[5C2[21;28H[1;76H8[25C3[13C02 0x066[21;29H[1;76H9[25C4[13C15 0x073[21;30H[1;75H30[25C5[12C032 0x020[21;31H[1;76H1[25C6[12C115 0x073[21;32H[1;110H6[5C00 0x064[21;32H[37m[44mdb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m5b) 0098[5C2[21;32H[37m[44mb[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m4[5C0[5C08[21;32H[39m[49m^H^H^H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m3[21;36H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m2[21;34H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m1b) 0100 0x064[21;32H[37m[44mdsdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m0[5C15 0x073[21;32H[37m[44msdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;108H[30m[46m399[5C00 0x064[21;32H[37m[44mdb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m8b) 0098[5C2[21;32H[37m[44mb[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m7[5C0[5C08[21;32H[39m[49m^H^H^H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m6[21;36H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m5[21;34H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m4b) 0101 0x065[21;32H[37m[44mesdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m3[5C15 0x073[21;32H[37m[44msdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m2[5C00 0x064[21;32H[37m[44mdb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m1b) 0098[5C2[21;32H[37m[44mb[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m0[5C0[5C08[21;32H[39m[49m^H^H^H[37m[44mvsdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;109H[30m[46m89[21;36H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m8[21;34H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m7b) 011[5C76[21;32H[37m[44mvsdb[39m[49m^H[10C[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m6[6C5[5C3[21;32H[37m[44msdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m5[5C00 0x064[21;32H[37m[44mdb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m4b) 0098[5C2[21;32H[37m[44mb[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m3[5C0[5C08[21;32H[39m[49m^H^H^H^H^H^H[37m[44m/devsdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;32H[1;110H[30m[46m2[21;42H[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m1[21;40H[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m0[21;38H[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;109H[30m[46m79[21;36H[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m8[21;34H[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;110H[30m[46m7[5C47 0x02F[21;32H[37m[44m/devsdb[39m[49m^H[11C[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;32H[1;76H[30m[46m2[25C7[12C100 0x064[21;33H[1;76H3[25C8[14C1[5C5[21;34H[1;76H4[25C9[13C18 0x076[21;35H[1;76H5[24C70[14C5[5C3[21;36H[1;110H6[5C00 0x064[21;36H[37m[44mdb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;36H[1;110H[30m[46m5b) 0098[5C2[21;36H[37m[44mb[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;36H[1;110H[30m[46m4[5C0[5C08[21;36H[39m[49m^H^H^H^H^H^H^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;36H[1;110H[30m[46m3[21;47H[39m[49m[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;36H[1;110H[30m[46m2[21;45H[39m[49m[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;36H[1;110H[30m[46m1[21;43H[39m[49m[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;36H[1;110H[30m[46m0[21;41H[39m[49m[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;36H[1;109H[30m[46m69[21;39H[39m[49m[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;36H[1;110H[30m[46m8[5C27 0x01B[21;37H[39m[49m[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;36H[1;110H[30m[46m7[5C91 0x05[21;36H[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;36H[1;110H[30m[46m6[5C67 0x043[21;36H[37m[44mC[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;36H[1;110H[30m[46m5[5C2[5C1B[21;36H[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;36H[1;110H[30m[46m4[5C91 0x05[21;36H[37m[44m[C[39m[49m^[[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;36H[1;110H[30m[46m3[5C67 0x043[21;36H[37m[44mC[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;36H[1;110H[30m[46m2[5C2[5C1B[21;36H[39m[49m^[[37m[44m[C/sdb[39m[49m^H^H^H^M[37m[44m[K[21;36H[1;110H[30m[46m1[5C91 0x05[21;36H[37m[44m[C/sdb[39m[49m^H[5CM[37m[44m[K[21;36H[1;110H[30m[46m0[5C67 0x043[21;36H[37m[44mC/sdb[39m[49m^H^H^H^M[37m[44m[K[21;36H[1;109H[30m[46m59[5C4[5C2F[21;36H[37m[44m/sdb[39m[49m^H^H^H^M[37m[44m[K[21;36H[1;76H[30m[46m6[25C1[12C115 0x073[21;37H[1;76H7[25C2[13C00 0x064[21;38H[1;76H8[25C3[12C098[5C2[21;39H[1;76H9[25C4[13C0[5C08[21;40H[1;110H8[21;45H[39m[49mM[37m[44m[K[21;40H[1;110H[30m[46m7[21;43H[39m[49mM[37m[44m[K[21;40H[1;110H[30m[46m6[5C13[5CD[21;41H[39m[49mM[37m[44m[K[21;40H[1;110H[30m[46m5[6C0[5CA[21;40H[37m[44m[K[1;75H[30m[46m20[8C20  21[10C9[22;21H[1;75H18[25C3[7C4[22;19H[37m[44m[K[1;86H[30m[46m1  22[9C912[12C105 0x069[23;19H[1;76H7[25C1[13C19 0x077[23;18H[1;76H6[25C0[12C046 0x02E[23;17H[1;76H5[24C09[12C115 0x073[23;16H[1;76H4[25C8[13C02 0x066[23;15H[1;76H3[25C7[13C14 0x072[23;14H[1;76H2[25C6[14C6[5C4[23;13H[1;76H1[25C5[12C098 0x062[23;12H[1;76H0[25C4[13C47 0x02F[23;11H[1;75H 9[25C3[23;10H[1;76H8[25C2[13C58 0x03A[23;9H[1;76H7[25C1[12C112 0x070[23;8H[1;76H6[25C0[14C6[5C4[23;7H[1;76H5[23C899[23;6H[1;76H4[25C8[13C04 0x068[23;5H[1;76H3[25C7[12C032 0x020[23;4H[1;76H2[25C6[12C101 0x065[23;3H[1;76H1[25C5[23;2H[1;76H0[25C4[12C083 0x053[23;1H[1;86H2  23[9C950[13C1[5C0D[24;1H[1;110H3[6C0[5CA[24;1H[37m[44m[K[1;86H[30m[46m3  24[11C1[13C76 0x04C[25;1H[1;86H4  25[10C79[13C85 0x055[26;1H[1;86H5  26[9C1037[12C78 0x04E[27;1H[1;86H6  27[11C64[12C83 0x053[28;1H[1;86H7  28[11C90[12C70 0x046[29;1H[1;86H8  29[10C12[13C66[5C2[30;1H[1;86H9  30[11C43[12C32 0x020[31;1H[1;85H30  31[11C90[32;1H[1;86H1  32[10C237[33;1H[1;86H2  33[11C84[12C83 0x053[34;1H[1;86H3  34[10C308[12C7[5C49[35;1H[1;86H4  35[11C53[13C8[5CE[36;1H[1;86H5  36[11C76[12C6[6C4[37;1H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m2[6C7[11C8[13C32 0x020[37;1H[37m[44m   ID        SIZE  PATH[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m3[6C8[10C411[37;1H[36m[44m    1    10.00GiB  /dev/sdb[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m4[6C9[11C40[12C13 0x00D[37;1H[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m5[5C40[12C2[12C27 0x01B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m6[6C1[10C524[12C98 0x062[37;1H[37m[44mbtrfs-progs v4.9.1[39m[49m^M[37m[44m[K
+[39m[49m[3;37r[3;1H[1M[1;38r[1;83H[30m[46m7[6C2[11C4[13C83 0x053
+[37m[44m[K[37;1HSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K
+[1;86H[30m[46m4  41[11C2[13C98 0x062[36;1H[1;86H3  40[10C442[12C27 0x01B[35;1H[1;86H4  41[10C524[12C98 0x062[36;1H[1;86H5  42[11C4[13C83 0x053[37;1H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m8[6C3[10C600[12C1[5C0D[37;1H[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m9[6C4[12C2[12C76 0x04C[37;1H[37m[44mLabel:              (null)[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;82H[30m[46m10[6C5[11C30[12C85 0x055[37;1H[37m[44mUUID:               38f786d4-c0b5-40eb-977b-d957bbebad5d[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m1[6C6[11C88[12C78 0x04E[37;1H[37m[44mNode size:          16384[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m2[6C7[10C715[12C83 0x053[37;1H[37m[44mSector size:        4096[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m3[6C8[11C41[12C70 0x046[37;1H[37m[44mFilesystem size:    3.00GiB[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m4[6C9[11C70[12C66[5C2[37;1H[37m[44mBlock group profiles:[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m5[5C50[11C93[12C32 0x020[37;1H[37m[44m  Data:             RAID0           307.12MiB[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m6[6C1[10C840[37;1H[37m[44m  Metadata:         RAID1           153.56MiB[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m7[6C2[11C87[37;1H[37m[44m  System:           RAID1             8.00MiB[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m8[6C3[10C934[12C83 0x053[37;1H[37m[44mSSD detected:       no[39m[49m^M[37m[44m[K
+[39m[49m[3;37r[3;1H[1M[1;38r[1;83H[30m[46m9[6C4[11C58[12C7[5C49
+[37m[44m[K[37;1HIncompat features:  extref, skinny-metadata[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;82H[30m[46m20[6C5[9C2003[13C8[5CE[37;1H[37m[44mNumber of devices:  2[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m1[6C6[11C26[12C6[6C4[37;1H[37m[44mDevices:[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m2[6C7[11C3[13C32 0x020[37;1H[37m[44m   ID        SIZE  PATH[39m[49m^M[37m[44m[K
+[39m[49m[3;37r[3;1H[1M[1;38r[1;83H[30m[46m3[6C8[11C61
+[37m[44m[K[37;1H[36m    1     2.00GiB  /dev/sdc[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m4[6C9[11C90[37;1H[36m[44m    2     1.00GiB  /dev/sdd[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m5[5C60[10C119[12C13 0x00D[37;1H[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m6[6C1[11C21[12C27 0x01B[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m7[6C2[11C75[12C78 0x04E[37;1H[37m[44mNAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m8[6C3[10C236[11C115 0x073[37;1H[37m[44msda                       8:0    0   40G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m9[6C4[11C87[10C9500 0x251C[37;1H[37m[44m├─sda1                    8:1    0    1M  0 part [39m[49m^M[37m[44m[K
+[1;86H[30m[46m4  63[11C36[10C0115 0x073 [36;1H[1;86H3  62[10C175[11C078 0x04E[35;1H[1;86H2  61[11C21[12C27 0x01B[34;1H[1;86H1  60[11C19[12C13 0x00D[33;1H[1;86H0  59[10C090[12C32 0x020[32;1H[1;85H29  58[11C61[31;1H[1;86H8  57[11C36[30;1H[1;86H7  56[11C2[13C68 0x044[29;1H[1;86H6  55[11C03[12C7[6CE[28;1H[1;86H5  54[9C1958[13C3[5C9[27;1H[1;86H4  53[11C34[12C8[5C53[26;1H[1;86H3  52[10C887[12C32 0x020[25;1H[1;86H2  51[11C40[24;1H[1;86H1  50[10C793[23;1H[1;86H0  49[11C70[12C66 0x042[22;1H[1;85H19  48[11C41[12C70[5C6[21;1H[1;86H8  47[11C15[12C83 0x053[20;1H[1;86H7  46[10C688[12C78 0x04E[19;1H[1;86H6  45[11C30[12C85 0x055[18;1H[1;86H5  44[11C02[12C76 0x04C[17;1H[1;86H4  43[12C0[12C13 0x00D[16;1H[1;86H3  42[10C544[12C8[5C53[15;1H[1;86H2  41[11C2[13C98 0x062[14;1H[1;86H1  40[10C442[12C27 0x01B[13;1H[1;86H0  39[12C0[12C13 0x00D[12;1H[1;85H 9  38[11C11[12C32 0x020[11;1H[1;86H8  37[10C386[10;1H[1;86H7  36[11C7[13C68 0x044[9;1H[1;86H6  35[11C53[12C7[6CE[8;1H[1;86H5  34[11C08[13C3[5C9[7;1H[1;86H4  33[10C284[12C8[5C53[6;1H[1;86H3  32[11C37[12C32 0x020
+
+
+
+[1;86H2  31[10C190
+
+
+[1;86H1  30[11C43
+
+[1;86H0  29[11C20[12C66 0x042
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m8[6C8[10C09[13C70[5C6
+[37m[44mFilesystem size:    10.00GiB[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m7[6C7[11C64[12C83 0x053
+[37m[44mSector size:        4096[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m6[6C6[11C37[12C78 0x04E
+[37m[44mNode size:          16384[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m5[6C5[9C979 [12C85 0x055
+[37m[44mUUID:               a8383377-ba69-40fe-b6c0-c0c862eed531[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m4[6C4[10C51[13C76 0x04C
+[37m[44mLabel:              (null)[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m3[6C3[11C0[13C10 0x00A
+[37m[44m[K[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m2[6C2[9C894[13C83 0x053
+[37m[44mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m1[6C1[10C75[13C98 0x062
+[37m[44mbtrfs-progs v4.9.1[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m0[6C0[10C3[15C1 0x05B
+[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;82H[30m[46m19[5C19[11C4[13C10 0x00A
+[37m[44m[K[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m8[6C8[9C783[12C115 0x073
+[37m[44msde                       8:64   0    1G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m7[6C7[10C32
+[37m[44msdd                       8:48   0    1G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m6[6C6[9C681
+[37m[44msdc                       8:32   0    2G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m5[6C5[10C30
+[37m[44msdb                       8:16   0   10G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m4[6C4[9C569[12C032 0x020
+[37m[44m  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP][39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m3[6C3[10C13
+[37m[44m  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m2[6C2[9C458[11C9492 0x2514
+[37m[44m└─sda3                    8:3    0   39G  0 part [39m[49m^M[37m[44m[K
+[1;86H[30m[46m1  13[9C513[11C0032 0x020 
+
+[1;86H2  14[10C69
+
+
+[1;86H3  15[9C630[12C115 0x073
+
+
+
+[1;86H4  16[10C81[6;1H[1;86H5  17[9C732[7;1H[1;86H6  18[10C83[8;1H[1;86H7  19[9C834[12C010 0x00A[9;1H[1;86H8  20[11C5[13C91 0x05B[10;18H[93m[42m]
+[1;86H[30m[46m9  21[10C7[15C8 0x062[10;18H[37m[44m]
+[1;85H[30m[46m10  22[10C94[13C83 0x053[12;1H[1;86H1  23[9C950[13C10 0x00A[13;1H[1;86H2  24[11C1[13C76 0x04C[14;1H[1;86H3  25[10C79[13C85 0x055[15;1H[1;86H4  26[9C1037[12C78 0x04E[16;1H[1;86H5  27[11C64[12C83 0x053[17;1H[1;86H6  28[11C90[12C70 0x046[18;1H[1;86H7  29[10C12[13C66[5C2[19;1H[1;86H8  30[11C43[12C32 0x020[20;1H[1;86H9  31[11C90[21;1H[1;85H20  32[10C237[22;1H[1;86H1  33[11C84[12C83 0x053[23;1H[1;86H2  34[10C308[12C7[5C49[24;1H[1;86H3  35[11C53[13C8[5CE[25;1H[1;86H4  36[11C76[12C6[6C4[26;1H[1;86H5  37[11C8[13C32 0x020[27;1H[1;86H6  38[10C411[28;1H[1;86H7  39[11C40[12C13 0x00D[29;1H[1;86H8  40[12C2[12C27 0x01B[30;1H[1;86H9  41[10C524[12C98 0x062[31;1H[1;86H8  40[10C442[12C27 0x01B[30;1H[1;110H2[5C93 0x05D[30;1H[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[5C48 0x030[30;1H[37m[44m0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[5C59[5CB[30;1H[37m[44m;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;109H[30m[46m49b) 0114 0x072[30;1H[37m[44mroot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[6C1 0x06F[30;1H[37m[44moot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[30;2H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[6C6 0x074[30;1H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0064 0x040[30;1H[37m[44m@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0108 0x06C[30;1H[37m[44mlvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3[5C1[5C76[30;1H[37m[44mvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2[5C09 0x06D[30;1H[37m[44mm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1b) 0058 0x03A[30;1H[37m[44m:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[5C47 0x02F[30;1H[37m[44m/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;109H[30m[46m39b) 0104 0x068[30;1H[37m[44mhome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[5C11[5CF[30;1H[37m[44mome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[5C09[5CD[30;1H[37m[44mme/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[6C1[5C5[30;1H[37m[44me/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0047 0x02F[30;1H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0118 0x076[30;1H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0097 0x061[30;1H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2b) 0103[5C7[30;1H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[5C14 0x072[30;1H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0b) 0097 0x061[30;1H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;109H[30m[46m29b) 0110[5CE[30;1H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[6C6 0x074[30;1H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7b) 0007 0x007[30;1H[39m[49m^G[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[5C91 0x05B[30;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0114 0x072[30;1H[37m[44mroot@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K
+[1;76H[30m[46m1[26C3[6C6[30;1H[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[39m[49m^H^[[37m[44m[Kc /dev/sdd[39m[49m^M[30;2H[1;76H[30m[46m2[26C4[13C1 0x06F[30;3H[1;76H3[26C5[30;4H[1;76H4[26C6[13C6 0x074[30;5H[1;76H5[26C7[11C064 0x040[30;6H[1;76H6[26C8[11C108 0x06C[30;7H[1;76H7[26C9[12C1[5C76[30;8H[1;76H8[25C50[12C09 0x06D[30;9H[1;76H9[26C1[11C032 0x020[30;10H[1;75H10[26C2[11C118 0x076[30;11H[1;76H1[26C3[11C097 0x061[30;12H[1;76H2[26C4[11C103[5C7[30;13H[1;76H3[26C5[12C14 0x072[30;14H[1;76H4[26C6[11C097 0x061[30;15H[1;76H5[26C7[11C110[5CE[30;16H[1;76H6[26C8[13C6 0x074[30;17H[1;76H7[26C9[11C093 0x05D[30;1H[93m[42m[[30;18H[1;76H[30m[46m8[25C60[12C35 0x023[30;1H[37m[44m[[30;19H[1;76H[30m[46m9[26C1[13C2[5C0[30;20H[1;75H20[26C2[11C109 0x06D[30;21H[1;76H1[26C3[13C7[5CB[30;22H[1;76H2[26C4[13C2[5C6[30;23H[1;76H3[26C5[12C15 0x073[30;24H[1;76H4[26C6[11C046 0x02E[30;25H[1;76H5[26C7[12C98 0x062[30;26H[1;76H6[26C8[11C116 0x074[30;27H[1;76H7[26C9[13C4[5C2[30;28H[1;76H8[25C70[12C02 0x066[30;29H[1;76H9[26C1[12C15 0x073[30;30H[1;75H30[26C2[11C032 0x020[30;31H[1;76H1[26C3[12C47[5CF[30;32H[1;76H2[26C4[11C100 0x064[30;33H[1;76H3[26C5[13C1[5C5[30;34H[1;76H4[26C6[12C18 0x076[30;35H[1;76H5[26C7[11C047 0x02F[30;36H[1;76H6[26C8[11C115 0x073[30;37H[1;76H7[26C9[12C00 0x064[30;38H[1;76H8[25C80[11C098[5C2[30;39H[1;76H9[26C1[12C0[5C08[30;40H[1;110H5[5C27 0x01B[30;41H[39m[49m[[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K[30;40H[1;110H[30m[46m4[5C91 0x05[30;40H[37m[44m[Kc /dev/sdd[39m[49m^M[37m[44m[K[30;40H[1;110H[30m[46m3[5C75 0x04[30;40H[37m[44mKc /dev/sdd[39m[49m^M[37m[44m[K[30;40H[1;110H[30m[46m2[5C99 0x063[30;40H[37m[44mc /dev/sdd[39m[49m^M[37m[44m[K[30;40H[1;76H[30m[46m8[26C0[6C1[30;39H[37m[44mc /dev/sdd[39m[49m^M[37m[44m[K[30;39H[1;76H[30m[46m9[26C1[12C32 0x020[30;40H[1;75H40[26C2[12C47[5CF[30;41H[1;76H1[26C3[11C100 0x064[30;42H[1;76H2[26C4[13C1[5C5[30;43H[1;76H3[26C5[12C18 0x076[30;44H[1;76H4[26C6[11C047 0x02F[30;45H[1;76H5[26C7[11C115 0x073[30;46H[1;76H6[26C8[12C00 0x064[30;47H[1;76H7[26C9[30;48H[1;76H8[25C90[11C013 0x00D[30;49H[1;110H0[6C0[5CA[30;49H[37m[44m[K[1;75H[30m[46m20[9C9  41[10C51[31;21H[1;75H18[25C09[5C19[31;19H[37m[44m[K[1;85H[30m[46m30  42[11C28[11C105 0x069[32;19H[1;75H 2[9C1  43[11C67[11C010 0x00A[33;3H[1;75H18[9C2  44[11C86[12C32 0x020[34;19H[1;86H3  45[10C614[35;19H[1;86H4  46[11C72[36;19H[1;86H5  47[11C99[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m3[6C8[10C725[37;1H[37m[44mFilesystem size:    3.00GiB[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m4[6C9[11C54[11C101 0x065[37;1H[37m[44mBlock group profiles:[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m5[5C50[11C77[11C032 0x020[37;1H[37m[44m  Data:             RAID0           307.12MiB[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m6[6C1[10C824[37;1H[37m[44m  Metadata:         RAID1           153.56MiB[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m7[6C2[11C71[37;1H[37m[44m  System:           RAID1             8.00MiB[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m8[6C3[10C918[37;1H[37m[44mSSD detected:       no[39m[49m^M[37m[44m[K[37;19H[39m[49m[3;37r[3;1H[1M[1;38r[1;83H[30m[46m9[6C4[11C42
+[37m[44m[K[37;1HIncompat features:  extref, skinny-metadata[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;82H[30m[46m20[6C5[11C87[37;1H[37m[44mNumber of devices:  2[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m0[6C1[6C6[9C2001[12C10 0x00A[37;1H[37m[44mDevices:[39m[49m^M[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m8[6C2[6C7[11C20[12C32 0x020[37;1H[37m[44m   ID        SIZE  PATH[39m[49m^M[37m[44m[K[37;19H[39m[49m[3;37r[3;1H[1M[1;38r[1;83H[30m[46m3[6C8[11C45
+[37m[44m[K[37;1H[36m    1     2.00GiB  /dev/sdc[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m4[6C9[11C74[37;1H[36m[44m    2     1.00GiB  /dev/sdd[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m 2[6C5[5C60[11C86[12C10 0x00A[37;1H[39m[49m^M[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m18[6C6[6C1[10C104[11C101 0x065[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[37;19H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m7[6C2[11C59[11C032 0x020[37;1H[37m[44mNAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[39m[49m^M[37m[44m[K[37;19H[1;86H[30m[46m4  61[11C04[11C101 0x065[36;19H[1;75H 2[9C3  60[10C086[11C010 0x00A[35;3H[1;75H18[9C4  61[10C104[11C101 0x065[36;19H[1;110H8b) 0047 0x02F[36;19H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[36;19H[1;110H[30m[46m7b) 0118 0x076[36;19H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[36;19H[1;110H[30m[46m6b) 0097 0x061[36;19H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[36;19H[1;110H[30m[46m5b) 0103[5C7[36;19H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[36;19H[1;110H[30m[46m4[5C14 0x072[36;19H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[36;19H[1;110H[30m[46m3b) 0097 0x061[36;19H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[36;19H[1;110H[30m[46m2b) 0110[5CE[36;19H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[36;19H[1;110H[30m[46m1[6C6 0x074[36;19H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[36;19H[1;110H[30m[46m0b) 0007 0x007[36;19H[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K[36;19H[1;109H[30m[46m09[5C91 0x05B[36;19H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;19H[1;76H[30m[46m7[26C3[6C8[36;18H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;18H[1;76H[30m[46m6[26C2[6C7[36;17H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;17H[1;76H[30m[46m5[26C1[6C6[36;16H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;16H[1;76H[30m[46m4[26C0[6C5[36;15H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;15H[1;76H[30m[46m3[24C099[6C4[36;14H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;14H[1;76H[30m[46m2[26C8[6C3[36;13H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;13H[1;76H[30m[46m1[26C7[6C2[36;12H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;12H[1;76H[30m[46m0[26C6[6C1[36;11H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;11H[1;75H[30m[46m 9[26C5[6C0[36;10H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;10H[1;76H[30m[46m8[26C4/117299[36;9H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;9H[1;76H[30m[46m7[26C3[6C8[36;8H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;8H[1;76H[30m[46m6[26C2[6C7[36;7H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;7H[1;76H[30m[46m5[26C1[6C6[36;6H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;6H[1;76H[30m[46m4[26C0[6C5[36;5H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;5H[1;76H[30m[46m3[25C89[6C4[36;4H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;4H[1;76H[30m[46m2[26C8[6C3[36;3H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K[36;3H[1;76H[30m[46m0[26C7[6C2[36;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[39m[49m^M[37m[44m[K
+[1;86H[30m[46m5  62[10C114[12C78 0x04E[36;18H[37m[44m]
+[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m8[6C3[11C75[11C115 0x073[37;1H[37m[44msda                       8:0    0   40G  0 disk [39m[49m^M[37m[44m[K
+[1;86H[30m[46m4  62[11C14[11C078 0x04E[36;1H[1;86H3  61[10C087[12C91 0x05B[35;18H[93m[42m]
+[1;76H[30m[46m1[26C8[11C114 0x072[35;18H[37m[44m][35;2H[1;76H[30m[46m2[26C9[13C1 0x06F[35;3H[1;76H3[25C90[35;4H[1;76H4[26C1[13C6 0x074[35;5H[1;76H5[26C2[11C064 0x040[35;6H[1;76H6[26C3[11C108 0x06C[35;7H[1;76H7[26C4[12C1[5C76[35;8H[1;76H8[26C5[12C09 0x06D[35;9H[1;76H9[26C6[11C032 0x020[35;10H[1;75H10[26C7[11C118 0x076[35;11H[1;76H1[26C8[11C097 0x061[35;12H[1;76H2[26C9[11C103[5C7[35;13H[1;76H3[24C100[12C14 0x072[35;14H[1;76H4[26C1[11C097 0x061[35;15H[1;76H5[26C2[11C110[5CE[35;16H[1;76H6[26C3[13C6 0x074[35;17H[1;76H7[26C4[11C093 0x05D[35;1H[93m[42m[[35;18H[1;76H[30m[46m8[26C5[12C35 0x023[35;1H[37m[44m[[35;19H[1;76H[30m[46m9[26C6[13C2[5C0[35;20H[1;75H20[26C7[11C108 0x06C[35;21H[1;76H1[26C8[12C15 0x073[35;22H[1;76H2[26C9[11C098 0x062[35;23H[1;76H3[25C10[11C10[6CC[35;24H[1;76H4[26C1[13C7[5CB[35;25H[1;76H5[26C2[11C013 0x00D[35;26H[1;110H1[6C0[5CA[35;26H[37m[44m[K[1;86H[30m[46m4  62[11C38[12C65 0x041[36;26H[1;86H5  63[11C99[12C32 0x020[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m9[6C4[10C254[37;1H[37m[44m├─sda1                    8:1    0    1M  0 part [39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;82H[30m[46m30[6C5[10C309[37;1H[37m[44m├─sda2                    8:2    0    1G  0 part /boot[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m1[6C6[11C6[37;1H[37m[44m└─sda3                    8:3    0   39G  0 part [39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m2[6C7[10C424[12C53 0x035[37;1H[37m[44m  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m3[6C8[11C80[37;1H[37m[44m  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP][39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m4[6C9[10C537[12C32 0x020[37;1H[37m[44msdb                       8:16   0   10G  0 disk [39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m5[5C70[11C88[37;1H[37m[44msdc                       8:32   0    2G  0 disk [39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m6[6C1[10C639[37;1H[37m[44msdd                       8:48   0    1G  0 disk [39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m7[6C2[11C90[37;1H[37m[44msde                       8:64   0    1G  0 disk [39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m8[6C3[10C74[12C110 0x06E[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m9[6C4[11C95[11C032 0x020[37;1H[37m[44mFilesystem                      1K-blocks   Used Available Use% Mounted on[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;82H[30m[46m40[6C5[10C871[11C103 0x067[37;1H[37m[44m/dev/mapper/VolGroup00-LogVol00  39269648 778048  38491600   2% /[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m1[6C6[10C938[11C032 0x020[37;1H[37m[44mdevtmpfs                           110948      0    110948   0% /dev[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m2[6C7[9C300[37;1H[37m[44mtmpfs                              120692      0    120692   0% /dev/shm[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m3[6C8[11C82[37;1H[37m[44mtmpfs                              120692   4600    116092   4% /run[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m4[6C9[10C15[37;1H[37m[44mtmpfs                              120692      0    120692   0% /sys/fs/cgroup[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m5[5C80[10C23[37;1H[37m[44m/dev/sda2                         1038336  64076    974260   7% /boot[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m6[6C1[10C303[37;1H[37m[44mtmpfs                               24140      0     24140   0% /run/user/1000[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m7[6C2[11C82[11C110 0x06E[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m8[6C3[10C459[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m9[6C4[10C542[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;82H[30m[46m50[6C5[10C685[11C032 0x020[37;1H[37m[44mFilesystem                       Size  Used Avail Use% Mounted on[39m[49m^M[37m[44m[K[37;26H[1;86H[30m[46m4  84[10C542[11C110 0x06E[36;26H[1;86H3  83[10C459[35;26H[1;86H2  82[10C382[34;26H[1;86H1  81[11C03[11C032 0x020[33;26H[1;86H0  80[10C232[32;26H[1;85H29  79[10C15[31;26H[1;86H8  78[10C08[30;26H[1;86H7  77[11C08[29;26H[1;86H6  76[9C293[28;26H[1;86H5  75[10C871[11C103 0x067[27;26H[1;86H4  74[10C795[11C032 0x020[26;26H[1;86H3  73[11C40[11C110 0x06E[25;26H[1;86H2  72[10C69[12C032 0x020[24;26H[1;86H1  71[11C39[23;26H[1;86H0  70[10C588[22;26H[1;85H19  69[11C37[21;26H[1;86H8  68[10C480[12C53 0x035[20;26H[1;86H7  67[11C24[19;26H[1;86H6  66[10C369[12C32 0x020[18;26H[1;86H5  65[11C0[17;26H[1;86H4  64[10C254[16;26H[1;86H3  63[10C199[15;26H[1;86H2  62[11C38[12C65 0x041[14;26H[1;86H1  61[11C12[12C10 0x00A[13;26H[1;75H 2[9C0  60[10C086[12;3H[1;76H0[26C5[13C3[5CD[12;1H[39m[49m[13;37r[13;1H[1M[1;38r[1;94H[30m[46m49[13C89[5C91 0x05B[12;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# lsblk[37;1H/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m8[13C63[5C78 0x04E[37;1H[37m[44mdevtmpfs                         109M     0  109M   0% /dev[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m7[13C02b) 0115 0x073[37;1H[37m[44mtmpfs                            118M     0  118M   0% /dev/shm[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m6[12C151b) 9500 0x251C[37;1H[37m[44mtmpfs                            118M  4.5M  114M   4% /run[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m5[12C096[37;1H[37m[44mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m4[13C3[5C492[6C4[37;1H[37m[44m/dev/sda2                       1014M   63M  952M   7% /boot[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m3[11C6981b) 0032 0x020 [37;1H[37m[44mtmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m2[13C25[37;1H[37m[44m/dev/sdb                          10G   17M  8.0G   1% /mnt/sdb[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m1[12C864b) 0115 0x073[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m0[13C13[37;1H[37m[44mbash: btrfa: command not found[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;94H[30m[46m39[12C762[37;1H[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[12;1H[12;37r[12;1H[1M[1;38r[1;95H[30m[46m8[13C11[37;1H[37m[44m/dev/sdc appears to contain an existing filesystem (btrfs).[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1M[1;38r[1;95H[30m[46m7[12C660b) 0027 0x01B[37;1H[37m[44mERROR: use the -f option to force overwrite of /dev/sdc[39m[49m^M[37m[44m[K[12;1H[39m[49m[12;37r[12;1H[1L[1;38r[1;86H[30m[46m1  61/1938[7C6[6C1[12;1H[37m[44m[K
+[1;110H[30m[46m0[5C93 0x05D[13;1H[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;109H[30m[46m59[5C48 0x030[13;1H[37m[44m0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[5C59[5CB[13;1H[37m[44m;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7b) 0114 0x072[13;1H[37m[44mroot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[6C1 0x06F[13;1H[37m[44moot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5[13;2H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4[6C6 0x074[13;1H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0064 0x040[13;1H[37m[44m@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2b) 0108 0x06C[13;1H[37m[44mlvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[5C1[5C76[13;1H[37m[44mvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[5C09 0x06D[13;1H[37m[44mm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;109H[30m[46m49b) 0058 0x03A[13;1H[37m[44m:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[5C47 0x02F[13;1H[37m[44m/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7b) 0104 0x068[13;1H[37m[44mhome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[5C11[5CF[13;1H[37m[44mome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5[5C09[5CD[13;1H[37m[44mme/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4[6C1[5C5[13;1H[37m[44me/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0047 0x02F[13;1H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2b) 0118 0x076[13;1H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1b) 0097 0x061[13;1H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0b) 0103[5C7[13;1H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;109H[30m[46m39[5C14 0x072[13;1H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8b) 0097 0x061[13;1H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7b) 0110[5CE[13;1H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[6C6 0x074[13;1H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0007 0x007[13;1H[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4[5C91 0x05B[13;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# df -l[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0114 0x072[13;1H[37m[44mroot@lvm vagrant]# df -l[39m[49m^M[37m[44m[K
+[1;76H[30m[46m1[26C7[6C4[13;1H[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[13;2H[1;86H[30m[46m2  62[10C114[12C05 0x069[14;2H[1;86H3  63[11C90[13C0[5C4[15;2H[1;86H4  64[10C257[13C1[5C5[16;2H[1;86H5  65[10C32[14C9[5CD[17;2H[1;86H6  66[10C401[18;2H[1;86H7  67[11C7[19;2H[1;86H8  68[10C55[14C0[5C4[20;2H[1;86H9  69[10C622[13C9[5CD[21;2H[1;76H0[8C20  70[10C701[11C027 0x01B[22;1H[1;110H3[5C93 0x05D[22;1H[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H[9C[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2[5C48 0x030[22;1H[37m[44m0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[5C59[5CB[22;1H[37m[44m;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0b) 0114 0x072[22;1H[37m[44mroot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;109H[30m[46m29[6C1 0x06F[22;1H[37m[44moot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[22;2H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[6C6 0x074[22;1H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6b) 0064 0x040[22;1H[37m[44m@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0108 0x06C[22;1H[37m[44mlvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4[5C1[5C76[22;1H[37m[44mvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3[5C09 0x06D[22;1H[37m[44mm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2b) 0058 0x03A[22;1H[37m[44m:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[5C47 0x02F[22;1H[37m[44m/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0b) 0104 0x068[22;1H[37m[44mhome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;109H[30m[46m19[5C11[5CF[22;1H[37m[44mome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[5C09[5CD[22;1H[37m[44mme/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[6C1[5C5[22;1H[37m[44me/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6b) 0047 0x02F[22;1H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0118 0x076[22;1H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0097 0x061[22;1H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0103[5C7[22;1H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2[5C14 0x072[22;1H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1b) 0097 0x061[22;1H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0b) 0110[5CE[22;1H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;109H[30m[46m09[6C6 0x074[22;1H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8b) 0007 0x007[22;1H[39m[49m^G[37m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[5C91 0x05B[22;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# df -l[39m[49m^H[9C[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[1;86H[30m[46m1  71[11C5[13C27 0x01[22;18H[37m[44m]
+[1;110H[30m[46m6[5C93 0x05D[22;38H[93m[42m[
+[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5[5C48 0x030[22;38H[37m[44m[
+0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4[5C59[5CB[23;1H[37m[44m;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0114 0x072[23;1H[37m[44mroot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2[6C1 0x06F[23;1H[37m[44moot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[23;2H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[6C6 0x074[23;1H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;108H[30m[46m599b) 0064 0x040[23;1H[37m[44m@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8b) 0108 0x06C[23;1H[37m[44mlvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[5C1[5C76[23;1H[37m[44mvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[5C09 0x06D[23;1H[37m[44mm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0058 0x03A[23;1H[37m[44m:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4[5C47 0x02F[23;1H[37m[44m/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0104 0x068[23;1H[37m[44mhome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2[5C11[5CF[23;1H[37m[44mome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[5C09[5CD[23;1H[37m[44mme/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[6C1[5C5[23;1H[37m[44me/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;109H[30m[46m89b) 0047 0x02F[23;1H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8b) 0118 0x076[23;1H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7b) 0097 0x061[23;1H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6b) 0103[5C7[23;1H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5[5C14 0x072[23;1H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0097 0x061[23;1H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0110[5CE[23;1H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2[6C6 0x074[23;1H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1b) 0007 0x007[23;1H[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[5C91 0x05B[23;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[1;86H[30m[46m2  72[10C807[12C27 0x01[23;18H[37m[44m]
+[1;109H[30m[46m79[5C93 0x05D[23;47H[93m[42m[
+[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[K
+[1;110H[30m[46m8[5C48 0x030[23;47H[37m[44m[
+0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[24;1H[1;110H[30m[46m7[5C59[5CB[24;1H[37m[44m;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[[24;1H[1;110H[30m[46m6b) 0114 0x072[24;1H[37m[44mroot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[24;1H[1;110H[30m[46m5[6C1 0x06F[24;1H[37m[44moot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[K
+[1;110H[30m[46m4[24;2H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[24;1H[1;110H[30m[46m3[6C6 0x074[24;1H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[[24;1H[1;110H[30m[46m2b) 0064 0x040[24;1H[37m[44m@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[24;1H[1;110H[30m[46m1b) 0108 0x06C[24;1H[37m[44mlvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[K
+[1;110H[30m[46m0[5C1[5C76[24;1H[37m[44mvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[24;1H[1;109H[30m[46m69[5C09 0x06D[24;1H[37m[44mm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[[24;1H[1;110H[30m[46m8b) 0058 0x03A[24;1H[37m[44m:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[24;1H[1;110H[30m[46m7[5C47 0x02F[24;1H[37m[44m/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[K
+[1;110H[30m[46m6b) 0104 0x068[24;1H[37m[44mhome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[24;1H[1;110H[30m[46m5[5C11[5CF[24;1H[37m[44mome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[[24;1H[1;110H[30m[46m4[5C09[5CD[24;1H[37m[44mme/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[K[24;1H[1;110H[30m[46m3[6C1[5C5[24;1H[37m[44me/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kd[24;1H[1;110H[30m[46m2b) 0047 0x02F[24;1H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf[24;1H[1;110H[30m[46m1b) 0118 0x076[24;1H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf[K
+[1;110H[30m[46m0b) 0097 0x061[24;1H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf -[24;1H[1;109H[30m[46m59b) 0103[5C7[24;1H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf -h[24;1H[1;110H[30m[46m8[5C14 0x072[24;1H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf -h[K
+[1;110H[30m[46m7b) 0097 0x061[24;1H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf -h[39m[49m^M[24;1H[1;110H[30m[46m6b) 0110[5CE[24;1H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf -h[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5[6C6 0x074[24;1H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf -h[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0007 0x007[24;1H[39m[49m^G[37m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf -h[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3[5C91 0x05B[24;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf -h[39m[49m^M[37m[44m[K
+[1;86H[30m[46m3  73[10C922[12C70 0x046[24;18H[37m[44m]
+[1;86H[30m[46m4  74[11C89[12C47 0x02F[26;1H[1;86H5  75[9C3047[11C100 0x064[27;1H[1;86H6  76[10C108[12C16 0x07[28;1H[1;86H7  77[11C73[29;1H[1;86H8  78[10C234[30;1H[1;86H9  79[10C305[11C047 0x02F[31;1H[1;85H30  80[11C67[11C116 0x074[32;1H[1;86H1  81[10C438[11C047 0x02F[33;1H[1;86H2  82[10C503[12C2[5C1B[34;1H[1;86H3  83[10C612[12C98 0x062[35;1H[1;86H2  82[10C503[12C27 0x01B[34;1H[1;110H2[5C93 0x05D[24;129H[93m[42m[[34;1H[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[5C48 0x030[24;129H[37m[44m[[34;1H0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[5C59[5CB[34;1H[37m[44m;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;109H[30m[46m49b) 0114 0x072[34;1H[37m[44mroot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[6C1 0x06F[34;1H[37m[44moot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[34;2H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[6C6 0x074[34;1H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0064 0x040[34;1H[37m[44m@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0108 0x06C[34;1H[37m[44mlvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3[5C1[5C76[34;1H[37m[44mvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2[5C09 0x06D[34;1H[37m[44mm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1b) 0058 0x03A[34;1H[37m[44m:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0[5C47 0x02F[34;1H[37m[44m/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;109H[30m[46m39b) 0104 0x068[34;1H[37m[44mhome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[5C11[5CF[34;1H[37m[44mome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7[5C09[5CD[34;1H[37m[44mme/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[6C1[5C5[34;1H[37m[44me/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0047 0x02F[34;1H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4b) 0118 0x076[34;1H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0097 0x061[34;1H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2b) 0103[5C7[34;1H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[5C14 0x072[34;1H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0b) 0097 0x061[34;1H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;109H[30m[46m29b) 0110[5CE[34;1H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8[6C6 0x074[34;1H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7b) 0007 0x007[34;1H[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6[5C91 0x05B[34;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+[1;86H[30m[46m3  83[11C85[13C8 0x062[34;18H[37m[44m]
+[1;86H[30m[46m4  84[10C617[12C27 0x01B[36;1H[1;110H5[5C93 0x05D[34;83H[93m[42m[
+
+[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H
+[1;110H[30m[46m4[5C48 0x030[34;83H[37m[44m[
+
+0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[37m[44m[K
+[1;110H[30m[46m3[5C59[5CB[36;1H[37m[44m;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[36;1H[1;110H[30m[46m2b) 0114 0x072[36;1H[37m[44mroot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[37m[44m[K
+[1;110H[30m[46m1[6C1 0x06F[36;1H[37m[44moot@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36;1H[1;110H[30m[46m0[36;2H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[[36;1H[1;109H[30m[46m19[6C6 0x074[36;1H[37m[44mt@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1[36;1H[1;110H[30m[46m8b) 0064 0x040[36;1H[37m[44m@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[36;1H[1;110H[30m[46m7b) 0108 0x06C[36;1H[37m[44mlvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[K
+[1;110H[30m[46m6[5C1[5C76[36;1H[37m[44mvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[36;1H[1;110H[30m[46m5[5C09 0x06D[36;1H[37m[44mm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[[36;1H[1;110H[30m[46m4b) 0058 0x03A[36;1H[37m[44m:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1[36;1H[1;110H[30m[46m3[5C47 0x02F[36;1H[37m[44m/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@[36;1H[1;110H[30m[46m2b) 0104 0x068[36;1H[37m[44mhome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[36;1H[1;110H[30m[46m1[5C11[5CF[36;1H[37m[44mome/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[K
+[1;110H[30m[46m0[5C09[5CD[36;1H[37m[44mme/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[36;1H[1;109H[30m[46m09[6C1[5C5[36;1H[37m[44me/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8b) 0047 0x02F[36;1H[37m[44m/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m7b) 0118 0x076[36;1H[37m[44mvagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m6b) 0097 0x061[36;1H[37m[44magrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m5b) 0103[5C7[36;1H[37m[44mgrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m4[5C14 0x072[36;1H[37m[44mrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m3b) 0097 0x061[36;1H[37m[44mant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m2b) 0110[5CE[36;1H[37m[44mnt[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m1[6C6 0x074[36;1H[37m[44mt[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m0b) 0007 0x007[36;1H[39m[49m^G[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;108H[30m[46m499[5C91 0x05B[36;1H[37m[44m[root@lvm vagrant[93m[42m][37m[44m# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H[61C[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;110H[30m[46m8b) 0114 0x072[36;1H[37m[44mroot@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+[1;76H[30m[46m1[26C8[6C9[36;1H[37m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[36;2H[11;27H[30m[47m                                                                                           [12;27H ┌──────────────────────────────────────[34m Save file [30m──────────────────────────────────────┐ [13;27H │ Confirm save file: "/home/pengwinn/Project/otus-linux/hometask/less3/Hometask_add.md" │ [14;27H ├───────────────────────────────────────────────────────────────────────────────────────┤ [15;27H │                                 [46m[ [34mS[30mave ][47m  [ [34mC[30mancel ]                                  │ [16;27H └───────────────────────────────────────────────────────────────────────────────────────┘ [17;27H                                                                                           [15;64H[1;70H[46m-[11;27H[36m[44md[39m[49m^M[37m[44m[K[12;27H[K[13;27H[39m[49mM[37m[44m[K[14;27H      1K-blocks   Used Available Use% Mounted on[39m[49m^M[37m[44m[K[15;27HVol00  39269648 778048  38491600   2% /[39m[49m^M[37m[44m[K[16;27H         110948      0    110948   0% /dev[39m[49m^M[37m[44m[K[17;27H         120692      0    120692   0% /dev/shm[39m[49m^M[37m[44m[K[36;2H[11;27H[30m[47m                                                                                           [12;27H ┌──────────────────────────────────────[34m Save file [30m──────────────────────────────────────┐ [13;27H │ Confirm save file: "/home/pengwinn/Project/otus-linux/hometask/less3/Hometask_add.md" │ [14;27H ├───────────────────────────────────────────────────────────────────────────────────────┤ [15;27H │                                 [46m[ [34mS[30mave ][47m  [ [34mC[30mancel ]                                  │ [16;27H └───────────────────────────────────────────────────────────────────────────────────────┘ [17;27H                                                                                           [15;64H[11;27H[36m[44md[39m[49m^M[37m[44m[K[12;27H[K[13;27H[39m[49mM[37m[44m[K[14;27H      1K-blocks   Used Available Use% Mounted on[39m[49m^M[37m[44m[K[15;27HVol00  39269648 778048  38491600   2% /[39m[49m^M[37m[44m[K[16;27H         110948      0    110948   0% /dev[39m[49m^M[37m[44m[K[17;27H         120692      0    120692   0% /dev/shm[39m[49m^M[37m[44m[K[36;2H[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?2004l[?1006l[?1002l[?1001r[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t[39;49m
+[?1001s[?1002h[?1006h[?2004h]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[1;1H[30m[46m  Left     File     Command     Options     Right[K
+[37m[44m┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐┌<─[30m[47m /home/pengwinn/Project/otus-linux/hometask/less3 [37m[44m────────────.[^]>┐[3;1H│[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m│[4;1H│[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 14 12:11[37m│[5;1H│[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[30m[46m Hometask_add.md                                │ 116499│лют 20 10:52[37m[44m│[6;1H│[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││ MainHOMETASK.md                                │  26726│лют 18 16:54│[7;1H│ README.md                                      │    109│лют 17 12:34││ README.md                                      │     43│лют 14 12:12│[8;1H│ Vagrantfile                                    │   2437│лют 17 14:37││                                                │       │            │[9;1H│ type                                           │ 118464│лют 19 17:09││                                                │       │            │[10;1H│ typescript                                     │ 294912│лют 20 10:52││                                                │       │            │[11;1H│                                                │       │            ││                                                │       │            │[12;1H│                                                │       │            ││                                                │       │            │[13;1H│                                                │       │            ││                                                │       │            │[14;1H│                                                │       │            ││                                                │       │            │[15;1H│                                                │       │            ││                                                │       │            │[16;1H│                                                │       │            ││                                                │       │            │[17;1H│                                                │       │            ││                                                │       │            │[18;1H│                                                │       │            ││                                                │       │            │[19;1H│                                                │       │            ││                                                │       │            │[20;1H│                                                │       │            ││                                                │       │            │[21;1H│                                                │       │            ││                                                │       │            │[22;1H│                                                │       │            ││                                                │       │            │[23;1H│                                                │       │            ││                                                │       │            │[24;1H│                                                │       │            ││                                                │       │            │[25;1H│                                                │       │            ││                                                │       │            │[26;1H│                                                │       │            ││                                                │       │            │[27;1H│                                                │       │            ││                                                │       │            │[28;1H│                                                │       │            ││                                                │       │            │[29;1H│                                                │       │            ││                                                │       │            │[30;1H│                                                │       │            ││                                                │       │            │[31;1H│                                                │       │            ││                                                │       │            │[32;1H│                                                │       │            ││                                                │       │            │[33;1H├─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────┤[34;1H│ type                                                                ││ Hometask_add.md                                                     │[35;1H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[36;1H[39m[49mHint: Want your plain shell? Press C-o, and get back to MC with C-o again.
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3#[71C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[2;142H[37;70H[4;73H/..                                             │UP--DIR│лют 14 12:11[5;73H[37m[44m Hometask_add.md                                │ 116499│лют 20 10:52[34;73HUP--DIR         [37;70H[?1006l[?1002l[?1001r[?2004l[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3#  [Kgit add .
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/hometask/less3root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3# git add .[K[K[K[K[Kcommit -m ""h"o"m"e"t"a"s"h"[1P"k"3"
+[master db7a99b] hometask3
+ 3 files changed, 2473 insertions(+)
+ create mode 100644 less3/Hometask_add.md
+ create mode 100644 less3/MainHOMETASK.md
+ create mode 100644 less3/README.md
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/hometask/less3root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3# git push
+Username for 'https://github.com': kakunindima
+Password for 'https://kakunindima@github.com': 
+Enumerating objects: 7, done.
+Counting objects:  14% (1/7)   
+Counting objects:  28% (2/7)   
+Counting objects:  42% (3/7)   
+Counting objects:  57% (4/7)   
+Counting objects:  71% (5/7)   
+Counting objects:  85% (6/7)   
+Counting objects: 100% (7/7)   
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects:  20% (1/5)   
+Compressing objects:  40% (2/5)   
+Compressing objects:  60% (3/5)   
+Compressing objects:  80% (4/5)   
+Compressing objects: 100% (5/5)   
+Compressing objects: 100% (5/5), done.
+Writing objects:  16% (1/6)   
+Writing objects:  33% (2/6)   
+Writing objects:  50% (3/6)   
+Writing objects:  66% (4/6)   
+Writing objects:  83% (5/6)   
+Writing objects: 100% (6/6)   
+Writing objects: 100% (6/6), 23.19 KiB | 2.58 MiB/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/kakunindima/otus_linux.git
+   044544d..db7a99b  master -> master
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/hometask/less3root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3# [?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[2;1H[37m[44m┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐[70C┐[3;1H│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+├[69C┤
+│[69C│
+└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H[2;72H┌<─[30m[47m /home/pengwinn/Project/otus-linux/hometask/less3 [37m[44m────────────.[^]>[3;72H│[69C│[4;72H│[69C│[5;72H│[69C│[6;72H│[69C│[7;72H│[69C│[8;72H│[69C│[9;72H│[69C│[10;72H│[69C│[11;72H│[69C│[12;72H│[69C│[13;72H│[69C│[14;72H│[69C│[15;72H│[69C│[16;72H│[69C│[17;72H│[69C│[18;72H│[69C│[19;72H│[69C│[20;72H│[69C│[21;72H│[69C│[22;72H│[69C│[23;72H│[69C│[24;72H│[69C│[25;72H│[69C│[26;72H│[69C│[27;72H│[69C│[28;72H│[69C│[29;72H│[69C│[30;72H│[69C│[31;72H│[69C│[32;72H│[69C│[33;72H├[69C┤[34;72H│[69C│[35;72H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[1;1H[30m[46m  Left     File     Command     Options     Right[K[3;2H[93m[44m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [4;2H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[30m[46m/..                                             │UP--DIR│лют 14 12:11[5;2H[97m[44m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││ Hometask_add.md                                │ 116499│лют 20 10:52[6;2H[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││ MainHOMETASK.md                                │  26726│лют 18 16:54[7;2H README.md                                      │    109│лют 17 12:34││ README.md                                      │     43│лют 14 12:12[8;2H Vagrantfile                                    │   2437│лют 17 14:37││                                                │       │            [9;2H type                                           │ 118464│лют 19 17:09││                                                │       │            [10;2H typescript                                     │ 307200│лют 20 10:53││                                                │       │            [11;2H                                                │       │            ││                                                │       │            [12;2H                                                │       │            ││                                                │       │            [13;2H                                                │       │            ││                                                │       │            [14;2H                                                │       │            ││                                                │       │            [15;2H                                                │       │            ││                                                │       │            [16;2H                                                │       │            ││                                                │       │            [17;2H                                                │       │            ││                                                │       │            [18;2H                                                │       │            ││                                                │       │            [19;2H                                                │       │            ││                                                │       │            [20;2H                                                │       │            ││                                                │       │            [21;2H                                                │       │            ││                                                │       │            [22;2H                                                │       │            ││                                                │       │            [23;2H                                                │       │            ││                                                │       │            [24;2H                                                │       │            ││                                                │       │            [25;2H                                                │       │            ││                                                │       │            [26;2H                                                │       │            ││                                                │       │            [27;2H                                                │       │            ││                                                │       │            [28;2H                                                │       │            ││                                                │       │            [29;2H                                                │       │            ││                                                │       │            [30;2H                                                │       │            ││                                                │       │            [31;2H                                                │       │            ││                                                │       │            [32;2H                                                │       │            ││                                                │       │            [33;2H─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────[34;2H type                                                                ││UP--DIR                                                              
+
+[39m[49mHint: Want your plain shell? Press C-o, and get back to MC with C-o again.
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3#[71C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[37;70H[4;73H[97m[44m/..                                             [37m│[97mUP--DIR[37m│[97mлют 14 12:11[5;73H[30m[46m Hometask_add.md                                │ 116499│лют 20 10:52[34;73H[37m[44m Hometask_add.md[37;70H[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1006l[?1002l[?1001r[?2004l[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t>[?1049h[22;0;0t[1;38r[4l[38;1H(B[m[37m[40m(B[m[39;49m
+[K
+[?1049l[23;0;0t[?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[1;1H[30m[46m/home/pengwinn/Project/otus-linux/hometask/less3/Hometask_add.md   [----]  1 L:[ 67+17  84/1938] *(3618/116499b) 0114 0x072             [*][X][2;1H[37m[44mtmpfs                              120692      0    120692   0% /sys/fs/cgroup[39m[49m^M[37m[44m[K
+/dev/sda2                         1038336  64076    974260   7% /boot[39m[49m^M[37m[44m[K
+tmpfs                               24140      0     24140   0% /run/user/1000[39m[49m^M[37m[44m[K
+[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[37m[44m[K[39m[49m^G[37m[44mmkdir /mnt/sdb[39m[49m^M[37m[44m[K
+[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K /mnt/sdb/[39m[49m^M[37m[44m[K
+[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[C[39m[49m^[[37m[44m[Kdf -h[39m[49m^M[37m[44m[K
+Filesystem                       Size  Used Avail Use% Mounted on[39m[49m^M[37m[44m[K
+/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M[37m[44m[K
+devtmpfs                         109M     0  109M   0% /dev[39m[49m^M[37m[44m[K
+tmpfs                            118M     0  118M   0% /dev/shm[39m[49m^M[37m[44m[K
+tmpfs                            118M  4.5M  114M   4% /run[39m[49m^M[37m[44m[K
+tmpfs                            118M     0  118M   0% /sys/fs/cgroup[39m[49m^M[37m[44m[K
+/dev/sda2                       1014M   63M  952M   7% /boot[39m[49m^M[37m[44m[K
+tmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M[37m[44m[K
+/dev/sdb                          10G   17M  8.0G   1% /mnt/sdb[39m[49m^M[37m[44m[K
+[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[K[39m[49m^H^[[37m[44m[Ke add /dev/sdc / [39m[49m^H^[[37m[44m[Kmnr[39m[49m^H^[[37m[44m[Kt/sdb/[39m[49m^M[37m[44m[K
+bash: btrfa: command not found[39m[49m^M[37m[44m[K
+[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[37m[44m[1P[39m[49m^[[37m[44m[1@s[39m[49m^M[37m[44m[K
+/dev/sdc appears to contain an existing filesystem (btrfs).[39m[49m^M[37m[44m[K
+ERROR: use the -f option to force overwrite of /dev/sdc[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# btrfs device add /dev/sdc /mnt/sdb/ -f[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# df -h[39m[49m^M[37m[44m[K
+Filesystem                       Size  Used Avail Use% Mounted on[39m[49m^M[37m[44m[K
+/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M[37m[44m[K
+devtmpfs                         109M     0  109M   0% /dev[39m[49m^M[37m[44m[K
+tmpfs                            118M     0  118M   0% /dev/shm[39m[49m^M[37m[44m[K
+tmpfs                            118M  4.5M  114M   4% /run[39m[49m^M[37m[44m[K
+tmpfs                            118M     0  118M   0% /sys/fs/cgroup[39m[49m^M[37m[44m[K
+/dev/sda2                       1014M   63M  952M   7% /boot[39m[49m^M[37m[44m[K
+tmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M[37m[44m[K
+/dev/sdb                          12G   17M   10G   1% /mnt/sdb[39m[49m^M[37m[44m[K
+[39m[49m^[[37m[44m]0;root@lvm:/home/vagrant[39m[49m^G[37m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K
+NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[39m[49m^M[37m[44m[K
+sda                       8:0    0   40G  0 disk [39m[49m^M[37m[44m[K
+├─sda1                    8:1    0    1M  0 part [39m[49m^M[37m[44m[K
+├─sda2                    8:2    0    1G  0 part /boot[39m[49m^M[37m[44m[K
+[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mSave        [97m[40m 3[30m[46mMark        [97m[40m 4[30m[46mReplac      [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mMove        [97m[40m 7[30m[46mSearch      [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[19;2H[1;86H6  83[10C586[11C097 0x061[18;2H[1;86H5  82[11C04[11C114 0x072[17;2H[1;86H4  81[10C439[12C00 0x064[16;2H[1;86H3  80[10C368[13C9[5CD[15;2H[1;86H2  79[11C06[13C0[5C4[14;2H[1;86H1  78[10C235[13C9[5CD[13;2H[1;86H0  77[10C174[12;2H[1;85H 9  76[11C09[11;2H[1;86H8  75[10C048[13C1[5C5[10;2H[1;86H7  74[9C2990[13C0[5C4[9;2H[1;86H6  73[11C23[13C5[5C9[8;2H[1;86H5  72[10C808[12C14 0x072[7;2H[1;86H4  71[10C752[6;2H[1;86H3  70[11C0[5;2H[1;86H2  69[10C62[13C09 0x06D[4;2H[1;86H1  68[10C551[13C0[5C4[3;2H[1;86H0  67[10C47[14C9[5CD[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m6[6C6[11C0
+[37m[44mtmpfs                              120692   4600    116092   4% /run[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m5[6C5[10C327
+[37m[44mtmpfs                              120692      0    120692   0% /dev/shm[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m4[6C4[10C25[14C1[5C5
+[37m[44mdevtmpfs                           110948      0    110948   0% /dev[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m3[6C3[10C190[13C0[5C4
+[37m[44m/dev/mapper/VolGroup00-LogVol00  39269648 778048  38491600   2% /[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m2[6C2[11C14[13C5[5C9
+[37m[44mFilesystem                      1K-blocks   Used Available Use% Mounted on[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m1[6C1[10C087[12C14 0x072
+[37m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m0[6C0[6C0[12C5[11C010 0x00A
+[37m[44m[K[39m[49m[2;37r[2;1H[1L[1;38r[1;82H[30m[46m59[5C59[11C56[12C32 0x020
+[36m[44m    2     1.00GiB  /dev/sdd[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m8[6C8[11C27
+[36m[44m    1     2.00GiB  /dev/sdc[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m1[6C7[6C7[11C03
+[37m[44m   ID        SIZE  PATH[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m6[6C6[9C199[12C101 0x065
+[37m[44mDevices:[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m5[6C5[11C70[12C17 0x07
+[37m[44mNumber of devices:  2[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m4[6C4[11C25[13C0 0x06E
+[37m[44mIncompat features:  extref, skinny-metadata[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m3[6C3[11C01[11C083 0x053
+[37m[44mSSD detected:       no[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m2[6C2[10C854[12C32 0x020
+[37m[44m  System:           RAID1             8.00MiB[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m1[6C1[11C07
+[37m[44m  Metadata:         RAID1           153.56MiB[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m0[6C0[10C760
+[37m[44m  Data:             RAID0           307.12MiB[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;82H[30m[46m49[5C49[11C37[11C108 0x06C
+[37m[44mBlock group profiles:[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m8[6C8[11C08[13C5[5C9
+[37m[44mFilesystem size:    3.00GiB[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m7[6C7[10C682[13C1[5C5
+[37m[44mSector size:        4096[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m6[6C6[11C55[12C1[6CF
+[37m[44mNode size:          16384[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m5[6C5[10C597[11C085 0x055
+[37m[44mUUID:               38f786d4-c0b5-40eb-977b-d957bbebad5d[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m4[6C4[11C69[12C97 0x061
+[37m[44mLabel:              (null)[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m0[6C3[6C3[12C6[12C13 0x00D
+[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m1[6C2[6C2[11C11[11C101 0x065
+[37m[44mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m1[6C1[10C492[12C16 0x074
+[37m[44mbtrfs-progs v4.9.1[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m0[6C0[11C43[13C4[5C2
+[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdc /dev/sdd[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m0[5C39[5C39[12C0[11C013 0x00D
+[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m8[6C8[11C11[12C32 0x020
+[36m[44m    1    10.00GiB  /dev/sdb[39m[49m^M[37m[44m[K
+[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m1[6C7[6C7[10C387
+[37m[44m   ID        SIZE  PATH[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m6[6C6[11C7[12C101 0x065
+[37m[44mDevices:[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m5[6C5[11C54[12C17 0x07
+[37m[44mNumber of devices:  1[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m4[6C4[11C09[13C0 0x06E
+[37m[44mIncompat features:  extref, skinny-metadata[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m3[6C3[10C285[11C083 0x053
+[37m[44mSSD detected:       no[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m2[6C2[11C38[12C32 0x020
+[37m[44m  System:           DUP               8.00MiB[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m1[6C1[10C191
+[37m[44m  Metadata:         DUP               1.00GiB[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m0[6C0[11C44
+[37m[44m  Data:             single            8.00MiB[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;82H[30m[46m29[5C29[11C21[11C108 0x06C
+[37m[44mBlock group profiles:[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m8[6C8[10C09[14C5[5C9
+[37m[44mFilesystem size:    10.00GiB[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m7[6C7[11C65[13C1[5C5
+[37m[44mSector size:        4096[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m6[6C6[11C38[12C1[6CF
+[37m[44mNode size:          16384[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;36r[2;1H[1L[1;38r[1;83H[30m[46m5[6C5[9C980 [11C085 0x055
+[37m[44mUUID:               a8383377-ba69-40fe-b6c0-c0c862eed531[39m[49m^M[37m[44m[K[37;1H[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m4[6C4[10C52[13C97 0x061
+[37m[44mLabel:              (null)[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m0[6C3[6C3[11C0[13C10 0x00A
+[37m[44m[K[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m1[6C2[6C2[9C895[12C101 0x065
+[37m[44mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m1[6C1[10C76[13C16 0x074
+[37m[44mbtrfs-progs v4.9.1[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m0[6C0[10C3[15C4[5C2
+[37m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdb[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m0[5C19[5C19[11C4[12C010 0x00A
+[37m[44m[K[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m1[6C8[6C8[9C78[13C10[5C64
+[37m[44msde                       8:64   0    1G  0 disk [39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m7[6C7[10C33
+[37m[44msdd                       8:48   0    1G  0 disk [39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m6[6C6[9C682
+[37m[44msdc                       8:32   0    2G  0 disk [39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m5[6C5[10C31
+[37m[44msdb                       8:16   0   10G  0 disk [39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m4[6C4[9C570[12C032 0x020
+[37m[44m  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP][39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m3[6C3[10C14
+[37m[44m  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m2[6C2[9C461[11C9472 0x2500
+[37m[44m└─sda3                    8:3    0   39G  0 part [39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m1[6C1[10C0
+[37m[44m├─sda2                    8:2    0    1G  0 part /boot[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m0[6C0[9C346
+[37m[44m├─sda1                    8:1    0    1M  0 part [39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;82H[30m[46m 9[5C 9[9C293[11C0100 0x064 
+[37m[44msda                       8:0    0   40G  0 disk [39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m8[6C8[10C32[12C065 0x041
+[37m[44mNAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[39m[49m^M[37m[44m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m0[6C7[6C7[11C0[13C10 0x00A
+[37m[44m[K[39m[49m[2;37r[2;1H[1L[1;38r[1;76H[30m[46m1[6C6[6C6[10C08[12C118 0x076
+[37m[44m[vagrant@lvm ~]$ lsblk[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m5[6C5[9C180[11C1099 0x44B
+[37m[44mвыводим список:[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m4[6C4[9C83 [11C0116 0x074
+[37m[44mbtrfsбудем устанавливать на доступные диски - sdb,sdc,sdd,sde[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m3[6C3[9C54[13C035 0x023
+[91m[44m### Установка btrfs[37m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m2[6C2[9C23
+[91m[44m## Less3 additional hometask *[37m[K[2;2H[39m[49m[2;37r[2;1H[1L[1;38r[1;83H[30m[46m1[6C1[9C1 [15C2[5C0
+[91m[44m# Otus-linux Hometask[37m[K[2;2H[1;86H[30m[46m1   2[9C23[15C5[5C3[3;2H[1;86H2   3[9C54[4;2H[1;86H3   4[9C83[13C116 0x074[5;2H[1;86H4   5[9C180[11C1099 0x44B[6;2H[1;86H3   4[9C83 [11C0116 0x074[5;2H[1;76H0[24C2[13C098 0x062
+
+
+
+[1;76H1[24C3[13C116 0x074[5;2H[1;76H2[24C4[15C4[5C2[5;3H[1;76H3[24C5[14C02 0x066[5;4H[1;76H4[24C6[14C15 0x073[5;5H[1;76H5[24C7[12C1073 0x431[5;6H[1;70HM[5C6[24C8[6C500[5;6H[37m[44m будем устанавливать на доступные диски - sdb,sdc,sdd,sde[5;7H[1;76H[30m[46m5[24C7[12C0032 0x020[5;6H[1;76H4[24C6[13C115 0x073[5;5H[1;76H3[24C5[14C02 0x066[5;4H[1;76H2[24C4[14C14 0x072[5;3H[1;76H1[24C3[15C6[5C4[5;2H[1;76H0[24C2[13C098 0x062
+
+
+
+[1;75H19[9C2   3[10C1[14C10 0x00A[4;20H[1;76H8[24C0[13C115 0x073[4;19H[1;76H7[23C79[14C02 0x066[4;18H[1;76H6[24C8[14C14 0x072[4;17H[1;76H7[24C9[14C02 0x066[4;18H[1;76H8[23C80[14C15 0x073[4;19H[1;76H9[24C1[13C010 0x00A[4;20H[1;86H3   4[9C113[11C1083 0x43B[5;20H[1;76H5[9C4   5[9C207[11C0010 0x00A[6;16H[1;76H9[9C5   6[10C2[14C98 0x062[7;20H[1;76H8[25C6[12C115 0x073[7;19H[1;76H7[25C5[13C08 0x06C[7;18H[1;76H6[25C4[12C032 0x020[7;17H[1;76H5[25C3[14C6[5C4[7;16H[1;76H4[25C2[13C93 0x05D[7;1H[93m[42m[[7;15H[1;76H[30m[46m3[25C1[12C126 0x07E[7;1H[37m[44m[[7;14H[1;76H[30m[46m2[25C0[12C032 0x020[7;13H[1;76H1[24C19[12C109 0x06D[7;12H[1;76H0[25C8[13C18 0x076[7;11H[1;75H 9[25C7[13C0[5C6C[7;10H[1;76H8[25C6[12C064 0x040[7;9H[1;76H7[25C5[12C116 0x074[7;8H[1;76H6[25C4[14C0 0x06E[7;7H[1;76H5[25C3[12C097[5C1[7;6H[1;76H4[25C2[12C114 0x072[7;5H[1;76H3[25C1[13C03 0x067[7;4H[1;76H2[25C0[12C097[5C1[7;3H[1;76H1[24C09[12C118 0x076[7;2H[1;76H0[25C8[12C091 0x05B[7;15H[93m[42m]
+[1;76H[30m[46m1[25C9[7C1[7;1H[36m[44m`[vagrant@lvm ~[93m[42m][36m[44m$ lsblk
+
+NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                       8:0    0   40G  0 disk 
+├─sda1                    8:1    0    1M  0 part 
+├─sda2                    8:2    0    1G  0 part /boot
+└─sda3                    8:3    0   39G  0 part 
+  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /
+  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+sdb                       8:16   0   10G  0 disk 
+sdc                       8:32   0    2G  0 disk 
+sdd                       8:48   0    1G  0 disk 
+sde                       8:64   0    1G  0 disk 
+
+[root@lvm vagrant]# mkfs.btrfs /dev/sdb
+btrfs-progs v4.9.1
+See http://btrfs.wiki.kernel.org for more information.
+
+Label:              (null)
+UUID:               a8383377-ba69-40fe-b6c0-c0c862eed531
+Node size:          16384
+Sector size:        4096
+Filesystem size:    10.00GiB
+Block group profiles:
+  Data:             single            8.00MiB
+  Metadata:         DUP               1.00GiB
+  System:           DUP               8.00MiB
+SSD detected:       no
+Incompat features:  extref, skinny-metadata
+Number of devices:  1
+Devices:[7;2H[1;76H[30m[46m2[24C10[7C2[7;2H[36m[44m`[vagrant@lvm ~[93m[42m][36m[44m$ lsblk[7;3H[1;76H[30m[46m3[25C1[7C3[7;3H[36m[44m`[vagrant@lvm ~[93m[42m][36m[44m$ lsblk[7;4H[1;76H[30m[46m4[25C2[7C4[7;4H[36m[44m [vagrant@lvm ~[93m[42m][36m[44m$ lsblk[7;5H[1;76H[30m[46m5[25C3[12C118 0x076[7;19H[36m[44m][7;6H[1;76H[30m[46m6[25C4[12C097 0x061[7;7H[1;76H7[25C5[12C103[5C7[7;8H[1;76H8[25C6[13C14 0x072[7;9H[1;76H9[25C7[12C097 0x061[7;10H[1;75H10[25C8[12C110[5CE[7;11H[1;76H1[25C9[14C6 0x074[7;12H[1;76H2[24C20[12C064 0x040[7;13H[1;76H3[25C1[12C108 0x06C[7;14H[1;76H4[25C2[13C1[5C76[7;15H[1;76H5[25C3[13C09 0x06D[7;16H[1;76H6[25C4[12C032 0x020[7;17H[1;76H7[25C5[12C126 0x07E[7;18H[1;76H8[25C6[12C093 0x05D[7;5H[93m[42m[[7;19H[1;76H[30m[46m9[25C7[13C36 0x024[7;5H[36m[44m[[7;20H[1;75H[30m[46m20[25C8[14C2[5C0[7;21H[1;76H1[25C9[12C108 0x06C[7;22H[1;76H2[24C30[13C15 0x073[7;23H[1;76H3[25C1[12C098 0x062[7;24H[1;76H4[25C2[12C10[6CC[7;25H[1;76H5[25C3[14C7[5CB[7;26H[1;76H6[25C4[12C010 0x00A[7;27H[1;75H 0[9C6   7[11C5[8;1H[1;75H26[9C7   8[10C62[13C74 0x04[9;27H[1;86H8   9[9C323[13C56 0x038[10;27H[1;86H9  10[10C78[11;27H[1;85H10  11[9C433[12;27H[1;86H1  12[10C9[13;27H[1;86H2  13[9C548[14C1[5C3[14;27H[1;86H3  14[9C604[15;27H[1;86H4  15[10C61[14C6[5C8[16;27H[1;86H5  16[9C712[17;27H[1;86H6  17[10C63[18;27H[1;86H7  18[9C814[19;27H[1;75H 0[9C8  19[10C39[13C10 0x00A[20;1H[1;75H26[9C9  20[10C66[12C116 0x074[21;27H[1;75H18[8C20  21[10C98[12C010 0x00A[22;19H[1;75H26[9C1  22[9C925[12C101 0x065[23;27H[1;75H 0[9C2  23[10C5[13C010 0x00A[24;1H[1;75H26[9C3  24[10C82[14C3[5CD[25;27H[1;86H4  25[9C1010[12C55 0x037[26;27H[1;86H3  24[9C982 [12C13 0x00D[25;27H[1;86H4  25[9C1010[12C55 0x037[26;27H[1;76H5[9C5  26[11C67[12C13 0x00D[27;26H[1;76H6[9C6  27[11C94[13C0[5CA[28;27H[1;86H7  28[10C121[11C105 0x069[29;27H[1;76H3[9C8  29[11C47[11C010 0x00A[30;24H[1;76H6[9C9  30[11C74[12C32 0x020[31;27H[1;85H30  31[10C221[32;27H[1;86H1  32[11C68[33;27H[1;76H4[9C2  33[10C312[12C10 0x00A[34;25H[1;76H6[9C3  34[11C39[12C44 0x02C[35;27H[1;76H3[9C4  35[11C80[12C10 0x00A[36;24H[1;75H10[9C5  36[11C9[37;11H[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m25[6C2[6C7[10C415[37;1H[36m[44m   ID        SIZE  PATH[39m[49m^M[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m6[6C3[6C8[11C42[12C98 0x062[37;1H[36m[44m    1    10.00GiB  /dev/sdb[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m 2[6C4[6C9[12C6[12C10 0x00A[37;1H[39m[49m^M[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m26[6C5[5C40[11C73[11C116 0x074[37;1H[36m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdc /dev/sdd[37m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m18[6C6[6C1[10C514[11C010 0x00A[37;1H[36m[44mbtrfs-progs v4.9.1[37m[K[39m[49m[3;37r[3;1H[1M[1;38r[1;75H[30m[46m26[6C7[6C2[11C41[11C101 0x065
+[37m[44m[K[37;1H[36mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m 2[6C8[6C3[11C72[11C010 0x00A[37;1H[39m[49m^M[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m26[6C9[6C4[11C99[13C3[5CD[37;1H[36m[44mLabel:              (null)[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;82H[30m[46m10[6C5[10C627[11C100 0x064[37;1H[36m[44mUUID:               38f786d4-c0b5-40eb-977b-d957bbebad5d[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m5[6C1[6C6[11C84[11C013 0x00D[37;1H[36m[44mNode size:          16384[39m[49m^M[37m[44m[K[37;26H[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m6[6C2[6C7[10C711[13C0[5CA[37;1H[36m[44mSector size:        4096[39m[49m^M[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m3[6C8[11C38[12C66 0x042[37;1H[36m[44mFilesystem size:    3.00GiB[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m3[6C4[6C9[11C63[12C10 0x00A[37;1H[36m[44mBlock group profiles:[39m[49m^M[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m6[6C5[5C50[11C90[12C32 0x020[37;1H[36m[44m  Data:             RAID0           307.12MiB[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m6[6C1[10C837[37;1H[36m[44m  Metadata:         RAID1           153.56MiB[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m7[6C2[11C84[37;1H[36m[44m  System:           RAID1             8.00MiB[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m4[6C8[6C3[10C928[12C10 0x00A[37;1H[36m[44mSSD detected:       no[39m[49m^M[37m[44m[K[39m[49m[3;37r[3;1H[1M[1;38r[1;76H[30m[46m6[6C9[6C4[11C55[12C44 0x02C
+[37m[44m[K[37;1H[36mIncompat features:  extref, skinny-metadata[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m3[5C20[6C5[11C96[12C10 0x00A[37;1H[36m[44mNumber of devices:  2[39m[49m^M[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m10[6C1[6C6[9C200[37;1H[36m[44mDevices:[39m[49m^M[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m25[6C2[6C7[11C31[37;1H[36m[44m   ID        SIZE  PATH[39m[49m^M[37m[44m[K[39m[49m[3;37r[3;1H[1M[1;38r[1;76H[30m[46m6[6C3[6C8[11C58[12C99 0x063
+[37m[44m[K[37;1H[36m    1     2.00GiB  /dev/sdc[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;83H[30m[46m4[6C9[11C87[11C100[5C4[37;1H[36m[44m    2     1.00GiB  /dev/sdd[39m[49m^M[37m[44m[K[37;27H[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m 0[6C5[5C60[11C90[11C01[5C0A[37;1H[37m[44m[K[39m[49m[2;37r[2;1H[1M[1;38r[1;75H[30m[46m25[6C6[6C1[10C116[13C3[5CD[37;1H[36m[44m[root@lvm vagrant]# df -l[39m[49m^M[37m[44m[K[37;26H[1;76H[30m[46m7[26C7[13C0[5CA[37;28H[1;82H61[5C96[9C4450[12C32 0x020
+[36m[44m[root@lvm vagrant]# df -l
+Filesystem  [8C            1K-blocks   Used Available Use% Mounted on[39m[49m^M
+[36m[44m/dev/mapper/VolGroup00-LogVol00  39269648 778048  38491600   2% /[39m[49m^M
+[36m[44mdevtmpfs                           110948      0    110948   0% /dev[39m[49m^M
+[36m[44mtmpfs  [13C      [9C120692      0    120692   0% /dev/shm[39m[49m^M
+[36m[44mtmpfs      [9C   [12C120692   4600    116092   4% /run[39m[49m^M
+[36m[44mtmpfs    [11C   [12C120692      0    120692   0% /sys/fs/cgroup[39m[49m^M
+[36m[44m/dev/sda2    [7C              1038336  64076    974260   7% /boot[39m[49m^M
+[36m[44mtmpfs                               24140      0     24140   0% /run/user/1000[39m[49m^M
+[36m[44m[root@lvm vagrant]# df -l[39m[49m^H^H^H^H^H^[[36m[44m[K[39m[49m^G[36m[44mmkdir /mnt/sdb[39m[49m^M
+[36m[44m[root@lvm vagrant]# mount /dev/sdb/ [39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K /mnt/sdb/[39m[49m^M
+[36m[44m[root@lvm vagrant]# mount /dev/sdb /mnt/sdb/[39m[49m^M^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[Kdf -h[39m[49m^M
+[36m[44mFilesystem                       Size  Used Avail Use% Mounted on[39m[49m^M
+[36m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M
+[36m[44mdevtmpfs                         109M     0  109M   0% /dev[39m[49m^M
+[36m[44mtmpfs                            118M     0  118M   0% /dev/shm[39m[49m^M
+[36m[44mtmpfs                            118M  4.5M  114M   4% /run[39m[49m^M
+[36m[44mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[39m[49m^M
+[36m[44m/dev/sda2[11C            1014M   63M  952M   7% /boot[39m[49m^M
+[36m[44mtmpfs[15C              24M     0   24M   0% /run/user/1000[39m[49m^M
+[36m[44m/dev/sdb  [10C              10G   17M  8.0G   1% /mnt/sdb[39m[49m^M
+[36m[44m[root@lvm vagrant]# btrfa devicce [39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[Ke add /dev/sdc / [39m[49m^H^[[36m[44m[Kmnr[39m[49m^H^[[36m[44m[Kt/sdb/[39m[49m^M
+[36m[44mbash: btrfa: command not found[39m[49m^M
+[36m[44m[root@lvm vagrant]# btrfa device add /dev/sdc /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P[39m[49m^[[36m[44m[1@s[39m[49m^M
+[36m[44m/dev/sdc appears to contain an existing filesystem (btrfs).[39m[49m^M
+[36m[44mERROR: use the -f option to force overwrite of /dev/sdc[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# btrfs device add /dev/sdc /mnt/sdb/ -f[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# df -h[39m[49m^M
+[36m[44mFilesystem                       Size  Used Avail Use% Mounted on[39m[49m^M
+[36m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M
+[36m[44mdevtmpfs                         109M     0  109M   0% /dev[39m[49m^M
+[36m[44mtmpfs[8C                    118M     0  118M   0% /dev/shm[39m[49m^M
+[36m[44mtmpfs[5C                       118M  4.5M  114M   4% /run[39m[49m^M
+[36m[44mtmpfs[5C                       118M     0  118M   0% /sys/fs/cgroup[39m[49m^M
+[36m[44m/dev/sda2                       1014M   63M  952M   7% /boot[39m[49m^M
+[36m[44mtmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M[37;28H[1;82H[30m[46m96+35 131[9C6337[12C98 0x062
+[36m[44mtmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M
+[36m[44m/dev/sdb  [22C  12G   17M   10G   1% /mnt/sdb[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# lsblk[39m[49m^M[37m[44m[K
+[36mNAME    [16CMAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[39m[49m^M[37m[44m[K
+[36msda  [21C8:0    0   40G  0 disk [39m[49m^M[37m[44m[K
+[36m├─sda1[20C8:1    0    1M  0 part [39m[49m^M[37m[44m[K
+[36m├─sda2[20C8:2    0    1G  0 part /boot[39m[49m^M[37m[44m[K
+[36m└─sda3   [17C8:3    0   39G  0 part [39m[49m^M[37m[44m[K
+[36m  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /[39m[49m^M[37m[44m[K
+[36m  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP]
+sdb                       8:16   0   10G  0 disk[9C[39m[49m^M[37m[44m[K
+[36msdc                       8:32   0    2G  0 disk [39m[49m^M[37m[44m[K
+[36msdd       [16C8:48   0    1G  0 disk [39m[49m^M[37m[44m[K
+[36msde                       8:64   0    1G  0 disk [39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# btr[39m[49m^G[36m[44mfs de[39m[49m^G[36m[44mv[39m[49m^G[36m[44mc[39m[49m^G[36m[44me sta[39m[49m^G[36m[44mts /n[39m[49m^H^[[36m[44m[Kmnt/sdb/[39m[49m^M
+[36m[44mbtrfs: unknown token 'devce'[39m[49m^M[37m[44m[K
+[36musage: btrfs [--help] [--version] <group> [<group>...] <command> [<args>][39m[49m^M
+^M[37m[44m[K
+[36m    btrfs subvolume create [-i <qgroupid>] [<dest>/]<name>[39m[49m^M[37m[44m[K
+[36m        Create a subvolume[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume delete [options] <subvolume> [<subvolume>...][39m[49m^M
+[36m[44m        Delete subvolume(s)[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume list [options] [-G [+|-]value] [-C [+|-]value] [--sort=gen,ogen,rootid,path] <path>[39m[49m^M
+[36m[44m        List subvolumes (and snapshots)[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume snapshot [-r] [-i <qgroupid>] <source> <dest>|[<dest>/]<name>[39m[49m^M
+[36m[44m        Create a snapshot of the subvolume[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume get-default <path>[39m[49m^M[37m[44m[K
+[36m        Get the default subvolume of a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume set-default <subvolid> <path>[39m[49m^M[37m[44m[K
+[36m        Set the default subvolume of a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume find-new <path> <lastgen>[39m[49m^M[37m[44m[K
+[36m        List the recently modified files in a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume show <subvol-path>[39m[49m^M[37m[44m[K
+[36m        Show more information of the subvolume[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume sync <path> [<subvol-id>...][39m[49m^M[37m[44m[K
+[36m        Wait until given subvolume(s) are completely removed from the filesystem.[39m[49m^M[37;28H[19;20r[19;1H[1L[1;38r[1;81H[30m[46m131[5C66[9C7940[12C45 0x02D
+[36m[44m        Wait until given subvolume(s) are completely removed from the filesystem.[39m[49m^M
+^M[37m[44m[K
+[36m    btrfs filesystem df [options] <path>[39m[49m^M[37m[44m[K
+[36m        Show space usage information for a mount point[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem du [options] <path> [<path>..][39m[49m^M
+[36m[44m        Summarize disk usage of each file.[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem show [options] [<path>|<uuid>|<device>|label][39m[49m^M
+[36m[44m        Show the structure of a filesystem[39m[49m^M[37m[44m[K[10;3H[36m  btrfs filesystem sync <path>[39m[49m^M[37m[44m[K[11;3H[36m      Force a sync on a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem defragment [options] <file>|<dir> [<file>|<dir>...][39m[49m^M
+[36m[44m   [5CDefragment a file or a directory[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem resize [devid:][+/-]<newsize>[kKmMgGtTpPeE]|[devid:]max <path>[39m[49m^M
+[36m[44m   [5CResize a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem label [<device>|<mount_point>] [<newlabel>][39m[49m^M[37m[44m[K
+[36m        Get or change the label of a filesystem[39m[49m^M
+[36m[44m    btrfs filesystem usage [options] <path> [<path>..][39m[49m^M[37m[44m[K
+[36m        Show detailed information about internal filesystem usage .[39m[49m^M[37m[44m[K[21;5H[36mbtrfs balance start [options] <path>[39m[49m^M[22;5H[36m[44m    Balance chunks across the devices[39m[49m^M[37m[44m[K[23;5H[36mbtrfs balance pause <path>[39m[49m^M[24;5H[36m[44m    Pause running balance[39m[49m^M[37m[44m[K[25;5H[36mbtrfs balance cancel <path>[39m[49m^M[37m[44m[K[26;5H[36m    Cancel running or paused balance[39m[49m^M[37m[44m[K[27;5H[36mbtrfs balance resume <path>[39m[49m^M[37m[44m[K[28;5H[36m    Resume interrupted balance[39m[49m^M[37m[44m[K[29;5H[36mbtrfs balance status [-v] <path>[39m[49m^M[37m[44m[K[30;5H[36m    Show status of running or paused balance[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[32;11H[36mdevice add [options] <device> [<device>...] <path>[39m[49m^M[33;9H[36m[44mAdd a device to a filesystem[39m[49m^M[37m[44m[K[34;11H[36mdevice delete <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[35;5H[36m[44mbtrfs device remove <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[36;5H[36m[44m    Remove a device from a filesystem[39m[49m^M[37m[44m[K[37;5H[36mbtrfs device scan [(-d|--all-devices)|<device> [<device>...]][39m[49m^M[37m[44m[K[37;28H[39m[49m[31;32r[31;1H[1L[1;38r[1;82H[30m[46m66+35 201[9C9681[11C11[5C73[2;5H[36m[44mbtrfs device scan [(-d|--all-devices)|<device> [<device>...]][39m[49m^M[37m[44m[K
+[36m        Scan devices for a btrfs filesystem[39m[49m^M[4;11H[36m[44mdevice ready <device>[39m[49m^M[37m[44m[K[5;9H[36mCheck device to see if it has all of its devices in cache for mounting[39m[49m^M[6;11H[36m[44mdevice stats [options] <path>|<device>[39m[49m^M[37m[44m[K[7;10H[36mhow device IO error statistics[39m[49m^M[37m[44m[K[8;11H[36mdevice usage [options] <path> [<path>..][39m[49m^M[37m[44m[K[9;14H[36mdetailed information about internal allocations in devices.[39m[49m^M
+^M[37m[44m[K[11;5H[36mbtrfs scrub start [-BdqrRf] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[12;5H[36m[44m    Start a new scrub. If a scrub is already running, the new one fails.[39m[49m^M[13;5H[36m[44mbtrfs scrub cancel <path>|<device>[39m[49m^M[37m[44m[K[14;5H[36m    Cancel a running scrub[39m[49m^M[37m[44m[K[15;5H[36mbtrfs scrub resume [-BdqrR] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[16;5H[36m[44m    Resume previously canceled or interrupted scrub[39m[49m^M[37m[44m[K[17;5H[36mbtrfs scrub status [-dR] <path>|<device>[39m[49m^M[37m[44m[K[18;5H[36m    Show status of running or finished scrub[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36m    btrfs check [options] <device>[39m[49m^M[21;5H[36m[44m    Check structural integrity of a filesystem (unmounted).[39m[49m^M
+^M[37m[44m[K[23;11H[36mrescue chunk-recover [options] <device>[39m[49m^M[24;9H[36m[44mRecover the chunk tree by scanning the devices one by one.[39m[49m^M[25;11H[36m[44mrescue super-recover [options] <device>[39m[49m^M[26;9H[36m[44mRecover bad superblocks from good copies[39m[49m^M[27;11H[36m[44mrescue zero-log <device>[39m[49m^M[28;9H[36m[44mClear the tree log. Usable if it's corrupted and prevents mount.[39m[49m^M
+^M[37m[44m[K[30;5H[36mbtrfs restore [options] <device> <path> | -l <device>[39m[49m^M
+[36m[44m        Try to restore files from a damaged filesystem (unmounted)[39m[49m^M[37m[44m[K[33;5H[36mbtrfs inspect-internal inode-resolve [-v] <inode> <path>[39m[49m^M[34;5H[36m[44m    Get file system paths for the given inode[39m[49m^M[37m[44m[K[35;11H[36minspect-internal logical-resolve [-Pv] [-s bufsize] <logical> <path>[39m[49m^M[36;9H[36m[44mGet file system paths for the given logical address[39m[49m^M[37;11H[36m[44minspect-internal subvolid-resolve <subvolid> <path>[39m[49m^M[37m[44m[K[37;28H[39m[49m[21;22r[21;1H[1M[1;38r[1;81H[30m[46m201[5C36[9C11340/116504b) 0099 0x063[2;11H[36m[44minspect-internal subvolid-resolve <subvolid> <path>[39m[49m^M[37m[44m[K[3;9H[36mGet file system paths for the given subvolume ID.[39m[49m^M[4;11H[36m[44minspect-internal rootid <path>[39m[49m^M[5;9H[36m[44mGet tree ID of the containing subvolume of path.[39m[49m^M[37m[44m[K[6;11H[36minspect-internal min-dev-size [options] <path>[39m[49m^M[7;9H[36m[44mGet the minimum size the device can be shrunk to. The[39m[49m^M[8;11H[36m[44minspect-internal dump-tree [options] device[39m[49m^M[9;9H[36m[44mDump tree structures from a given device[39m[49m^M[37m[44m[K
+[36m    btrfs inspect-internal dump-super [options] device [device...][39m[49m^M[11;5H[36m[44m    Dump superblock from a device in a textual form[39m[49m^M[37m[44m[K[12;5H[36mbtrfs inspect-internal tree-stats [options] <device>[39m[49m^M[37m[44m[K[13;5H[36m    Print various stats for trees[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[15;11H[36mproperty get [-t <type>] <object> [<name>][39m[49m^M[37m[44m[K[16;9H[36mGets a property from a btrfs object.[39m[49m^M[37m[44m[K[17;11H[36mproperty set [-t <type>] <object> <name> <value>[39m[49m^M[18;10H[36m[44mets a property on a btrfs object.[39m[49m^M[37m[44m[K
+[36m    btrfs property list [-t <type>] <object>[39m[49m^M[20;5H[36m[44m    Lists available properties with their descriptions for the given object.[39m[49m^M
+
+[36m[44m    btrfs send [-ve] [-p <parent>] [-c <clone-src>] [-f <outfile>] <subvol> [<subvol>...][39m[49m^M[37m[44m[K[23;5H[36m    Send the subvolume(s) to stdout.[39m[49m^M[37m[44m[K[24;5H[36mbtrfs receive [options] <mount>[39m[49m^M[37m[44m[K
+[36mbtrfs receive --dump [options][39m[49m^M[37m[44m[K[26;12H[36meive subvolumes from a stream[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[28;5H[36mbtrfs quota enable <path>[39m[49m^M[37m[44m[K
+[36m        Enable subvolume quota support for a filesystem.[39m[49m^M[30;11H[36m[44mquota disable <path>[39m[49m^M[37m[44m[K[31;9H[36mDisable subvolume quota support for a filesystem.[39m[49m^M[37m[44m[K
+[36m    btrfs quota rescan [-sw] <path>[39m[49m^M[33;5H[36m[44m    Trash all qgroup numbers and scan the metadata again with the current config.[39m[49m^M
+^M[37m[44m[K[35;11H[36mqgroup assign [options] <src> <dst> <path>[39m[49m^M[37m[44m[K[36;9H[36mAssign SRC as the child qgroup of DST[39m[49m^M[37m[44m[K[37;11H[36mqgroup remove <src> <dst> <path>[39m[49m^M[37m[44m[K[37;28H[1;82H[30m[46m36[5C71[10C272[13C07 0x007[2;11H[36m[44mqgroup remove <src> <dst> <path>[39m[49m^M[37m[44m[K[3;9H[36mRemove a child qgroup SRC from DST.[39m[49m^M[37m[44m[K[4;11H[36mqgroup create <qgroupid> <path>[39m[49m^M[5;9H[36m[44mCreate a subvolume quota group.[39m[49m^M[37m[44m[K[6;11H[36mqgroup destroy <qgroupid> <path>[39m[49m^M[37m[44m[K[7;9H[36mDestroy a quota group.[39m[49m^M[37m[44m[K[8;11H[36mqgroup show [options] <path>[39m[49m^M[37m[44m[K[9;9H[36mShow subvolume quota groups.[39m[49m^M[37m[44m[K[10;11H[36mqgroup limit [options] <size>|none [<qgroupid>] <path>[39m[49m^M[37m[44m[K[11;9H[36mSet the limits a subvolume quota group.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[13;5H[36mbtrfs replace start [-Bfr] <srcdev>|<devid> <targetdev> <mount_point>[39m[49m^M
+[36m[44m        Replace device of a btrfs filesystem.[39m[49m^M[15;11H[36m[44mreplace status [-1] <mount_point>[39m[49m^M[37m[44m[K[16;9H[36mPrint status and progress information of a running device replace[39m[49m^M[17;11H[36m[44mreplace cancel <mount_point>[39m[49m^M[37m[44m[K[18;9H[36mCancel a running device replace operation.[39m[49m^M
+^M[37m[44m[K[20;5H[36mbtrfs help [--full][39m[49m^M[37m[44m[K
+[36m        Display help information[39m[49m^M[22;11H[36m[44mversion[39m[49m^M[37m[44m[K[23;9H[36mDisplay btrfs-progs version[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36mUse --help as an argument for information on a specific group or command.[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# btrfs devce stats /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1@i[39m[49m^M
+[36m[44m[/dev/sdb].write_io_errs    0[39m[49m^M
+[36m[44m[/dev/sdb].read_io_errs     0
+[/dev/sdb].flush_io_errs    0[39m[49m^M[37m[44m[K
+[36m[/dev/sdb].corruption_errs  0[39m[49m^M[37m[44m[K
+[36m[/dev/sdb].generation_errs  0[39m[49m^M[37m[44m[K
+[36m[/dev/sdc].write_io_errs    0[39m[49m^M[37m[44m[K
+[36m[/dev/sdc].read_io_errs     0[39m[49m^M[37m[44m[K
+[36m[/dev/sdc].flush_io_errs    0[39m[49m^M
+[36m[44m[/dev/sdc].corruption_errs  0[39m[49m^M[37m[44m[K
+[36m[/dev/sdc].generation_errs  0[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# btrfs filesystem show --mounted[39m[49m^M[37;28H[1;82H[30m[46m71+35 306[10C5939
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# btrfs filesystem show --mounted[39m[49m^M
+[36m[44mLabel: none  uuid: a8383377-ba69-40fe-b6c0-c0c862eed531[39m[49m^M
+[94m[44m<------>[36mTotal devices 2 FS bytes used 384.00KiB[39m[49m^M
+[94m[44m<------>[36mdevid    1 size 10.00GiB used 2.02GiB path /dev/sdb[39m[49m^M
+[94m[44m<------>[36mdevid    2 size 2.00GiB used 0.00B path /dev/sdc[39m[49m^M
+^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# btrfs filesystem show --mounted[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[3Pdevice[K
+Filesystem                       Size  Used Avail Use% Mounted on[39m[49m^M
+[36m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M[37m[44m[K
+[36mdevtmpfs                         109M     0  109M   0% /dev[39m[49m^M
+[36m[44mtmpfs                            118M     0  118M   0% /dev/shm[39m[49m^M
+[36m[44mtmpfs                            118M  4.5M  114M   4% /run[39m[49m^M[37m[44m[K
+[36mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[39m[49m^M
+[36m[44m/dev/sda2                       1014M   63M  952M   7% /boot[39m[49m^M
+[36m[44mtmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M[37m[44m[K
+[36m/dev/sdb                          12G   17M   10G   1% /mnt/sdb[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /mnt/sdb/[39m[49m^M
+[36m[44mtotal 0[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[Ca /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^M
+[36m[44mtotal 16[39m[49m^M[37m[44m[K
+[36mdrwxr-xr-x. 1 root root  0 Feb 19 09:11 [39m[49m^[[36m[44m[0m[39m[49m^[[36m[44m[38;5;27m.[39m[49m^[[36m[44m[0m[39m[49m^M
+[36m[44mdrwxr-xr-x. 3 root root 17 Feb 19 09:12 [39m[49m^[[36m[44m[38;5;27m..[39m[49m^[[36m[44m[0m[39m[49m^M[24;2H[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# [39m[49m^M^[[36m[44m[K[root@lvm vagrant]# [39m[49m^M^[[36m[44m[K[root@lvm vagrant]# ls -la /mnt/sdb/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H
+[36m[44mtotal 0[39m[49m^M[37m[44m[K[26;50H[36mls -l /var/opt/[39m[49m^H^H^H^H^H^H[19C[[36m[44m[K[39m[49m^G[36m[44mmkdir /dev/sd[39m[49m^G[36m[44mb/opt[39m[49m^G^M
+[36m[44mmkdir: cannot create directory ‘/dev/sdb/opt’: Not a directory[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mkdir /dev/sdb/opt[39m[49m^H^H^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mount /var/opt/ /mnt/[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[Kdev/sd[39m[49m^G[36m[44mb [39m[49m^H^[[36m[44m[K/[39m[49m^G^G^G^G^G^G[36m[44mo[39m[49m^G^G^G[36m[44mo[39m[49m^H^[[36m[44m[Kp[39m[49m^G^G[30;1H[36m[44mmount: mount point /dev/sdb/opt is not a directory[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mount /var/opt/ /dev/sdb/opt[39m[49m^H^H^H^H^H^[[36m[44m[1P/opt[39m[49m^H^H^H^H^H^[[36m[44m[1P/opt[39m[49m^H^H^H^H^H^[[36m[44m[1P/opt[39m[49m^H^H^H^H[32;1H[36m[44mumount: /mnt/: not mounted[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# umount /mnt/sdb/[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# moun[39m[49m^G[36m[44mt /v[39m[49m^G[36m[44mar/opt/ /dev/sd[39m[49m^G[36m[44mb[39m[49m^M
+[36m[44mmount:  /var/opt is not a block device[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mount /var/opt/ /dev/sdb[39m[49m^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /dev/sdb[39m[49m^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /dev/sdb[37;50Hdf -h[39m[49m^M[37m[44m[K[37;28H[39m[49m[3;16r[3;1H[6M[1;38r[1;81H[30m[46m306[5C41[10C800[12C101 0x065[2;50H[36m[44mdf -h[39m[49m^M[37m[44m[K[11;1H[36m/dev/sdb                          12G   17M   10G   1% /var/opt[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# cd [39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[Ktouch file {}[39m[49m^H[36m[44m1}[39m[49m^H[36m[44m/}[39m[49m^H[36m[44m/}[39m[49m^H^H^[[36m[44m[1P}[39m[49m^H^H^[[36m[44m[1P}[39m[49m^H[36m[44m.}[39m[49m^H[36m[44m.}[39m[49m^H[36m[44m2}[39m[49m^H[36m[44m0}[39m[49m^H^[[36m[44m[C /va[37m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /var/opt/[39m[49m^M[37m[44m[K
+[36mtotal 0[39m[49m^M[37m[44m[K
+[36mdrwxr-xr-x. 1 root root 0 Feb 19 11:05 [39m[49m^[[36m[44m[0m[39m[49m^[[36m[44m[38;5;27mopt[39m[49m^[[36m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /var/opt/[39m[49m^H^H^H^H^H^H^H^H^H^H[36m[44ma /var/opt/[39m[49m^H^H^H^H^H^H^H^H^H^H^M[37m[44m[K
+[36mtotal 16[39m[49m^M[37m[44m[K
+[36mdrwxr-xr-x.  1 root root   6 Feb 19 11:09 [39m[49m^[[36m[44m[0m[39m[49m^[[36m[44m[38;5;27m.[39m[49m^[[36m[44m[0m
+drwxr-xr-x. 18 root root 254 Feb 19 09:06 [39m[49m^[[36m[44m[38;5;27m..[39m[49m^[[36m[44m[0m[39m[49m^M
+[36m[44mdrwxr-xr-x.  1 root root   0 Feb 19 11:05 [39m[49m^[[36m[44m[38;5;27mopt[39m[49m^[[36m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# cd /v[39m[49m^G[36m[44mar/opt/[39m[49m^M
+^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# ll[39m[49m^M[37m[44m[K
+[36mtotal 0[39m[49m^M[37m[44m[K
+[36mdrwxr-xr-x. 1 root root 0 Feb 19 11:05 [39m[49m^[[36m[44m[0m[39m[49m^[[36m[44m[38;5;27mopt[39m[49m^[[36m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# cd opt/[39m[49m^M[26;16H[36m[44mvar/opt/opt[39m[49m^G[36m[44m[root@lvm opt]# ll[39m[49m^M[37m[44m[K
+[36mtotal 0[39m[49m^M[37m[44m[K[28;16H[36mvar/opt/opt[39m[49m^G[36m[44m[root@lvm opt]# ll[39m[49m^H^H[36m[44mcd opt/[39m[49m^H^H^H^H^H^H^H[36m[44mll[39m[49m^[[36m[44m[K[39m[49m^H^H[36m[44mcd /var/opt/[39m[49m^H^H^H^H^H^H^H^H^H^H^H[5C[36m[44m4@ls -la[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[29;16H[36m[44mvar/opt[39m[49m^G[36m[44m[root@lvm opt]# ll[39m[49m^M[37m[44m[K
+[36mtotal 0[39m[49m^M[37m[44m[K
+[36mdrwxr-xr-x. 1 root root 0 Feb 19 11:05 [39m[49m^[[36m[44m[0m[39m[49m^[[36m[44m[38;5;27mopt[39m[49m^[[36m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# touch file{}[39m[49m^H[36m[44m1}[39m[49m^H[36m[44m.}[39m[49m^H[36m[44m.}[39m[49m^H[36m[44m2}[39m[49m^H[36m[44m0}[39m[49m^H^M[33;16H[36m[44mvar/opt[39m[49m^G[36m[44m[root@lvm opt]# ll[39m[49m^M[37m[44m[K
+[36mtotal 0[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file1[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file10[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file11[39m[49m^M[37m[44m[K[37;28H[39m[49m[3;35r[3;1H[24L[1;38r[1;82H[30m[46m41[5C76[10C9851[13C2[5C6
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file11[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file12[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file13[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file14[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file15[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file16[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file17[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file18[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file19[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file2[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file20[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file3[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file4[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file5[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file6[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file7[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file8[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file9[39m[49m^M[37m[44m[K
+[36mdrwxr-xr-x. 1 root root 0 Feb 19 11:05 [39m[49m^[[36m[44m[0m[39m[49m^[[36m[44m[38;5;27mopt[39m[49m^[[36m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# [39m[49m^M^[[36m[44m[K[root@lvm opt]# [39m[49m^M^[[36m[44m[K[root@lvm opt]# fd -f[39m[49m^M[37m[44m[K
+[36mbash: fd: command not found[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# fd -f[39m[49m^H^H^H^H^[[36m[44m[1P -f[39m[49m^H^H^H^H^[[36m[44m[1P -f[39m[49m^H^H^H[36m[44md -f[39m[49m^H^H^H[36m[44mf -f[39m[49m^H^H^H^M[37m[44m[K
+[36mdf: invalid option -- 'f'[39m[49m^M[37m[44m[K
+[36mTry 'df --help' for more information.[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# df -f[39m[49m^H^[[36m[44m[Kh[39m[49m^M[37m[44m[K[36;1H[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# lslsblk[39m[49m^M
+[36m[44mbash: lslsblk: command not found[39m[49m^M[37m[44m[K[37;28H[1;75H[30m[46m 2[5C76+35 411[9C21756[11C010 0x00A
+[36m[44mbash: lslsblk: command not found[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# lslsblk[39m[49m^H^H^H^H^H^H^[[36m[44m[1Plsblk[39m[49m^H^H^H^H^H^[[36m[44m[1Psblk[39m[49m^H^H^H^H^H^M
+[36m[44mNAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[39m[49m^M
+[36m[44msda                       8:0    0   40G  0 disk [39m[49m^M
+[36m[44m├─sda1                    8:1    0    1M  0 part [39m[49m^M
+[36m[44m├─sda2                    8:2    0    1G  0 part /boot[39m[49m^M
+[36m[44m└─sda3                    8:3    0   39G  0 part [39m[49m^M
+[36m[44m  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /[39m[49m^M
+[36m[44m  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP][39m[49m^M
+[36m[44msdb                       8:16   0   10G  0 disk /var/opt[39m[49m^M
+[36m[44msdc                       8:32   0    2G  0 disk [39m[49m^M
+[36m[44msdd                       8:48   0    1G  0 disk [39m[49m^M
+[36m[44msde                       8:64   0    1G  0 disk [39m[49m^M
+^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# btrf[39m[49m^G[36m[44ms su[39m[49m^G[36m[44mb[39m[49m^G^G^G^G^G^G^G^G[36m[44mbvoolume [39m[49m^H^H^H^H^H^H^H^H^H^[[36m[44m[1P[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^G^G^G^G
+[36m[44mbtrfs: unknown token 'subvoolume'[39m[49m^M[37m[44m[K
+[36musage: btrfs [--help] [--version] <group> [<group>...] <command> [<args>][39m[49m^M
+^M[37m[44m[K
+[36m    btrfs subvolume create [-i <qgroupid>] [<dest>/]<name>[39m[49m^M
+[36m[44m        Create a subvolume[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume delete [options] <subvolume> [<subvolume>...][39m[49m^M[37m[44m[K
+[36m        Delete subvolume(s)
+    btrfs subvolume list [options] [-G [+|-]value] [-C [+|-]value] [--sort=gen,ogen,rootid,path] <path>
+        List subvolumes (and snapshots)[39m[49m^M
+[36m[44m    btrfs subvolume snapshot [-r] [-i <qgroupid>] <source> <dest>|[<dest>/]<name>[39m[49m^M
+[36m[44m        Create a snapshot of the subvolume[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume get-default <path>[39m[49m^M[37m[44m[K
+[36m        Get the default subvolume of a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume set-default <subvolid> <path>[39m[49m^M[37m[44m[K
+[36m        Set the default subvolume of a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume find-new <path> <lastgen>[39m[49m^M[37m[44m[K
+[36m        List the recently modified files in a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume show <subvol-path>[39m[49m^M[37m[44m[K
+[36m        Show more information of the subvolume[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume sync <path> [<subvol-id>...][39m[49m^M[37m[44m[K
+[36m        Wait until given subvolume(s) are completely removed from the filesystem.[39m[49m^M
+^M[37m[44m[K[39m[49m[18;19r[18;1H[1L[1;38r[1;75H[30m[46m27 L:[411[5C46[10C3369[12C98 0x062
+[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem df [options] <path>[39m[49m^M[37m[44m[K
+[36m        Show space usage information for a mount point[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem du [options] <path> [<path>..][39m[49m^M
+[36m[44m        Summarize disk usage of each file.[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem show [options] [<path>|<uuid>|<device>|label][39m[49m^M
+[36m[44m        Show the structure of a filesystem[39m[49m^M[37m[44m[K[9;3H[36m  btrfs filesystem sync <path>[39m[49m^M[37m[44m[K[10;3H[36m      Force a sync on a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem defragment [options] <file>|<dir> [<file>|<dir>...][39m[49m^M
+[36m[44m   [5CDefragment a file or a directory[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem resize [devid:][+/-]<newsize>[kKmMgGtTpPeE]|[devid:]max <path>[39m[49m^M
+[36m[44m   [5CResize a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem label [<device>|<mount_point>] [<newlabel>][39m[49m^M[37m[44m[K
+[36m        Get or change the label of a filesystem[39m[49m^M
+[36m[44m    btrfs filesystem usage [options] <path> [<path>..][39m[49m^M[37m[44m[K
+[36m        Show detailed information about internal filesystem usage .[39m[49m^M[37m[44m[K[20;5H[36mbtrfs balance start [options] <path>[39m[49m^M[21;5H[36m[44m    Balance chunks across the devices[39m[49m^M[37m[44m[K[22;5H[36mbtrfs balance pause <path>[39m[49m^M[23;5H[36m[44m    Pause running balance[39m[49m^M[37m[44m[K[24;5H[36mbtrfs balance cancel <path>[39m[49m^M[37m[44m[K[25;5H[36m    Cancel running or paused balance[39m[49m^M[37m[44m[K[26;5H[36mbtrfs balance resume <path>[39m[49m^M[37m[44m[K[27;5H[36m    Resume interrupted balance[39m[49m^M[37m[44m[K[28;5H[36mbtrfs balance status [-v] <path>[39m[49m^M[37m[44m[K[29;5H[36m    Show status of running or paused balance[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[31;11H[36mdevice add [options] <device> [<device>...] <path>[39m[49m^M[32;9H[36m[44mAdd a device to a filesystem[39m[49m^M[37m[44m[K[33;11H[36mdevice delete <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[34;5H[36m[44mbtrfs device remove <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[35;5H[36m[44m    Remove a device from a filesystem[39m[49m^M[37m[44m[K[36;5H[36mbtrfs device scan [(-d|--all-devices)|<device> [<device>...]][39m[49m^M[37m[44m[K
+[36m        Scan devices for a btrfs filesystem[39m[49m^M[37;28H[30;31r[30;1H[1L[1;38r[1;82H[30m[46m46[5C81[10C5106[11C104[5C8
+[36m[44m        Scan devices for a btrfs filesystem[39m[49m^M[3;11H[36m[44mdevice ready <device>[39m[49m^M[37m[44m[K[4;9H[36mCheck device to see if it has all of its devices in cache for mounting[39m[49m^M[5;11H[36m[44mdevice stats [options] <path>|<device>[39m[49m^M[37m[44m[K[6;10H[36mhow device IO error statistics[39m[49m^M[37m[44m[K[7;11H[36mdevice usage [options] <path> [<path>..][39m[49m^M[37m[44m[K[8;14H[36mdetailed information about internal allocations in devices.[39m[49m^M
+^M[37m[44m[K[10;5H[36mbtrfs scrub start [-BdqrRf] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[11;5H[36m[44m    Start a new scrub. If a scrub is already running, the new one fails.[39m[49m^M[12;5H[36m[44mbtrfs scrub cancel <path>|<device>[39m[49m^M[37m[44m[K[13;5H[36m    Cancel a running scrub[39m[49m^M[37m[44m[K[14;5H[36mbtrfs scrub resume [-BdqrR] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[15;5H[36m[44m    Resume previously canceled or interrupted scrub[39m[49m^M[37m[44m[K[16;5H[36mbtrfs scrub status [-dR] <path>|<device>[39m[49m^M[37m[44m[K[17;5H[36m    Show status of running or finished scrub[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36m    btrfs check [options] <device>[39m[49m^M[20;5H[36m[44m    Check structural integrity of a filesystem (unmounted).[39m[49m^M
+^M[37m[44m[K[22;11H[36mrescue chunk-recover [options] <device>[39m[49m^M[23;9H[36m[44mRecover the chunk tree by scanning the devices one by one.[39m[49m^M[24;11H[36m[44mrescue super-recover [options] <device>[39m[49m^M[25;9H[36m[44mRecover bad superblocks from good copies[39m[49m^M[26;11H[36m[44mrescue zero-log <device>[39m[49m^M[27;9H[36m[44mClear the tree log. Usable if it's corrupted and prevents mount.[39m[49m^M
+^M[37m[44m[K[29;5H[36mbtrfs restore [options] <device> <path> | -l <device>[39m[49m^M
+[36m[44m        Try to restore files from a damaged filesystem (unmounted)[39m[49m^M[37m[44m[K[32;5H[36mbtrfs inspect-internal inode-resolve [-v] <inode> <path>[39m[49m^M[33;5H[36m[44m    Get file system paths for the given inode[39m[49m^M[37m[44m[K[34;11H[36minspect-internal logical-resolve [-Pv] [-s bufsize] <logical> <path>[39m[49m^M[35;9H[36m[44mGet file system paths for the given logical address[39m[49m^M[36;11H[36m[44minspect-internal subvolid-resolve <subvolid> <path>[39m[49m^M[37m[44m[K[37;9H[36mGet file system paths for the given subvolume ID.[39m[49m^M[37;28H[20;21r[20;1H[1M[1;38r[1;82H[30m[46m81+35 516[10C674[13C17 0x075[2;9H[36m[44mGet file system paths for the given subvolume ID.[39m[49m^M[3;11H[36m[44minspect-internal rootid <path>[39m[49m^M[4;9H[36m[44mGet tree ID of the containing subvolume of path.[39m[49m^M[37m[44m[K[5;11H[36minspect-internal min-dev-size [options] <path>[39m[49m^M[6;9H[36m[44mGet the minimum size the device can be shrunk to. The[39m[49m^M[7;11H[36m[44minspect-internal dump-tree [options] device[39m[49m^M[8;9H[36m[44mDump tree structures from a given device[39m[49m^M[37m[44m[K
+[36m    btrfs inspect-internal dump-super [options] device [device...][39m[49m^M[10;5H[36m[44m    Dump superblock from a device in a textual form[39m[49m^M[37m[44m[K[11;5H[36mbtrfs inspect-internal tree-stats [options] <device>[39m[49m^M[37m[44m[K[12;5H[36m    Print various stats for trees[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[14;11H[36mproperty get [-t <type>] <object> [<name>][39m[49m^M[37m[44m[K[15;9H[36mGets a property from a btrfs object.[39m[49m^M[37m[44m[K[16;11H[36mproperty set [-t <type>] <object> <name> <value>[39m[49m^M[17;10H[36m[44mets a property on a btrfs object.[39m[49m^M[37m[44m[K
+[36m    btrfs property list [-t <type>] <object>[39m[49m^M[19;5H[36m[44m    Lists available properties with their descriptions for the given object.[39m[49m^M
+
+[36m[44m    btrfs send [-ve] [-p <parent>] [-c <clone-src>] [-f <outfile>] <subvol> [<subvol>...][39m[49m^M[37m[44m[K[22;5H[36m    Send the subvolume(s) to stdout.[39m[49m^M[37m[44m[K[23;5H[36mbtrfs receive [options] <mount>[39m[49m^M[37m[44m[K
+[36mbtrfs receive --dump [options][39m[49m^M[37m[44m[K[25;12H[36meive subvolumes from a stream[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[27;5H[36mbtrfs quota enable <path>[39m[49m^M[37m[44m[K
+[36m        Enable subvolume quota support for a filesystem.[39m[49m^M[29;11H[36m[44mquota disable <path>[39m[49m^M[37m[44m[K[30;9H[36mDisable subvolume quota support for a filesystem.[39m[49m^M[37m[44m[K
+[36m    btrfs quota rescan [-sw] <path>[39m[49m^M[32;5H[36m[44m    Trash all qgroup numbers and scan the metadata again with the current config.[39m[49m^M
+^M[37m[44m[K[34;11H[36mqgroup assign [options] <src> <dst> <path>[39m[49m^M[37m[44m[K[35;9H[36mAssign SRC as the child qgroup of DST[39m[49m^M[37m[44m[K[36;11H[36mqgroup remove <src> <dst> <path>[39m[49m^M[37m[44m[K[37;9H[36mRemove a child qgroup SRC from DST.[39m[49m^M[37m[44m[K[37;28H[1;81H[30m[46m516[5C51[10C8309[11C09[5C61[2;9H[36m[44mRemove a child qgroup SRC from DST.[39m[49m^M[37m[44m[K[3;11H[36mqgroup create <qgroupid> <path>[39m[49m^M[4;9H[36m[44mCreate a subvolume quota group.[39m[49m^M[37m[44m[K[5;11H[36mqgroup destroy <qgroupid> <path>[39m[49m^M[37m[44m[K[6;9H[36mDestroy a quota group.[39m[49m^M[37m[44m[K[7;11H[36mqgroup show [options] <path>[39m[49m^M[37m[44m[K[8;9H[36mShow subvolume quota groups.[39m[49m^M[37m[44m[K[9;11H[36mqgroup limit [options] <size>|none [<qgroupid>] <path>[39m[49m^M[37m[44m[K[10;9H[36mSet the limits a subvolume quota group.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[12;5H[36mbtrfs replace start [-Bfr] <srcdev>|<devid> <targetdev> <mount_point>[39m[49m^M
+[36m[44m        Replace device of a btrfs filesystem.[39m[49m^M[14;11H[36m[44mreplace status [-1] <mount_point>[39m[49m^M[37m[44m[K[15;9H[36mPrint status and progress information of a running device replace[39m[49m^M[16;11H[36m[44mreplace cancel <mount_point>[39m[49m^M[37m[44m[K[17;9H[36mCancel a running device replace operation.[39m[49m^M
+^M[37m[44m[K[19;5H[36mbtrfs help [--full][39m[49m^M[37m[44m[K
+[36m        Display help information[39m[49m^M[21;11H[36m[44mversion[39m[49m^M[37m[44m[K[22;9H[36mDisplay btrfs-progs version[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36mUse --help as an argument for information on a specific group or command.[39m[49m^M
+^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# btrfs subvoolume list /mnt[39m[49m^M
+[36m[44mbtrfs: unknown token 'subvoolume'[39m[49m^M
+[36m[44musage: btrfs [--help] [--version] <group> [<group>...] <command> [<args>][39m[49m^M
+^M[37m[44m[K[29;11H[36msubvolume create [-i <qgroupid>] [<dest>/]<name>[39m[49m^M[30;9H[36m[44mCreate a subvolume[39m[49m^M[37m[44m[K[31;11H[36msubvolume delete [options] <subvolume> [<subvolume>...][39m[49m^M[32;9H[36m[44mDelete subvolume(s)[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume list [options] [-G [+|-]value] [-C [+|-]value] [--sort=gen,ogen,rootid,path] <path>[39m[49m^M[34;5H[36m[44m    List subvolumes (and snapshots)[39m[49m^M[37m[44m[K[35;5H[36mbtrfs subvolume snapshot [-r] [-i <qgroupid>] <source> <dest>|[<dest>/]<name>[39m[49m^M[36;5H[36m[44m    Create a snapshot of the subvolume[37;5Hbtrfs subvolume get-default <path>[39m[49m^M[37m[44m[K[37;28H[39m[49m[28;29r[28;1H[1L[1;38r[11;12r[11;1H[1L[1;38r[1;82H[30m[46m51[5C86[10C9937[13C8[5C2[2;5H[36m[44mbtrfs subvolume get-default <path>[39m[49m^M[37m[44m[K[3;5H[36m    Get the default subvolume of a filesystem[39m[49m^M[4;5H[36m[44mbtrfs subvolume set-default <subvolid> <path>[39m[49m^M[5;5H[36m[44m    Set the default subvolume of a filesystem[39m[49m^M[6;5H[36m[44mbtrfs subvolume find-new <path> <lastgen>[39m[49m^M[7;5H[36m[44m    List the recently modified files in a filesystem[39m[49m^M[8;5H[36m[44mbtrfs subvolume show <subvol-path>[39m[49m^M[9;5H[36m[44m    Show more information of the subvolume[39m[49m^M[37m[44m[K[10;5H[36mbtrfs subvolume sync <path> [<subvol-id>...][39m[49m^M
+[36m[44m        Wait until given subvolume(s) are completely removed from the filesystem.[39m[49m^M[37m[44m[K[13;5H[36mbtrfs filesystem df [options] <path>[39m[49m^M[37m[44m[K[14;5H[36m    Show space usage information for a mount point[39m[49m^M[15;5H[36m[44mbtrfs filesystem du [options] <path> [<path>..][39m[49m^M[37m[44m[K[16;5H[36m    Summarize disk usage of each file.[39m[49m^M[17;5H[36m[44mbtrfs filesystem show [options] [<path>|<uuid>|<device>|label][39m[49m^M
+[36m[44m        Show the structure of a filesystem[39m[49m^M[19;11H[36m[44mfilesystem sync <path>[39m[49m^M[20;9H[36m[44mForce a sync on a filesystem[39m[49m^M[21;11H[36m[44mfilesystem defragment [options] <file>|<dir> [<file>|<dir>...][39m[49m^M[22;10H[36m[44mefragment a file or a directory[39m[49m^M
+[36m[44m    btrfs filesystem resize [devid:][+/-]<newsize>[kKmMgGtTpPeE]|[devid:]max <path>[39m[49m^M
+[36m[44m        Resize a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem label [<device>|<mount_point>] [<newlabel>][39m[49m^M[37m[44m[K
+[36m        Get or change the label of a filesystem[39m[49m^M
+[36m[44m    btrfs filesystem usage [options] <path> [<path>..][39m[49m^M[37m[44m[K
+[36m        Show detailed information about internal filesystem usage .[39m[49m^M[37m[44m[K[30;5H[36mbtrfs balance start [options] <path>[39m[49m^M[31;5H[36m[44m    Balance chunks across the devices[39m[49m^M[37m[44m[K[32;5H[36mbtrfs balance pause <path>[39m[49m^M[33;5H[36m[44m    Pause running balance[39m[49m^M[37m[44m[K[34;5H[36mbtrfs balance cancel <path>[39m[49m^M[37m[44m[K[35;5H[36m    Cancel running or paused balance[39m[49m^M[37m[44m[K[36;5H[36mbtrfs balance resume <path>[39m[49m^M[37m[44m[K[37;5H[36m    Resume interrupted balance[39m[49m^M[37m[44m[K[37;28H[39m[49m[28;29r[28;1H[1M[1;38r[1;82H[30m[46m86+35 621[9C31630[12C32 0x020[2;5H[36m[44m    Resume interrupted balance[39m[49m^M[37m[44m[K[3;5H[36mbtrfs balance status [-v] <path>[39m[49m^M[37m[44m[K[4;5H[36m    Show status of running or paused balance[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[6;11H[36mdevice add [options] <device> [<device>...] <path>[39m[49m^M[7;9H[36m[44mAdd a device to a filesystem[39m[49m^M[37m[44m[K[8;11H[36mdevice delete <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[9;5H[36m[44mbtrfs device remove <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[10;5H[36m[44m    Remove a device from a filesystem[39m[49m^M[37m[44m[K[11;5H[36mbtrfs device scan [(-d|--all-devices)|<device> [<device>...]][39m[49m^M[37m[44m[K
+[36m        Scan devices for a btrfs filesystem[39m[49m^M[13;11H[36m[44mdevice ready <device>[39m[49m^M[37m[44m[K[14;9H[36mCheck device to see if it has all of its devices in cache for mounting[39m[49m^M[15;11H[36m[44mdevice stats [options] <path>|<device>[39m[49m^M[37m[44m[K[16;10H[36mhow device IO error statistics[39m[49m^M[37m[44m[K[17;11H[36mdevice usage [options] <path> [<path>..][39m[49m^M[37m[44m[K[18;14H[36mdetailed information about internal allocations in devices.[39m[49m^M
+^M[37m[44m[K[20;5H[36mbtrfs scrub start [-BdqrRf] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[21;5H[36m[44m    Start a new scrub. If a scrub is already running, the new one fails.[39m[49m^M[22;5H[36m[44mbtrfs scrub cancel <path>|<device>[39m[49m^M[37m[44m[K[23;5H[36m    Cancel a running scrub[39m[49m^M[37m[44m[K[24;5H[36mbtrfs scrub resume [-BdqrR] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[25;5H[36m[44m    Resume previously canceled or interrupted scrub[39m[49m^M[37m[44m[K[26;5H[36mbtrfs scrub status [-dR] <path>|<device>[39m[49m^M[37m[44m[K[27;5H[36m    Show status of running or finished scrub[39m[49m^M[37m[44m[K
+
+[36m    btrfs check [options] <device>[39m[49m^M[37m[44m[K[30;5H[36m    Check structural integrity of a filesystem (unmounted).[39m[49m^M
+^M[37m[44m[K[32;11H[36mrescue chunk-recover [options] <device>[39m[49m^M[33;9H[36m[44mRecover the chunk tree by scanning the devices one by one.[39m[49m^M[34;11H[36m[44mrescue super-recover [options] <device>[39m[49m^M[35;9H[36m[44mRecover bad superblocks from good copies[39m[49m^M[36;11H[36m[44mrescue zero-log <device>[39m[49m^M[37;9H[36m[44mClear the tree log. Usable if it's corrupted and prevents mount.[39m[49m^M[37;28H[5;6r[5;1H[1L[1;38r[1;81H[30m[46m621[5C56[10C3341[11C104 0x068[2;9H[36m[44mClear the tree log. Usable if it's corrupted and prevents mount.[39m[49m^M
+^M[37m[44m[K[4;5H[36mbtrfs restore [options] <device> <path> | -l <device>[39m[49m^M
+[36m[44m        Try to restore files from a damaged filesystem (unmounted)[39m[49m^M[37m[44m[K[7;5H[36mbtrfs inspect-internal inode-resolve [-v] <inode> <path>[39m[49m^M[8;5H[36m[44m    Get file system paths for the given inode[39m[49m^M[37m[44m[K[9;11H[36minspect-internal logical-resolve [-Pv] [-s bufsize] <logical> <path>[39m[49m^M[10;9H[36m[44mGet file system paths for the given logical address[39m[49m^M[11;11H[36m[44minspect-internal subvolid-resolve <subvolid> <path>[39m[49m^M[37m[44m[K[12;9H[36mGet file system paths for the given subvolume ID.[39m[49m^M[13;11H[36m[44minspect-internal rootid <path>[39m[49m^M[14;9H[36m[44mGet tree ID of the containing subvolume of path.[39m[49m^M[37m[44m[K[15;11H[36minspect-internal min-dev-size [options] <path>[39m[49m^M[16;9H[36m[44mGet the minimum size the device can be shrunk to. The[39m[49m^M[17;11H[36m[44minspect-internal dump-tree [options] device[39m[49m^M[18;9H[36m[44mDump tree structures from a given device[39m[49m^M[37m[44m[K
+[36m    btrfs inspect-internal dump-super [options] device [device...][39m[49m^M[20;5H[36m[44m    Dump superblock from a device in a textual form[39m[49m^M[37m[44m[K[21;5H[36mbtrfs inspect-internal tree-stats [options] <device>[39m[49m^M[37m[44m[K[22;5H[36m    Print various stats for trees[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[24;11H[36mproperty get [-t <type>] <object> [<name>][39m[49m^M[37m[44m[K[25;9H[36mGets a property from a btrfs object.[39m[49m^M[37m[44m[K[26;11H[36mproperty set [-t <type>] <object> <name> <value>[39m[49m^M[27;10H[36m[44mets a property on a btrfs object.[39m[49m^M[37m[44m[K
+[36m    btrfs property list [-t <type>] <object>[39m[49m^M[29;5H[36m[44m    Lists available properties with their descriptions for the given object.[39m[49m^M
+^M[37m[44m[K
+[36m    btrfs send [-ve] [-p <parent>] [-c <clone-src>] [-f <outfile>] <subvol> [<subvol>...][39m[49m^M[32;5H[36m[44m    Send the subvolume(s) to stdout.[39m[49m^M[37m[44m[K[33;5H[36mbtrfs receive [options] <mount>[39m[49m^M[37m[44m[K
+[36mbtrfs receive --dump [options][39m[49m^M[37m[44m[K[35;12H[36meive subvolumes from a stream[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[37;5H[36mbtrfs quota enable <path>[39m[49m^M[37m[44m[K[37;28H[1;82H[30m[46m56[5C91[10C4872[12C1[5C72[2;5H[36m[44mbtrfs quota enable <path>[39m[49m^M[37m[44m[K
+[36m        Enable subvolume quota support for a filesystem.[39m[49m^M[4;11H[36m[44mquota disable <path>[39m[49m^M[37m[44m[K[5;9H[36mDisable subvolume quota support for a filesystem.[39m[49m^M[37m[44m[K
+[36m    btrfs quota rescan [-sw] <path>[39m[49m^M[7;5H[36m[44m    Trash all qgroup numbers and scan the metadata again with the current config.[39m[49m^M
+^M[37m[44m[K[9;11H[36mqgroup assign [options] <src> <dst> <path>[39m[49m^M[37m[44m[K[10;9H[36mAssign SRC as the child qgroup of DST[39m[49m^M[37m[44m[K[11;11H[36mqgroup remove <src> <dst> <path>[39m[49m^M[37m[44m[K[12;9H[36mRemove a child qgroup SRC from DST.[39m[49m^M[37m[44m[K[13;11H[36mqgroup create <qgroupid> <path>[39m[49m^M[14;9H[36m[44mCreate a subvolume quota group.[39m[49m^M[37m[44m[K[15;11H[36mqgroup destroy <qgroupid> <path>[39m[49m^M[37m[44m[K[16;9H[36mDestroy a quota group.[39m[49m^M[37m[44m[K[17;11H[36mqgroup show [options] <path>[39m[49m^M[37m[44m[K[18;9H[36mShow subvolume quota groups.[39m[49m^M[37m[44m[K[19;11H[36mqgroup limit [options] <size>|none [<qgroupid>] <path>[39m[49m^M[37m[44m[K[20;9H[36mSet the limits a subvolume quota group.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[22;5H[36mbtrfs replace start [-Bfr] <srcdev>|<devid> <targetdev> <mount_point>[39m[49m^M
+[36m[44m        Replace device of a btrfs filesystem.[39m[49m^M[24;11H[36m[44mreplace status [-1] <mount_point>[39m[49m^M[37m[44m[K[25;9H[36mPrint status and progress information of a running device replace[39m[49m^M[26;11H[36m[44mreplace cancel <mount_point>[39m[49m^M[37m[44m[K[27;9H[36mCancel a running device replace operation.[39m[49m^M
+^M[37m[44m[K[29;5H[36mbtrfs help [--full][39m[49m^M[37m[44m[K
+[36m        Display help information[39m[49m^M[31;11H[36m[44mversion[39m[49m^M[37m[44m[K[32;9H[36mDisplay btrfs-progs version[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36mUse --help as an argument for information on a specific group or command.[39m[49m^M
+^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# btrfs subvoolume list /mnt[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[Kcreate /dev/sdd[39m[49m^M
+[36m[44mbtrfs: unknown token 'subvoolume'[39m[49m^M
+[36m[44musage: btrfs [--help] [--version] <group> [<group>...] <command> [<args>][39m[49m^M[37;28H[21;22r[21;1H[1L[1;38r[1;82H[30m[46m91+35 726[10C6651[11C091 0x05B
+[36m[44musage: btrfs [--help] [--version] <group> [<group>...] <command> [<args>][39m[49m^M
+^M[37m[44m[K[4;11H[36msubvolume create [-i <qgroupid>] [<dest>/]<name>[39m[49m^M[5;9H[36m[44mCreate a subvolume[39m[49m^M[37m[44m[K[6;11H[36msubvolume delete [options] <subvolume> [<subvolume>...][39m[49m^M[7;9H[36m[44mDelete subvolume(s)[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume list [options] [-G [+|-]value] [-C [+|-]value] [--sort=gen,ogen,rootid,path] <path>[39m[49m^M[9;5H[36m[44m    List subvolumes (and snapshots)[39m[49m^M[37m[44m[K[10;5H[36mbtrfs subvolume snapshot [-r] [-i <qgroupid>] <source> <dest>|[<dest>/]<name>[39m[49m^M[11;5H[36m[44m    Create a snapshot of the subvolume[12;5Hbtrfs subvolume get-default <path>[39m[49m^M[37m[44m[K[13;5H[36m    Get the default subvolume of a filesystem[39m[49m^M[14;5H[36m[44mbtrfs subvolume set-default <subvolid> <path>[39m[49m^M[15;5H[36m[44m    Set the default subvolume of a filesystem[39m[49m^M[16;5H[36m[44mbtrfs subvolume find-new <path> <lastgen>[39m[49m^M[17;5H[36m[44m    List the recently modified files in a filesystem[39m[49m^M[18;5H[36m[44mbtrfs subvolume show <subvol-path>[39m[49m^M[19;5H[36m[44m    Show more information of the subvolume[39m[49m^M[37m[44m[K[20;5H[36mbtrfs subvolume sync <path> [<subvol-id>...][39m[49m^M
+[36m[44m        Wait until given subvolume(s) are completely removed from the filesystem.[39m[49m^M[37m[44m[K[23;5H[36mbtrfs filesystem df [options] <path>[39m[49m^M[37m[44m[K[24;5H[36m    Show space usage information for a mount point[39m[49m^M[25;5H[36m[44mbtrfs filesystem du [options] <path> [<path>..][39m[49m^M[37m[44m[K[26;5H[36m    Summarize disk usage of each file.[39m[49m^M[27;5H[36m[44mbtrfs filesystem show [options] [<path>|<uuid>|<device>|label][39m[49m^M
+[36m[44m        Show the structure of a filesystem[39m[49m^M[29;11H[36m[44mfilesystem sync <path>[39m[49m^M[30;9H[36m[44mForce a sync on a filesystem[39m[49m^M[31;11H[36m[44mfilesystem defragment [options] <file>|<dir> [<file>|<dir>...][39m[49m^M[32;10H[36m[44mefragment a file or a directory[39m[49m^M
+[36m[44m    btrfs filesystem resize [devid:][+/-]<newsize>[kKmMgGtTpPeE]|[devid:]max <path>[39m[49m^M
+[36m[44m        Resize a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem label [<device>|<mount_point>] [<newlabel>][39m[49m^M[37m[44m[K
+[36m        Get or change the label of a filesystem[39m[49m^M
+[36m[44m    btrfs filesystem usage [options[93m[42m][36m[44m <path> [<path>..][39m[49m^M[37m[44m[K[37;28H[39m[49m[3;4r[3;1H[1L[1;38r[1;81H[30m[46m726[5C61[10C8316[11C105 0x069
+[36m[44m    btrfs filesystem usage [options] <path> [<path>..][39m[49m^M[37m[44m[K
+[36m        Show detailed information about internal filesystem usage .[39m[49m^M[37m[44m[K[5;5H[36mbtrfs balance start [options] <path>[39m[49m^M[6;5H[36m[44m    Balance chunks across the devices[39m[49m^M[37m[44m[K[7;5H[36mbtrfs balance pause <path>[39m[49m^M[8;5H[36m[44m    Pause running balance[39m[49m^M[37m[44m[K[9;5H[36mbtrfs balance cancel <path>[39m[49m^M[37m[44m[K[10;5H[36m    Cancel running or paused balance[39m[49m^M[37m[44m[K[11;5H[36mbtrfs balance resume <path>[39m[49m^M[37m[44m[K[12;5H[36m    Resume interrupted balance[39m[49m^M[37m[44m[K[13;5H[36mbtrfs balance status [-v] <path>[39m[49m^M[37m[44m[K[14;5H[36m    Show status of running or paused balance[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[16;11H[36mdevice add [options] <device> [<device>...] <path>[39m[49m^M[17;9H[36m[44mAdd a device to a filesystem[39m[49m^M[37m[44m[K[18;11H[36mdevice delete <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[19;5H[36m[44mbtrfs device remove <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[20;5H[36m[44m    Remove a device from a filesystem[39m[49m^M[37m[44m[K[21;5H[36mbtrfs device scan [(-d|--all-devices)|<device> [<device>...]][39m[49m^M[37m[44m[K
+[36m        Scan devices for a btrfs filesystem[39m[49m^M[23;11H[36m[44mdevice ready <device>[39m[49m^M[37m[44m[K[24;9H[36mCheck device to see if it has all of its devices in cache for mounting[39m[49m^M[25;11H[36m[44mdevice stats [options] <path>|<device>[39m[49m^M[37m[44m[K[26;10H[36mhow device IO error statistics[39m[49m^M[37m[44m[K[27;11H[36mdevice usage [options] <path> [<path>..][39m[49m^M[37m[44m[K[28;14H[36mdetailed information about internal allocations in devices.[39m[49m^M
+^M[37m[44m[K[30;5H[36mbtrfs scrub start [-BdqrRf] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[31;5H[36m[44m    Start a new scrub. If a scrub is already running, the new one fails.[39m[49m^M[32;5H[36m[44mbtrfs scrub cancel <path>|<device>[39m[49m^M[37m[44m[K[33;5H[36m    Cancel a running scrub[39m[49m^M[37m[44m[K[34;5H[36mbtrfs scrub resume [-BdqrR] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[35;5H[36m[44m    Resume previously canceled or interrupted scrub[39m[49m^M[37m[44m[K[36;5H[36mbtrfs scrub status [-dR] <path>|<device>[39m[49m^M[37m[44m[K[37;5H[36m    Show status of running or finished scrub[39m[49m^M[37m[44m[K[37;28H[39m[49m[15;16r[15;1H[1L[1;38r[1;82H[30m[46m61[5C96[9C40018[11C097[5C1[2;5H[36m[44m    Show status of running or finished scrub[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36m    btrfs check [options] <device>[39m[49m^M[5;5H[36m[44m    Check structural integrity of a filesystem (unmounted).[39m[49m^M
+^M[37m[44m[K[7;11H[36mrescue chunk-recover [options] <device>[39m[49m^M[8;9H[36m[44mRecover the chunk tree by scanning the devices one by one.[39m[49m^M[9;11H[36m[44mrescue super-recover [options] <device>[39m[49m^M[10;9H[36m[44mRecover bad superblocks from good copies[39m[49m^M[11;11H[36m[44mrescue zero-log <device>[39m[49m^M[12;9H[36m[44mClear the tree log. Usable if it's corrupted and prevents mount.[39m[49m^M
+^M[37m[44m[K[14;5H[36mbtrfs restore [options] <device> <path> | -l <device>[39m[49m^M
+[36m[44m        Try to restore files from a damaged filesystem (unmounted)[39m[49m^M[37m[44m[K[17;5H[36mbtrfs inspect-internal inode-resolve [-v] <inode> <path>[39m[49m^M[18;5H[36m[44m    Get file system paths for the given inode[39m[49m^M[37m[44m[K[19;11H[36minspect-internal logical-resolve [-Pv] [-s bufsize] <logical> <path>[39m[49m^M[20;9H[36m[44mGet file system paths for the given logical address[39m[49m^M[21;11H[36m[44minspect-internal subvolid-resolve <subvolid> <path>[39m[49m^M[37m[44m[K[22;9H[36mGet file system paths for the given subvolume ID.[39m[49m^M[23;11H[36m[44minspect-internal rootid <path>[39m[49m^M[24;9H[36m[44mGet tree ID of the containing subvolume of path.[39m[49m^M[37m[44m[K[25;11H[36minspect-internal min-dev-size [options] <path>[39m[49m^M[26;9H[36m[44mGet the minimum size the device can be shrunk to. The[39m[49m^M[27;11H[36m[44minspect-internal dump-tree [options] device[39m[49m^M[28;9H[36m[44mDump tree structures from a given device[39m[49m^M[37m[44m[K
+[36m    btrfs inspect-internal dump-super [options] device [device...][39m[49m^M[30;5H[36m[44m    Dump superblock from a device in a textual form[39m[49m^M[37m[44m[K[31;5H[36mbtrfs inspect-internal tree-stats [options] <device>[39m[49m^M[37m[44m[K[32;5H[36m    Print various stats for trees[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[34;11H[36mproperty get [-t <type>] <object> [<name>][39m[49m^M[37m[44m[K[35;9H[36mGets a property from a btrfs object.[39m[49m^M[37m[44m[K[36;11H[36mproperty set [-t <type>] <object> <name> <value>[39m[49m^M[37;10H[36m[44mets a property on a btrfs object.[39m[49m^M[37m[44m[K[37;28H[39m[49m[5;6r[5;1H[1M[1;38r[1;82H[30m[46m96+35 831[10C1571[11C118 0x076[2;10H[36m[44mets a property on a btrfs object.[39m[49m^M[37m[44m[K
+[36m    btrfs property list [-t <type>] <object>[39m[49m^M[4;5H[36m[44m    Lists available properties with their descriptions for the given object.[39m[49m^M
+
+[36m[44m    btrfs send [-ve] [-p <parent>] [-c <clone-src>] [-f <outfile>] <subvol> [<subvol>...][39m[49m^M[37m[44m[K[7;5H[36m    Send the subvolume(s) to stdout.[39m[49m^M[37m[44m[K[8;5H[36mbtrfs receive [options] <mount>[39m[49m^M[37m[44m[K
+[36mbtrfs receive --dump [options][39m[49m^M[37m[44m[K[10;12H[36meive subvolumes from a stream[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[12;5H[36mbtrfs quota enable <path>[39m[49m^M[37m[44m[K
+[36m        Enable subvolume quota support for a filesystem.[39m[49m^M[14;11H[36m[44mquota disable <path>[39m[49m^M[37m[44m[K[15;9H[36mDisable subvolume quota support for a filesystem.[39m[49m^M[37m[44m[K
+[36m    btrfs quota rescan [-sw] <path>[39m[49m^M[17;5H[36m[44m    Trash all qgroup numbers and scan the metadata again with the current config.[39m[49m^M
+^M[37m[44m[K[19;11H[36mqgroup assign [options] <src> <dst> <path>[39m[49m^M[37m[44m[K[20;9H[36mAssign SRC as the child qgroup of DST[39m[49m^M[37m[44m[K[21;11H[36mqgroup remove <src> <dst> <path>[39m[49m^M[37m[44m[K[22;9H[36mRemove a child qgroup SRC from DST.[39m[49m^M[37m[44m[K[23;11H[36mqgroup create <qgroupid> <path>[39m[49m^M[24;9H[36m[44mCreate a subvolume quota group.[39m[49m^M[37m[44m[K[25;11H[36mqgroup destroy <qgroupid> <path>[39m[49m^M[37m[44m[K[26;9H[36mDestroy a quota group.[39m[49m^M[37m[44m[K[27;11H[36mqgroup show [options] <path>[39m[49m^M[37m[44m[K[28;9H[36mShow subvolume quota groups.[39m[49m^M[37m[44m[K[29;11H[36mqgroup limit [options] <size>|none [<qgroupid>] <path>[39m[49m^M[37m[44m[K[30;9H[36mSet the limits a subvolume quota group.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[32;5H[36mbtrfs replace start [-Bfr] <srcdev>|<devid> <targetdev> <mount_point>[39m[49m^M
+[36m[44m        Replace device of a btrfs filesystem.[39m[49m^M[34;11H[36m[44mreplace status [-1] <mount_point>[39m[49m^M[37m[44m[K[35;9H[36mPrint status and progress information of a running device replace[39m[49m^M[36;11H[36m[44mreplace cancel <mount_point>[39m[49m^M[37m[44m[K[37;9H[36mCancel a running device replace operation.[39m[49m^M[37;28H[1;81H[30m[46m831[5C66[10C362[14C1 0x06F[2;9H[36m[44mCancel a running device replace operation.[39m[49m^M
+^M[37m[44m[K[4;5H[36mbtrfs help [--full][39m[49m^M[37m[44m[K
+[36m        Display help information[39m[49m^M[6;11H[36m[44mversion[39m[49m^M[37m[44m[K[7;9H[36mDisplay btrfs-progs version[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36mUse --help as an argument for information on a specific group or command.[39m[49m^M
+^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# btrfs subvoolume create /dev/sdd[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P[39m[49m^H^M
+[36m[44mERROR: target path already exists: /dev/sdd[39m[49m^M
+^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# btrfs subvolume create /dev/sdd/subvol1[39m[49m^M
+[36m[44mERROR: cannot access /dev/sdd/subvol1: Not a directory[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# btrfs subvolume create /dev/sdd/subvol1[39m[49m^M^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C
+mount: mount point /mnt/sdd does not exist[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# mount /dev/sdd /mnt/sdd[39m[49m^H^H^H^H^M^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[Km[17;1H[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# mkdir /mnt/sdd[39m[49m^H^[[36m[44m[Ke[39m[49m^M[37m[44m[K[18;2H[39m[49m[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# mkdir /mnt/sde[39m[49m^H[36m[44md[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[9@ount /dev/sdd[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^M
+[36m[44mmount: wrong fs type, bad option, bad superblock on /dev/sdd,[39m[49m^M[20;8H[36m[44mmissing codepage or helper program, or other error[39m[49m^M
+^M[37m[44m[K[22;8H[36mIn some cases useful info is found in syslog - try[39m[49m^M[23;5H[36m[44m   dmesg | tail or so.[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# mount /dev/sdd /mnt/sdd/[39m[49m^M
+[36m[44mmount: wrong fs type, bad option, bad superblock on /dev/sdd,[39m[49m^M[26;8H[36m[44mmissing codepage or helper program, or other error[39m[49m^M
+^M[37m[44m[K[28;8H[36mIn some cases useful info is found in syslog - try[39m[49m^M[29;5H[36m[44m   dmesg | tail or so.[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# mount /dev/sdd /mnt/sdd/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /mnt/sdd/[39m[49m^H^H^H^H^H^H^H^H^H^H[36m[44me /mnt/sdd/[39m[49m^H^H^H^H^H[31;1H[36m[44mmount: /dev/sde is write-protected, mounting read-only[39m[49m^M
+[36m[44mmount: wrong fs type, bad option, bad superblock on /dev/sde,[39m[49m^M[37m[44m[K[33;8H[36mmissing codepage or helper program, or other error[39m[49m^M
+^M[37m[44m[K[35;8H[36mIn some cases useful info is found in syslog - try[39m[49m^M[37m[44m[K[36;5H[36m   dmesg | tail or so.[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# mount /dev/sde /mnt/sde[39m[49m^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /mnt/sde[39m[49m^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /mnt/sde[39m[49m^H^H^H^H^H[37;28H[9;23r[9;1H[13M[1;38r[1;82H[30m[46m66+35 901[10C6805[12C02[5C6
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# mount /dev/sde /mnt/sde[39m[49m^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /mnt/sde[39m[49m^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /mnt/sde[39m[49m^H^H^H^H^H
+[36m[44mmount:  /mnt/sdd is not a block device[39m[49m^M
+^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# mount /mnt/sdd /dev/sdd[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[36m[44mdev/sde /mnt/sde[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^M
+[36m[44mmount: /dev/sde is write-protected, mounting read-only[39m[49m^M
+[36m[44mmount: wrong fs type, bad option, bad superblock on /dev/sde,[39m[49m^M[7;8H[36m[44mmissing codepage or helper program, or other error[39m[49m^M
+
+
+
+^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# dmesg -T[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] Initializing cgroup subsys cpuset[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] Initializing cgroup subsys cpu[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] Initializing cgroup subsys cpuacct[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] Linux version 3.10.0-862.2.3.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.5 20150623 (Red Hat 4.8.[16;1H[Wed Feb 19 09:05:46 2020] Command line: BOOT_IMAGE=/vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 ro no_timer_check[K
+[Wed Feb 19 09:05:46 2020] e820: BIOS-provided physical RAM map:[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] BIOS-e820: [mem 0x0000000000100000-0x000000000ffeffff] usable[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] BIOS-e820: [mem 0x000000000fff0000-0x000000000fffffff] ACPI data[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] NX (Execute Disable) protection: active[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] SMBIOS 2.5 present.[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] Hypervisor detected: KVM[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] e820: remove [mem 0x000a0000-0x000fffff] usable[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] e820: last_pfn = 0xfff0 max_arch_pfn = 0x400000000[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] MTRR default type: uncachable[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] MTRR variable ranges disabled:[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] PAT configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- UC  [39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] CPU MTRRs all blank - virtualized system.[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] found SMP MP-table at [mem 0x0009fff0-0x0009ffff] mapped at [ffffffffff200ff0][39m[49m^M[37m[44m[K[37;28H[1;81H[30m[46m901[5C36[10C9409[11C03[5C20
+[36m[44m[Wed Feb 19 09:05:46 2020] found SMP MP-table at [mem 0x0009fff0-0x0009ffff] mapped at [ffffffffff200ff0][39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] Base memory trampoline at [ffff8cc380099000] 99000 size 24576[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] BRK [0x08a2e000, 0x08a2efff] PGTABLE[39m[49m^M[37m[44m[K
+[36m[Wed Feb 19 09:05:46 2020] BRK [0x08a2f000, 0x08a2ffff] PGTABLE[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] BRK [0x08a30000, 0x08a30fff] PGTABLE[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] BRK [0x08a31000, 0x08a31fff] PGTABLE[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] BRK [0x08a32000, 0x08a32fff] PGTABLE[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] RAMDISK: [mem 0x0e21e000-0x0f1dbfff][39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] Early table checksum verification disabled[39m[49m^M
+[36m[44m[Wed Feb 19 09:05:46 2020] ACPI: RSDP 00000000000e0000 00024 (v02 VBOX  )[39m[49m^M[12;28H[36m[44mACPI: XSDT 000000000fff0030 0003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)[39m[49m^M[13;28H[36m[44mACPI: FACP 000000000fff00f0 000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)[39m[49m^M[14;28H[36m[44mACPI: DSDT 000000000fff0470 022EA (v02 VBOX   VBOXBIOS 00000002 INTL 20190509)[39m[49m^M[15;28H[36m[44mACPI: FACS 000000000fff0200 00040[39m[49m^M[37m[44m[K[16;28H[36mACPI: APIC 000000000fff0240 00054 (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)[39m[49m^M[37m[44m[K[17;28H[36mACPI: SSDT 000000000fff02a0 001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20190509)[39m[49m^M[18;28H[36m[44mACPI: Local APIC address 0xfee00000[39m[49m^M[37m[44m[K[19;28H[36mNo NUMA configuration found[39m[49m^M[37m[44m[K[20;28H[36mFaking a node at [mem 0x[5C00000000000-0x[5C0000ffeffff][39m[49m^M[37m[44m[K[21;28H[36mNODE_DATA(0) allocated [mem 0x0ffc9000-0x0ffeffff][39m[49m^M[37m[44m[K[22;28H[36mcrashkernel=auto resulted in zero bytes of reserved memory.[39m[49m^M[37m[44m[K[23;28H[36mkvm-clock: Using msrs 4b564d01 and 4b564d00[39m[49m^M[37m[44m[K[24;28H[36mkvm-clock: cpu 0, msr 0:ff79001, primary cpu clock[39m[49m^M[37m[44m[K[25;28H[36mkvm-clock: using sched offset of 8834457646 cycles[39m[49m^M[37m[44m[K[26;28H[36mZone ranges:[39m[49m^M[37m[44m[K[27;28H[36m  DMA      [mem 0x00001000-0x00ffffff][39m[49m^M[28;28H[36m[44m  DMA32    [mem 0x01000000-0xffffffff][39m[49m^M[37m[44m[K[29;28H[36m  Normal   empty[39m[49m^M[37m[44m[K[30;28H[36mMovable zone start for each node[39m[49m^M[37m[44m[K[31;28H[36mEarly memory node ranges[39m[49m^M[37m[44m[K[32;28H[36m  node   0: [mem 0x00001000-0x0009efff][39m[49m^M[37m[44m[K[33;28H[36m  node   0: [mem 0x00100000-0x0ffeffff][39m[49m^M[34;28H[36m[44mInitmem setup node 0 [mem 0x00001000-0x0ffeffff][39m[49m^M[35;28H[36m[44mOn node 0 totalpages: 65422[39m[49m^M[37m[44m[K[36;28H[36m  DMA zone: 64 pages used for memmap[39m[49m^M[37m[44m[K[37;28H[36m  DMA zone: 21 pages reserved[39m[49m^M[37m[44m[K[37;28H[1;82H[30m[46m36[5C71[9C52365[12C67 0x043[2;28H[36m[44m  DMA zone: 21 pages reserved[39m[49m^M[37m[44m[K[3;28H[36m  DMA zone: 3998 pages, LIFO batch:0[39m[49m^M[37m[44m[K[4;28H[36m  DMA32 zone: 960 pages used for memmap[39m[49m^M[5;28H[36m[44m  DMA32 zone: 61424 pages, LIFO batch:15[39m[49m^M[6;28H[36m[44mACPI: PM-Timer IO Port: 0x4008[39m[49m^M[37m[44m[K[7;28H[36mACPI: Local APIC address 0xfee00000[39m[49m^M[37m[44m[K[8;28H[36mACPI: LAPIC (acpi_id[0x00] lapic_id[0x00] enabled)[39m[49m^M[9;28H[36m[44mACPI: IOAPIC (id[0x01] address[0xfec00000] gsi_base[0])[39m[49m^M[10;28H[36m[44mIOAPIC[0]: apic_id 1, version 32, address 0xfec00000, GSI 0-23[39m[49m^M[11;34H[36m[44mINT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)[39m[49m^M[12;34H[36m[44mINT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)[39m[49m^M[37m[44m[K[13;34H[36mIRQ0 used by override.[39m[49m^M[37m[44m[K[14;34H[36mIRQ9 used by override.[39m[49m^M[37m[44m[K[15;28H[36mUsing ACPI (MADT) for SMP configuration information[39m[49m^M[16;28H[36m[44msmpboot: Allowing 1 CPUs, 0 hotplug CPUs[39m[49m^M[37m[44m[K[17;28H[36mPM: Registered nosave memory: [mem 0x0009f000-0x0009ffff][39m[49m^M[37m[44m[K[18;28H[36mPM: Registered nosave memory: [mem 0x000a0000-0x000effff][39m[49m^M[19;28H[36m[44mPM: Registered nosave memory: [mem 0x000f0000-0x000fffff][39m[49m^M[20;28H[36m[44me820: [mem 0x10000000-0xfebfffff] available for PCI devices[39m[49m^M[37m[44m[K[21;28H[36mBooting paravirtualized kernel on KVM[39m[49m^M[37m[44m[K[22;28H[36msetup_percpu: NR_CPUS:5120 nr_cpumask_bits:1 nr_cpu_ids:1 nr_node_ids:1[39m[49m^M[23;28H[36m[44mPERCPU: Embedded 35 pages/cpu @ffff8cc38fc00000 s104856 r8192 d30312 u2097152[39m[49m^M[24;28H[36m[44mpcpu-alloc: s104856 r8192 d30312 u2097152 alloc=1*2097152[39m[49m^M[25;28H[36m[44mpcpu-alloc: [0] 0 [39m[49m^M[37m[44m[K[26;28H[36mPV qspinlock hash table entries: 256 (order: 0, 4096 bytes)[39m[49m^M[27;28H[36m[44mBuilt 1 zonelists in Node order, mobility grouping on.  Total pages: 64377[39m[49m^M[28;28H[36m[44mPolicy zone: DMA32[39m[49m^M[37m[44m[K[29;28H[36mKernel command line: BOOT_IMAGE=/vmlinuz-3.10.0-862.2.3.el7.x86_64 root=/dev/mapper/VolGroup00-LogVol00 ro no_timer[30;28HPID hash table entries: 1024 (order: 1, 8192 bytes)[39m[49m^M[31;28H[36m[44mMemory: 221872k/262080k available (7324k kernel code, 392k absent, 39816k reserved, 6305k data, 1832k init)[39m[49m^M[32;28H[36m[44mSLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1[39m[49m^M[33;28H[36m[44mx86/pti: Unmapping kernel while in userspace[39m[49m^M[34;28H[36m[44mHierarchical RCU implementation.[39m[49m^M[37m[44m[K[35;28H[94m<--->[36mRCU restricting CPUs from NR_CPUS=5120 to nr_cpu_ids=1.[39m[49m^M[36;28H[36m[44mNR_IRQS:327936 nr_irqs:256 0[39m[49m^M[37m[44m[K[37;28H[36mConsole: colour VGA+ 80x25[39m[49m^M[37m[44m[K[37;28H[1;82H[30m[46m71+35 1006/1938] *(54720/116504b) 0065 0x041[2;28H[36m[44mConsole: colour VGA+ 80x25[39m[49m^M[37m[44m[K[3;28H[36mconsole [tty0] enabled[39m[49m^M[37m[44m[K[4;28H[36mconsole [ttyS0] enabled[39m[49m^M[37m[44m[K[5;28H[36mallocated 1048576 bytes of page_cgroup[39m[49m^M[37m[44m[K[6;28H[36mplease try 'cgroup_disable=memory' option if you don't want memory cgroups[39m[49m^M[7;28H[36m[44mtsc: Detected 2127.172 MHz processor[39m[49m^M[8;28H[36m[44mCalibrating delay loop (skipped) preset value.. 4254.34 BogoMIPS (lpj=2127172)[39m[49m^M[9;28H[36m[44mpid_max: default: 32768 minimum: 301[39m[49m^M[37m[44m[K[10;28H[36mSecurity Framework initialized[39m[49m^M[37m[44m[K[11;28H[36mSELinux:  Initializing.[39m[49m^M[37m[44m[K[12;28H[36mSELinux:  Starting in permissive mode[39m[49m^M[37m[44m[K[13;28H[36mYama: becoming mindful.[39m[49m^M[37m[44m[K[14;28H[36mDentry cache hash table entries: 32768 (order: 6, 262144 bytes)[39m[49m^M[15;28H[36m[44mInode-cache hash table entries: 16384 (order: 5, 131072 bytes)[39m[49m^M[16;28H[36m[44mMount-cache hash table entries: 512 (order: 0, 4096 bytes)[39m[49m^M[17;28H[36m[44mMountpoint-cache hash table entries: 512 (order: 0, 4096 bytes)[39m[49m^M[18;28H[36m[44mInitializing cgroup subsys memory[39m[49m^M[37m[44m[K[19;28H[36mInitializing cgroup subsys devices[39m[49m^M[37m[44m[K[20;28H[36mInitializing cgroup subsys freezer[39m[49m^M[37m[44m[K[21;28H[36mInitializing cgroup subsys net_cls[39m[49m^M[37m[44m[K[22;28H[36mInitializing cgroup subsys blkio[39m[49m^M[37m[44m[K[23;28H[36mInitializing cgroup subsys perf_event[39m[49m^M[37m[44m[K[24;28H[36mInitializing cgroup subsys hugetlb[39m[49m^M[37m[44m[K[25;28H[36mInitializing cgroup subsys pids[39m[49m^M[26;28H[36m[44mInitializing cgroup subsys net_prio[39m[49m^M[37m[44m[K[27;28H[36mCPU: Physical Processor ID: 0[39m[49m^M[37m[44m[K[28;28H[36mmce: CPU supports 0 MCE banks[39m[49m^M[29;28H[36m[44mLast level iTLB entries: 4KB 512, 2MB 7, 4MB 7[39m[49m^M[37m[44m[K[30;28H[36mLast level dTLB entries: 4KB 512, 2MB 32, 4MB 32[39m[49m^M[37m[44m[K[31;28H[36mtlb_flushall_shift: 6[39m[49m^M[37m[44m[K[32;28H[36mFEATURE SPEC_CTRL Not Present[39m[49m^M[37m[44m[K[33;28H[36mFEATURE IBPB_SUPPORT Not Present[39m[49m^M[37m[44m[K[34;28H[36mSpectre V2 : Vulnerable: Retpoline without IBPB[39m[49m^M[35;28H[36m[44mFreeing SMP alternatives: 24k freed[39m[49m^M[37m[44m[K[36;28H[36mACPI: Core revision 20130517[37;28HACPI: All ACPI Tables successfully acquired[39m[49m^M[37;28H[1;81H[30m[46m1006+35 1041/1938] *(57182/116504b) 0065 0x041[2;28H[36m[44mACPI: All ACPI Tables successfully acquired[39m[49m^M[3;28H[36m[44mftrace: allocating 28047 entries in 110 pages[39m[49m^M[4;28H[36m[44mEnabling x2apic[39m[49m^M[37m[44m[K[5;28H[36mEnabled x2apic[39m[49m^M[37m[44m[K[6;28H[36mSwitched APIC routing to physical x2apic.[39m[49m^M[37m[44m[K[7;28H[36m..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1[39m[49m^M[8;28H[36m[44msmpboot: CPU0: Intel(R) Core(TM) i3 CPU       M 330  @ 2.13GHz (fam: 06, model: 25, stepping: 02)[39m[49m^M[9;28H[36m[44mAPIC calibration not consistent with PM-Timer: 174ms instead of 100ms[39m[49m^M[10;28H[36m[44mAPIC delta adjusted to PM-Timer: 6313037 (11008319)[39m[49m^M[11;28H[36m[44mPerformance Events: unsupported p6 CPU model 37 no PMU driver, software events only.[39m[49m^M[12;28H[36m[44mKVM setup paravirtual spinlock[39m[49m^M[37m[44m[K[13;28H[36mBrought up 1 CPUs[39m[49m^M[37m[44m[K[14;28H[36msmpboot: Max logical packages: 1[39m[49m^M[37m[44m[K[15;28H[36msmpboot: Total of 1 processors activated (4254.34 BogoMIPS)[39m[49m^M[37m[44m[K[16;28H[36mdevtmpfs: initialized[39m[49m^M[37m[44m[K[17;28H[36mEVM: security.selinux[39m[49m^M[37m[44m[K[18;28H[36mEVM: security.ima[39m[49m^M[37m[44m[K[19;28H[36mEVM: security.capability[39m[49m^M[37m[44m[K[20;28H[36matomic64 test passed for x86-64 platform with CX8 and with SSE[39m[49m^M[21;28H[36m[44mpinctrl core: initialized pinctrl subsystem[39m[49m^M[22;28H[36m[44mRTC time:  9:05:46, date: 02/19/20[39m[49m^M[23;28H[36m[44mNET: Registered protocol family 16[39m[49m^M[37m[44m[K[24;28H[36mACPI: bus type PCI registered[39m[49m^M[37m[44m[K[25;28H[36macpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5[39m[49m^M[26;28H[36m[44mPCI: Using configuration type 1 for base access[39m[49m^M[27;28H[36m[44mACPI: Added _OSI(Module Device)[39m[49m^M[28;28H[36m[44mACPI: Added _OSI(Processor Device)[39m[49m^M[29;28H[36m[44mACPI: Added _OSI(3.0 _SCP Extensions)[39m[49m^M[37m[44m[K[30;28H[36mACPI: Added _OSI(Processor Aggregator Device)[39m[49m^M[37m[44m[K[31;28H[36mACPI: EC: Look up EC in DSDT[39m[49m^M[32;28H[36m[44mACPI: Executed 1 blocks of module-level executable AML code[39m[49m^M[33;28H[36m[44mACPI: Interpreter enabled[39m[49m^M[37m[44m[K[34;28H[36mACPI: (supports S0 S5)[39m[49m^M[37m[44m[K[35;28H[36mACPI: Using IOAPIC for interrupt routing[39m[49m^M[36;28H[36m[44mPCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug[39m[49m^M[37;34H[36m[44mEnabled 2 GPEs in block 00 to 07[39m[49m^M[37m[44m[K[37;28H[1;83H[30m[46m41[6C76[9C60207[11C112 0x070[2;34H[36m[44mEnabled 2 GPEs in block 00 to 07[39m[49m^M[37m[44m[K[3;28H[36mACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])[39m[49m^M[4;28H[36m[44macpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI][39m[49m^M[5;28H[36m[44macpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI][39m[49m^M[6;28H[36m[44macpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.[7;28HPCI host bridge to bus 0000:00[39m[49m^M[37m[44m[K[8;28H[36mpci_bus 0000:00: root bus resource [bus 00-ff][39m[49m^M[37m[44m[K[9;28H[36mpci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window][39m[49m^M[37m[44m[K[10;28H[36mpci_bus 0000:00: root bus resource [io  0x0d00-0xffff window][39m[49m^M[11;28H[36m[44mpci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window][39m[49m^M[37m[44m[K[12;28H[36mpci_bus 0000:00: root bus resource [mem 0x10000000-0xfdffffff window][39m[49m^M[13;28H[36m[44mpci 0000:00:00.0: [8086:1237] type 00 class 0x060000[39m[49m^M[14;28H[36m[44mpci 0000:00:01.0: [8086:7000] type 00 class 0x060100[39m[49m^M[15;28H[36m[44mpci 0000:00:01.1: [8086:7111] type 00 class 0x01018a[39m[49m^M[37m[44m[K[16;28H[36mpci 0000:00:01.1: reg 0x20: [io  0xd000-0xd00f][39m[49m^M[17;28H[36m[44mpci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7][39m[49m^M[18;28H[36m[44mpci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6][39m[49m^M[19;28H[36m[44mpci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177][39m[49m^M[20;28H[36m[44mpci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376][39m[49m^M[37m[44m[K[21;29H[36mci 0000:00:02.0: [80ee:beef] type 00 class 0x030000[39m[49m^M[22;28H[36m[44mpci 0000:00:02.0: reg 0x10: [mem 0xe0000000-0xe0ffffff pref][39m[49m^M[23;28H[36m[44mpci 0000:00:03.0: [8086:100e] type 00 class 0x020000[39m[49m^M[24;28H[36m[44mpci 0000:00:03.0: reg 0x10: [mem 0xf0000000-0xf001ffff][39m[49m^M[25;28H[36m[44mpci 0000:00:03.0: reg 0x18: [io  0xd010-0xd017][39m[49m^M[37m[44m[K[26;28H[36mpci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000[39m[49m^M[27;28H[36m[44mpci 0000:00:04.0: reg 0x10: [io  0xd020-0xd03f][39m[49m^M[28;28H[36m[44mpci 0000:00:04.0: reg 0x14: [mem 0xf0400000-0xf07fffff][39m[49m^M[29;28H[36m[44mpci 0000:00:04.0: reg 0x18: [mem 0xf0800000-0xf0803fff pref][39m[49m^M[30;28H[36m[44mpci 0000:00:05.0: [8086:2415] type 00 class 0x040100[39m[49m^M[31;28H[36m[44mpci 0000:00:05.0: reg 0x10: [io  0xd100-0xd1ff][39m[49m^M[32;28H[36m[44mpci 0000:00:05.0: reg 0x14: [io  0xd200-0xd23f][39m[49m^M[37m[44m[K[33;28H[36mpci 0000:00:07.0: [8086:7113] type 00 class 0x068000[39m[49m^M[34;28H[36m[44mpci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI[39m[49m^M[35;28H[36m[44mpci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB[39m[49m^M[36;28H[36m[44mpci 0000:00:08.0: [8086:100e] type 00 class 0x020000[39m[49m^M[37m[44m[K[37;28H[36mpci 0000:00:08.0: reg 0x10: [mem 0xf0820000-0xf083ffff][39m[49m^M[37;28H[1;83H[30m[46m76[5C111[10C269[2;28H[36m[44mpci 0000:00:08.0: reg 0x10: [mem 0xf0820000-0xf083ffff][39m[49m^M[3;28H[36m[44mpci 0000:00:08.0: reg 0x18: [io  0xd240-0xd247][39m[49m^M[37m[44m[K[4;28H[36mpci 0000:00:0d.0: [8086:2829] type 00 class 0x010601[39m[49m^M[37m[44m[K[5;28H[36mpci 0000:00:0d.0: reg 0x10: [io  0xd248-0xd24f][39m[49m^M[37m[44m[K[6;28H[36mpci 0000:00:0d.0: reg 0x14: [io  0xd250-0xd253][39m[49m^M[37m[44m[K[7;28H[36mpci 0000:00:0d.0: reg 0x18: [io  0xd258-0xd25f][39m[49m^M[8;31H[36m[44m 0000:00:0d.0: reg 0x1c: [io  0xd260-0xd263][39m[49m^M[9;31H[36m[44m 0000:00:0d.0: reg 0x20: [io  0xd270-0xd27f][39m[49m^M[37m[44m[K[10;31H[36m 0000:00:0d.0: reg 0x24: [mem 0xf0840000-0xf0841fff][39m[49m^M[37m[44m[K[11;28H[36mACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)[39m[49m^M[37m[44m[K[12;28H[36mACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 *10 11)[39m[49m^M[37m[44m[K[13;28H[36mACPI: PCI Interrupt Link [LNKC] (IRQs 5 *9 10 11)[39m[49m^M[37m[44m[K[14;28H[36mACPI: PCI Interrupt Link [LNKD] (IRQs 5 9 10 *11)[39m[49m^M[37m[44m[K[15;28H[36mvgaarb: device added: PCI:0000:00:02.0,decodes=io+mem,owns=io+mem,locks=none[39m[49m^M[16;28H[36m[44mvgaarb: loaded[39m[49m^M[37m[44m[K[17;28H[36mvgaarb: bridge control possible 0000:00:02.0[39m[49m^M[37m[44m[K[18;28H[36mSCSI subsystem initialized[39m[49m^M[37m[44m[K[19;28H[36mACPI: bus type USB registered[39m[49m^M[37m[44m[K[20;28H[36musbcore: registered new interface driver usbfs[39m[49m^M[37m[44m[K[21;28H[36musbcore: registered new interface driver hub[39m[49m^M[37m[44m[K[22;28H[36musbcore: registered new device driver usb[39m[49m^M[37m[44m[K[23;28H[36mEDAC MC: Ver: 3.0.0[39m[49m^M[37m[44m[K[24;28H[36mPCI: Using ACPI for IRQ routing[39m[49m^M[37m[44m[K[25;28H[36mPCI: pci_cache_line_size set to 64 bytes[39m[49m^M[37m[44m[K[26;28H[36me820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff][27;28He820: reserve RAM buffer [mem 0x0fff0000-0x0fffffff][39m[49m^M[28;28H[36m[44mNetLabel: Initializing[39m[49m^M[37m[44m[K[29;28H[36mNetLabel:  domain hash size = 128[39m[49m^M[37m[44m[K[30;28H[36mNetLabel:  protocols = UNLABELED CIPSOv4[39m[49m^M[37m[44m[K[31;28H[36mNetLabel:  unlabeled traffic allowed by default[32;28Hamd_nb: Cannot enumerate AMD northbridges[39m[49m^M[37m[44m[K[33;28H[36mSwitched to clocksource kvm-clock[39m[49m^M[37m[44m[K[34;29H[36mnp: PnP ACPI init[39m[49m^M[37m[44m[K[35;28H[36mACPI: bus type PNP registered[39m[49m^M[37m[44m[K[36;29H[36mnp 00:00: Plug and Play ACPI device, IDs PNP0303 (active)[39m[49m^M[37;29H[36m[44mnp 00:01: Plug and Play ACPI device, IDs PNP0f03 (active)[39m[49m^M[37;28H[1;82H[30m[46m111[6C46[10C5234[11C083 0x053[2;29H[36m[44mnp 00:01: Plug and Play ACPI device, IDs PNP0f03 (active)[39m[49m^M[3;29H[36m[44mnp: PnP ACPI: found 2 devices[39m[49m^M[37m[44m[K[4;28H[36mACPI: bus type PNP unregistered[39m[49m^M[37m[44m[K[5;31H[36m_bus 0000:00: resource 4[8C0000-0x0cf7 window][39m[49m^M[6;31H[36m[44m_bus 0000:00: resource 5[8C0d00-0xffff window][39m[49m^M[7;31H[36m[44m_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window][39m[49m^M[8;31H[36m[44m_bus 0000:00: resource 7 [mem 0x10000000-0xfdffffff window][39m[49m^M[9;28H[36m[44mNET: Registered protocol family 2[39m[49m^M[37m[44m[K[10;28H[36mTCP established hash table entries: 2048 (order: 2, 16384 bytes)[39m[49m^M[11;28H[36m[44mTCP bind hash table entries: 2048 (order: 3, 32768 bytes)[39m[49m^M[12;28H[36m[44mTCP: Hash tables configured (established 2048 bind 2048)[39m[49m^M[13;28H[36m[44mTCP: reno registered[39m[49m^M[37m[44m[K[14;28H[36mUDP hash table entries: 256 (order: 1, 8192 bytes)[39m[49m^M[15;28H[36m[44mUDP-Lite hash table entries: 256 (order: 1, 8192 bytes)[39m[49m^M[37m[44m[K[16;28H[36mNET: Registered protocol family 1[39m[49m^M[17;28H[36m[44mpci 0000:00:00.0: Limiting direct PCI/PCI transfers[39m[49m^M[18;28H[36m[44mpci 0000:00:01.0: Activating ISA DMA hang workarounds[39m[49m^M[19;28H[36m[44mpci 0000:00:02.0: Boot video device[39m[49m^M[20;28H[36m[44mPCI: CLS 0 bytes, default 64[39m[49m^M[37m[44m[K[21;28H[36mUnpacking initramfs...[39m[49m^M[37m[44m[K[22;28H[36mFreeing initrd memory: 16120k freed[39m[49m^M[37m[44m[K[23;28H[36mplatform rtc_cmos: registered platform RTC device (no PNP device found)[39m[49m^M[24;28H[36m[44msha1_ssse3: Using SSSE3 optimized SHA-1 implementation[39m[49m^M[25;28H[36m[44msha256_ssse3: Using SSSE3 optimized SHA-256 implementation[39m[49m^M[26;28H[36m[44mfutex hash table entries: 256 (order: 2, 16384 bytes)[39m[49m^M[27;28H[36m[44mInitialise system trusted keyring[39m[49m^M[37m[44m[K[28;28H[36maudit: initializing netlink socket (disabled)[39m[49m^M[29;28H[36m[44mtype=2000 audit(1582103156.507:1): initialized[39m[49m^M[30;28H[36m[44mHugeTLB registered 2 MB page size, pre-allocated 0 pages[39m[49m^M[31;28H[36m[44mzpool: loaded[39m[49m^M[37m[44m[K[32;28H[36mzbud: loaded[39m[49m^M[37m[44m[K[33;28H[36mVFS: Disk quotas dquot_6.5.2[39m[49m^M[37m[44m[K[34;28H[36mDquot-cache hash table entries: 512 (order 0, 4096 bytes)[39m[49m^M[35;28H[36m[44mmsgmni has been set to 464[39m[49m^M[37m[44m[K[36;28H[36mKey type big_key registered[39m[49m^M[37m[44m[K[37;28H[36mSELinux:  Registering netfilter hooks[39m[49m^M[37m[44m[K[37;28H[1;83H[30m[46m46[6C81[10C7656[11C117 0x075[2;28H[36m[44mSELinux:  Registering netfilter hooks[39m[49m^M[37m[44m[K[3;28H[36mNET: Registered protocol family 38[39m[49m^M[4;28H[36m[44mKey type asymmetric registered[39m[49m^M[37m[44m[K[5;28H[36mAsymmetric key parser 'x509' registered[39m[49m^M[37m[44m[K[6;28H[36mBlock layer SCSI generic (bsg) driver version 0.4 loaded (major 248)[39m[49m^M[7;28H[36m[44mio scheduler noop registered (default)[39m[49m^M[37m[44m[K[8;28H[36mio scheduler deadline registered[39m[49m^M[37m[44m[K[9;28H[36mio scheduler cfq registered[39m[49m^M[37m[44m[K[10;28H[36mio scheduler mq-deadline registered[39m[49m^M[37m[44m[K[11;28H[36mio scheduler kyber registered[39m[49m^M[37m[44m[K[12;28H[36mpci_hotplug: PCI Hot Plug PCI Core version: 0.5[39m[49m^M[37m[44m[K[13;28H[36mpciehp: PCI Express Hot Plug Controller Driver version: 0.4[39m[49m^M[14;28H[36m[44mACPI: AC Adapter [AC] (on-line)[39m[49m^M[37m[44m[K[15;28H[36minput: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0[39m[49m^M[16;28H[36m[44mACPI: Power Button [PWRF][39m[49m^M[37m[44m[K[17;28H[36minput: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1[39m[49m^M[18;28H[36m[44mACPI: Sleep Button [SLPF][39m[49m^M[37m[44m[K[19;28H[36mACPI: Battery Slot [BAT0] (battery present)[39m[49m^M[20;28H[36m[44mGHES: HEST is not enabled![39m[49m^M[37m[44m[K[21;28H[36mSerial: 8250/16550 driver, 4 ports, IRQ sharing enabled[39m[49m^M[22;28H[36m[44mNon-volatile memory driver v1.3[39m[49m^M[37m[44m[K[23;28H[36mLinux agpgart interface v0.103[39m[49m^M[37m[44m[K[24;28H[36mcrash memory driver: version 1.1[39m[49m^M[37m[44m[K[25;28H[36mrdac: device handler registered[39m[49m^M[37m[44m[K[26;28H[36mhp_sw: device handler registered[39m[49m^M[37m[44m[K[27;28H[36memc: device handler registered[39m[49m^M[37m[44m[K[28;29H[36mlua: device handler registered[39m[49m^M[37m[44m[K[29;28H[36mlibphy: Fixed MDIO Bus: probed[39m[49m^M[37m[44m[K[30;28H[36mehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver[39m[49m^M[31;28H[36m[44mehci-pci: EHCI PCI platform driver[39m[49m^M[32;28H[36m[44mohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver[39m[49m^M[33;28H[36m[44mohci-pci: OHCI PCI platform driver[39m[49m^M[34;28H[36m[44muhci_hcd: USB Universal Host Controller Interface driver[39m[49m^M[37m[44m[K[35;28H[36musbcore: registered new interface driver usbserial[39m[49m^M[36;28H[36m[44musbcore: registered new interface driver usbserial_generic[39m[49m^M[37;28H[36m[44musbserial: USB Serial support registered for generic[39m[49m^M[37;28H[1;83H[30m[46m81[5C216[9C70383[11C070 0x046[2;28H[36m[44musbserial: USB Serial support registered for generic[39m[49m^M[3;28H[36m[44mi8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12[39m[49m^M[4;28H[36m[44mserio: i8042 KBD port at 0x60,0x64 irq 1[39m[49m^M[5;28H[36m[44mserio: i8042 AUX port at 0x60,0x64 irq 12[39m[49m^M[6;28H[36m[44mmousedev: PS/2 mouse device common for all mice[39m[49m^M[37m[44m[K[7;29H[36mnput: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2[39m[49m^M[8;28H[36m[44mrtc_cmos rtc_cmos: rtc core: registered rtc_cmos as rtc0[39m[49m^M[9;28H[36m[44mrtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram[39m[49m^M[10;28H[36m[44mcpuidle: using governor menu[39m[49m^M[37m[44m[K[11;28H[36mhidraw: raw HID events driver (C) Jiri Kosina[39m[49m^M[12;28H[36m[44musbcore: registered new interface driver usbhid[13;28Husbhid: USB HID core driver[39m[49m^M[37m[44m[K[14;28H[36mdrop_monitor: Initializing network drop monitor service[39m[49m^M[15;28H[36m[44mTCP: cubic registered[39m[49m^M[37m[44m[K[16;28H[36mInitializing XFRM netlink socket[39m[49m^M[17;28H[36m[44mNET: Registered protocol family 10[39m[49m^M[37m[44m[K[18;28H[36mNET: Registered protocol family 17[39m[49m^M[19;28H[36m[44mmpls_gso: MPLS GSO support[39m[49m^M[37m[44m[K[20;28H[36mmicrocode: CPU0 sig=0x20652, pf=0x4, revision=0x616[39m[49m^M[21;28H[36m[44mmicrocode: Microcode Update Driver: v2.01 <tigran@aivazian.fsnet.co.uk>, Peter Oruba[39m[49m^M[22;28H[36m[44mPM: Hibernation image not present or could not be loaded.[39m[49m^M[23;29H[36m[44moading compiled-in X.509 certificates[39m[49m^M[24;28H[36m[44mLoaded X.509 cert 'CentOS Linux kpatch signing key: ea0413152cde1d98ebdca3fe6f0230904c9ef717'[39m[49m^M[25;28H[36m[44mLoaded X.509 cert 'CentOS Linux Driver update signing key: 7f421ee0ab69461574bb358861dbe77762a4201b'[39m[49m^M[26;28H[36m[44mLoaded X.509 cert 'CentOS Linux kernel signing key: 666ef031933f5127062372832ce9ba8a49005c8f'[39m[49m^M[27;28H[36m[44mregistered taskstats version 1[28;28HKey type trusted registered[39m[49m^M[37m[44m[K[29;28H[36mKey type encrypted registered[39m[49m^M[37m[44m[K[30;28H[36mIMA: No TPM chip found, activating TPM-bypass! (rc=-19)[39m[49m^M[37m[44m[K[31;28H[36m  Magic number: 8:867:70[39m[49m^M[37m[44m[K[32;28H[36m memory: hash matches[39m[49m^M[37m[44m[K[33;28H[36mrtc_cmos rtc_cmos: setting system clock to 2020-02-19 09:05:46 UTC (1582103146)[39m[49m^M[34;28H[36m[44mFreeing unused kernel memory: 1832k freed[39m[49m^M[37m[44m[K[35;28H[36mWrite protecting the kernel read-only data: 12288k[36;28HFreeing unused kernel memory: 856k freed[39m[49m^M[37m[44m[K[37;28H[36mFreeing unused kernel memory: 684k freed[39m[49m^M[37m[44m[K[37;28H[1;82H[30m[46m216[6C51[10C3174[11C115 0x073[2;28H[36m[44mFreeing unused kernel memory: 684k freed[39m[49m^M[37m[44m[K[3;28H[36mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[37m[44m[K[4;28H[36mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[5;28H[36m[44mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[6;28H[36m[44msystemd[1]: systemd 219 running in system mode. (+PAM +AUDIT +SELINUX +IMA -APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRY[7;28Hsystemd[1]: Detected virtualization kvm.[39m[49m^M[37m[44m[K[8;28H[36msystemd[1]: Detected architecture x86-64.[39m[49m^M[37m[44m[K[9;28H[36msystemd[1]: Running in initial RAM disk.[39m[49m^M[37m[44m[K[10;28H[36msystemd[1]: Set hostname to <localhost.localdomain>.[39m[49m^M[11;28H[36m[44msystemd[1]: Initializing machine ID from KVM UUID.[39m[49m^M[12;28H[36m[44mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[13;28H[36m[44mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[14;28H[36m[44mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[15;28H[36m[44mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[16;28H[36m[44mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[17;28H[36m[44mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[18;28H[36m[44mrandom: systemd: uninitialized urandom read (16 bytes read)[39m[49m^M[19;28H[36m[44msystemd[1]: Reached target Timers.[39m[49m^M[20;28H[36m[44msystemd[1]: Starting Timers.[39m[49m^M[37m[44m[K[21;28H[36msystemd[1]: Created slice Root Slice.[39m[49m^M[37m[44m[K[22;28H[36msystemd[1]: Starting Root Slice.[39m[49m^M[37m[44m[K[23;28H[36msystemd[1]: Reached target Local File Systems.[39m[49m^M[24;28H[36m[44msystemd[1]: Starting Local File Systems.[39m[49m^M[37m[44m[K[25;28H[36msystemd[1]: Listening on Journal Socket.[39m[49m^M[37m[44m[K[26;28H[36msystemd[1]: Starting Journal Socket.[39m[49m^M[37m[44m[K[27;28H[36msystemd[1]: Listening on udev Kernel Socket.[39m[49m^M[28;28H[36m[44msystemd[1]: Starting udev Kernel Socket.[39m[49m^M[29;28H[36m[44msystemd[1]: Listening on udev Control Socket.[39m[49m^M[30;28H[36m[44msystemd[1]: Starting udev Control Socket.[39m[49m^M[37m[44m[K[31;28H[36msystemd[1]: Reached target Sockets.[39m[49m^M[32;28H[36m[44msystemd[1]: Starting Sockets.[39m[49m^M[33;28H[36m[44msystemd[1]: Created slice System Slice.[39m[49m^M[37m[44m[K[34;28H[36msystemd[1]: Starting System Slice.[39m[49m^M[37m[44m[K[35;28H[36msystemd[1]: Starting dracut cmdline hook...[39m[49m^M[37m[44m[K[36;28H[36msystemd[1]: Starting Create list of required static device nodes for the current kernel...[39m[49m^M[37;28H[36m[44msystemd[1]: Starting Setup Virtual Console...[39m[49m^M[37;28H[1;83H[30m[46m51[6C86[10C5619[2;28H[36m[44msystemd[1]: Starting Setup Virtual Console...[39m[49m^M[3;28H[36m[44msystemd[1]: Starting Apply Kernel Variables...[39m[49m^M[37m[44m[K[4;28H[36msystemd[1]: Reached target Slices.[39m[49m^M[37m[44m[K[5;28H[36msystemd[1]: Starting Slices.[39m[49m^M[37m[44m[K[6;40H[36mStarting Journal Service...[39m[49m^M[37m[44m[K[7;40H[36mReached target Swap.[39m[49m^M[37m[44m[K[8;40H[36mStarting Swap.[39m[49m^M[37m[44m[K[9;20H[36m7[19CStarted Create list of required static device nodes for the current kernel.[39m[49m^M[10;20H[36m[44m7[20Ctarting Create Static Device Nodes in /dev...[39m[49m^M[11;20H[36m[44m7[7Cpsmouse serio1: alps: Unknown ALPS touchpad: E7=10 00 64, EC=10 00 64[39m[49m^M[12;20H[36m[44m7[7Cinput: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input3[39m[49m^M[13;20H[36m[44m7[7Csystemd[1]: Started Create Static Device Nodes in /dev.[39m[49m^M[37m[44m[K[14;20H[36m7[7Csystemd[1]: Started Apply Kernel Variables.[39m[49m^M[37m[44m[K[15;20H[36m7[7Csystemd[1]: Started Journal Service.[39m[49m^M[37m[44m[K[16;20H[36m7[7Cdevice-mapper: uevent: version 1.0.3[39m[49m^M[37m[44m[K[17;20H[36m7[7Cdevice-mapper: ioctl: 4.37.0-ioctl (2017-09-20) initialised: dm-devel@redhat.com[39m[49m^M[18;20H[36m[44m7[7Ctsc: Refined TSC clocksource calibration: 2127.402 MHz[39m[49m^M[37m[44m[K[19;20H[36m8[7Clibata version 3.00 loaded.[39m[49m^M[37m[44m[K[20;20H[36m8[7Cata_piix 0000:00:01.1: version 2.13[39m[49m^M[21;20H[36m[44m8[8Ccsi host0: ata_piix[39m[49m^M[37m[44m[K[22;20H[36m8[8Ccsi host1: ata_piix[39m[49m^M[37m[44m[K[23;20H[36m8[7Cata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14[39m[49m^M[24;20H[36m[44m8[7Cata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15[39m[49m^M[25;20H[36m[44m8[7Cahci 0000:00:0d.0: version 3.0[39m[49m^M[37m[44m[K[26;20H[36m8[7Cahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled[39m[49m^M[27;20H[36m[44m8[7Cahci 0000:00:0d.0: AHCI 0001.0100 32 slots 30 ports 3 Gbps 0x3fffffff impl SATA mode[39m[49m^M[28;20H[36m[44m8[7Cahci 0000:00:0d.0: flags: 64bit ncq stag only ccc [39m[49m^M[29;20H[36m[44m8[8Ccsi host2: ahci[39m[49m^M[37m[44m[K[30;20H[36m8[8Ccsi host3: ahci[39m[49m^M[37m[44m[K[31;20H[36m8[8Ccsi host4: ahci[39m[49m^M[37m[44m[K[32;20H[36m8[8Ccsi host5: ahci[39m[49m^M[37m[44m[K[33;20H[36m8[8Ccsi host6: ahci[39m[49m^M[37m[44m[K[34;20H[36m8[8Ccsi host7: ahci[39m[49m^M[37m[44m[K[35;20H[36m8[8Ccsi host8: ahci[39m[49m^M[37m[44m[K[36;20H[36m8[8Ccsi host9: ahci[39m[49m^M[37m[44m[K[37;20H[36m8[8Ccsi host10: ahci[39m[49m^M[37m[44m[K[37;28H[1;83H[30m[46m86[5C321[10C7898[11C097 0x061[2;20H[36m[44m8[8Ccsi host10: ahci[39m[49m^M[37m[44m[K[3;20H[36m8[8Ccsi host11: ahci[39m[49m^M[37m[44m[K[4;20H[36m8[8Ccsi host12: ahci[39m[49m^M[37m[44m[K[5;20H[36m8[8Ccsi host13: ahci[39m[49m^M[37m[44m[K[6;20H[36m8[8Ccsi host14: ahci[39m[49m^M[37m[44m[K[7;20H[36m8[8Ccsi host15: ahci[39m[49m^M[37m[44m[K[8;20H[36m8[8Ccsi host16: ahci[39m[49m^M[37m[44m[K[9;20H[36m8[8Ccsi host17: ahci[39m[49m^M[37m[44m[K[10;20H[36m8[8Ccsi host18: ahci[39m[49m^M[37m[44m[K[11;20H[36m8[7Cscsi host19: ahci[39m[49m^M[37m[44m[K[12;20H[36m8[7Cscsi host20: ahci[39m[49m^M[37m[44m[K[13;20H[36m8[8Ccsi host21: ahci[39m[49m^M[37m[44m[K[14;20H[36m8[8Ccsi host22: ahci[39m[49m^M[37m[44m[K[15;20H[36m8[8Ccsi host23: ahci[39m[49m^M[37m[44m[K[16;20H[36m8[7Cscsi host24: ahci[39m[49m^M[37m[44m[K[17;20H[36m8[7Cscsi host25: ahci[39m[49m^M[37m[44m[K[18;20H[36m8[7Cscsi host26: ahci[39m[49m^M[37m[44m[K[19;28H[36mscsi host27: ahci[39m[49m^M[37m[44m[K[20;28H[36mscsi host28: ahci[39m[49m^M[37m[44m[K[21;37H[36m29: ahci[39m[49m^M[37m[44m[K[22;37H[36m30: ahci[39m[49m^M[37m[44m[K[23;28H[36mscsi host31: ahci[39m[49m^M[37m[44m[K[24;31H[36m3: S[13C133 abar m8192@0xf0840000 port 0xf0840100 irq 21[39m[49m^M[25;29H[36m[44mta4: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840180 irq 21[39m[49m^M[26;29H[36m[44mta5: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840200 irq 21[39m[49m^M[27;29H[36m[44mta6: SATA max UDMA/133 abar m8192@0xf084000[6C 0xf0840280 irq 21[39m[49m^M[37m[44m[K[28;29H[36mta7: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840300 irq 21[39m[49m^M[29;28H[36m[44mata8: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840380 irq 21[39m[49m^M[30;28H[36m[44mata9: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840400 irq 21[39m[49m^M[31;28H[36m[44mata10: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840480 irq 21[39m[49m^M[32;28H[36m[44mata11: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840500 irq 21[39m[49m^M[33;28H[36m[44mata12: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840580 irq 21[39m[49m^M[34;28H[36m[44mata13: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840600 irq 21[39m[49m^M[35;28H[36m[44mata14: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840680 irq 21[39m[49m^M[36;28H[36m[44mata15: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840700 irq 21[39m[49m^M[37;28H[36m[44mata16: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840780 irq 21[39m[49m^M[37;28H[1;82H[30m[46m321[6C56[9C81009[2;28H[36m[44mata16: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840780 irq 21[39m[49m^M[3;28H[36m[44mata17: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840800 irq 21[39m[49m^M[4;28H[36m[44mata18: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840880 irq 21[39m[49m^M[5;28H[36m[44mata19: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840900 irq 21[39m[49m^M[6;28H[36m[44mata20: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840980 irq 21[39m[49m^M[7;28H[36m[44mata21: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840a00 irq 21[39m[49m^M[8;28H[36m[44mata22: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840a80 irq 21[39m[49m^M[9;28H[36m[44mata23: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840b00 irq 21[39m[49m^M[10;28H[36m[44mata24: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840b80 irq 21[39m[49m^M[11;28H[36m[44mata25: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840c00 irq 21[39m[49m^M[12;28H[36m[44mata26: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840c80 irq 21[39m[49m^M[13;28H[36m[44mata27: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840d00 irq 21[39m[49m^M[14;28H[36m[44mata28: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840d80 irq 21[39m[49m^M[15;28H[36m[44mata29: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840e00 irq 21[39m[49m^M[16;28H[36m[44mata30: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840e80 irq 21[39m[49m^M[17;28H[36m[44mata31: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840f00 irq 21[39m[49m^M[18;28H[36m[44mata32: SATA max UDMA/133 abar m8192@0xf0840000 port 0xf0840f80 irq 21[39m[49m^M[19;28H[36m[44mata1.01: NODEV after polling detection[39m[49m^M[20;28H[36m[44mata1.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133[39m[49m^M[21;28H[36m[44mata1.00: 83886080 sectors, multi 128: LBA [39m[49m^M[22;28H[36m[44mata1.00: configured for UDMA/33[39m[49m^M[23;33H[36m[44m0:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5[39m[49m^M[24;39H[36m[44mlink down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[25;39H[36mlink up 3.0 Gbps (SStatus 123 SControl 300)[39m[49m^M[37m[44m[K[26;31H[36m4.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133[39m[49m^M[37m[44m[K[27;31H[36m4.00: 20971520 sectors, multi 128: LBA48 NCQ (depth 31/32)[39m[49m^M[37m[44m[K[28;31H[36m4.00: configured for UDMA/133[39m[49m^M[37m[44m[K[29;28H[36mscsi 3:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5[39m[49m^M[30;20H[36m[44m9[10C5[7Clink up 3.0 Gbps (SStatus 123 SControl 300)[39m[49m^M[37m[44m[K[31;20H[36m9[10C5.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133[39m[49m^M[37m[44m[K[32;20H[36m9[10C5.00: 4194304 sectors, multi 128: LBA48 NCQ (depth 31/32)[39m[49m^M[37m[44m[K[33;20H[36m9[10C5.00: configured for UDMA/133[39m[49m^M[37m[44m[K[34;20H[36m9[7Cscsi 4:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5[39m[49m^M[35;20H[36m[44m9[10C6: SATA link up 3.0 Gbps (SStatus 123 SControl 300)[39m[49m^M[37m[44m[K[36;20H[36m9[10C6.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133[39m[49m^M[37m[44m[K[37;20H[36m9[10C6.00: 2097152 sectors, multi 128: LBA48 NCQ (depth 31/32)[39m[49m^M[37m[44m[K[37;28H[1;83H[30m[46m56[6C91[10C3718[11C115 0x073[2;20H[36m[44m9[10C6.00: 2097152 sectors, multi 128: LBA48 NCQ (depth 31/32)[39m[49m^M[37m[44m[K[3;20H[36m9[10C6.00: configured for UDMA/133[39m[49m^M[37m[44m[K[4;20H[36m9[7Cscsi 5:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5[39m[49m^M[5;20H[36m[44m9[10C7: SATA link up 3.0 Gbps (SStatus 123 SControl 300)[39m[49m^M[37m[44m[K[6;20H[36m9[10C7.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133[39m[49m^M[37m[44m[K[7;20H[36m9[10C7.00: 2097152 sectors, multi 128: LBA48 NCQ (depth 31/32)[39m[49m^M[37m[44m[K[8;20H[36m9[10C7.00: configured for UDMA/133[39m[49m^M[37m[44m[K[9;20H[36m9[7Cscsi 6:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5[39m[49m^M[10;19H[36m[44m50[10C8: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[11;19H[36m50[10C9: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[12;19H[36m50[10C10[7Clink down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[13;19H[36m51[10C11[7Clink down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[14;19H[36m51[10C12[7Clink down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[15;19H[36m51[10C13[7Clink down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[16;19H[36m51[10C14[7Clink down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[17;19H[36m52[10C15[7Clink down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[18;19H[36m52[10C16[7Clink down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[19;19H[36m52[11C7: SATA link down (SStatus 0 SControl 300)[39m[49m^M[20;19H[36m[44m53[11C8: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[21;19H[36m53[11C9: SATA link down (SStatus 0 SControl 300)[39m[49m^M[22;19H[36m[44m53[10C20: SATA link down (SStatus 0 SControl 300)[39m[49m^M[23;19H[36m[44m54[7Cata21: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[24;19H[36m54[10C22: SATA link down (SStatus 0 SControl 300)[39m[49m^M[25;19H[36m[44m54[10C23: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[26;19H[36m55[10C24: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[27;19H[36m55[10C25: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[28;19H[36m55[10C26: SATA link down (SStatus 0 SControl 300)[39m[49m^M[29;19H[36m[44m55[7Cata27: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[30;19H[36m56[10C28: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[31;19H[36m56[10C29: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[32;19H[36m56[10C30: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[33;19H[36m57[10C31: SATA link down (SStatus 0 SControl 300)[39m[49m^M[34;19H[36m[44m57[7Cata32: SATA link down (SStatus 0 SControl 300)[39m[49m^M[37m[44m[K[35;19H[36m57[7Csd 0:0:0:0: [sda] 83886080 512-byte logical blocks: (42.9 GB/40.0 GiB)[39m[49m^M[36;19H[36m[44m57[7Csd 0:0:0:0: [sda] Write Protect is off[39m[49m^M[37m[44m[K[37;19H[36m57[7Csd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00[39m[49m^M[37m[44m[K[37;28H[1;83H[30m[46m91[5C426[10C6512[11C083 0x05[2;19H[36m[44m57[7Csd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00[39m[49m^M[37m[44m[K[3;19H[36m57[7Csd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA[39m[49m^M[4;19H[36m[44m57[7C sda: sda1 sda2 sda3[39m[49m^M[37m[44m[K[5;19H[36m57[7Csd 0:0:0:0: [sda] Attached SCSI disk[39m[49m^M[37m[44m[K[6;19H[36m57[7Csd 3:0:0:0: [sdb] 20971520 512-byte logical blocks: (10.7 GB/10.0 GiB)[39m[49m^M[7;19H[36m[44m57[7Csd 3:0:0:0: [sdb] Write Protect is off[39m[49m^M[37m[44m[K[8;19H[36m57[7Csd 3:0:0:0: [sdb] Mode Sense: 00 3a 00 00[39m[49m^M[9;19H[36m[44m57[8Cd 3:0[5C [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA[39m[49m^M[10;20H[36m[44m7[7Csd 4:0:0:0: [sdc] 4194304 512-byte logical blocks: (2.14 GB/2.00 GiB)[39m[49m^M[11;20H[36m[44m7[7Csd 4:0:0:0: [sdc] Write Protect is off[39m[49m^M[37m[44m[K[12;20H[36m7[7Csd 4:0:0:0: [sdc] Mode Sense: 00 3a 00 00[39m[49m^M[37m[44m[K[13;20H[36m7[7Csd 4:0:0:0: [sdc] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA[39m[49m^M[14;20H[36m[44m7[7Csd 4:0:0:0: [sdc] Attached SCSI disk[39m[49m^M[37m[44m[K[15;20H[36m7[7Csd 3:0:0:0: [sdb] Attached SCSI disk[39m[49m^M[37m[44m[K[16;20H[36m7[7Csd 5:0:0:0: [sdd] 2097152 512-byte logical blocks: (1.07 GB/1.00 GiB)[39m[49m^M[17;20H[36m[44m7[7Csd 5:0:0:0: [sdd] Write Protect is off[39m[49m^M[37m[44m[K[18;20H[36m7[7Csd 5:0:0:0: [sdd] Mode Sense: 00 3a 00 00[39m[49m^M[37m[44m[K[19;20H[36m7[7Csd 5:0:0:0: [sdd] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA[39m[49m^M[20;20H[36m[44m7[7Csd 6:0:0:0: [sde] 2097152 512-byte logical blocks: (1.07 GB/1.00 GiB)[39m[49m^M[21;20H[36m[44m7[7Csd 6:0:0:0: [sde] Write Protect is off[39m[49m^M[37m[44m[K[22;20H[36m7[7Csd 6:0:0:0: [sde] Mode Sense: 00 3a 00 00[39m[49m^M[37m[44m[K[23;20H[36m7[7Csd 6:0:0:0: [sde] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA[39m[49m^M[24;20H[36m[44m7[7Csd 6:0:0:0: [sde] Attached SCSI disk[39m[49m^M[37m[44m[K[25;20H[36m7[7Csd 5:0:0:0: [sdd] Attached SCSI disk[39m[49m^M[37m[44m[K[26;20H[36m7[7Crandom: fast init done[39m[49m^M[37m[44m[K[27;20H[36m8[7Crandom: crng init done[39m[49m^M[37m[44m[K[28;20H[36m8[7CSGI XFS with ACLs, security attributes, no debug enabled[39m[49m^M[29;20H[36m[44m8[7CXFS (dm-0): Mounting V5 Filesystem[39m[49m^M[37m[44m[K[30;20H[36m8[7CXFS (dm-0): Ending clean mount[39m[49m^M[37m[44m[K[31;20H[36m8[7Csystemd-journald[87]: Received SIGTERM from PID 1 (systemd).[39m[49m^M[32;20H[36m[44m8[7Ctype=1404 audit(1582103158.379:2): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295[39m[49m^M[33;20H[36m[44m8[7CSELinux: 2048 avtab hash slots, 106591 rules.[39m[49m^M[37m[44m[K[34;20H[36m8[7CSELinux: 2048 avtab hash slots, 106591 rules.[39m[49m^M[37m[44m[K[35;20H[36m8[7CSELinux:  8 users, 14 roles, 5015 types, 310 bools, 1 sens, 1024 cats[39m[49m^M[37m[44m[K[36;20H[36m8[7CSELinux:  97 classes, 106591 rules[39m[49m^M[37m[44m[K[37;20H[36m8[7CSELinux:  Completing initialization.[39m[49m^M[37m[44m[K[37;28H[1;82H[30m[46m426[6C61[10C9480[11C101 0x065[2;20H[36m[44m8[7CSELinux:  Completing initialization.[39m[49m^M[37m[44m[K[3;20H[36m8[7CSELinux:  Setting up existing superblocks.[39m[49m^M[37m[44m[K[4;20H[36m8[7Ctype=1403 audit(1582103158.638:3): policy loaded auid=4294967295 ses=4294967295[39m[49m^M[5;20H[36m[44m8[8Cystemd[1]: Successfully loaded SELinux policy in 277.396ms.[39m[49m^M[6;20H[36m[44m9[7Cip_tables: (C) 2000-2006 Netfilter Core Team[39m[49m^M[37m[44m[K[7;20H[36m9[8Cystemd[1]: Inserted module 'ip_tables'[39m[49m^M[8;20H[36m[44m9[8Cystemd[1]: Relabelled /dev and /run in 35.181ms.[39m[49m^M[9;20H[36m[44m9[8Cystemd-journald[500]: Received request to flush runtime journal from PID 1[39m[49m^M[37m[44m[K[10;17H[36m6:00[7CACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)[39m[49m^M[37m[44m[K[11;17H[36m6:00[7Cinput: Video Bus as /devices/LNXSYSTM:00/device:00/PNP0A03:00/LNXVIDEO:00/input/input4[39m[49m^M[12;17H[36m[44m6:01[7Cpiix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0[39m[49m^M[13;17H[36m[44m6:01[7Ce1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI[39m[49m^M[37m[44m[K[14;17H[36m6:01[7Ce1000: Copyright (c) 1999-2006 Intel Corporation.[39m[49m^M[15;17H[36m[44m6:01[10C0[8CAttached scsi generic sg0 type 0[39m[49m^M[16;17H[36m[44m6:01[10C3[8CAttached scsi generic sg1 type 0[39m[49m^M[37m[44m[K[17;17H[36m6:01[10C4[8CAttached scsi generic sg2 type 0[39m[49m^M[18;17H[36m[44m6:01[19CAttached scsi generic sg3 type 0[39m[49m^M[19;17H[36m[44m6:01[10C6[8CAttached scsi generic sg4 type 0[39m[49m^M[37m[44m[K[20;17H[36m6:01[7Cinput: PC Speaker as /devices/platform/pcspkr/input/input5[39m[49m^M[37m[44m[K[21;17H[36m6:01[7Cppdev: user-space parallel port driver[22;17H6:01[7CXFS (sda2): Mounting V5 Filesystem[39m[49m^M[37m[44m[K[23;17H[36m6:01[7CAdding 1572860k swap on /dev/mapper/VolGroup00-LogVol01.  Priority:-1 extents:1 across:1572860k FS[39m[49m^M[24;17H[36m[44m6:02[7CXFS (sda2): Ending clean mount[39m[49m^M[37m[44m[K[25;17H[36m6:02[7Ce1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 52:54:00:c9:c7:04[39m[49m^M[26;17H[36m[44m6:02[7Ce1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection[39m[49m^M[27;17H[36m[44m6:02[7Ctype=1305 audit(1582103162.342:4): audit_pid=605 old=0 auid=4294967295 ses=4294967295 subj=system_u:system_r:auditd[28;17H6:02[7CRPC: Registered named UNIX socket transport module.[39m[49m^M[37m[44m[K[29;17H[36m6:02[7CRPC: Registered udp transport module.[39m[49m^M[30;17H[36m[44m6:02[7CRPC: Registered tcp transport module.[39m[49m^M[31;17H[36m[44m6:02[7CRPC: Registered tcp NFSv4.1 backchannel transport module.[39m[49m^M[37m[44m[K[32;17H[36m6:04[7Csnd_intel8x0 0000:00:05.0: measure - unreliable DMA position..[39m[49m^M[37m[44m[K[33;17H[36m6:04[7Csnd_intel8x0 0000:00:05.0: measure - unreliable DMA position..[39m[49m^M[34;17H[36m[44m6:05[7Csnd_intel8x0 0000:00:05.0: measure - unreliable DMA position..[39m[49m^M[35;17H[36m[44m6:05[7Csnd_intel8x0 0000:00:05.0: clocking to 48000[39m[49m^M[37m[44m[K[36;17H[36m6:06[7Ce1000 0000:00:08.0 eth1: (PCI:33MHz:32-bit) 08:00:27:b8:7d:ca[39m[49m^M[37;17H[36m[44m6:06[7Ce1000 0000:00:08.0 eth1: Intel(R) PRO/1000 Network Connection[39m[49m^M[37;28H[1;83H[30m[46m61[6C96[9C92239[11C066 0x042[2;17H[36m[44m6:06[7Ce1000 0000:00:08.0 eth1: Intel(R) PRO/1000 Network Connection[39m[49m^M[3;17H[36m[44m6:06[7CIPv6: ADDRCONF(NETDEV_UP): eth1: link is not ready[39m[49m^M[4;17H[36m[44m6:06[7CIPv6: ADDRCONF(NETDEV_UP): eth1: link is not ready[39m[49m^M[37m[44m[K[5;17H[36m6:06[7CIPv6: ADDRCONF(NETDEV_UP): eth0: link is not ready[39m[49m^M[37m[44m[K[6;17H[36m6:06[7Ce1000: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX[39m[49m^M[7;17H[36m[44m6:08[7Ce1000: eth1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX[39m[49m^M[8;17H[36m[44m6:08[7CIPv6: ADDRCONF(NETDEV_CHANGE): eth1: link becomes ready[39m[49m^M[9;16H[36m[44m11:16[7Cxor: measuring software checksum speed[39m[49m^M[37m[44m[K[10;16H[36m11:16[7C   prefetch64-sse: 44552.000 MB/sec[39m[49m^M[37m[44m[K[11;16H[36m11:16[7C   generic_sse: 66464.000 MB/sec[39m[49m^M[37m[44m[K[12;16H[36m11:16[7Cxor: using function: generic_sse (66464.000 MB/sec)[39m[49m^M[37m[44m[K[13;16H[36m11:16[7Craid6: sse2x1   gen()  5941 MB/s[39m[49m^M[37m[44m[K[14;16H[36m11:16[7Craid6: sse2x2   gen()  7570 MB/s[39m[49m^M[37m[44m[K[15;16H[36m11:16[7Craid6: sse2x4   gen()  6890 MB/s[39m[49m^M[37m[44m[K[16;16H[36m11:16[7Craid6: using algorithm sse2x2 gen() (7570 MB/s)[39m[49m^M[17;16H[36m[44m11:16[7Craid6: using ssse3x2 recovery algorithm[39m[49m^M[37m[44m[K[18;16H[36m11:16[7CBtrfs loaded, crc32c=crc32c-intel[39m[49m^M[37m[44m[K[19;16H[36m11:16[7CBTRFS: device fsid a8383377-ba69-40fe-b6c0-c0c862eed531 devid 1 transid 5 /dev/sdb[39m[49m^M[20;16H[36m[44m11:23[7CBTRFS: device fsid 38f786d4-c0b5-40eb-977b-d957bbebad5d devid 2 transid 5 /dev/sdd[39m[49m^M[21;16H[36m[44m11:23[7CBTRFS: device fsid 38f786d4-c0b5-40eb-977b-d957bbebad5d devid 1 transid 5 /dev/sdc[39m[49m^M[22;16H[36m[44m12:45[7CBTRFS info (device sdb): disk space caching is enabled[39m[49m^M[23;16H[36m[44m12:45[7CBTRFS info (device sdb): has skinny extents[39m[49m^M[37m[44m[K[24;16H[36m12:45[7CBTRFS info (device sdb): flagging fs with big metadata feature[39m[49m^M[25;16H[36m[44m12:45[7CBTRFS info (device sdb): creating UUID tree[39m[49m^M[37m[44m[K[26;16H[36m14:14[7CBTRFS info (device sdb): disk added /dev/sdc[39m[49m^M[37m[44m[K[27;16H[36m38:11[7Ce1000: eth1 NIC Link is Down[39m[49m^M[37m[44m[K[28;16H[36m38:13[7Ce1000: eth1 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX[39m[49m^M[29;13H[36m[44m11:08:04[7CBTRFS info (device sdc): disk space caching is enabled[39m[49m^M[30;13H[36m[44m11:08:04[7CBTRFS info (device sdc): has skinny extents[39m[49m^M[31;13H[36m[44m11:56:44[7CBTRFS info (device sdd): disk space caching is enabled[39m[49m^M[37m[44m[K[32;13H[36m11:56:4[8CBTRFS info (device sdd): has skinny extents[39m[49m^M[37m[44m[K[33;13H[36m11:56:4[8CBTRFS info (device sdd): flagging fs with big metadata feature[34;13H11:56:44[7CBTRFS error (device sdd): failed to read chunk tree: -5[39m[49m^M[37m[44m[K[35;13H[36m11:56:44[7CBTRFS: open_ctree failed[39m[49m^M[37m[44m[K[36;13H[36m11:56:57[7CBTRFS info (device sdd): disk space caching is enabled[39m[49m^M[37m[44m[K[37;13H[36m11:56:57[7CBTRFS info (device sdd): has skinny extents[39m[49m^M[37m[44m[K[37;28H[1;83H[30m[46m96[5C531[10C4510[11C111 0x06F[2;13H[36m[44m11:56:57[7CBTRFS info (device sdd): has skinny extents[39m[49m^M[37m[44m[K[3;13H[36m11:56:57[7CBTRFS info (device sdd): flagging fs with big metadata feature[39m[49m^M[4;13H[36m[44m11:56:57[7CBTRFS error (device sdd): failed to read chunk tree: -5[39m[49m^M[5;13H[36m[44m11:56:57[7CBTRFS: open_ctree failed[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/var/opt[39m[49m^G[36m[44m[root@lvm opt]# exit[39m[49m^M[37m[44m[K
+[36mexit[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;vagrant@lvm:~[39m[49m^G[36m[44m[vagrant@lvm ~]$ btrfs[39m[49m^H^H^H^H^H^G^G^G^G^G[36m[44mmbtrfs[39m[49m^H^H^H^H^H[36m[44mkbtrfs[39m[49m^H^H^H^H^H[36m[44mfbtrfs[39m[49m^H^H^H^H^H[36m[44msbtrfs[39m[49m^H^H^H^H^H[36m[44m.btrfs[39m[49m^H^H^H^H^H[9;1H[36m[44mbtrfs-progs v4.9.1[39m[49m^M[37m[44m[K
+[36mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36mprobe of /dev/sdd failed, cannot detect existing filesystem.[39m[49m^M[37m[44m[K
+[36mERROR: use the -f option to force overwrite of /dev/sdd[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;vagrant@lvm:~[39m[49m^G[36m[44m[vagrant@lvm ~]$ mkfs.btrfs /dev/sdd -f
+btrfs-progs v4.9.1[39m[49m^M[37m[44m[K
+[36mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36mERROR: mount check: cannot open /dev/sdd: Permission denied[39m[49m^M[37m[44m[K
+[36mERROR: cannot check mount status of /dev/sdd: Permission denied[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;vagrant@lvm:~[39m[49m^G[36m[44m[vagrant@lvm ~]$ mkfs.btrfs /dev/sdd -f[39m[49m^M^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[K[39m[49m^G^G^G^G
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G^[[36m[44m[?1034h[root@lvm vagrant]# exit[39m[49m^H^H^H^H[36m[44mdmesg -T[39m[49m^H^H^H^H^H^H^H^H^[[36m[44m[4Pexit[39m[49m^H^H^H^H^[[36m[44m[K[39m[49m^G[36m[44mmkfs.br[39m[49m^H^[[36m[44m[Ktrfs /dev/sd[22;1Hbtrfs-progs v4.9.1[39m[49m^M[37m[44m[K
+[36mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36m/dev/sdd appears to contain an existing filesystem (btrfs).[39m[49m^M[37m[44m[K
+[36mERROR: use the -f option to force overwrite of /dev/sdd[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdd[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[K[39m[49m^G^G^G^G^G^G^G^G[36m[44mmkfs.btrfs /dev/[28;1Hmount: /dev/sde is write-protected, mounting read-only[39m[49m^M[37m[44m[K
+[36mmount: wrong fs type, bad option, bad superblock on /dev/sde,[39m[49m^M[37m[44m[K
+[36m       missing codepage or helper program, or other error[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36m       In some cases useful info is found in syslog - try[39m[49m^M[37m[44m[K
+[36m       dmesg | tail or so.[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mount /dev/sde /mnt/sde[39m[49m^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /mnt/sde[39m[49m^H^H^H^H^H^H^H^H^H[36m[44mb /mnt/sde[39m[49m^H^H^H^H[35;1H^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# df -g[39m[49m^H^[[36m[44m[Kh[39m[49m^M
+[36m[44mFilesystem                       Size  Used Avail Use% Mounted on[39m[49m^M[37m[44m[K
+[36m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M[37m[44m[K[37;28H[1;82H[30m[46m531[6C66[10C6204[11C007 0x007
+[36m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M[37m[44m[K
+[36mdevtmpfs                         109M     0  109M   0% /dev[39m[49m^M[37m[44m[K
+[36mtmpfs                            118M     0  118M   0% /dev/shm[39m[49m^M[37m[44m[K
+[36mtmpfs                            118M  4.5M  114M   4% /run[39m[49m^M
+[36m[44mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[39m[49m^M
+[36m[44m/dev/sda2                       1014M   63M  952M   7% /boot[39m[49m^M
+[36m[44mtmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M[37m[44m[K
+[36m/dev/sdb                          12G   17M   10G   1% /var/opt[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /mnt/d[39m[49m^G^G^G^G^G^H^[[36m[44m[K[39m[49m^G[36m[44msd[39m[49m^G^M
+[36m[44msdb/ sdd/ sde/ [39m[49m^M
+[36m[44m[root@lvm vagrant]# ls -l /mnt/sd[39m[49m^M[37m[44m[K
+[36msdb/ sdd/ sde/ [39m[49m^M[37m[44m[K
+[36m[root@lvm vagrant]# ls -l /mnt/sdb[39m[49m^M[37m[44m[K
+[36mtotal 0[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file1[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file10[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file11[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file12[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file13[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file14[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file15[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file16[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file17[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file18[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file19[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file2[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file20[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file3[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file4[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file5[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file6[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file7[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file8[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 11:10 file9[39m[49m^M[37m[44m[K
+[36mdrwxr-xr-x. 1 root root 0 Feb 19 11:05 [39m[49m^[[36m[44m[0m[39m[49m^[[36m[44m[38;5;27mopt[39m[49m^[[36m[44m[0m[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /mnt/sdb[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[9Pdf -h[39m[49m^H^H^H^H^H[36m[44mmount /dev/sdb /mnt/sdb[39m[49m^M^[[36m[44m[C[39m[49m^[[37;28H[2;11r[2;1H[2L[1;38r[1;83H[30m[46m66[5C601[10C9222[12C32 0x020
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /mnt/sdb[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[9Pdf -h[39m[49m^H^H^H^H^H[36m[44mmount /dev/sdb /mnt/sdb[39m[49m^M^[[36m[44m[C[39m[49m^[[3;1H[36m[44mFilesystem                       Size  Used Avail Use% Mounted on[39m[49m^M[37m[44m[K[12;1H[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# df -h[39m[49m^H^H^H^H^H[36m[44mls -l /mnt/sdb[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[9Pdf -h[39m[49m^H^H^H^H^H[36m[44mmount /dev/sdb /[13;1Hmount: wrong fs type, bad option, bad superblock on /dev/sdd,[39m[49m^M
+[36m[44m       missing codepage or helper program, or other error[39m[49m^M
+^M[37m[44m[K
+[36m       In some cases useful info is found in syslog - try[39m[49m^M
+[36m[44m       dmesg | tail or so.[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mount /dev/sdd /mnt/sdd[39m[49m^M^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[19;1H[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# [39m[49m^G^G[36m[44mmkdir /test/[39m[49m^H^H^H^H^H^H^H^H^H^H^H[36m[44mount /dev/sdd /mnt/sdd[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H
+[36m[44mmount: wrong fs type, bad option, bad superblock on /dev/sdd,[39m[49m^M
+[36m[44m       missing codepage or helper program, or other error[39m[49m^M
+^M[37m[44m[K
+[36m       In some cases useful info is found in syslog - try[39m[49m^M
+[36m[44m       dmesg | tail or so.[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mount /dev/sdd /test/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[9Pkdir[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[[26;1Hbtrfs-progs v4.9.1[39m[49m^M[37m[44m[K
+[36mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M
+^M[37m[44m[K
+[36mLabel:              (null)[39m[49m^M[37m[44m[K
+[36mUUID:               a0303891-fac6-4145-9f61-2f76c0fd2f11[39m[49m^M
+[36m[44mNode size:          16384[39m[49m^M[37m[44m[K
+[36mSector size:        4096[39m[49m^M[37m[44m[K
+[36mFilesystem size:    1.00GiB[39m[49m^M[37m[44m[K
+[36mBlock group profiles:[39m[49m^M[37m[44m[K
+[36m  Data:             single            8.00MiB[39m[49m^M
+[36m[44m  Metadata:         DUP              51.19MiB[39m[49m^M[37m[44m[K
+[36m  System:           DUP               8.00MiB[39m[49m^M[37m[44m[K[37;28H[39m[49m[12;28r[12;1H[14M[1;38r[22;37r[22;1H[9M[1;38r[1;82H[30m[46m601[6C36[9C100704/116504b) 0007 0x007
+[36m[44m  System:           DUP               8.00MiB[39m[49m^M[37m[44m[K
+[36mSSD detected:[7Cno[39m[49m^M[37m[44m[K
+[36mIncompat features:  extref, skinny-metadata[39m[49m^M[37m[44m[K
+[36mNumber of devices:  1[39m[49m^M[37m[44m[K
+[36mDevices:[39m[49m^M[37m[44m[K
+[36m   ID[8CSIZE  PATH[39m[49m^M[37m[44m[K
+[36m    1[5C1.00GiB  /dev/sdd[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdd -f[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1Pount /dev/sdd /test/[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mount /dev/sdd /test/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[36m[44mkfs.btrfs /dev/sdd -f[39m[49m^H^H^H^H^[[36m[44m[[15;1HERROR: /dev/sdc is mounted[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sdc -f[39m[49m^H^H^H^H^[[36m[44m[1P -f[39m[49m^H^H^H[36m[44me -f[39m[49m^H^H^H^M[37m[44m[K
+[36mbtrfs-progs v4.9.1[39m[49m^M[37m[44m[K
+[36mSee http://btrfs.wiki.kernel.org for more information.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36mLabel:              (null)[39m[49m^M[37m[44m[K
+[36mUUID:               5f463209-96bb-4164-83eb-281f5825b3b5[39m[49m^M[37m[44m[K[29;1H[36mSSD detected:       no[39m[49m^M[37m[44m[K
+[36mIncompat features:  extref, skinny-metadata[39m[49m^M[37m[44m[K
+[36mNumber of devices:  1[39m[49m^M[37m[44m[K
+[36mDevices:[39m[49m^M[37m[44m[K
+[36m   ID        SIZE  PATH[39m[49m^M[37m[44m[K
+[36m    1     1.00GiB  /dev/sde[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mkfs.btrfs /dev/sde -f[39m[49m^H^H^H^H[36m[44mc[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1Poun[37;1H[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# umount /test/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H[36m[44mmkfs.btrfs /dev/sde -f[39m[49m^H^H^H^H[36m[44mc[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^H^H^H^H^H[37m[44m[K[37;28H[1;75H[30m[46m 9[6C36[6C71[11C3428[12C10[5CA
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# umount /test/[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H[36m[44mmkfs.btrfs /dev/sde -f[39m[49m^H^H^H^H[36m[44mc[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^H^H^H^H^H
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mount /dev/sdd /mnt/sdd[39m[49m^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /mnt/sdd[39m[49m^H^H^H^H^H^H^H^H^H[36m[44mc /mnt/sdd[39m[49m^H^H^H^H[4;1H[36m[44mmount: mount point /mnt/sdc does not exist[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# mount /dev/sdc /mnt/sdc[39m[49m^H^H^H^H^H^H^H^H^H^H^[[36m[44m[1P /mnt/sdc[39m[49m^H^H^H^H^H^H^H^H^H[36m[44me /mnt/sdc[39m[49m^H^H^H^H[6;1H^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# df -h[39m[49m^M
+[36m[44mFilesystem                       Size  Used Avail Use% Mounted on[39m[49m^M
+[36m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[39m[49m^M
+[36m[44mdevtmpfs                         109M     0  109M   0% /dev[39m[49m^M
+[36m[44mtmpfs                            118M     0  118M   0% /dev/shm[39m[49m^M[37m[44m[K
+[36mtmpfs                            118M  4.5M  114M   4% /run[39m[49m^M[37m[44m[K
+[36mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[39m[49m^M
+[36m[44m/dev/sda2                       1014M   63M  952M   7% /boot[39m[49m^M
+[36m[44mtmpfs                             24M     0   24M   0% /run/user/1000[39m[49m^M
+[36m[44m/dev/sdb                          12G   17M   10G   1% /var/opt[39m[49m^M
+[36m[44m/dev/sdd                         1.0G   17M  905M   2% /mnt/sdd[39m[49m^M[37m[44m[K
+[36m/dev/sde                         1.0G   17M  905M   2% /mnt/sde[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# [39m[49m^M^[[36m[44m[K[root@lvm vagrant]# [39m[49m^M^[[36m[44m[K[root@lvm vagrant]# [39m[49m^M^[[36m[44m[K[root@lvm vagrant]# [39m[49m^M^[[36m[44m[K[root@lvm[19;2H[39m[49m[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /dev/sdd[39m[49m^M
+[36m[44mbrw-rw----. 1 root disk 8, 48 Feb 19 13:53 [39m[49m^[[36m[44m[0m[39m[49m^[[36m[44m[48;5;232;38;5;11m/dev/sdd[39m[49m^[[36m[44m[0m[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /dev/sdd/[39m[49m^M
+[36m[44mls: cannot access /dev/sdd/: Not a directory[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# [39m[49m^G[36m[44mls -l /dev/sdd/[39m[49m^H^[[36m[44m[K/[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[Kmnt/sdd[39m[49m^M
+[36m[44mtotal 0[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /mnt/sdd[39m[49m^H^H^H^H^H^H^H[36m[44mdev/sdd/[39m[49m^H^[[36m[44m[K[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[13@touch file{1..100[26;1H[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# touch file{1..100} /mnt/sdd[39m[49m^M^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[39m[49m^[[36m[44m[C[27;1Htotal 0[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# ls -l /mnt/sdd[39m[49m^H^H^H^H^H^H^H^H^H[36m[44ma /mnt/sdd[39m[49m^H^H^H^H^H^H^H^H^H^M
+[36m[44mtotal 16[39m[49m^M[37m[44m[K
+[36mdrwxr-xr-x. 1 root root  0 Feb 19 13:53 [39m[49m^[[36m[44m[0m[39m[49m^[[36m[44m[38;5;27m.[39m[49m^[[36m[44m[0m[39m[49m^M
+[36m[44mdrwxr-xr-x. 5 root root 39 Feb 19 11:56 [39m[49m^[[36m[44m[38;5;27m..[39m[49m^[[36m[44m[0m[39m[49m^M
+^[[36m[44m]0;root@lvm:/home/vagrant[39m[49m^G[36m[44m[root@lvm vagrant]# cd /[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[Cd /mnr[39m[49m^H^[[36m[44m[K\t[39m[49m^H^[[36m[44m[K[39m[49m^H^[[36m[44m[Kt/sdd[39m[49m^M
+^[[36m[44m]0;root@lvm:/mnt/sdd[39m[49m^G[36m[44m[root@lvm sdd]# ll[39m[49m^M
+[36m[44mtotal 0[39m[49m^M[37m[44m[K[35;2H[39m[49m[[36m[44m]0;root@lvm:/mnt/sdd[39m[49m^G[36m[44m[root@lvm sdd]# touch file [39m[49m^H^[[36m[44m[K{}[39m[49m^H[36m[44m1}[39m[49m^H[36m[44m.}[39m[49m^H[36m[44m.}[39m[49m^H[36m[44m1}[39m[49m^H[36m[44m0}[39m[49m^H[36m[44m0}[39m[49m^H^M[36;16H[36m[44mmnt/sdd[39m[49m^G[36m[44m[root@lvm sdd]# ll[39m[49m^M[37m[44m[K
+[36mtotal 0[39m[49m^M[37m[44m[K[1;75H[30m[46m27[6C71[5C706[11C5052[11C101 0x065
+[36m[44mtotal 0[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file1[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file10[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file100[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file11[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file12[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file13[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file14[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file15[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file16[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file17[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file18[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file19[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file2[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file20[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file21[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file22[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file23[39m[49m^M[37m[44m[K
+[36m-rw-r--r[11Croot 0 Feb 19 13:54 file24[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file25[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file26[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file27[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file28[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file29[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file3[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file30[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file31[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file32[39m[49m^M
+[36m[44m-rw-r--r--[14C0 Feb 19 13:54 file33[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1[11C0 Feb 19 13:54 file34[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file35[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file36[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file37[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file38[39m[49m^M[37m[44m[K
+[36m-rw-r--r--. 1 root root 0 Feb 19 13:54 file39[39m[49m^M
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file4[39m[49m^M[37;28H[1;82H[30m[46m706[6C41[11C6693
+[36m[44m-rw-r--r--. 1 root root 0 Feb 19 13:54 file4[39m[49m^M[3;44H[36m[44m40[39m[49m^M[4;44H[36m[44m41[5;44H42[39m[49m^M[37m[44m[K[6;44H[36m43[7;44H44[8;44H45[9;44H46[10;44H47[11;44H48[12;44H49[13;44H5[39m[49m^M[37m[44m[K[14;44H[36m50[15;44H51[39m[49m^M[16;44H[36m[44m52[17;44H53[18;44H54[19;44H55[20;44H56[21;44H57[22;44H58[23;44H59[24;44H6[39m[49m^M[37m[44m[K[25;44H[36m60[26;44H61[39m[49m^M[27;44H[36m[44m62[28;44H63[29;44H64[30;44H65[31;44H66[32;44H67[33;44H68[34;44H69[35;44H7[39m[49m^M[37m[44m[K[36;44H[36m70[37;44H71[39m[49m^M[37;28H[1;83H[30m[46m41[6C76[11C8866[13C4[5C8[2;44H[36m[44m71[39m[49m^M[3;44H[36m[44m72[4;44H73[5;44H74[6;44H75[7;44H76[8;44H77[9;44H78[10;44H79[11;44H8[39m[49m^M[37m[44m[K[12;44H[36m80[13;44H81[39m[49m^M[14;44H[36m[44m82[15;44H83[16;44H84[17;44H85[18;44H86[19;44H87[20;44H88[21;44H89[22;44H9[39m[49m^M[37m[44m[K[23;44H[36m90[24;44H91[39m[49m^M[25;44H[36m[44m92[26;44H93[27;44H94[28;44H95[29;44H96[30;44H97[31;44H98[32;44H99
+[39m[49m^[[36m[44m]0;root@lvm:/mnt/sdd[39m[49m^G[36m[44m[root@lvm sdd]# exit[39m[49m^M[37m[44m[K
+[36mexit[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;vagrant@lvm:~[39m[49m^G[36m[44m[vagrant@lvm ~]$ ^C[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;vagrant@lvm:~[39m[49m^G[36m[44m[vagrant@lvm ~]$ btrfs subvolume snapshot /source /destination[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H[37;1H[36m[44mbtrfs: unknown token 'snapshot'[39m[49m^M[37m[44m[K[37;28H[1;83H[30m[46m76[5C811[10C10629[11C097[5C1
+[36m[44mbtrfs: unknown token 'snapshot'[39m[49m^M[37m[44m[K
+[36musage: btrfs [--help] [--version] <group> [<group>...] <command> [<args>][39m[49m^M
+^M[37m[44m[K
+[36m    btrfs subvolume create [-i <qgroupid>] [<dest>/]<name>[39m[49m^M
+[36m[44m        Create a subvolume[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume delete [options] <subvolume> [<subvolume>...][39m[49m^M
+[36m[44m        Delete subvolume(s)[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume list [options] [-G [+|-]value] [-C [+|-]value] [--sort=gen,ogen,rootid,path] <path>[39m[49m^M
+[36m[44m        List subvolumes (and snapshots)[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume snapshot [-r] [-i <qgroupid>] <source> <dest>|[<dest>/]<name>[39m[49m^M
+[36m[44m        Create a snapshot of the subvolume[39m[49m^M[37m[44m[K
+[36m    btrfs subvolume get-default <path>[39m[49m^M[37m[44m[K
+[36m        Get the default subvolume of a[5Csystem[39m[49m^M
+[36m[44m    btrfs subvolume set-default <subvolid> <path>[39m[49m^M
+[36m[44m        Set the default subvolume of a[5Csystem[39m[49m^M
+[36m[44m    btrfs subvolume find-new <path> <lastgen>
+        List the recently modified files in a filesystem[39m[49m^M
+[36m[44m    btrfs subvolume show <subvol-path>[39m[49m^M[37m[44m[K
+[36m        Show more information of the subvolume[39m[49m^M
+[36m[44m    btrfs subvolume sync <path> [<subvol-id>...][39m[49m^M
+[36m[44m        Wait until given subvolume(s) are completely removed from the filesystem.[39m[49m^M
+^M[37m[44m[K
+[36m    btrfs filesystem df [options] <path>[39m[49m^M[37m[44m[K
+[36m        Show space usage information for a mount point[39m[49m^M
+[36m[44m    btrfs filesystem du [options] <path> [<path>..][39m[49m^M
+[36m[44m        Summarize disk usage of each file.[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem show [options] [<path>|<uuid>|<device>|label][39m[49m^M
+[36m[44m        Show the structure of a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem sync <path>[39m[49m^M[37m[44m[K
+[36m        Force a sync on a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem defragment [options] <file>|<dir> [<file>|<dir>...][39m[49m^M
+[36m[44m        Defragment a file or a directory[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem resize [devid:][+/-]<newsize>[kKmMgGtTpPeE]|[devid:]max <path>[39m[49m^M
+[36m[44m        Resize a filesystem[39m[49m^M[37m[44m[K
+[36m    btrfs filesystem label [<device>|<mount_point>] [<newlabel>][39m[49m^M[37m[44m[K
+[36m        Get or change the label of a filesystem[39m[49m^M[37;28H[4;5r[4;1H[1L[1;38r[1;82H[30m[46m811[6C46[11C2297[13C3 0x05D
+[36m[44m        Get or change the label of a filesystem[39m[49m^M
+[36m[44m    btrfs filesystem usage [options] <path> [<path>..][39m[49m^M[37m[44m[K
+[36m        Show detailed information about internal filesystem usage .[39m[49m^M[37m[44m[K[6;5H[36mbtrfs balance start [options] <path>[39m[49m^M[7;5H[36m[44m    Balance chunks across the devices[39m[49m^M[37m[44m[K[8;5H[36mbtrfs balance pause <path>[39m[49m^M[9;5H[36m[44m    Pause running balance[39m[49m^M[37m[44m[K[10;5H[36mbtrfs balance cancel <path>[39m[49m^M[37m[44m[K[11;5H[36m    Cancel running or paused balance[39m[49m^M[37m[44m[K[12;5H[36mbtrfs balance resume <path>[39m[49m^M[37m[44m[K[13;5H[36m    Resume interrupted balance[39m[49m^M[37m[44m[K[14;5H[36mbtrfs balance status [-v] <path>[39m[49m^M[37m[44m[K[15;5H[36m    Show status of running or paused balance[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[17;11H[36mdevice add [options] <device> [<device>...] <path>[39m[49m^M[18;9H[36m[44mAdd a device to a filesystem[39m[49m^M[37m[44m[K[19;11H[36mdevice delete <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[20;5H[36m[44mbtrfs device remove <device>|<devid> [<device>|<devid>...] <path>[39m[49m^M[21;5H[36m[44m    Remove a device from a filesystem[39m[49m^M[37m[44m[K[22;5H[36mbtrfs device scan [(-d|--all-devices)|<device> [<device>...]][39m[49m^M[37m[44m[K
+[36m        Scan devices for a btrfs filesystem[39m[49m^M[24;11H[36m[44mdevice ready <device>[39m[49m^M[37m[44m[K[25;9H[36mCheck device to see if it has all of its devices in cache for mounting[39m[49m^M[26;11H[36m[44mdevice stats [options] <path>|<device>[39m[49m^M[37m[44m[K[27;10H[36mhow device IO error statistics[39m[49m^M[37m[44m[K[28;11H[36mdevice usage [options] <path> [<path>..][39m[49m^M[37m[44m[K[29;14H[36mdetailed information about internal allocations in devices.[39m[49m^M
+^M[37m[44m[K[31;5H[36mbtrfs scrub start [-BdqrRf] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[32;5H[36m[44m    Start a new scrub. If a scrub is already running, the new one fails.[39m[49m^M[33;5H[36m[44mbtrfs scrub cancel <path>|<device>[39m[49m^M[37m[44m[K[34;5H[36m    Cancel a running scrub[39m[49m^M[37m[44m[K[35;5H[36mbtrfs scrub resume [-BdqrR] [-c ioprio_class -n ioprio_classdata] <path>|<device>[39m[49m^M[36;5H[36m[44m    Resume previously canceled or interrupted scrub[39m[49m^M[37m[44m[K[37;5H[36mbtrfs scrub status [93m[42m[[36m[44m-dR] <path>|<device>[39m[49m^M[37m[44m[K[37;28H[39m[49m[16;17r[16;1H[1L[1;38r[1;83H[30m[46m46[6C81[11C3985[12C60 0x03C[2;5H[36m[44mbtrfs scrub status [-dR] <path>|<device>[39m[49m^M[37m[44m[K[3;5H[36m    Show status of running or finished scrub[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36m    btrfs check [options] <device>[39m[49m^M[6;5H[36m[44m    Check structural integrity of a filesystem (unmounted).[39m[49m^M
+^M[37m[44m[K[8;11H[36mrescue chunk-recover [options] <device>[39m[49m^M[9;9H[36m[44mRecover the chunk tree by scanning the devices one by one.[39m[49m^M[10;11H[36m[44mrescue super-recover [options] <device>[39m[49m^M[11;9H[36m[44mRecover bad superblocks from good copies[39m[49m^M[12;11H[36m[44mrescue zero-log <device>[39m[49m^M[13;9H[36m[44mClear the tree log. Usable if it's corrupted and prevents mount.[39m[49m^M
+^M[37m[44m[K[15;5H[36mbtrfs restore [options] <device> <path> | -l <device>[39m[49m^M
+[36m[44m        Try to restore files from a damaged filesystem (unmounted)[39m[49m^M[37m[44m[K[18;5H[36mbtrfs inspect-internal inode-resolve [-v] <inode> <path>[39m[49m^M[19;5H[36m[44m    Get file system paths for the given inode[39m[49m^M[37m[44m[K[20;11H[36minspect-internal logical-resolve [-Pv] [-s bufsize] <logical> <path>[39m[49m^M[21;9H[36m[44mGet file system paths for the given logical address[39m[49m^M[22;11H[36m[44minspect-internal subvolid-resolve <subvolid> <path>[39m[49m^M[37m[44m[K[23;9H[36mGet file system paths for the given subvolume ID.[39m[49m^M[24;11H[36m[44minspect-internal rootid <path>[39m[49m^M[25;9H[36m[44mGet tree ID of the containing subvolume of path.[39m[49m^M[37m[44m[K[26;11H[36minspect-internal min-dev-size [options] <path>[39m[49m^M[27;9H[36m[44mGet the minimum size the device can be shrunk to. The[39m[49m^M[28;11H[36m[44minspect-internal dump-tree [options] device[39m[49m^M[29;9H[36m[44mDump tree structures from a given device[39m[49m^M[37m[44m[K
+[36m    btrfs inspect-internal dump-super [options] device [device...][39m[49m^M[31;5H[36m[44m    Dump superblock from a device in a textual form[39m[49m^M[37m[44m[K[32;5H[36mbtrfs inspect-internal tree-stats [options] <device>[39m[49m^M[37m[44m[K[33;5H[36m    Print various stats for trees[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[35;11H[36mproperty get [-t <type>] <object> [<name>][39m[49m^M[37m[44m[K[36;9H[36mGets a property from a btrfs object.[39m[49m^M[37m[44m[K[37;11H[36mproperty set [-t <type>] <object> <name> <value>[39m[49m^M[37;28H[6;7r[6;1H[1M[1;38r[1;83H[30m[46m81[5C916[11C5558[11C111 0x06F[2;11H[36m[44mproperty set [-t <type>] <object> <name> <value>[39m[49m^M[3;10H[36m[44mets a property on a btrfs object.[39m[49m^M[37m[44m[K
+[36m    btrfs property list [-t <type>] <object>[39m[49m^M[5;5H[36m[44m    Lists available properties with their descriptions for the given object.[39m[49m^M
+
+[36m[44m    btrfs send [-ve] [-p <parent>] [-c <clone-src>] [-f <outfile>] <subvol> [<subvol>...][39m[49m^M[37m[44m[K[8;5H[36m    Send the subvolume(s) to stdout.[39m[49m^M[37m[44m[K[9;5H[36mbtrfs receive [options] <mount>[39m[49m^M[37m[44m[K
+[36mbtrfs receive --dump [options][39m[49m^M[37m[44m[K[11;12H[36meive subvolumes from a stream[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[13;5H[36mbtrfs quota enable <path>[39m[49m^M[37m[44m[K
+[36m        Enable subvolume quota support for a filesystem.[39m[49m^M[15;11H[36m[44mquota disable <path>[39m[49m^M[37m[44m[K[16;9H[36mDisable subvolume quota support for a filesystem.[39m[49m^M[37m[44m[K
+[36m    btrfs quota rescan [-sw] <path>[39m[49m^M[18;5H[36m[44m    Trash all qgroup numbers and scan the metadata again with the current config.[39m[49m^M
+^M[37m[44m[K[20;11H[36mqgroup assign [options] <src> <dst> <path>[39m[49m^M[37m[44m[K[21;9H[36mAssign SRC as the child qgroup of DST[39m[49m^M[37m[44m[K[22;11H[36mqgroup remove <src> <dst> <path>[39m[49m^M[37m[44m[K[23;9H[36mRemove a child qgroup SRC from DST.[39m[49m^M[37m[44m[K[24;11H[36mqgroup create <qgroupid> <path>[39m[49m^M[25;9H[36m[44mCreate a subvolume quota group.[39m[49m^M[37m[44m[K[26;11H[36mqgroup destroy <qgroupid> <path>[39m[49m^M[37m[44m[K[27;9H[36mDestroy a quota group.[39m[49m^M[37m[44m[K[28;11H[36mqgroup show [options] <path>[39m[49m^M[37m[44m[K[29;9H[36mShow subvolume quota groups.[39m[49m^M[37m[44m[K[30;11H[36mqgroup limit [options] <size>|none [<qgroupid>] <path>[39m[49m^M[37m[44m[K[31;9H[36mSet the limits a subvolume quota group.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K[33;5H[36mbtrfs replace start [-Bfr] <srcdev>|<devid> <targetdev> <mount_point>[39m[49m^M
+[36m[44m        Replace device of a btrfs filesystem.[39m[49m^M[35;11H[36m[44mreplace status [-1] <mount_point>[39m[49m^M[37m[44m[K[36;9H[36mPrint status and progress information of a running device replace[39m[49m^M[37;11H[36m[44mreplace cancel <mount_point>[39m[49m^M[37m[44m[K[37;28H[39m[49m[2;37r[2;1H[22M[1;38r[1;75H[30m[46m 0[5C903[6C38[11C6504[10C<EOF>     [16;1H[36m[44m        Cancel a running device replace operation.[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36m    btrfs help [--full][39m[49m^M[37m[44m[K
+[36m        Display help information[39m[49m^M[37m[44m[K
+[36m    btrfs version[39m[49m^M[37m[44m[K
+[36m        Display btrfs-progs version[39m[49m^M[37m[44m[K
+[39m[49m^M[37m[44m[K
+[36mUse --help as an argument for information on a specific group or command.[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;vagrant@lvm:~[39m[49m^G[36m[44m[vagrant@lvm ~]$ btrfs snapshot /dev/sdd /dev/sde[39m[49m^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^H^[[36m[44m[C[39m[49m^[[36m[44m[1@s[39m[49m^H^[[36m[44m[1@u[39m[49m^[[36m[44m[[25;1HERROR: not a subvolume: /dev/sdd[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;vagrant@lvm:~[39m[49m^G[36m[44m[vagrant@lvm ~]$ [39m[49m^M^[[36m[44m[K[vagrant@lvm ~]$ [39m[49m^M^[[36m[44m[K[vagrant@lvm ~]$ htop[39m[49m^M[37m[44m[K
+[36m-bash: htop: command not found[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;vagrant@lvm:~[39m[49m^G[36m[44m[vagrant@lvm ~]$ exi[39m[49m^M[37m[44m[K
+[36m-bash: exi: command not found[39m[49m^M[37m[44m[K
+[39m[49m^[[36m[44m]0;vagrant@lvm:~[39m[49m^G[36m[44m[vagrant@lvm ~]$ exit[39m[49m^M[37m[44m[K
+[36mlogout[39m[49m^M[37m[44m[K
+[36mConnection to 127.0.0.1 closed.[39m[49m^M^M[37m[44m[K
+[39m[49m^[[36m[44m]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvm[39m[49m^G[36m[44mroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[K
+exit[39m[49m^M[37m[44m[K
+[K
+[36mScript done on 2020-02-19 17:09:10+02:00 [COMMAND_EXIT_CODE="127"][37m[K
+[K[1;76H[30m[46m1[30C5[6C5[37;1H[36m[44m`[1;76H[30m[46m2[30C6[6C6[37;2H[36m[44m`[1;76H[30m[46m3[30C7[6C7[37;3H[36m[44m`[39m[49m[2;37r[2;1H[1M[1;38r[1;76H[30m[46m0[7C4[7C9/1939[9C8[6C8[37;1H[37m[44m[K[11;27H[30m[47m                                                                                           [12;27H ┌──────────────────────────────────────[34m Save file [30m──────────────────────────────────────┐ [13;27H │ Confirm save file: "/home/pengwinn/Project/otus-linux/hometask/less3/Hometask_add.md" │ [14;27H ├───────────────────────────────────────────────────────────────────────────────────────┤ [15;27H │                                 [46m[ [34mS[30mave ][47m  [ [34mC[30mancel ]                                  │ [16;27H └───────────────────────────────────────────────────────────────────────────────────────┘ [17;27H                                                                                           [15;64H[1;70H[46m-[11;27H[36m[44ma btrfs filesystem.[39m[49m^M[37m[44m[K[12;27H[36m-1] <mount_point>[39m[49m^M[37m[44m[K[13;27H[36mrogress information of a running device replace[39m[49m^M[37m[44m[K[14;27H[36mmount_point>[39m[49m^M[37m[44m[K[15;27H[36mevice replace operation.[39m[49m^M[37m[44m[K[16;27H[K[17;27H[K[37;1H[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?2004l[?1006l[?1002l[?1001r[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t[39;49m
+[?1001s[?1002h[?1006h[?2004h]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[1;1H[30m[46m  Left     File     Command     Options     Right[K
+[37m[44m┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐┌<─[30m[47m /home/pengwinn/Project/otus-linux/hometask/less3 [37m[44m────────────.[^]>┐[3;1H│[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m│[4;1H│[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 14 12:11[37m│[5;1H│[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[30m[46m Hometask_add.md                                │ 116508│лют 20 10:56[37m[44m│[6;1H│[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││ MainHOMETASK.md                                │  26726│лют 18 16:54│[7;1H│ README.md                                      │    109│лют 17 12:34││ README.md                                      │     43│лют 14 12:12│[8;1H│ Vagrantfile                                    │   2437│лют 17 14:37││                                                │       │            │[9;1H│ type                                           │ 118464│лют 19 17:09││                                                │       │            │[10;1H│ typescript                                     │ 499712│лют 20 10:56││                                                │       │            │[11;1H│                                                │       │            ││                                                │       │            │[12;1H│                                                │       │            ││                                                │       │            │[13;1H│                                                │       │            ││                                                │       │            │[14;1H│                                                │       │            ││                                                │       │            │[15;1H│                                                │       │            ││                                                │       │            │[16;1H│                                                │       │            ││                                                │       │            │[17;1H│                                                │       │            ││                                                │       │            │[18;1H│                                                │       │            ││                                                │       │            │[19;1H│                                                │       │            ││                                                │       │            │[20;1H│                                                │       │            ││                                                │       │            │[21;1H│                                                │       │            ││                                                │       │            │[22;1H│                                                │       │            ││                                                │       │            │[23;1H│                                                │       │            ││                                                │       │            │[24;1H│                                                │       │            ││                                                │       │            │[25;1H│                                                │       │            ││                                                │       │            │[26;1H│                                                │       │            ││                                                │       │            │[27;1H│                                                │       │            ││                                                │       │            │[28;1H│                                                │       │            ││                                                │       │            │[29;1H│                                                │       │            ││                                                │       │            │[30;1H│                                                │       │            ││                                                │       │            │[31;1H│                                                │       │            ││                                                │       │            │[32;1H│                                                │       │            ││                                                │       │            │[33;1H├─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────┤[34;1H│ type                                                                ││ Hometask_add.md                                                     │[35;1H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[36;1H[39m[49mHint: Want your plain shell? Press C-o, and get back to MC with C-o again.
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3#[71C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[2;142H[37;70H[?1006l[?1002l[?1001r[?2004l[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t [Kgit pushcommit -m "hometask3"add .[K
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/hometask/less3root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3# git add .[1Ppushcommit -m "hometask3"
+[master a1f2dc9] hometask3
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/hometask/less3root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3# git commit -m "hometask3"add .[K[1Ppushcommit -m "hometask3"push[K
+Username for 'https://github.com': kakunindima
+Password for 'https://kakunindima@github.com': 
+Enumerating objects: 7, done.
+Counting objects:  14% (1/7)   
+Counting objects:  28% (2/7)   
+Counting objects:  42% (3/7)   
+Counting objects:  57% (4/7)   
+Counting objects:  71% (5/7)   
+Counting objects:  85% (6/7)   
+Counting objects: 100% (7/7)   
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects:  25% (1/4)   
+Compressing objects:  50% (2/4)   
+Compressing objects:  75% (3/4)   
+Compressing objects: 100% (4/4)   
+Compressing objects: 100% (4/4), done.
+Writing objects:  25% (1/4)   
+Writing objects:  50% (2/4)   
+Writing objects:  75% (3/4)   
+Writing objects: 100% (4/4)   
+Writing objects: 100% (4/4), 421 bytes | 421.00 KiB/s, done.
+Total 4 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)[K
+remote: Resolving deltas:  50% (1/2)[K
+remote: Resolving deltas: 100% (2/2)[K
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To https://github.com/kakunindima/otus_linux.git
+   db7a99b..a1f2dc9  master -> master
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/hometask/less3root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3# git push[K[?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[2;1H[37m[44m┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐[70C┐[3;1H│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+├[69C┤
+│[69C│
+└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H[2;72H┌<─[30m[47m /home/pengwinn/Project/otus-linux/hometask/less3 [37m[44m────────────.[^]>[3;72H│[69C│[4;72H│[69C│[5;72H│[69C│[6;72H│[69C│[7;72H│[69C│[8;72H│[69C│[9;72H│[69C│[10;72H│[69C│[11;72H│[69C│[12;72H│[69C│[13;72H│[69C│[14;72H│[69C│[15;72H│[69C│[16;72H│[69C│[17;72H│[69C│[18;72H│[69C│[19;72H│[69C│[20;72H│[69C│[21;72H│[69C│[22;72H│[69C│[23;72H│[69C│[24;72H│[69C│[25;72H│[69C│[26;72H│[69C│[27;72H│[69C│[28;72H│[69C│[29;72H│[69C│[30;72H│[69C│[31;72H│[69C│[32;72H│[69C│[33;72H├[69C┤[34;72H│[69C│[35;72H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[1;1H[30m[46m  Left     File     Command     Options     Right[K[3;2H[93m[44m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [4;2H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 14 12:11[5;2H/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[30m[46m Hometask_add.md                                │ 116508│лют 20 10:56[6;2H[97m[44m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││ MainHOMETASK.md                                │  26726│лют 18 16:54[7;2H README.md                                      │    109│лют 17 12:34││ README.md                                      │     43│лют 14 12:12[8;2H Vagrantfile                                    │   2437│лют 17 14:37││                                                │       │            [9;2H type                                           │ 118464│лют 19 17:09││                                                │       │            [10;2H typescript                                     │ 507904│лют 20 10:56││                                                │       │            [11;2H                                                │       │            ││                                                │       │            [12;2H                                                │       │            ││                                                │       │            [13;2H                                                │       │            ││                                                │       │            [14;2H                                                │       │            ││                                                │       │            [15;2H                                                │       │            ││                                                │       │            [16;2H                                                │       │            ││                                                │       │            [17;2H                                                │       │            ││                                                │       │            [18;2H                                                │       │            ││                                                │       │            [19;2H                                                │       │            ││                                                │       │            [20;2H                                                │       │            ││                                                │       │            [21;2H                                                │       │            ││                                                │       │            [22;2H                                                │       │            ││                                                │       │            [23;2H                                                │       │            ││                                                │       │            [24;2H                                                │       │            ││                                                │       │            [25;2H                                                │       │            ││                                                │       │            [26;2H                                                │       │            ││                                                │       │            [27;2H                                                │       │            ││                                                │       │            [28;2H                                                │       │            ││                                                │       │            [29;2H                                                │       │            ││                                                │       │            [30;2H                                                │       │            ││                                                │       │            [31;2H                                                │       │            ││                                                │       │            [32;2H                                                │       │            ││                                                │       │            [33;2H─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────[34;2H type                                                                ││ Hometask_add.md                                                     
+
+[39m[49mHint: Want your plain shell? Press C-o, and get back to MC with C-o again.
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3#[71C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[37;70H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[2;4H[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [22C[37m[44m /home/pengwinn/Project/otus-linux/hometask/less3 [5;73H Hometask_add.md                                │ 116508│лют 20 10:56[9;2H[30m[46m type                                           │ 118464│лют 19 17:09[37;70H[37;54H[39m[49mstands-03-lvm# [71C[37;69H[?1006l[?1002l[?1001r[?2004l[1;1H[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#  [Kvagrant up
+[0mBringing machine 'lvm' up with 'virtualbox' provider...[0m
+[1m==> lvm: Checking if box 'centos/7' version '1804.02' is up to date...[0m
+[1m==> lvm: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> lvm: flag to force provisioning. Provisioners marked to run always will still run.[0m
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvmroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# vagrant up
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A[0mBringing machine 'lvm' up with 'virtualbox' provider...[0m
+^[[A^[[A^[[A^[[A[1m==> lvm: Checking if box 'centos/7' version '1804.02' is up to date...[0m
+[1m==> lvm: Machine already provisioned. Run `vagrant provision` or use the `--provision`
+==> lvm: flag to force provisioning. Provisioners marked to run always will still run.[0m
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvmroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# vagrant up[2Pgit pushcommit -m "hometask3"add .[K[1Ppushcommit -m "hometask3"add .[Kvagrant ssh[1Pup[4Pscript[4Pmcllcd stands-03-lvm/[Kll[Kmcscriptvagrant upssh[1Pupssh
+Last login: Thu Feb 20 07:37:33 2020 from 10.0.2.2
+
+]0;vagrant@lvm:~[?1034h[vagrant@lvm ~]$ df -l
+Filesystem                      1K-blocks   Used Available Use% Mounted on
+/dev/mapper/VolGroup00-LogVol00  39269648 777480  38492168   2% /
+devtmpfs                           110948      0    110948   0% /dev
+tmpfs                              120692      0    120692   0% /dev/shm
+tmpfs                              120692   4592    116100   4% /run
+tmpfs                              120692      0    120692   0% /sys/fs/cgroup
+/dev/sda2                         1038336  64076    974260   7% /boot
+/dev/sdb                         12582912  16896  10467072   1% /mnt/sdb
+/dev/sdd                          1048576  16928    926336   2% /mnt/sdd
+/dev/sde                          1048576  16704    926336   2% /mnt/sde
+tmpfs                               24140      0     24140   0% /run/user/1000
+]0;vagrant@lvm:~[vagrant@lvm ~]$ l[Kmount /var/opr[Kt [K/ /dev/sd
+sda   sda1  sda2  sda3  sdb   sdc   sdd   sde   
+[vagrant@lvm ~]$ mount /var/opt/ /dev/sd
+sda   sda1  sda2  sda3  sdb   sdc   sdd   sde   
+[vagrant@lvm ~]$ mount /var/opt/ /dev/sdb/[K/
+mount: only root can do that
+]0;vagrant@lvm:~[vagrant@lvm ~]$ mount /var/opt/ /dev/sdb/[1@s[1@u[1@d[1@o[1@ 
+mount:  /var/opt is not a block device
+]0;vagrant@lvm:~[vagrant@lvm ~]$ sudo mount /var/opt/ /dev/sdb/[1P/dev/sdb/[1Pdev/sdb/[1P/dev/sdb/[1P/dev/sdb/[1P/dev/sdb/[1Pdev/sdb/[1P/dev/sdb/[1P/dev/sdb/[1P/dev/sdb/[1Pdev/sdb/[C[C[C[C[C[C[C[C[C /var/opt
+]0;vagrant@lvm:~[vagrant@lvm ~]$ sudo mount /dev/sdb/ /var/optvar/opt/ /dev/sdb/
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[5P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -l[Kh
+Filesystem                       Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /
+devtmpfs                         109M     0  109M   0% /dev
+tmpfs                            118M     0  118M   0% /dev/shm
+tmpfs                            118M  4.5M  114M   4% /run
+tmpfs                            118M     0  118M   0% /sys/fs/cgroup
+/dev/sda2                       1014M   63M  952M   7% /boot
+/dev/sdb                          12G   17M   10G   1% /mnt/sdb
+/dev/sdd                         1.0G   17M  905M   2% /mnt/sdd
+/dev/sde                         1.0G   17M  905M   2% /mnt/sde
+tmpfs                             24M     0   24M   0% /run/user/1000
+]0;vagrant@lvm:~[vagrant@lvm ~]$ df -lh[1Ph
+Filesystem                       Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /
+devtmpfs                         109M     0  109M   0% /dev
+tmpfs                            118M     0  118M   0% /dev/shm
+tmpfs                            118M  4.5M  114M   4% /run
+tmpfs                            118M     0  118M   0% /sys/fs/cgroup
+/dev/sda2                       1014M   63M  952M   7% /boot
+/dev/sdb                          12G   17M   10G   1% /mnt/sdb
+/dev/sdd                         1.0G   17M  905M   2% /mnt/sdd
+/dev/sde                         1.0G   17M  905M   2% /mnt/sde
+tmpfs                             24M     0   24M   0% /run/user/1000
+]0;vagrant@lvm:~[vagrant@lvm ~]$ umount /dev/sdb
+umount: /var/opt: umount failed: Operation not permitted
+]0;vagrant@lvm:~[vagrant@lvm ~]$ umount /dev/sdb/
+umount: /var/opt: umount failed: Operation not permitted
+]0;vagrant@lvm:~[vagrant@lvm ~]$ umount /dev/sdb/[K[K[K[K[K[K[K[Kmnt.[K/sdb
+umount: /mnt/sdb: umount failed: Operation not permitted
+]0;vagrant@lvm:~[vagrant@lvm ~]$ sudo -s 
+]0;root@lvm:/home/vagrant[?1034h[root@lvm vagrant]# umount /mnt/SDB
+umount: /mnt/SDB: mountpoint not found
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# umount /mnt/SDB[K[K[Ksdb
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# umount /mnt/sdbSDBsdb[1P[C[C[C[C[C[C[C[C[1Pnt/sdb[1Pt/sdb[1P/sdbd/sdbe/sdbv/sdb[C[C[C[C /var.[K/opt
+mount: /dev/sdb is already mounted or /var/opt busy
+       /dev/sdb is already mounted on /var/opt
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# mount /dev/sdb /var/opt
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8Pumount /mnt/sdbSDBexit[Kumount /mnt/SDBsdbmount /dev/sdb /var/opt
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kdf -h
+Filesystem                       Size  Used Avail Use% Mounted on
+/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /
+devtmpfs                         109M     0  109M   0% /dev
+tmpfs                            118M     0  118M   0% /dev/shm
+tmpfs                            118M  4.5M  114M   4% /run
+tmpfs                            118M     0  118M   0% /sys/fs/cgroup
+/dev/sda2                       1014M   63M  952M   7% /boot
+/dev/sdd                         1.0G   17M  905M   2% /mnt/sdd
+/dev/sde                         1.0G   17M  905M   2% /mnt/sde
+tmpfs                             24M     0   24M   0% /run/user/1000
+/dev/sdb                          12G   17M   10G   1% /var/opt
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# df -hmount /dev/sdb /var/opt
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdf -h[K[?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[2;71H[1K [37m[44m┌<─ /home/pengwinn/Project/otus-linux/hometask/less3 ────────────.[^]>┐[3;71H[39m[49m[1K [37m[44m│[69C│[4;71H[39m[49m[1K [37m[44m│[69C│[5;71H[39m[49m[1K [37m[44m│[69C│[6;71H[39m[49m[1K [37m[44m│[69C│[7;71H[39m[49m[1K [37m[44m│[69C│[8;71H[39m[49m[1K [37m[44m│[69C│[9;71H[39m[49m[1K [37m[44m│[69C│[10;71H[39m[49m[1K [37m[44m│[69C│[11;71H[39m[49m[1K [37m[44m│[69C│[12;71H[39m[49m[1K [37m[44m│[69C│[13;71H[39m[49m[1K [37m[44m│[69C│[14;71H[39m[49m[1K [37m[44m│[69C│[15;71H[39m[49m[1K [37m[44m│[69C│[16;71H[39m[49m[1K [37m[44m│[69C│[17;71H[39m[49m[1K [37m[44m│[69C│[18;71H[39m[49m[1K [37m[44m│[69C│[19;71H[39m[49m[1K [37m[44m│[69C│[20;71H[39m[49m[1K [37m[44m│[69C│[21;71H[39m[49m[1K [37m[44m│[69C│[22;71H[39m[49m[1K [37m[44m│[69C│[23;71H[39m[49m[1K [37m[44m│[69C│[24;71H[39m[49m[1K [37m[44m│[69C│[25;71H[39m[49m[1K [37m[44m│[69C│[26;71H[39m[49m[1K [37m[44m│[69C│[27;71H[39m[49m[1K [37m[44m│[69C│[28;71H[39m[49m[1K [37m[44m│[69C│[29;71H[39m[49m[1K [37m[44m│[69C│[30;71H[39m[49m[1K [37m[44m│[69C│[31;71H[39m[49m[1K [37m[44m│[69C│[32;71H[39m[49m[1K [37m[44m│[69C│[33;71H[39m[49m[1K [37m[44m├[69C┤[34;71H[39m[49m[1K [37m[44m│[69C│[35;71H[39m[49m[1K [37m[44m└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H
+┌<─[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [37m[44m─────────────.[^]>┐
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+├[69C┤
+│[69C│
+└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[1;1H[30m[46m  Left     File     Command     Options     Right[K[3;2H[93m[44m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [4;2H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 14 12:11[5;2H/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││ Hometask_add.md                                │ 116508│лют 20 10:56[6;2H[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││ MainHOMETASK.md                                │  26726│лют 18 16:54[7;2H README.md                                      │    109│лют 17 12:34││ README.md                                      │     43│лют 14 12:12[8;2H Vagrantfile                                    │   2437│лют 17 14:37││                                                │       │            [9;2H[30m[46m type                                           │ 118464│лют 19 17:09[37m[44m││                                                │       │            [10;2H typescript                                     │ 524288│лют 20 11:19││                                                │       │            [11;2H                                                │       │            ││                                                │       │            [12;2H                                                │       │            ││                                                │       │            [13;2H                                                │       │            ││                                                │       │            [14;2H                                                │       │            ││                                                │       │            [15;2H                                                │       │            ││                                                │       │            [16;2H                                                │       │            ││                                                │       │            [17;2H                                                │       │            ││                                                │       │            [18;2H                                                │       │            ││                                                │       │            [19;2H                                                │       │            ││                                                │       │            [20;2H                                                │       │            ││                                                │       │            [21;2H                                                │       │            ││                                                │       │            [22;2H                                                │       │            ││                                                │       │            [23;2H                                                │       │            ││                                                │       │            [24;2H                                                │       │            ││                                                │       │            [25;2H                                                │       │            ││                                                │       │            [26;2H                                                │       │            ││                                                │       │            [27;2H                                                │       │            ││                                                │       │            [28;2H                                                │       │            ││                                                │       │            [29;2H                                                │       │            ││                                                │       │            [30;2H                                                │       │            ││                                                │       │            [31;2H                                                │       │            ││                                                │       │            [32;2H                                                │       │            ││                                                │       │            [33;2H─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────[34;2H type                                                                ││ Hometask_add.md                                                     
+
+[39m[49mHint: Want your plain shell? Press C-o, and get back to MC with C-o again.
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[72C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[37;69H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[2;4H[37m[44m /home/pengwinn/Project/otus-linux/stands-03-lvm [22C[30m[47m /home/pengwinn/Project/otus-linux/hometask/less3 [5;73H[46m Hometask_add.md                                │ 116508│лют 20 10:56[9;2H[37m[44m type                                           │ 118464│лют 19 17:09[37;69H[?1006l[?1002l[?1001r[?2004l[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t[K[K[K[K[Kmount /dev/sdb /var/opt
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kgit pull 
+bash: git: command not found
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# [?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[2;141H[1K [37m[44m┐[2;142H[36;1H[39m[49mHint: Want to see your *~ backup files? Set it in the Configuration dialog.[36;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[2;1H[37m[44m┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐[70C
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+├[69C┤
+│[69C│
+└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H[2;72H┌<─[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [37m[44m─────────────.[^]>[3;72H│[69C│[4;72H│[69C│[5;72H│[69C│[6;72H│[69C│[7;72H│[69C│[8;72H│[69C│[9;72H│[69C│[10;72H│[69C│[11;72H│[69C│[12;72H│[69C│[13;72H│[69C│[14;72H│[69C│[15;72H│[69C│[16;72H│[69C│[17;72H│[69C│[18;72H│[69C│[19;72H│[69C│[20;72H│[69C│[21;72H│[69C│[22;72H│[69C│[23;72H│[69C│[24;72H│[69C│[25;72H│[69C│[26;72H│[69C│[27;72H│[69C│[28;72H│[69C│[29;72H│[69C│[30;72H│[69C│[31;72H│[69C│[32;72H│[69C│[33;72H├[69C┤[34;72H│[69C│[35;72H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[1;1H[30m[46m  Left     File     Command     Options     Right[K[3;2H[93m[44m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [4;2H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[30m[46m/..                                             │UP--DIR│лют 17 12:34[5;2H[97m[44m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[6;2H/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[7;2H[37m README.md                                      │    109│лют 17 12:34││ README.md                                      │    109│лют 17 12:34[8;2H Vagrantfile                                    │   2437│лют 17 14:37││ Vagrantfile                                    │   2437│лют 17 14:37[9;2H type                                           │ 118464│лют 19 17:09││ type                                           │ 118464│лют 19 17:09[10;2H typescript                                     │ 532480│лют 20 11:28││ typescript                                     │ 532480│лют 20 11:28[11;2H                                                │       │            ││                                                │       │            [12;2H                                                │       │            ││                                                │       │            [13;2H                                                │       │            ││                                                │       │            [14;2H                                                │       │            ││                                                │       │            [15;2H                                                │       │            ││                                                │       │            [16;2H                                                │       │            ││                                                │       │            [17;2H                                                │       │            ││                                                │       │            [18;2H                                                │       │            ││                                                │       │            [19;2H                                                │       │            ││                                                │       │            [20;2H                                                │       │            ││                                                │       │            [21;2H                                                │       │            ││                                                │       │            [22;2H                                                │       │            ││                                                │       │            [23;2H                                                │       │            ││                                                │       │            [24;2H                                                │       │            ││                                                │       │            [25;2H                                                │       │            ││                                                │       │            [26;2H                                                │       │            ││                                                │       │            [27;2H                                                │       │            ││                                                │       │            [28;2H                                                │       │            ││                                                │       │            [29;2H                                                │       │            ││                                                │       │            [30;2H                                                │       │            ││                                                │       │            [31;2H                                                │       │            ││                                                │       │            [32;2H                                                │       │            ││                                                │       │            [33;2H─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────[34;2H type                                                                ││UP--DIR                                                              
+
+
+[39m[49mroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[72C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[37;69H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux>[2;109H[47m [37m[44m──────────────[4;73H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют  1 11:34[5;74Hhometask[53C4 12:11[6;74Hmanual_kernel_update[40C 6 18:40[7;73H/otus-linux                                     [37m│[97m   4096[37m│[97mлют 14 12:11[8;73H[30m[46m/stands-03-lvm                                  │   4096│лют 20 08:47[9;73H[97m[44m/test                                           [37m│[97m   4096[37m│[97mлют  7 18:22[10;73H/test2                                          [37m│[97m   4096[37m│[97mлют  7 17:57[34;73H[37m/stands-03-lvm[37;69H[7;73H[30m[46m/otus-linux                                     │   4096│лют 14 12:11[8;73H[97m[44m/stands-03-lvm                                  [37m│[97m   4096[37m│[97mлют 20 08:47[34;74H[37motus-linux   [37;69H[6;73H[30m[46m/manual_kernel_update                           │   4096│лют  6 18:40[7;73H[97m[44m/otus-linux                                     [37m│[97m   4096[37m│[97mлют 14 12:11[34;74H[37mmanual_kernel_update[37;69H[5;73H[30m[46m/hometask                                       │   4096│лют 14 12:11[6;73H[97m[44m/manual_kernel_update                           [37m│[97m   4096[37m│[97mлют  6 18:40[34;74H[37mhometask            [37;69H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask>[2;109H[30m[47m/hometask [4;73H[46m/..                                             │UP--DIR│лют 17 12:34[5;73H[97m[44m/.git                                           [37m│[97m   4096[37m│[97mлют 20 10:56[6;74Hless1               [40C10 21:19[7;74Hless2     [51C3 18:29[8;74Hless3        [50C10:56[9;73H[37m readme.md                                      │     60│лют  7 18:19[10;73H                                                │       │            [34;73HUP--DIR  [37;69H[?1006l[?1002l[?1001r[?2004l[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0tgit pull
+bash: git: command not found
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# git pull[K[K[K[K[K[K[K[Kll
+total 0
+-rw-r--r--. 1 root root 0 Feb 19 11:09 1
+-rw-r--r--. 1 root root 0 Feb 19 11:09 10
+-rw-r--r--. 1 root root 0 Feb 19 11:09 11
+-rw-r--r--. 1 root root 0 Feb 19 11:09 12
+-rw-r--r--. 1 root root 0 Feb 19 11:09 13
+-rw-r--r--. 1 root root 0 Feb 19 11:09 14
+-rw-r--r--. 1 root root 0 Feb 19 11:09 15
+-rw-r--r--. 1 root root 0 Feb 19 11:09 16
+-rw-r--r--. 1 root root 0 Feb 19 11:09 17
+-rw-r--r--. 1 root root 0 Feb 19 11:09 18
+-rw-r--r--. 1 root root 0 Feb 19 11:09 19
+-rw-r--r--. 1 root root 0 Feb 19 11:09 2
+-rw-r--r--. 1 root root 0 Feb 19 11:09 20
+-rw-r--r--. 1 root root 0 Feb 19 11:09 3
+-rw-r--r--. 1 root root 0 Feb 19 11:09 4
+-rw-r--r--. 1 root root 0 Feb 19 11:09 5
+-rw-r--r--. 1 root root 0 Feb 19 11:09 6
+-rw-r--r--. 1 root root 0 Feb 19 11:09 7
+-rw-r--r--. 1 root root 0 Feb 19 11:09 8
+-rw-r--r--. 1 root root 0 Feb 19 11:09 9
+-rw-r--r--. 1 root root 0 Feb 19 11:09 file
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file1
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file10
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file100
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file11
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file12
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file13
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file14
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file15
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file16
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file17
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file18
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file19
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file2
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file20
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file21
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file22
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file23
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file24
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file25
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file26
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file27
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file28
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file29
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file3
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file30
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file31
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file32
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file33
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file34
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file35
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file36
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file37
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file38
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file39
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file4
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file40
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file41
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file42
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file43
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file44
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file45
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file46
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file47
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file48
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file49
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file5
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file50
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file51
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file52
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file53
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file54
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file55
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file56
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file57
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file58
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file59
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file6
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file60
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file61
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file62
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file63
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file64
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file65
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file66
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file67
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file68
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file69
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file7
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file70
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file71
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file72
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file73
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file74
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file75
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file76
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file77
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file78
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file79
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file8
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file80
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file81
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file82
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file83
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file84
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file85
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file86
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file87
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file88
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file89
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file9
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file90
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file91
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file92
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file93
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file94
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file95
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file96
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file97
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file98
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file99
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# [?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[2;141H[1K [37m[44m┐[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>
+┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐[70C
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+├[69C┤
+│[69C│
+└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H[2;72H┌<─[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [37m[44m─────────────.[^]>[3;72H│[69C│[4;72H│[69C│[5;72H│[69C│[6;72H│[69C│[7;72H│[69C│[8;72H│[69C│[9;72H│[69C│[10;72H│[69C│[11;72H│[69C│[12;72H│[69C│[13;72H│[69C│[14;72H│[69C│[15;72H│[69C│[16;72H│[69C│[17;72H│[69C│[18;72H│[69C│[19;72H│[69C│[20;72H│[69C│[21;72H│[69C│[22;72H│[69C│[23;72H│[69C│[24;72H│[69C│[25;72H│[69C│[26;72H│[69C│[27;72H│[69C│[28;72H│[69C│[29;72H│[69C│[30;72H│[69C│[31;72H│[69C│[32;72H│[69C│[33;72H├[69C┤[34;72H│[69C│[35;72H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[1;1H[30m[46m  Left     File     Command     Options     Right[K[3;2H[93m[44m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [4;2H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[30m[46m/..                                             │UP--DIR│лют 17 12:34[5;2H[97m[44m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[6;2H/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[7;2H[37m README.md                                      │    109│лют 17 12:34││ README.md                                      │    109│лют 17 12:34[8;2H Vagrantfile                                    │   2437│лют 17 14:37││ Vagrantfile                                    │   2437│лют 17 14:37[9;2H type                                           │ 118464│лют 19 17:09││ type                                           │ 118464│лют 19 17:09[10;2H typescript                                     │ 548864│лют 20 11:29││ typescript                                     │ 548864│лют 20 11:29[11;2H                                                │       │            ││                                                │       │            [12;2H                                                │       │            ││                                                │       │            [13;2H                                                │       │            ││                                                │       │            [14;2H                                                │       │            ││                                                │       │            [15;2H                                                │       │            ││                                                │       │            [16;2H                                                │       │            ││                                                │       │            [17;2H                                                │       │            ││                                                │       │            [18;2H                                                │       │            ││                                                │       │            [19;2H                                                │       │            ││                                                │       │            [20;2H                                                │       │            ││                                                │       │            [21;2H                                                │       │            ││                                                │       │            [22;2H                                                │       │            ││                                                │       │            [23;2H                                                │       │            ││                                                │       │            [24;2H                                                │       │            ││                                                │       │            [25;2H                                                │       │            ││                                                │       │            [26;2H                                                │       │            ││                                                │       │            [27;2H                                                │       │            ││                                                │       │            [28;2H                                                │       │            ││                                                │       │            [29;2H                                                │       │            ││                                                │       │            [30;2H                                                │       │            ││                                                │       │            [31;2H                                                │       │            ││                                                │       │            [32;2H                                                │       │            ││                                                │       │            [33;2H─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────[34;2H type                                                                ││UP--DIR                                                              
+
+[39m[49mHint: Want to see your *~ backup files? Set it in the Configuration dialog.
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[72C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[37;69H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux>[2;109H[47m [37m[44m──────────────[4;73H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют  1 11:34[5;74Hhometask[53C4 12:11[6;74Hmanual_kernel_update[40C 6 18:40[7;73H/otus-linux                                     [37m│[97m   4096[37m│[97mлют 14 12:11[8;73H[30m[46m/stands-03-lvm                                  │   4096│лют 20 08:47[9;73H[97m[44m/test                                           [37m│[97m   4096[37m│[97mлют  7 18:22[10;73H/test2                                          [37m│[97m   4096[37m│[97mлют  7 17:57[34;73H[37m/stands-03-lvm[37;69H[7;73H[30m[46m/otus-linux                                     │   4096│лют 14 12:11[8;73H[97m[44m/stands-03-lvm                                  [37m│[97m   4096[37m│[97mлют 20 08:47[34;74H[37motus-linux   [37;69H[6;73H[30m[46m/manual_kernel_update                           │   4096│лют  6 18:40[7;73H[97m[44m/otus-linux                                     [37m│[97m   4096[37m│[97mлют 14 12:11[34;74H[37mmanual_kernel_update[37;69H[5;73H[30m[46m/hometask                                       │   4096│лют 14 12:11[6;73H[97m[44m/manual_kernel_update                           [37m│[97m   4096[37m│[97mлют  6 18:40[34;74H[37mhometask            [37;69H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask>[2;109H[30m[47m/hometask [4;73H[46m/..                                             │UP--DIR│лют 17 12:34[5;73H[97m[44m/.git                                           [37m│[97m   4096[37m│[97mлют 20 10:56[6;74Hless1               [40C10 21:19[7;74Hless2     [51C3 18:29[8;74Hless3        [50C10:56[9;73H[37m readme.md                                      │     60│лют  7 18:19[10;73H                                                │       │            [34;73HUP--DIR  [37;69H[4;73H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[5;73H[30m[46m/.git                                           │   4096│лют 20 10:56[34;73H[37m[44m/.git  [37;69H[5;73H[97m/.git                                           [37m│[97m   4096[37m│[97mлют 20 10:56[6;73H[30m[46m/less1                                          │   4096│лют 10 21:19[34;74H[37m[44mless1[37;69H[6;73H[97m/less1                                          [37m│[97m   4096[37m│[97mлют 10 21:19[7;73H[30m[46m/less2                                          │   4096│лют 13 18:29[34;78H[37m[44m2[37;69H[7;73H[97m/less2                                          [37m│[97m   4096[37m│[97mлют 13 18:29[8;73H[30m[46m/less3                                          │   4096│лют 20 10:56[34;78H[37m[44m3[37;69H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[2;118H[30m[47m/less3 [4;73H[46m/..                                             │UP--DIR│лют 14 12:11[5;73H[37m[44m Hometask_add.md                                │ 116508│лют 20 10:56[6;73H MainHOMETASK.md                                │  26726│лют 18 16:54[7;73H README.md                                      │     43│лют 14 12:12[8;73H                                                │       │            [9;74H         [44C  │            [34;73HUP--DIR[37;69H[?1006l[?1002l[?1001r[?2004l[1;1H[39m[49m[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0tll
+total 0
+-rw-r--r--. 1 root root 0 Feb 19 11:09 1
+-rw-r--r--. 1 root root 0 Feb 19 11:09 10
+-rw-r--r--. 1 root root 0 Feb 19 11:09 11
+-rw-r--r--. 1 root root 0 Feb 19 11:09 12
+-rw-r--r--. 1 root root 0 Feb 19 11:09 13
+-rw-r--r--. 1 root root 0 Feb 19 11:09 14
+-rw-r--r--. 1 root root 0 Feb 19 11:09 15
+-rw-r--r--. 1 root root 0 Feb 19 11:09 16
+-rw-r--r--. 1 root root 0 Feb 19 11:09 17
+-rw-r--r--. 1 root root 0 Feb 19 11:09 18
+-rw-r--r--. 1 root root 0 Feb 19 11:09 19
+-rw-r--r--. 1 root root 0 Feb 19 11:09 2
+-rw-r--r--. 1 root root 0 Feb 19 11:09 20
+-rw-r--r--. 1 root root 0 Feb 19 11:09 3
+-rw-r--r--. 1 root root 0 Feb 19 11:09 4
+-rw-r--r--. 1 root root 0 Feb 19 11:09 5
+-rw-r--r--. 1 root root 0 Feb 19 11:09 6
+-rw-r--r--. 1 root root 0 Feb 19 11:09 7
+-rw-r--r--. 1 root root 0 Feb 19 11:09 8
+-rw-r--r--. 1 root root 0 Feb 19 11:09 9
+-rw-r--r--. 1 root root 0 Feb 19 11:09 file
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file1
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file10
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file100
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file11
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file12
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file13
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file14
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file15
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file16
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file17
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file18
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file19
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file2
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file20
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file21
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file22
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file23
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file24
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file25
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file26
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file27
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file28
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file29
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file3
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file30
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file31
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file32
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file33
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file34
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file35
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file36
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file37
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file38
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file39
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file4
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file40
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file41
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file42
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file43
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file44
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file45
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file46
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file47
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file48
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file49
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file5
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file50
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file51
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file52
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file53
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file54
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file55
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file56
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file57
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file58
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file59
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file6
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file60
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file61
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file62
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file63
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file64
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file65
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file66
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file67
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file68
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file69
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file7
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file70
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file71
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file72
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file73
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file74
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file75
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file76
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file77
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file78
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file79
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file8
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file80
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file81
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file82
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file83
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file84
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file85
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file86
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file87
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file88
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file89
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file9
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file90
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file91
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file92
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file93
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file94
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file95
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file96
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file97
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file98
+-rw-r--r--. 1 root root 0 Feb 20 07:52 file99
+]0;root@lvm:/home/vagrant[root@lvm vagrant]# exit
+exit
+]0;vagrant@lvm:~[vagrant@lvm ~]$ exit
+logout
+Connection to 127.0.0.1 closed.
+
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/stands-03-lvmroot@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm# [?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[2;141H[1K [37m[44m┐[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>
+┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐[70C
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+├[69C┤
+│[69C│
+└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H[2;72H┌<─[30m[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [37m[44m─────────────.[^]>[3;72H│[69C│[4;72H│[69C│[5;72H│[69C│[6;72H│[69C│[7;72H│[69C│[8;72H│[69C│[9;72H│[69C│[10;72H│[69C│[11;72H│[69C│[12;72H│[69C│[13;72H│[69C│[14;72H│[69C│[15;72H│[69C│[16;72H│[69C│[17;72H│[69C│[18;72H│[69C│[19;72H│[69C│[20;72H│[69C│[21;72H│[69C│[22;72H│[69C│[23;72H│[69C│[24;72H│[69C│[25;72H│[69C│[26;72H│[69C│[27;72H│[69C│[28;72H│[69C│[29;72H│[69C│[30;72H│[69C│[31;72H│[69C│[32;72H│[69C│[33;72H├[69C┤[34;72H│[69C│[35;72H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[1;1H[30m[46m  Left     File     Command     Options     Right[K[3;2H[93m[44m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [4;2H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[30m[46m/..                                             │UP--DIR│лют 17 12:34[5;2H[97m[44m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[6;2H/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[7;2H[37m README.md                                      │    109│лют 17 12:34││ README.md                                      │    109│лют 17 12:34[8;2H Vagrantfile                                    │   2437│лют 17 14:37││ Vagrantfile                                    │   2437│лют 17 14:37[9;2H type                                           │ 118464│лют 19 17:09││ type                                           │ 118464│лют 19 17:09[10;2H typescript                                     │ 569344│лют 20 11:29││ typescript                                     │ 569344│лют 20 11:29[11;2H                                                │       │            ││                                                │       │            [12;2H                                                │       │            ││                                                │       │            [13;2H                                                │       │            ││                                                │       │            [14;2H                                                │       │            ││                                                │       │            [15;2H                                                │       │            ││                                                │       │            [16;2H                                                │       │            ││                                                │       │            [17;2H                                                │       │            ││                                                │       │            [18;2H                                                │       │            ││                                                │       │            [19;2H                                                │       │            ││                                                │       │            [20;2H                                                │       │            ││                                                │       │            [21;2H                                                │       │            ││                                                │       │            [22;2H                                                │       │            ││                                                │       │            [23;2H                                                │       │            ││                                                │       │            [24;2H                                                │       │            ││                                                │       │            [25;2H                                                │       │            ││                                                │       │            [26;2H                                                │       │            ││                                                │       │            [27;2H                                                │       │            ││                                                │       │            [28;2H                                                │       │            ││                                                │       │            [29;2H                                                │       │            ││                                                │       │            [30;2H                                                │       │            ││                                                │       │            [31;2H                                                │       │            ││                                                │       │            [32;2H                                                │       │            ││                                                │       │            [33;2H─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────[34;2H type                                                                ││UP--DIR                                                              
+
+[39m[49mHint: Want to see your *~ backup files? Set it in the Configuration dialog.
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/stands-03-lvm#[72C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[37;69H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux>[2;109H[47m [37m[44m──────────────[4;73H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют  1 11:34[5;74Hhometask[53C4 12:11[6;74Hmanual_kernel_update[40C 6 18:40[7;73H/otus-linux                                     [37m│[97m   4096[37m│[97mлют 14 12:11[8;73H[30m[46m/stands-03-lvm                                  │   4096│лют 20 08:47[9;73H[97m[44m/test                                           [37m│[97m   4096[37m│[97mлют  7 18:22[10;73H/test2                                          [37m│[97m   4096[37m│[97mлют  7 17:57[34;73H[37m/stands-03-lvm[37;69H[37;53H[39m[49m#              [72C[37;55H[7;73H[30m[46m/otus-linux                                     │   4096│лют 14 12:11[8;73H[97m[44m/stands-03-lvm                                  [37m│[97m   4096[37m│[97mлют 20 08:47[34;74H[37motus-linux   [37;55H[6;73H[30m[46m/manual_kernel_update                           │   4096│лют  6 18:40[7;73H[97m[44m/otus-linux                                     [37m│[97m   4096[37m│[97mлют 14 12:11[34;74H[37mmanual_kernel_update[37;55H[5;73H[30m[46m/hometask                                       │   4096│лют 14 12:11[6;73H[97m[44m/manual_kernel_update                           [37m│[97m   4096[37m│[97mлют  6 18:40[34;74H[37mhometask            [37;55H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask>[2;109H[30m[47m/hometask [4;73H[46m/..                                             │UP--DIR│лют 17 12:34[5;73H[97m[44m/.git                                           [37m│[97m   4096[37m│[97mлют 20 10:56[6;74Hless1               [40C10 21:19[7;74Hless2     [51C3 18:29[8;74Hless3        [50C10:56[9;73H[37m readme.md                                      │     60│лют  7 18:19[10;73H                                                │       │            [34;73HUP--DIR  [37;55H[37;53H[39m[49m/hometask#[77C[37;64H[?1006l[?1002l[?1001r[?2004l[1;1H[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K[1;142H[?1l>[38;1H(B[m[39;49m
+[K
+[?1049l[23;0;0t
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask#  [Kgit pull
+remote: Enumerating objects: 15, done.[K
+remote: Counting objects:   6% (1/15)[K
+remote: Counting objects:  13% (2/15)[K
+remote: Counting objects:  20% (3/15)[K
+remote: Counting objects:  26% (4/15)[K
+remote: Counting objects:  33% (5/15)[K
+remote: Counting objects:  40% (6/15)[K
+remote: Counting objects:  46% (7/15)[K
+remote: Counting objects:  53% (8/15)[K
+remote: Counting objects:  60% (9/15)[K
+remote: Counting objects:  66% (10/15)[K
+remote: Counting objects:  73% (11/15)[K
+remote: Counting objects:  80% (12/15)[K
+remote: Counting objects:  86% (13/15)[K
+remote: Counting objects:  93% (14/15)[K
+remote: Counting objects: 100% (15/15)[K
+remote: Counting objects: 100% (15/15), done.[K
+remote: Compressing objects:   8% (1/12)[K
+remote: Compressing objects:  16% (2/12)[K
+remote: Compressing objects:  25% (3/12)[K
+remote: Compressing objects:  33% (4/12)[K
+remote: Compressing objects:  41% (5/12)[K
+remote: Compressing objects:  50% (6/12)[K
+remote: Compressing objects:  58% (7/12)[K
+remote: Compressing objects:  66% (8/12)[K
+remote: Compressing objects:  75% (9/12)[K
+remote: Compressing objects:  83% (10/12)[K
+remote: Compressing objects:  91% (11/12)[K
+remote: Compressing objects: 100% (12/12)[K
+remote: Compressing objects: 100% (12/12), done.[K
+remote: Total 12 (delta 6), reused 0 (delta 0), pack-reused 0[K
+Unpacking objects:   8% (1/12)   
+Unpacking objects:  16% (2/12)   
+Unpacking objects:  25% (3/12)   
+Unpacking objects:  33% (4/12)   
+Unpacking objects:  41% (5/12)   
+Unpacking objects:  50% (6/12)   
+Unpacking objects:  58% (7/12)   
+Unpacking objects:  66% (8/12)   
+Unpacking objects:  75% (9/12)   
+Unpacking objects:  83% (10/12)   
+Unpacking objects:  91% (11/12)   
+Unpacking objects: 100% (12/12)   
+Unpacking objects: 100% (12/12), done.
+From https://github.com/kakunindima/otus_linux
+   a1f2dc9..a579f74  master     -> origin/master
+Updating a1f2dc9..a579f74
+Fast-forward
+ less3/Hometask_add.md | 1859 [32m++++[m[31m-----------------------------------------------------------------------------------------------------------[m
+ 1 file changed, 53 insertions(+), 1806 deletions(-)
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/hometaskroot@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask# [?1001s[?1002h[?1006h[?2004h[?1049h[22;0;0t[1;38r[4l[?1h=(B[m[39m[49m[1;38r[H[2J[2;1H[37m[44m┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐[70C┐[3;1H│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+│[69C│
+├[69C┤
+│[69C│
+└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H[2;72H┌<─[30m[47m /home/pengwinn/Project/otus-linux/hometask [37m[44m──────────────────.[^]>[3;72H│[69C│[4;72H│[69C│[5;72H│[69C│[6;72H│[69C│[7;72H│[69C│[8;72H│[69C│[9;72H│[69C│[10;72H│[69C│[11;72H│[69C│[12;72H│[69C│[13;72H│[69C│[14;72H│[69C│[15;72H│[69C│[16;72H│[69C│[17;72H│[69C│[18;72H│[69C│[19;72H│[69C│[20;72H│[69C│[21;72H│[69C│[22;72H│[69C│[23;72H│[69C│[24;72H│[69C│[25;72H│[69C│[26;72H│[69C│[27;72H│[69C│[28;72H│[69C│[29;72H│[69C│[30;72H│[69C│[31;72H│[69C│[32;72H│[69C│[33;72H├[69C┤[34;72H│[69C│[35;72H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask>[1;1H[30m[46m  Left     File     Command     Options     Right[K[3;2H[93m[44m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [4;2H[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[30m[46m/..                                             │UP--DIR│лют 17 12:34[5;2H[97m[44m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[97m/.git                                           [37m│[97m   4096[37m│[97mлют 20 11:29[6;2H/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││[97m/less1                                          [37m│[97m   4096[37m│[97mлют 10 21:19[7;2H[37m README.md                                      │    109│лют 17 12:34││[97m/less2                                          [37m│[97m   4096[37m│[97mлют 13 18:29[8;2H[37m Vagrantfile                                    │   2437│лют 17 14:37││[97m/less3                                          [37m│[97m   4096[37m│[97mлют 20 11:29[9;2H[37m type                                           │ 118464│лют 19 17:09││ readme.md                                      │     60│лют  7 18:19[10;2H typescript                                     │ 581632│лют 20 11:29││                                                │       │            [11;2H                                                │       │            ││                                                │       │            [12;2H                                                │       │            ││                                                │       │            [13;2H                                                │       │            ││                                                │       │            [14;2H                                                │       │            ││                                                │       │            [15;2H                                                │       │            ││                                                │       │            [16;2H                                                │       │            ││                                                │       │            [17;2H                                                │       │            ││                                                │       │            [18;2H                                                │       │            ││                                                │       │            [19;2H                                                │       │            ││                                                │       │            [20;2H                                                │       │            ││                                                │       │            [21;2H                                                │       │            ││                                                │       │            [22;2H                                                │       │            ││                                                │       │            [23;2H                                                │       │            ││                                                │       │            [24;2H                                                │       │            ││                                                │       │            [25;2H                                                │       │            ││                                                │       │            [26;2H                                                │       │            ││                                                │       │            [27;2H                                                │       │            ││                                                │       │            [28;2H                                                │       │            ││                                                │       │            [29;2H                                                │       │            ││                                                │       │            [30;2H                                                │       │            ││                                                │       │            [31;2H                                                │       │            ││                                                │       │            [32;2H                                                │       │            ││                                                │       │            [33;2H─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────[34;2H type                                                                ││UP--DIR                                                              
+
+[39m[49mHint: Want to see your *~ backup files? Set it in the Configuration dialog.
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask#[77C[37m[44m[^][38;1H[97m[40m 1[30m[46mHelp        [97m[40m 2[30m[46mMenu        [97m[40m 3[30m[46mView        [97m[40m 4[30m[46mEdit        [97m[40m 5[30m[46mCopy         [97m[40m 6[30m[46mRenMov      [97m[40m 7[30m[46mMkdir       [97m[40m 8[30m[46mDelete      [97m[40m 9[30m[46mPullDn      [97m[40m10[30m[46mQuit[K[37;64H[4;73H[97m[44m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[5;73H[30m[46m/.git                                           │   4096│лют 20 11:29[34;73H[37m[44m/.git  [37;64H[5;73H[97m/.git                                           [37m│[97m   4096[37m│[97mлют 20 11:29[6;73H[30m[46m/less1                                          │   4096│лют 10 21:19[34;74H[37m[44mless1[37;64H[6;73H[97m/less1                                          [37m│[97m   4096[37m│[97mлют 10 21:19[7;73H[30m[46m/less2                                          │   4096│лют 13 18:29[34;78H[37m[44m2[37;64H[7;73H[97m/less2                                          [37m│[97m   4096[37m│[97mлют 13 18:29[8;73H[30m[46m/less3                                          │   4096│лют 20 11:29[34;78H[37m[44m3[37;64H[2;142H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/hometask/less3>[2;118H[30m[47m/less3 [4;73H[46m/..                                             │UP--DIR│лют 14 12:11[5;73H[37m[44m Hometask_add.md                                │   7942│лют 20 11:29[6;73H MainHOMETASK.md                                │  26726│лют 18 16:54[7;73H README.md                                      │     43│лют 14 12:12[8;73H                                                │       │            [9;74H         [44C  │            [34;73HUP--DIR[37;64H[37;62H[39m[49m/less3#[71C[37;70H[4;73H[97m[44m/..                                             [37m│[97mUP--DIR[37m│[97mлют 14 12:11[5;73H[30m[46m Hometask_add.md                                │   7942│лют 20 11:29[34;73H[37m[44m Hometask_add.md[37;70H[1;1H[30m[46m/home/pengwinn/Project/otus-linux/hometask/less3/Hometask_add.md[51C1398/7942[15C17%[2;1H[37m[44m# Otus-linux Hometask[K
+## Less3 additional hometask *[K
+### Установка btrfs[K
+__btrfs будем устанавливать на доступные диски - sdb,sdc,sdd,sde[K
+выводим список:__[K
+```[K
+[vagrant@lvm ~]$ lsblk[K
+[K
+NAME        [12CMAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[K
+sda[23C8:0    0   40G  0 disk[K
+├─sda1[20C8:1    0    1M  0 part[K
+├─sda2[20C8:2    0    1G  0 part /boot[K
+└─sda3[20C8:3    0   39G  0 part[K
+  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /[K
+  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP][K
+sdb[23C8:16   0   10G  0 disk[K
+sdc[23C8:32   0    2G  0 disk[K
+sdd[23C8:48   0    1G  0 disk[K
+sde[23C8:64   0    1G  0 disk[K
+```[K
+__Создаем ФС на дисках sdb,sdc,sdd,sde.__[K
+```[K
+[root@lvm vagrant]# mkfs.btrfs /dev/sdb[K
+btrfs-progs v4.9.1[K
+See http://btrfs.wiki.kernel.org for more information.[K
+[K
+Label:[14C(null)[K
+UUID:[15Ca8383377-ba69-40fe-b6c0-c0c862eed531[K
+Node size:[10C16384[K
+Sector size:[8C4096[K
+Filesystem size:    10.00GiB[K
+Block group profiles:[K
+  Data:[13Csingle[12C8.00MiB[K
+  Metadata:         DUP               1.00GiB[K
+  System:           DUP               8.00MiB[K
+SSD detected:       no[K[38;17H[30m[46mUnWrap[8CQuit[10CHex [10CGoto[11C      [8CSearch[8CRaw   [8CFormat[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m443[21C8[37;1H[37m[44mIncompat features:  extref, skinny-metadata[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m66[37;1H[37m[44mNumber of devices:  1[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m7[37;1H[37m[44mDevices:[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m501[37;1H[37m[44m   ID        SIZE  PATH[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m30[21C9[37;1H[37m[44m    1    10.00GiB  /dev/sdb[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;119H[30m[46m2[37;1H[37m[44m[K[1;142H[39m[49m[3;37r[3;1H[1M[1;38r[1;118H[30m[46m8
+[37m[44m[K[37;1H[root@lvm vagrant]# mkfs.btrfs /dev/sdc /dev/sdd[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m60[21C20[37;1H[37m[44mbtrfs-progs v4.9.1[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m58[37;1H[37m[44mSee http://btrfs.wiki.kernel.org for more information.[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m60[37;1H[37m[44m[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m88[21C1[37;1H[37m[44mLabel:              (null)[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m746[37;1H[37m[44mUUID:               38f786d4-c0b5-40eb-977b-d957bbebad5d[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m73[21C2[37;1H[37m[44mNode size:          16384[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m99[37;1H[37m[44mSector size:        4096[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m828[21C3[37;1H[37m[44mFilesystem size:    3.00GiB[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m51[37;1H[37m[44mBlock group profiles:[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m98[37;1H[37m[44m  Data:             RAID0           307.12MiB[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m945[21C4[37;1H[37m[44m  Metadata:         RAID1           153.56MiB[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m92[21C5[37;1H[37m[44m  System:           RAID1             8.00MiB[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;116H[30m[46m2016[37;1H[37m[44mSSD detected:       no[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m61[37;1H[37m[44mIncompat features:  extref, skinny-metadata[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m84[21C6[37;1H[37m[44mNumber of devices:  2[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m9[37;1H[37m[44mDevices:[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m119[37;1H[37m[44m   ID        SIZE  PATH[K[1;142H[39m[49m[3;37r[3;1H[1M[1;38r[1;118H[30m[46m48[21C7
+[37m[44m[K[37;1H    1     2.00GiB  /dev/sdc[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m77[37;1H[37m[44m    2     1.00GiB  /dev/sdd[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m82[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m255[21C8[37;1H[37m[44m__Создаем папку и монтируем первый том__[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m60[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m96[37;1H[37m[44m[root@lvm vagrant]# mkdir /mnt/sdb[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m343[21C9[37;1H[37m[44m[root@lvm vagrant]# mount /dev/sdb/ /mnt/sdb/[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m70[37;1H[37m[44m[root@lvm vagrant]# df -h[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m437[20C30[37;1H[37m[44mFilesystem                       Size  Used Avail Use% Mounted on[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m95[21C1[37;1H[37m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m556[21C2[37;1H[37m[44mdevtmpfs                         109M     0  109M   0% /dev[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m621[21C3[37;1H[37m[44mtmpfs                            118M     0  118M   0% /dev/shm[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m82[37;1H[37m[44mtmpfs                            118M  4.5M  114M   4% /run[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m753[21C4[37;1H[37m[44mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m815[21C5[37;1H[37m[44m/dev/sda2                       1014M   63M  952M   7% /boot[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m86[21C6[37;1H[37m[44mtmpfs                             24M     0   24M   0% /run/user/1000[K[1;142H[39m[49m[3;37r[3;1H[1M[1;38r[1;117H[30m[46m951[21C7[2;5H[37m[44m[K[37;1H/dev/sdb                          10G   17M  8.0G   1% /mnt/sdb[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;119H[30m[46m6[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;116H[30m[46m3077[21C8[37;1H[37m[44m__В результате видим появившийся смонтированый раздел равный 8Гб.[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m218[20C40[37;1H[37m[44mРасширим созданый раздел средствами btrfs, добавив еще один диск размером 2Гб__[K[1;142H[39m[49m[3;37r[3;1H[1M[1;38r[1;118H[30m[46m23
+[37m[44m[K[37;1H```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m82[21C1[37;1H[37m[44m[root@lvm vagrant]# btrfs devicce add /dev/sdc/ /mnt/sdb/[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m309[37;1H[37m[44m[root@lvm vagrant]# df -h[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m76[21C2[37;1H[37m[44mFilesystem                       Size  Used Avail Use% Mounted on[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m434[21C3[37;1H[37m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m95[21C4[37;1H[37m[44mdevtmpfs                         109M     0  109M   0% /dev[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m560[37;1H[37m[44mtmpfs                            118M     0  118M   0% /dev/shm[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m621[21C5[37;1H[37m[44mtmpfs                            118M  4.5M  114M   4% /run[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m92[21C6[37;1H[37m[44mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m754[21C7[37;1H[37m[44m/dev/sda2                       1014M   63M  952M   7% /boot[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m825[21C8[37;1H[37m[44mtmpfs                             24M     0   24M   0% /run/user/1000[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m90[37;1H[37m[44m/dev/sdb                          12G   17M   10G   1% /mnt/sdb[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;119H[30m[46m5[21C9[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;116H[30m[46m4032[20C50[37;1H[37m[44m__Как результат видим что размер примонтированого тома увеличился до 10ГБ__[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;119H[30m[46m7[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m64[21C1[37;1H[37m[44m[root@lvm vagrant]# lsblk[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m125[37;1H[37m[44mNAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m76[21C2[37;1H[37m[44msda                       8:0    0   40G  0 disk[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m231[21C3[37;1H[37m[44m├─sda1                    8:1    0    1M  0 part[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m9[22C4[37;1H[37m[44m├─sda2                    8:2    0    1G  0 part /boot[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m346[37;1H[37m[44m└─sda3                    8:3    0   39G  0 part[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m402[21C5[37;1H[37m[44m  ├─VolGroup00-LogVol00 253:0    0 37.5G  0 lvm  /[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m63[21C6[37;1H[37m[44m  └─VolGroup00-LogVol01 253:1    0  1.5G  0 lvm  [SWAP][K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m522[37;1H[37m[44msdb                       8:16   0   10G  0 disk /mnt/sdb[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m73[21C7[37;1H[37m[44msdc                       8:32   0    2G  0 disk[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m624[21C8[37;1H[37m[44msdd                       8:48   0    1G  0 disk[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m75[37;1H[37m[44msde                       8:64   0    1G  0 disk[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m80[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m763[21C9[37;1H[37m[44m__Просмотрим статус смонтированого ресурса__[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;119H[30m[46m8[20C60[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m817[37;1H[37m[44m[root@lvm vagrant]# btrfs devce stats /mnt/sdb/[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m48[21C1[37;1H[37m[44m[/dev/sdb].write_io_errs    0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m79[37;1H[37m[44m[/dev/sdb].read_io_errs     0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m910[37;1H[37m[44m[/dev/sdb].flush_io_errs    0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m41[21C2[37;1H[37m[44m[/dev/sdb].corruption_errs  0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m72[37;1H[37m[44m[/dev/sdb].generation_errs  0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;116H[30m[46m5003[37;1H[37m[44m[/dev/sdc].write_io_errs    0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m34[21C3[37;1H[37m[44m[/dev/sdc].read_io_errs     0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m65[37;1H[37m[44m[/dev/sdc].flush_io_errs    0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m96[21C4[37;1H[37m[44m[/dev/sdc].corruption_errs  0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m127[37;1H[37m[44m[/dev/sdc].generation_errs  0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;119H[30m[46m9[37;1H[37m[44m[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m82[21C5[37;1H[37m[44m[root@lvm vagrant]# btrfs filesystem show --mounted[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m239[37;1H[37m[44mLabel: none  uuid: a8383377-ba69-40fe-b6c0-c0c862eed531[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m81[21C6[37;1H[37m[44m        Total devices 2 FS bytes used 384.00KiB[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m335[21C7[37;1H[37m[44m        devid    1 size 10.00GiB used 2.02GiB path /dev/sdb[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m86[37;1H[37m[44m        devid    2 size 2.00GiB used 0.00B path /dev/sdc[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m91[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m480[21C9[37;1H[37m[44m__Перенесем на смонтированый раздел папку /vat/opt__[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;119H[30m[46m2[37;1H[37m[44m[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;119H[30m[46m8[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m535[37;1H[37m[44m[root@lvm vagrant]# mount /dev/sdb /var/opt/[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m62[20C70[37;1H[37m[44m[root@lvm vagrant]# df -h[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m629[37;1H[37m[44mFilesystem                       Size  Used Avail Use% Mounted on[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m87[21C1[37;1H[37m[44m/dev/mapper/VolGroup00-LogVol00   38G  760M   37G   2% /[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m748[21C2[37;1H[37m[44mdevtmpfs                         109M     0  109M   0% /dev[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m813[21C3[37;1H[37m[44mtmpfs                            118M     0  118M   0% /dev/shm[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m74[37;1H[37m[44mtmpfs                            118M  4.5M  114M   4% /run[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m945[21C4[37;1H[37m[44mtmpfs                            118M     0  118M   0% /sys/fs/cgroup[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;116H[30m[46m6007[21C5[37;1H[37m[44m/dev/sda2                       1014M   63M  952M   7% /boot[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m78[21C6[37;1H[37m[44mtmpfs                             24M     0   24M   0% /run/user/1000[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m143[21C7[37;1H[37m[44m/dev/sdb                          12G   17M   10G   1% /var/opt[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;119H[30m[46m8[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m245[21C8[37;1H[37m[44m__Перейдем в папку и для наглядности создадим файлы__[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m50[37;1H[37m[44m```[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m75[21C9[37;1H[37m[44m[root@lvm opt]# cd opt/[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m9[37;1H[37m[44m[root@lvm opt]# ll[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m304[37;1H[37m[44mtotal 0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m39[37;1H[37m[44m[root@lvm opt]# touch file{1..20}[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m5[21C80[37;1H[37m[44m[root@lvm opt]# ll[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m68[37;1H[37m[44mtotal 0[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m414[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file1[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;118H[30m[46m61[21C1[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file10[K[1;142H[39m[49m[2;37r[2;1H[1M[1;38r[1;117H[30m[46m508[37;1H[37m[44m-rw-r--r--. 1 root root 0 Feb 19 11:10 file11[K[1;142H
+[30m[46m  Left     File     Command     Options     Right[K
+[37m[44m┌<─ /home/pengwinn/Project/otus-linux/stands-03-lvm ─────────────.[^]>┐┌<─[30m[47m /home/pengwinn/Project/otus-linux/hometask/less3 [37m[44m────────────.[^]>┐[3;1H│[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m││[93m.n                    Name                      [37m│[93m Size  [37m│[93mModify time [37m│[4;1H│[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 17 12:34[37m││[97m/..                                             [37m│[97mUP--DIR[37m│[97mлют 14 12:11[37m│[5;1H│[97m/.git                                           [37m│[97m   4096[37m│[97mлют 17 12:34[37m││[30m[46m Hometask_add.md                                │   7942│лют 20 11:29[37m[44m│[6;1H│[97m/.vagrant                                       [37m│[97m   4096[37m│[97mлют 17 12:35[37m││ MainHOMETASK.md[32C│  26726│лют 18 16:54│[7;1H│ README.md                                      │    109│лют 17 12:34││ README.md[38C│[5C43│лют 14 12:12│[8;1H│ Vagrantfile                                    │   2437│лют 17 14:37││[48C│[7C│[12C│[9;1H│ type                                           │ 118464│лют 19 17:09││[48C│[7C│[12C│[10;1H│ typescript                                     │ 581632│лют 20 11:29││[48C│[7C│[12C│[11;1H│  [46C│[7C│[12C││[48C│[7C│[12C│[12;1H│                                                │  [5C│[12C││[48C│[7C│[12C│[13;1H│[48C│[7C│[12C││[48C│[7C│[12C│[14;1H│  [46C│[7C│[12C││[48C│[7C│[12C│[15;1H│                                           [5C│[7C│[12C││[48C│[7C│[12C│[16;1H│                        [24C│[7C│[12C││[48C│[7C│[12C│[17;1H│         [23C                │       │       [5C││[48C│[7C│[12C│[18;1H│                                                │       │[12C││[48C│[7C│[12C│[19;1H│       [25C    [5C       │       │ [11C││[48C│[7C│[12C│[20;1H│    [28C    [5C       │       │     [7C││[48C│[7C│[12C│[21;1H│    [28C                │       │ [11C││[48C│[7C│[12C│[22;1H│    [28C    [5C       │       │            ││[48C│[7C│[12C│[23;1H│        [23C                 │       │  [10C││[48C│[7C│[12C│[24;1H│    [29C   [5C       │       │            ││[48C│[7C│[12C│[25;1H│       [26C               │       │     [7C││[48C│[7C│[12C│[26;1H│  [46C│[7C│[12C││[48C│[7C│[12C│[27;1H│                                                │       │[12C││[48C│[7C│[12C│[28;1H│  [46C│[7C│[12C││[48C│[7C│[12C│[29;1H│                      [26C│[7C│[12C││[48C│[7C│[12C│[30;1H│                 [31C│[7C│[12C││[48C│[7C│[12C│[31;1H│      [42C│[7C│[12C││[48C│[7C│[12C│[32;1H│                                [16C│[7C│[12C││[48C│[7C│[12C│[33;1H├─────────────────────────────────────────────────────────────────────┤├─────────────────────────────────────────────────────────────────────┤[34;1H│ type [63C││ Hometask_add.md[53C│[35;1H└──────────────────────────────────────────────────── 66G/110G (59%) ─┘└──────────────────────────────────────────────────── 66G/110G (59%) ─┘[36;1H[39m[49mHint: Want to see your *~ backup files? Set it in the Configuration dialog.[K
+root@pengwinn-home:/home/pengwinn/Project/otus-linux/hometask/less3#                                                                       [37m[44m[^][38;17H[30m[46mMenu  [8CView[10CEdit[10CCopy[11CRenMov[8CMkdir [8CDelete[8CPullDn[37;70H]0;mc [root@pengwinn-home]:/home/pengwinn/Project/otus-linux/stands-03-lvm>[2;4H[47m /home/pengwinn/Project/otus-linux/stands-03-lvm [22C[37m[44m /home/pengwinn/Project/otus-linux/hometask/less3 [5;73H Hometask_add.md                                │   7942│лют 20 11:29[9;2H[30m[46m type                                           │ 118464│лют 19 17:09[37;70H[37;54H[39m[49mstands-03-lvm# [71C[37;69H[9;2H[37m[44m type                                           │ 118464│лют 19 17:09[10;2H[30m[46m typescript                                     │ 581632│лют 20 11:29[34;7H[37m[44mscript[37;69H[11;38H[30m[47m                                                                    [12;38H ┌─────────────────────────────[34m Copy [30m─────────────────────────────┐ [13;38H │ Copy file "typescript" with source mask:   
+```
