@@ -185,18 +185,18 @@ sdd                       8:48   0    1G  0 disk
 sde                       8:64   0    1G  0 disk 
 ```
 ### 3.Работа со снапшотами на оставшихся дисках /dev/sdd, /dev/sde
+
+__Монтируем диски для создания subvolume для последующего создания снапшота__
 ```
 [root@lvm vagrant]# mount /dev/sde /mnt/sde
 [root@lvm vagrant]# mount /dev/sdd /mnt/sdd
-
-
+```
+__Создаем дополнительные подразделы__
+```
 [root@lvm vagrant]# btrfs subvolume create /mnt/sdd/subv_1
 [root@lvm vagrant]# btrfs subvolume create /mnt/sdd/subv_2
     Create subvolume '/mnt/sdd/subv_1'
     Create subvolume '/mnt/sdd/subv_2'
-
-[root@lvm vagrant]# btrfs subvolume create /mnt/sde/subv_2
-    Create subvolume '/mnt/sde/subv_2'
 
 [root@lvm vagrant]# btrfs subvolume list /mnt/sdd
 ID 256 gen 11 top level 5 path subv_1
@@ -205,7 +205,9 @@ ID 257 gen 12 top level 5 path subv_2
 [root@lvm vagrant]# btrfs subvolume list /mnt/sde
 ID 256 gen 8 top level 5 path subv_2
 ID 257 gen 9 top level 5 path subv_1
-
+```
+__Переходим в смонтированую директорию /mnt/sdd/sub_v1/ создаем файлы__ 
+```
 [root@lvm vagrant]# cd /mnt/sdd/subv_1
 [root@lvm vagrant]# touch file{1..10}
 [root@lvm vagrant]# ls -l /mnt/sdd/subv_1
@@ -220,10 +222,14 @@ total 0
 -rw-r--r--. 1 root root 0 Feb 19 13:54 file7
 -rw-r--r--. 1 root root 0 Feb 19 13:54 file8
 -rw-r--r--. 1 root root 0 Feb 19 13:54 file9
-
+```
+__Создаем снапшот с /mnt/sdd/subv_1 в /mnt/sdd/subv_2__
+```
 [root@lvm vagrant]# btrfs subvolume snapshot /mnt/sdd/subv_1 /mnt/sdd/subv_2
 Create a snapshot of '/mnt/sdd/subv_1' in '/mnt/sdd/subv_2/subv_1'
-
+```
+__Проверяем наличие файлов в снапшоте__
+```
 [root@lvm vagrant]# ls -l /mnt/sdd/subv_2/subv_1/
 total 0
 -rw-r--r--. 1 root root 0 Feb 19 13:54 file1
@@ -236,7 +242,9 @@ total 0
 -rw-r--r--. 1 root root 0 Feb 19 13:54 file7
 -rw-r--r--. 1 root root 0 Feb 19 13:54 file8
 -rw-r--r--. 1 root root 0 Feb 19 13:54 file9
-
+```
+__Удаляем часть файлов__
+```
 [root@lvm /]# rm -rf /mnt/sdd/subv_1/file{1..5} 
 ls -l /mnt/sdd/subv_1
 total 0
@@ -245,7 +253,9 @@ total 0
 -rw-r--r--. 1 root root 0 Feb 20 07:53 file8
 -rw-r--r--. 1 root root 0 Feb 20 07:53 file9
 -rw-r--r--. 1 root root 0 Feb 20 07:53 file10
-
+```
+__Восстанавливаем файлы из снапшота__
+```
 [root@lvm /]# btrfs subvolume snapshot /mnt/sdd/subv_2 /mnt/dev/sdd/subv1
 Create a snapshot of '/mnt/sdd/subv_2/subv_1/' in '/mnt/sdd/subv_1/subv_1'
 [root@lvm /]# ls -la /mnt/sdd/subv_1
