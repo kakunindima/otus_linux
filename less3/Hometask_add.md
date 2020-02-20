@@ -1,8 +1,8 @@
 # Otus-linux Hometask
 ## Less3 additional hometask *
 ### Установка btrfs
-btrfs будем устанавливать на доступные диски - sdb,sdc,sdd,sde
-выводим список:
+__btrfs будем устанавливать на доступные диски - sdb,sdc,sdd,sde
+выводим список:__
 ``` 
 [vagrant@lvm ~]$ lsblk
 
@@ -18,7 +18,7 @@ sdc                       8:32   0    2G  0 disk
 sdd                       8:48   0    1G  0 disk 
 sde                       8:64   0    1G  0 disk 
 ```
-Создаем ФС на дисках sdb,sdc,sdd,sde.
+__Создаем ФС на дисках sdb,sdc,sdd,sde.__
 ```
 [root@lvm vagrant]# mkfs.btrfs /dev/sdb
 btrfs-progs v4.9.1
@@ -61,7 +61,7 @@ Devices:
     1     2.00GiB  /dev/sdc
     2     1.00GiB  /dev/sdd
 ```
-Создаем папку и монтируем первый том
+__Создаем папку и монтируем первый том__
 ```
 [root@lvm vagrant]# mkdir /mnt/sdb
 [root@lvm vagrant]# mount /dev/sdb/ /mnt/sdb/
@@ -76,8 +76,8 @@ tmpfs                            118M     0  118M   0% /sys/fs/cgroup
 tmpfs                             24M     0   24M   0% /run/user/1000
 /dev/sdb                          10G   17M  8.0G   1% /mnt/sdb
 ```
-В результате видим появившийся смонтированый раздел равный 8Гб.
-Расширим созданый раздел средствами btrfs, добавив еще один диск размером 2Гб
+__В результате видим появившийся смонтированый раздел равный 8Гб.
+Расширим созданый раздел средствами btrfs, добавив еще один диск размером 2Гб__
 ```
 [root@lvm vagrant]# btrfs devicce add /dev/sdc/ /mnt/sdb/
 [root@lvm vagrant]# df -h
@@ -91,7 +91,7 @@ tmpfs                            118M     0  118M   0% /sys/fs/cgroup
 tmpfs                             24M     0   24M   0% /run/user/1000
 /dev/sdb                          12G   17M   10G   1% /mnt/sdb
 ```
-Как результат видим что размер примонтированого тома увеличился до 10ГБ
+__Как результат видим что размер примонтированого тома увеличился до 10ГБ__
 ```
 [root@lvm vagrant]# lsblk
 NAME                    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
@@ -106,7 +106,7 @@ sdc                       8:32   0    2G  0 disk
 sdd                       8:48   0    1G  0 disk 
 sde                       8:64   0    1G  0 disk 
 ```
-Просмотрим статус смонтированого ресурса
+__Просмотрим статус смонтированого ресурса__
 ```
 [root@lvm vagrant]# btrfs devce stats /mnt/sdb/
 [/dev/sdb].write_io_errs    0
@@ -126,7 +126,7 @@ Label: none  uuid: a8383377-ba69-40fe-b6c0-c0c862eed531
 	devid    1 size 10.00GiB used 2.02GiB path /dev/sdb
 	devid    2 size 2.00GiB used 0.00B path /dev/sdc
 ```
-Перенесем на смонтированый раздел папку /vat/opt
+__Перенесем на смонтированый раздел папку /vat/opt__
 
 ```	
 [root@lvm vagrant]# mount /dev/sdb /var/opt/ 
@@ -141,7 +141,7 @@ tmpfs                            118M     0  118M   0% /sys/fs/cgroup
 tmpfs                             24M     0   24M   0% /run/user/1000
 /dev/sdb                          12G   17M   10G   1% /var/opt
 ```
-Перейдем в папку и для наглядности создадим файлы
+__Перейдем в папку и для наглядности создадим файлы__
 ```
 [root@lvm opt]# cd opt/
 [root@lvm opt]# ll
