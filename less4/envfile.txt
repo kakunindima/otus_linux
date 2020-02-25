@@ -1,2 +1,2 @@
-num=671
+num=0
 timestamp_last=2020-02-24 17:41:36

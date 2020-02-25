@@ -69,7 +69,7 @@ launch_chk() {
 	    parsing
 	    sleep 15s
 	    #Send mail
-	    mail -s "Statistic" root@localhost < mail.txt
+	    mail -s "Statistic" root@localhost < $scr_dirr/mail.txt
 	    exit
 	done
 	rm -f "$lockfile"
