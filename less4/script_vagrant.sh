@@ -62,7 +62,7 @@ launch_chk() {
 	while true
 	    do
 	    #Удаляем файл предыдушего письма
-	    rm mail.txt
+	    rm $scr_dirr/mail.txt
 	    #Launch func
 	    clear_log
 	    time_func
