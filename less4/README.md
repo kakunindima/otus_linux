@@ -43,33 +43,33 @@ __Порядок проверки ДЗ__
 
 1.Скачать репозиторий  
 
-    ```git cllone https://github.com/kakunindima/otus_linux.git``` 
+```git cllone https://github.com/kakunindima/otus_linux.git``` 
 
 2.Перейти в директорию с ДЗ -> less4 
 
-    ```cd less4/``` 
+```cd less4/``` 
 
 3.Запустить проверочный vagrant-стенд 
 
-    ```vagrant up``` 
+```vagrant up``` 
 
 4.Залогиниться на стенд и переключиться на root 
 
-    ```vagrant ssh``` 
+```vagrant ssh``` 
 
-    ```sudo -s``` 
+```sudo -s``` 
 
 5.До запуска скрипта ждать час... =) шутка 
 
 6.Файл скрипта доступен для непосредственного запуска в директории: /srv/scripts/otus_linux/less4 
 
-    ```ls -l /srv/scripts/otus_linux/less4``` 
+```ls -l /srv/scripts/otus_linux/less4``` 
 
-    ```/srv/scripts/otus_linux/less4/./script_vagrant.sh``` 
+```/srv/scripts/otus_linux/less4/./script_vagrant.sh``` 
 
 7.После выполнения скрипта проверить получение письма для пользователя root 
 
-    ```mail -u root``` 
+```mail -u root``` 
 
 _В письме будет отображена статистика: в соответствии с логикой обработки и выполнения скрипта._ 
 
