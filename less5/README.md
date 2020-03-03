@@ -63,7 +63,7 @@ __COMMAND-исполняемый процесс__
 ```
 2.3 Перейти в папку 
 ```
-    /srv/scripts/otus_linux/less5/
+   cd /srv/scripts/otus_linux/less5/
 ```
 2.4 Запустить скрипт
 ```
