@@ -36,7 +36,7 @@ P-parked
 
 __NICE-priority of process__
 
-__PID	PPID	STATUS	NICE	COMMAND_
+__COMMAND-исполняемый процесс__
 
 Для запуска проверки необходимо:
 
