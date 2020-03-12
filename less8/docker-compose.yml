@@ -1,0 +1,6 @@
+version: "3.4"
+services:
+ repo:
+  image: pengwinn/less8_apache:latest
+  ports:
+   - "8080:80"
