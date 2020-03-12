@@ -53,6 +53,9 @@ Vagrant.configure("2") do |config|
 	    sudo yum -y install gcc
 	    sudo yum -y install git
 	    git clone https://github.com/kakunindima/otus_linux.git
+	    cd /otus_linux/hometask/less8/
+	    sudo chmod a+x php_build.sh
+	    sudo ./php_build.sh
   	  SHELL
 
       end

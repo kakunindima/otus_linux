@@ -6,11 +6,11 @@
 #make folders tree
     sudo rpmdev-setuptree
 #get php5 sources
-    cd rpmbuild
+    cd /root/rpmbuild
     sudo yumdownloader -y --enablerepo=epel-source --source php
 #unpack 
     rpm -ivh php-5.*
 #builddep
     sudo yum-builddep -y php-5.4.16-46.1.el7_7.src.rpm
 #build from spec
-    cd SPEC/ && sudo rpmbuild -ba php.spec
+    cd /root/rpmbuild/SPECS/ && sudo rpmbuild -ba php.spec
