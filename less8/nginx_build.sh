@@ -16,6 +16,7 @@
 #build from spec
     sudo rm -f /root/rpmbuild/SPECS/nginx.spec
     sudo cp /home/vagrant/otus_linux/less8/nginx.spec /root/rpmbuild/SPECS/
+    sudo cp /home/vagrant/otus_linux/less8/nginx.spec /root/rpmbuild/
     sudo cd /root/rpmbuild/SPECS/ && sudo rpmbuild -ba nginx.spec
 #install
     sudo yum localinstall -y /root/rpmbuild/RPMS/x86_64/nginx-1.14.1-1.el7_4.ngx.x86_64.rpm
