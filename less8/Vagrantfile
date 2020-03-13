@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
           end
  	  box.vm.provision "shell", inline: <<-SHELL
 	    sudo yum update -y
-	    sudo yum install -y docker && sudo yum install -y docker-compose 
+	    sudo yum install -y docker && sudo yum install -y docker-compose*
 	    sudo yum install -y createrepo
 	    sudo yum -y install gcc
 	    sudo yum -y install git

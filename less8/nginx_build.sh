@@ -2,13 +2,14 @@
 #Otus-linux hometask
 #BUILD RPM nginx script
 #packages for build
-    sudo yum install -y redhat-lsb-core rpmdevtools yum-utils wget createrepo
+    sudo yum install -y redhat-lsb-core rpmdevtools yum-utils wget createrepo epel-release
+#    sudo yum -y install openldap compat-openldap openldap-clients openldap-servers openldap-servers-sql openldap-devel
 #make folders tree
     sudo rpmdev-setuptree
 #get nginx and ldap modelu sources
     cd /root/rpmbuild
     wget https://nginx.org/packages/centos/7/SRPMS/nginx-1.14.1-1.el7_4.ngx.src.rpm
-    sudo git clone https://github.com/kvspb/nginx-auth-ldap.git /root/nginx-auth-ldap
+#    sudo git clone https://github.com/kvspb/nginx-auth-ldap.git /root/nginx-auth-ldap
 #unpack 
     rpm -ivh nginx-*
 #builddep
