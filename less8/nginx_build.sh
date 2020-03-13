@@ -37,6 +37,9 @@ name=less8_kdv
 baseurl=http://localhost/repo
 gpgcheck=0
 enabled=1
-    EOF
-#yum repolist enabled | grep kdv
-#yum list | grep kdv
+EOF
+yum repolist enabled | grep kdv
+yum list | grep kdv
+yum install -y docker-compose
+cd /home/vagrant/otus_linux/less8/
+sudo docker-compose up -d
