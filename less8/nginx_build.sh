@@ -29,7 +29,7 @@
 #create repo
     mkdir /usr/share/nginx/html/repo
     sudo cp /root/rpmbuild/RPMS/x86_64/nginx-1.* /usr/share/nginx/html/repo
-    sudo cd /usr/share/nginx/htma/repo/ && wget https://rpmfind.net/linux/remi/fedora/32/test/x86_64/redis-6.0~RC2-1.fc32.remi.x86_64.rpm
+    sudo cd /usr/share/nginx/html/repo/ && wget https://rpmfind.net/linux/remi/fedora/32/test/x86_64/redis-6.0~RC2-1.fc32.remi.x86_64.rpm
     sudo createrepo /usr/share/nginx/html/repo/
 #edit repos.d
     sudo cat >> /etc/yum.repos.d/otus.repo << EOF
