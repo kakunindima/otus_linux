@@ -48,12 +48,14 @@ Vagrant.configure("2") do |config|
           end
  	  box.vm.provision "shell", inline: <<-SHELL
 	    sudo yum update -y
-	    sudo yum install -y docker
+	    sudo yum install -y docker && sudo yum install -y docker-compose 
 	    sudo yum install -y createrepo
 	    sudo yum -y install gcc
 	    sudo yum -y install git
 	    git clone https://github.com/kakunindima/otus_linux.git
-	    cd /otus_linux/hometask/less8/
+	    cd /home/vagrant/otus_linux/less8/
+	    sudo systemctl start docker
+	    sudo docker-compose up -d 
 	    sudo chmod a+x php_build.sh
 	    sudo ./php_build.sh
   	  SHELL
