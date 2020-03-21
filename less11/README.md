@@ -14,4 +14,5 @@ __Для проверки необходимо выполнить команду
 ```
 __Подробно Dockerfile и sources доступны в репозитории по ссылке [https://github.com/kakunindima/sources/tree/master/less11](https://github.com/kakunindima/sources/tree/master/less11)__
 
+__Репозиторий с Docker-image доступен по ссылке [https://hub.docker.com/repository/docker/pengwinn/less11_nginx](https://hub.docker.com/repository/docker/pengwinn/less11_nginx)__
 __Часть 2__
