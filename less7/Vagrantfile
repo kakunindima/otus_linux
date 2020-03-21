@@ -1,0 +1,93 @@
+# -*- mode: ruby -*-
+# vim: set ft=ruby :
+
+MACHINES = {
+  :otuslinux => {
+        :box_name => "centos/7",
+        :ip_addr => '192.168.11.101',
+	:disks => {
+		:sata1 => {
+			:dfile => './sata1.vdi',
+			:size => 10240,
+			:port => 1
+		}#,
+	}
+  },
+}
+
+Vagrant.configure("2") do |config|
+
+  MACHINES.each do |boxname, boxconfig|
+ config.vm.synced_folder ".", "/vagrant" , disabled: true
+           config.vm.define boxname do |box|
+
+          box.vm.box = boxconfig[:box_name]
+          box.vm.host_name = boxname.to_s
+
+          #box.vm.network "forwarded_port", guest: 3260, host: 3260+offset
+
+          box.vm.network "private_network", ip: boxconfig[:ip_addr]
+
+          box.vm.provider :virtualbox do |vb|
+		#vb.gui = true
+            	  vb.customize ["modifyvm", :id, "--memory", "1024"]
+                  needsController = false
+		  boxconfig[:disks].each do |dname, dconf|
+			  unless File.exist?(dconf[:dfile])
+				vb.customize ['createhd', '--filename', dconf[:dfile], '--variant', 'Fixed', '--size', dconf[:size]]
+                                needsController =  true
+                          end
+
+		  end
+                  if needsController == true
+                     vb.customize ["storagectl", :id, "--name", "SATA", "--add", "sata" ]
+                     boxconfig[:disks].each do |dname, dconf|
+                         vb.customize ['storageattach', :id,  '--storagectl', 'SATA', '--port', dconf[:port], '--device', 0, '--type', 'hdd', '--medium', dconf[:dfile]]
+                     end
+                  end
+          end
+ 	  box.vm.provision "shell", inline: <<-SHELL
+	    yum install -y git wget
+	    git clone https://github.com/kakunindima/sources.git
+	    echo "task1"
+		cd /home/vagrant/sources/less7/task1
+		cp watchlog /etc/sysconfig/
+		cp watchlog.log /var/log/
+		cp watchlog.sh /opt/
+		cp watchlog.service /etc/systemd/system/
+		cp watchlog.timer /etc/systemd/system/
+		sudo chmod -R 777 /opt/watchlog.sh
+		sudo systemctl start watchlog.service
+		sudo systemctl start watchlog.timer
+	    echo "task2"
+#		sudo yum -y install policycoreutils-python
+#		sudo semanage port -a -t http_port_t -p tcp 8081
+		sudo setenforce 0
+		cd /home/vagrant/sources/less7/task2
+		sudo yum install -y httpd
+		cp httpd-first /etc/sysconfig
+		cp httpd-second /etc/sysconfig
+		cp httpd-first.service /etc/systemd/system
+		cp httpd-second.service /etc/systemd/system
+		cp first.conf /etc/httpd/conf
+		cp second.conf /etc/httpd/conf
+		sudo systemctl start httpd-first
+		sudo systemctl start httpd-second
+	    echo "task3"
+		cd /home/vagrant/sources/less7/task3
+		wget https://product-downloads.atlassian.com/software/jira/downloads/atlassian-jira-software-8.8.0-x64.bin
+		chmod a+x atlassian-jira-*
+		sudo yes "" | ./atlassian-jira-*
+		cp jira.service /lib/systemd/system/
+		sudo systemctl daemon-reload
+		sudo systemctl start jira
+		sudo systemctl status jira
+	    echo "task1 start"
+		sudo systemctl start watchlog.service
+		sudo systemctl start watchlog.timer
+  	  SHELL
+
+      end
+  end
+end
+
