@@ -1,0 +1,33 @@
+---
+
+- name: Check nginx installation
+  command: systemctl status nginx
+  register: nginx_check
+  ignore_errors: True
+
+- name: Installation
+  block:
+    - name: add repo
+      yum: 
+        name: epel-release
+        state: present
+
+    - name: install nginx
+      yum: 
+        name: nginx
+        state: latest
+
+    - name: copy configs
+      template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+      notify: NGINX restart
+        
+  when: nginx_check.stdout == ""
+
+- name: copy content
+  copy:
+    src: html/
+    dest: /usr/share/nginx/html/
+    mode: 0774
+  notify: NGINX restart
