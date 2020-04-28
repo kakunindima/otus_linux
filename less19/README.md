@@ -117,7 +117,7 @@ __From office1Server (192.168.2.66)__
     vagrant ssh of1Server
 ```
 ```
-of1Server -> of2Server ping 192.168.2.66
+of1Server -> of2Server ping 192.168.1.130
 of1Server -> centralServer ping 192.168.0.40
 of1Server -> office1Router ping (192.168.2.65 or 192.168.0.35)
 of1Server -> office2Router ping (192.168.1.129 or 192.168.0.36)
