@@ -1,0 +1,52 @@
+---
+# tasks file for journald_srv
+- name: Configure journald
+  block:
+   - name: install journald
+     yum:
+       name: systemd-journal-gateway
+       state: present
+
+   - name: create dir journal/remote
+     file:
+       path: "{{ journald_log_path }}"
+       state: directory
+       owner: "{{ journald_owner }}"
+       group: "{{ journald_group}}"
+
+   - name: copy configs
+     template:
+       src: systemd-journal-remote.service.j2
+       dest: /usr/lib/systemd/system/systemd-journal-remote.service
+#     notify: journald start
+
+#   - name: read configs
+#     systemd:
+#       daemon_reload: yes
+#     notify: journald start
+
+   - name: copy configs
+     template:
+       src: journald.conf.j2
+       dest: /etc/systemd/journald.conf
+     notify: journald start
+
+
+   - name: read config, enable & start service
+     systemd:
+      state: restarted
+      daemon_reload: yes
+      enabled: yes
+      name: systemd-journal-remote
+     notify: journald-remote start
+
+- name: Configure auditd
+  block:
+   - name: copy auditd config
+     template:
+       src: audit.conf.j2
+       dest: /etc/audit/auditd.conf
+     notify: auditd start
+
+- name: reboot
+  reboot:

@@ -1,0 +1,16 @@
+all:
+  less16:
+#  vars:
+#    ansible_user: 'root'
+
+less16:
+  hosts:
+    web:
+      ansible_host: 192.168.11.101
+      ansible_ssh_private_key_file: .vagrant/machines/host1/virtualbox/private_key
+    log:
+      ansible_host: 192.168.11.102
+      ansible_ssh_private_key_file: .vagrant/machines/host2/virtualbox/private_key
+#    elk:
+#      ansible_host: 192.168.11.103
+#      ansible_ssh_private_key_file: .vagrant/machines/host3/virtualbox/private_key

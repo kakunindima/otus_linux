@@ -1,0 +1,6 @@
+---
+# vars file for journald_srv
+journald_log_path: /var/log/journal/remote
+journald_owner: systemd-journal-remote
+journald_group: systemd-journal-remote
+audit_listen_port: 60

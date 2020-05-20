@@ -1,0 +1,16 @@
+---
+- hosts: web
+  become: True
+  roles:
+    - nginx
+    - journald_cli
+
+- hosts: log
+  become: True
+  roles:
+    - journald_srv
+
+#- hosts: elk
+#  become: True
+#  roles: 
+#    - elk_install

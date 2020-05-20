@@ -1,0 +1,76 @@
+---
+# tasks file for journald_cli
+- name: Configure Journald
+  block:
+    - name: Install journald
+      yum:
+        name: systemd-journal-gateway
+        state: present
+      notify: journald_upload start
+
+#    - name: copy configs
+#      template:
+#        src: systemd-journal-remote.service.j2
+#        dest: /usr/lib/systemd/system/systemd-journal-remote.service
+#      notify: journald_upload restart
+
+    - name: copy configs
+      template:
+        src: journald.conf.j2
+        dest: /etc/systemd/journald.conf
+      notify: journald start
+
+    - name: copy configs
+      template:
+        src: journal-upload.conf.j2
+        dest: /etc/systemd/journal-upload.conf
+      notify: journald_upload start
+
+
+- name: configure auditd
+  block:
+    - name: Install auditd-plugins
+      yum:
+        name: audispd-plugins
+        state: present
+      notify: auditd start
+
+    - name: copy configs
+      template:
+        src: audisp-remote.conf.j2
+        dest: /etc/audisp/audisp-remote.conf
+#      notify: auditd start
+
+    - name: copy configs
+      template:
+        src: au-remote.conf.j2
+        dest: /etc/audisp/plugins.d/au-remote.conf
+#      notify: auditd start
+
+    - name: copy configs
+      template:
+        src: audit.rules.j2
+        dest: /etc/audit/audit.rules
+
+    - name: copy configs
+      template:
+        src: auditd.service.j2
+        dest: /etc/systemd/system/auditd.service
+
+    - name: read config & start service
+      systemd:
+       state: started
+       daemon_reload: yes
+      # enabled: yes
+       name: auditd
+      notify: auditd start
+
+    - name: reboot
+      reboot:
+#    - name: clean rulles
+#      become: true
+#      command: auditctl -D
+
+#    - name: add rulles
+#      become: true
+#      command: auditctl -w /etc/nginx/nginx.conf -p wa -k nginx
