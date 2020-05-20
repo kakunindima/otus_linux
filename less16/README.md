@@ -2,7 +2,7 @@
 ## Less16
 ### Logs
 
-__Клонируем (репозиторий)[https://github.com/kakunindima/otus_linux.git] и переходим в папку otus_linux/less16/__
+__Клонируем [репозиторий](https://github.com/kakunindima/otus_linux.git) и переходим в папку otus_linux/less16/__
 
 
 __В выполненном дз стенд создан на основе 2х машин - WEB & LOG__
