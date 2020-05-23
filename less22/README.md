@@ -1,7 +1,7 @@
 # Otus-linux Hometask
 ## Less 22
 ### Dynamic routing OSPF
-
+![Иллюстрация к проекту](https://github.com/jon/coolproject/raw/master/image/image.png)
 __Часть1__
 
 __Проверка ассимметричного роутинга__
