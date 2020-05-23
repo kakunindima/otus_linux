@@ -1,0 +1,17 @@
+interface eth0
+interface eth1
+interface eth2
+ ip ospf cost {{ cost_eth2 }}
+interface eth3
+ ip ospf cost {{ cost_eth3 }}
+interface lo
+router ospf
+ ospf router-id {{ lo }}
+ passive-interface default
+ no passive-interface eth2
+ no passive-interface eth3
+ network {{ network_eth2 }} area 0
+ network {{ network_eth3 }} area 0
+ network {{ lo }}/32 area 0
+ {{ def_i_or }}
+line vty

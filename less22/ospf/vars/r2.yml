@@ -1,0 +1,9 @@
+---
+# vars file for ospf
+lo: 10.10.2.1
+r: r2
+network_eth2: 1.1.1.0/24
+network_eth3: 1.1.2.0/24
+def_i_or: ''
+cost_eth2: 10
+cost_eth3: 1000

@@ -1,0 +1,7 @@
+---
+# tasks file for conf
+- name: install tcpdump
+  yum:
+    name: tcpdump
+    state: present
+

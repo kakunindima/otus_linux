@@ -1,0 +1,4 @@
+---
+# vars file for ospf
+quagga_usr: quagga
+quagga_group: quaggavt

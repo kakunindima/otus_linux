@@ -1,0 +1,29 @@
+---
+# handlers file for ospf
+- name: lo2.up
+  shell: ifup lo.2
+
+- name: network restart
+  service: name=network state=restarted
+- name: enable zebra
+  systemd:
+    state: started
+    enabled: yes
+    name: zebra
+  notify: start zebra
+
+- name: start zebra
+  service: name=zebra state=started
+
+- name: enable ospf
+  systemd:
+    state: started
+    enabled: yes
+    name: ospfd
+  notify: start ospf
+
+- name: start ospf
+  service: name=ospfd state=started
+
+- name: sysctl reload
+  shell: sysctl --system

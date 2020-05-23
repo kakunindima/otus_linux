@@ -1,0 +1,85 @@
+---
+# tasks file for ospf
+#- name: Get hostname
+#  shell: echo $hostname
+#  register: result
+
+- name: include vars by hostname
+  block:
+    - name: include vars for r1
+      include_vars: r1.yml
+      when: inventory_hostname == "r1"
+
+    - name: include vars for r2
+      include_vars: r2.yml
+      when: inventory_hostname == "r2"
+
+    - name: include vars for r3
+      include_vars: r3.yml
+      when: inventory_hostname == "r3"
+
+- name: install quagga
+  yum:
+    name: quagga
+    state: present
+
+- name: defroute => no
+  shell: echo "DEFROUTE=no" >> /etc/sysconfig/network-scripts/ifcfg-eth0
+  notify: network restart
+  when: inventory_hostname == "r2"
+
+- name: defroute => no
+  shell: echo "DEFROUTE=no" >> /etc/sysconfig/network-scripts/ifcfg-eth0
+  notify: network restart
+  when: inventory_hostname == "r3"
+
+- name: create lo2
+  template:
+    src: ifcfg-lo.2.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-lo.2
+  notify: lo2.up
+- name: up lo2
+  shell: ifup lo.2
+#- name: Set zebra write conf Selinux
+#  seboolean:
+#    name: zebra_write_config
+#    state: yes
+#    persistent: yes
+- name: zebr selinux
+  shell: setsebool -P zebra_write_config 1
+
+- name: config os for quagga
+  template:
+    src: router.conf.j2
+    dest: /etc/sysctl.d/router.conf
+  notify: sysctl reload
+
+- name: create ospfd.conf
+  template:
+    src: ospfd.conf.j2
+    dest: /etc/quagga/ospfd.conf
+    owner: "{{ quagga_usr }}"
+    group: "{{ quagga_group }}"
+  notify:
+    - enable ospf
+
+
+- name: create zebra.conf
+  template:
+    src: zebra.conf.j2
+    dest: /etc/quagga/zebra.conf
+    owner: "{{ quagga_usr }}"
+    group: "{{ quagga_group }}"
+  notify:
+    - enable zebra
+
+
+
+#- name: config os for quagga
+#  block:
+#    - sysctl:
+#        name: net.ipv4.ip_forward
+#        value: '1'
+#        sysctl_set: yes
+#        state: present
+#        reload: yes

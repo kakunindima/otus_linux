@@ -1,0 +1,6 @@
+---
+- hosts: less22
+  become: True
+  roles:
+    - conf
+    - ospf
