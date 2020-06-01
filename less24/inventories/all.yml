@@ -1,0 +1,11 @@
+all:
+  less24:
+
+less24:
+  hosts:
+    r1:
+      ansible_host: 172.16.10.10
+      ansible_ssh_private_key_file: .vagrant/machines/r1/virtualbox/private_key
+    r2:
+      ansible_host: 172.16.10.20
+      ansible_ssh_private_key_file: .vagrant/machines/r2/virtualbox/private_key

@@ -1,0 +1,4 @@
+---
+# vars file for ovpn
+ovpn_port: 1194
+srv: 1.1.1.1

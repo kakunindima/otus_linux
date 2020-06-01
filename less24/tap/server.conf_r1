@@ -1,0 +1,10 @@
+dev tap
+ifconfig 10.10.10.1 255.255.255.0
+topology subnet
+route 192.168.20.0 255.255.255.0
+secret /etc/openvpn/static.key
+comp-lzo
+status /var/log/openvpn-status.log
+log /var/log/openvpn.log
+verb 3
+

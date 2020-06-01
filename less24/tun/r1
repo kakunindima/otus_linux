@@ -1,0 +1,112 @@
+Script started on 2020-05-28 17:07:43+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="158" LINES="45"]
+]0;root@pengwinn-home: /home/pengwinn/Project/otus-linux/vpnroot@pengwinn-home:/home/pengwinn/Project/otus-linux/vpn# exitvagrant ssh r2[K1
+Last login: Thu May 28 14:02:51 2020 from 10.0.2.2
+]0;vagrant@r1:~[?1034h[vagrant@r1 ~]$ exitsudo -s 
+]0;root@r1:/home/vagrant[?1034h[root@r1 vagrant]# exitping 10.10.10.2[7Pip ro lia[Ksystemctl status openvpn@server[1@restart[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[17Pvi server.conf ll[Kcd /etc/openvpn/[1Pvi server.conf exit[Kiperf3 -s &kill -9 6179[1Piperf3 -s &
+[1] 6444
+]0;root@r1:/home/vagrant[root@r1 vagrant]# iperf3: error - unable to start listener for connections: Address already in use
+iperf3: exiting
+^C
+]0;root@r1:/home/vagrant[1]+  Exit 1                  iperf3 -s
+[root@r1 vagrant]# ps -aux | grep iperf
+root      6242  0.5  0.4   9612  1032 ?        S    14:00   0:02 [01;31m[Kiperf[m[K3 -s
+root      6446  0.0  0.2  12492   696 pts/1    S+   14:08   0:00 grep --color=auto [01;31m[Kiperf[m[K
+]0;root@r1:/home/vagrant[root@r1 vagrant]# ku[Kill -9 6245[K2
+]0;root@r1:/home/vagrant[root@r1 vagrant]# kill -9 6242ps -aux | grep iperf[9Piperf3 -s &
+[1] 6454
+]0;root@r1:/home/vagrant[root@r1 vagrant]# -----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 10.10.10.2, port 42562
+[  5] local 10.10.10.1 port 5201 connected to 10.10.10.2 port 42564
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-1.00   sec  6.35 MBytes  53.3 Mbits/sec                  
+[  5]   1.00-2.00   sec  7.02 MBytes  58.7 Mbits/sec                  
+[  5]   2.00-3.01   sec  7.05 MBytes  58.9 Mbits/sec                  
+[  5]   3.01-4.01   sec  6.02 MBytes  50.5 Mbits/sec                  
+[  5]   4.01-5.00   sec  6.80 MBytes  57.3 Mbits/sec                  
+[  5]   5.00-6.01   sec  6.97 MBytes  57.9 Mbits/sec                  
+[  5]   6.01-7.01   sec  6.95 MBytes  58.6 Mbits/sec                  
+[  5]   7.01-8.00   sec  7.32 MBytes  61.5 Mbits/sec                  
+[  5]   8.00-9.00   sec  6.60 MBytes  55.5 Mbits/sec                  
+[  5]   9.00-10.00  sec  6.78 MBytes  56.9 Mbits/sec                  
+[  5]  10.00-11.00  sec  6.75 MBytes  56.6 Mbits/sec                  
+[  5]  11.00-12.00  sec  7.41 MBytes  62.3 Mbits/sec                  
+[  5]  12.00-13.00  sec  7.41 MBytes  62.1 Mbits/sec                  
+[  5]  13.00-14.00  sec  7.24 MBytes  60.8 Mbits/sec                  
+[  5]  14.00-15.00  sec  7.15 MBytes  60.0 Mbits/sec                  
+[  5]  15.00-16.01  sec  7.20 MBytes  59.8 Mbits/sec                  
+[  5]  16.01-17.00  sec  6.88 MBytes  58.4 Mbits/sec                  
+[  5]  17.00-18.00  sec  7.30 MBytes  61.0 Mbits/sec                  
+[  5]  18.00-19.01  sec  7.11 MBytes  59.2 Mbits/sec                  
+[  5]  19.01-20.00  sec  7.12 MBytes  60.2 Mbits/sec                  
+[  5]  20.00-21.01  sec  7.15 MBytes  59.7 Mbits/sec                  
+[  5]  21.01-22.01  sec  7.37 MBytes  61.9 Mbits/sec                  
+[  5]  22.01-23.00  sec  6.71 MBytes  56.5 Mbits/sec                  
+[  5]  23.00-24.01  sec  6.91 MBytes  57.7 Mbits/sec                  
+[  5]  24.01-25.00  sec  7.33 MBytes  61.8 Mbits/sec                  
+[  5]  25.00-26.00  sec  7.13 MBytes  59.8 Mbits/sec                  
+[  5]  26.00-27.01  sec  7.21 MBytes  59.9 Mbits/sec                  
+[  5]  27.01-28.00  sec  6.78 MBytes  57.4 Mbits/sec                  
+[  5]  28.00-29.00  sec  7.32 MBytes  61.4 Mbits/sec                  
+[  5]  29.00-30.00  sec  6.91 MBytes  58.0 Mbits/sec                  
+[  5]  30.00-31.01  sec  7.13 MBytes  59.4 Mbits/sec                  
+[  5]  31.01-32.00  sec  7.32 MBytes  61.7 Mbits/sec                  
+[  5]  32.00-33.00  sec  7.31 MBytes  61.2 Mbits/sec                  
+[  5]  33.00-34.01  sec  6.53 MBytes  54.7 Mbits/sec                  
+[  5]  34.01-35.00  sec  5.40 MBytes  45.5 Mbits/sec                  
+[  5]  35.00-36.00  sec  6.44 MBytes  53.9 Mbits/sec                  
+[  5]  36.00-37.01  sec  6.45 MBytes  53.8 Mbits/sec                  
+[  5]  37.01-38.01  sec  6.84 MBytes  57.3 Mbits/sec                  
+[  5]  38.01-39.01  sec  6.81 MBytes  57.3 Mbits/sec                  
+[  5]  39.01-40.01  sec  7.27 MBytes  61.0 Mbits/sec                  
+[  5]  40.01-40.08  sec   511 KBytes  53.7 Mbits/sec                  
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-40.08  sec  0.00 Bytes  0.00 bits/sec                  sender
+[  5]   0.00-40.08  sec   278 MBytes  58.2 Mbits/sec                  receiver
+-----------------------------------------------------------
+Server listening on 5201
+-----------------------------------------------------------
+Accepted connection from 10.10.10.2, port 42566
+[  5] local 10.10.10.1 port 5201 connected to 10.10.10.2 port 42568
+[ ID] Interval           Transfer     Bandwidth
+[  5]   0.00-1.00   sec  6.99 MBytes  58.4 Mbits/sec                  
+[  5]   1.00-2.00   sec  8.09 MBytes  68.2 Mbits/sec                  
+[  5]   2.00-3.00   sec  8.75 MBytes  73.2 Mbits/sec                  
+[  5]   3.00-4.00   sec  8.64 MBytes  72.3 Mbits/sec                  
+[  5]   4.00-5.00   sec  8.66 MBytes  72.9 Mbits/sec                  
+[  5]   5.00-6.00   sec  7.71 MBytes  64.6 Mbits/sec                  
+[  5]   6.00-7.01   sec  8.63 MBytes  72.1 Mbits/sec                  
+[  5]   7.01-8.01   sec  9.02 MBytes  75.5 Mbits/sec                  
+[  5]   8.01-9.00   sec  8.76 MBytes  74.0 Mbits/sec                  
+[  5]   9.00-10.01  sec  8.55 MBytes  71.0 Mbits/sec                  
+[  5]  10.01-11.00  sec  8.23 MBytes  69.6 Mbits/sec                  
+[  5]  11.00-12.01  sec  8.35 MBytes  69.7 Mbits/sec                  
+[  5]  12.01-13.01  sec  8.15 MBytes  68.4 Mbits/sec                  
+[  5]  13.01-14.00  sec  8.40 MBytes  70.6 Mbits/sec                  
+[  5]  14.00-15.01  sec  8.92 MBytes  74.6 Mbits/sec                  
+[  5]  15.01-16.01  sec  8.29 MBytes  69.5 Mbits/sec                  
+[  5]  16.01-17.01  sec  8.29 MBytes  69.3 Mbits/sec                  
+[  5]  17.01-18.00  sec  7.97 MBytes  67.5 Mbits/sec                  
+[  5]  18.00-19.01  sec  8.43 MBytes  70.0 Mbits/sec                  
+[  5]  19.01-20.00  sec  8.45 MBytes  71.4 Mbits/sec                  
+[  5]  20.00-21.00  sec  8.37 MBytes  70.3 Mbits/sec                  
+[  5]  21.00-22.01  sec  8.44 MBytes  70.5 Mbits/sec                  
+[  5]  22.01-23.00  sec  8.46 MBytes  71.4 Mbits/sec                  
+[  5]  23.00-24.00  sec  8.49 MBytes  71.1 Mbits/sec                  
+[  5]  24.00-25.01  sec  8.32 MBytes  69.4 Mbits/sec                  
+[  5]  25.01-26.00  sec  8.65 MBytes  73.0 Mbits/sec                  
+[  5]  26.00-27.00  sec  8.45 MBytes  71.1 Mbits/sec                  
+[  5]  27.00-28.00  sec  7.45 MBytes  62.5 Mbits/sec                  
+[  5]  28.00-29.00  sec  8.61 MBytes  72.0 Mbits/sec                  
+[  5]  29.00-30.00  sec  8.28 MBytes  69.6 Mbits/sec                  
+[  5]  30.00-31.00  sec  8.40 MBytes  70.5 Mbits/sec                  
+[  5]  31.00-32.01  sec  8.09 MBytes  67.3 Mbits/sec                  
+[  5]  32.01-33.00  sec  8.71 MBytes  73.5 Mbits/sec                  
+[  5]  33.00-34.01  sec  8.70 MBytes  72.8 Mbits/sec                  
+[  5]  34.01-35.00  sec  8.43 MBytes  70.9 Mbits/sec                  
+[  5]  35.00-36.00  sec  7.94 MBytes  66.9 Mbits/sec                  
+[  5]  36.00-37.00  sec  8.80 MBytes  73.8 Mbits/sec                  
+[  5]  37.00-38.01  sec  8.86 MBytes  73.8 Mbits/sec                  
+[  5]  38.01-39.00  sec  8.50 MBytes  71.6 Mbits/sec               

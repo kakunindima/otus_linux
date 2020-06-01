@@ -1,0 +1,55 @@
+---
+# tasks file for ovpn
+- name: install repo
+  yum:
+    name: epel-release
+    state: present
+
+- name: install openvpn
+  yum:
+    name: openvpn
+    state: present
+
+- name: server
+  block:
+
+  - name: copy certs
+    copy:
+      src: certs_srv/
+      dest: /etc/openvpn/
+
+  - name: copy config
+    template:
+      src: server.conf.j2
+      dest: /etc/openvpn/server.conf
+
+  - name: start ovpn@srv
+    systemd:
+      state: started
+      name: openvpn@server
+
+  when: inventory_hostname == "r1"
+
+- name: client
+  block:
+
+  - name: copy certs
+    copy:
+      src: certs_cli/
+      dest: /etc/openvpn/
+
+  - name: copy config
+    template:
+      src: client.conf.j2
+      dest: /etc/openvpn/client.conf
+  - name: create logdir
+    file:
+      path: /var/log/openvpn/
+      state: directory
+
+  - name: start ovpn@cli
+    systemd:
+      state: started
+      name: openvpn@client
+
+  when: inventory_hostname == "r2"

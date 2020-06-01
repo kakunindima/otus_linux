@@ -1,0 +1,7 @@
+---
+# handlers file for ovpn
+- name: ovpn@srv start
+  service: name=openvpn@server state=started
+
+- name: ovpn@cli start
+  service: name=openvpn@client state=started

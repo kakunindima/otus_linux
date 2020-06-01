@@ -1,0 +1,5 @@
+---
+- hosts: less24
+  become: True
+  roles:
+    - ovpn
