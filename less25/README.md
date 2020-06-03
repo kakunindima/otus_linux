@@ -20,7 +20,7 @@ __1.2 Проверяем доступность интерфейса при по
 
 __1.3 Устанавливаем link eth2 -> up на роутерах iR & cR__
 
-__1.4 Прверяем состояние интерфейса_
+__1.4 Прверяем состояние интерфейса__
 
 ![sheme](https://github.com/kakunindima/otus_linux/blob/master/less25/img/bond_down.png)
 
@@ -42,8 +42,8 @@ __Прверяем доступность серверов/коиентов вн
 
 __vlan10__
 
-![sheme]()https://github.com/kakunindima/otus_linux/blob/master/less25/img/vlan10.png
+![sheme](https://github.com/kakunindima/otus_linux/blob/master/less25/img/vlan10.png)
 
 __vlan110__
 
-![sheme]()https://github.com/kakunindima/otus_linux/blob/master/less25/img/vlan110.png
+![sheme](https://github.com/kakunindima/otus_linux/blob/master/less25/img/vlan110.png)
