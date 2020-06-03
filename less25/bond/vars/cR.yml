@@ -1,0 +1,3 @@
+---
+bond_addr: 10.100.10.2
+bond_interface: bond0

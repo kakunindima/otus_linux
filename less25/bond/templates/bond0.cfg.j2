@@ -1,0 +1,11 @@
+DEVICE=bond0
+IPADDR={{ bond_addr }}
+NAME=bond0
+TYPE=Bond
+BONDING_MASTER=yes
+NETMASK=255.255.255.0
+ONBOOT=yes
+BOOTPROTO=static
+BONDING_OPTS="mode=1 miimon=100 fail_over_mac=1"
+NM_CONTROLLED=no
+USERCTL=no

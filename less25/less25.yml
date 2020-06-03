@@ -1,0 +1,10 @@
+---
+- hosts: routers
+  become: True
+  roles:
+    - bond
+
+- hosts: less25
+  become: True
+  roles:
+    - vlan

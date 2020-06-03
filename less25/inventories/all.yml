@@ -1,0 +1,30 @@
+all:
+  less25:
+
+less25:
+  hosts:
+  children:
+    clients:
+      hosts:
+        tc1:
+          ansible_host: 172.16.10.11
+          ansible_ssh_private_key_file: .vagrant/machines/tc2/virtualbox/private_key
+        tc2:
+          ansible_host: 172.16.10.12
+          ansible_ssh_private_key_file: .vagrant/machines/tc2/virtualbox/private_key
+    servers:
+      hosts:
+        ts1:
+          ansible_host: 172.16.10.13
+          ansible_ssh_private_key_file: .vagrant/machines/ts1/virtualbox/private_key
+        ts2:
+          ansible_host: 172.16.10.14
+          ansible_ssh_private_key_file: .vagrant/machines/ts2/virtualbox/private_key
+    routers:
+      hosts:
+        iR:
+          ansible_host: 172.16.10.5
+          ansible_ssh_private_key_file: .vagrant/machines/iR/virtualbox/private_key
+        cR:
+          ansible_host: 172.16.10.10
+          ansible_ssh_private_key_file: .vagrant/machines/cR/virtualbox/private_key

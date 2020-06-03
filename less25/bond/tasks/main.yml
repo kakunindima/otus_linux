@@ -1,0 +1,39 @@
+---
+# tasks file for vlan
+- name: include vars
+  include_vars: iR.yml
+  when: inventory_hostname == "iR"
+
+- name: include vars
+  include_vars: cR.yml
+  when: inventory_hostname == "cR"
+
+- name: copy modprobe conf
+  template:
+    src: modprobe.conf.j2
+    dest: /etc/modprobe.d/modprobe.conf
+
+- name: enable bond modprobe
+  modprobe:
+    name: bonding
+    state: present
+
+- name: cp bond config
+  template:
+    src: bond0.cfg.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-bond0
+
+- name: cp eth2 config
+  template:
+    src: ifcfg-eth2.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-eth2
+
+- name: cp eth3 config
+  template:
+    src: ifcfg-eth3.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-eth3
+
+- name: restart network
+  systemd:
+    state: restarted
+    name: network

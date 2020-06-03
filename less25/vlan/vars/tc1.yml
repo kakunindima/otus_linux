@@ -1,0 +1,4 @@
+---
+IPADDR: 10.10.10.254
+VLAN_ID: 10
+IFACE: eth2

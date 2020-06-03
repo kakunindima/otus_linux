@@ -1,0 +1,40 @@
+---
+# tasks file for vlan
+- name: vlan
+  block:
+  - name: include vars
+    include_vars: cR.yml
+    when: inventory_hostname == "cR"
+
+  - name: include vars
+    include_vars: tc1.yml
+    when: inventory_hostname == "tc1"
+
+  - name: include vars
+    include_vars: tc2.yml
+    when: inventory_hostname == "tc2"
+
+  - name: include vars
+    include_vars: ts1.yml
+    when: inventory_hostname == "ts1"
+
+  - name: include vars
+    include_vars: ts2.yml
+    when: inventory_hostname == "ts2"
+
+  - name: copy vlan conf
+    template:
+      src: ifcfg-vlan.j2
+      dest: /etc/sysconfig/network-scripts/ifcfg-vlan{{ VLAN_ID }}
+
+  - name: copy vlan conf
+    template:
+      src: ifcfg-vlan11.j2
+      dest: /etc/sysconfig/network-scripts/ifcfg-vlan110
+    when: inventory_hostname == "cR"
+
+  - name: restart network
+    systemd:
+      state: restarted
+      name: network
+  when: inventory_hostname != "iR"
