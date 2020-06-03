@@ -47,3 +47,12 @@ __vlan10__
 __vlan110__
 
 ![sheme](https://github.com/kakunindima/otus_linux/blob/master/less25/img/vlan110.png)
+
+__Для проверки ДЗ необходимо склонировать [репозиторий](https://github.com/kakunindima/otus_linux.git)__ 
+
+__Перейти в директорию c дз и запустить стенд__
+
+```
+    cd otus_linux/less25
+    vagrant up
+```
