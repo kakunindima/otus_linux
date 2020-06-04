@@ -26,6 +26,6 @@ __Открыв в браузере [http://localhost/otus.txt](http://localhost/
 
 __Результат тестирования приложен на скриншоте__
 
-![img]()
+![img](https://github.com/kakunindima/otus_linux/blob/master/less28/web.png)
 
 __Ccылка на [Docker repo](https://hub.docker.com/repository/docker/pengwinn/web)__
