@@ -1,0 +1,43 @@
+---
+- name: check if percona repo is installed
+  command: rpm -qa percona-release
+  args:
+    warn: False
+  register: percona_release_installed
+
+- name: install percona server dependencies
+  yum:
+    name: https://repo.percona.com/yum/percona-release-latest.noarch.rpm
+    state: present
+  when: percona_release_installed.stdout == ""
+
+- name: install percona server
+  yum:
+    name: Percona-Server-server-57
+    state: present
+  notify: restart mysql
+
+- name: copy config files
+  template:
+    src: "{{ item }}"
+    dest: /etc/my.cnf.d/
+  with_fileglob: templates/my.cnf.d/*
+  notify: restart mysql
+
+- name: restart mysql
+  systemd:
+    name: mysql.service
+    state: started
+
+- name: get current mysql password
+  shell: grep 'A temporary password is generated' /var/log/mysqld.log | awk '{print $11}' | head -1
+  register: generated_password
+
+- name: update mysql password
+  shell: |
+    set -e
+    mysql --connect-expired-password -uroot -p'{{ generated_password.stdout }}' -e 'ALTER USER USER() IDENTIFIED BY "{{ mysql_password }}"'
+    sed -i '/A temporary password is generated/d' /var/log/mysqld.log
+  when: generated_password.stdout
+
+

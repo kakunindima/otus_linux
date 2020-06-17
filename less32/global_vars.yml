@@ -1,0 +1,9 @@
+---
+mysql_password: 'Dlj[yjdtybt1'
+remote_dump_path: /vagrant/master.sql
+local_dump_path: /tmp/master.sql
+replication_user: repl
+replication_password: 'Dlj[yjdtybt1'
+replication_ignore_tables:
+  - bet.events_on_demand
+  - bet.v_same_event
