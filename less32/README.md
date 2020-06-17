@@ -10,18 +10,22 @@ __В качестве решения приложен готовый стенд_
 
 __Запускаем стенд__
 
-    ```
+```
     vagrant up
-    ```
+```
 
 __Проверка работоспособности репликации__
 ```
 vagrant ssh master
-mysql -uroot -p'Dlj[yjdtybt1' -D 'bet' -e 'INSERT INTO bookmaker (id,bookmaker_name) VALUES(1,"1xbet");'
+mysql -uroot -p'Dlj[yjdtybt1'
+USE bet
+INSERT INTO bookmaker (id,bookmaker_name) VALUES(1,"1xbet");
 exit
 
 vagrant ssh slave
-mysql -uroot -p'Dlj[yjdtybt1' -D 'bet' -e 'SELECT * FROM bookmaker;'
+mysql -uroot -p'Dlj[yjdtybt1' 
+USE bet 
+SELECT * FROM bookmaker;
 exit
 ```
 
