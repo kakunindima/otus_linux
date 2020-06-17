@@ -8,7 +8,9 @@ __Для проверки необходимо выполнить следующ
 
 1. Запустить vagrant-стенд
 
-``` vagrant up
+```
+    vagrant up
+
 ```
 
 1. Проверить client1/client2 dns resolution
