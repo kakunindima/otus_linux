@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: True
+  roles:
+    - add_hosts
+
+- hosts: master
+  become: True
+  roles:
+    - 
+
+- hosts: master
+  become: True
+  roles:
+    - 
+
+- hosts: backup
+  become: True
+  roles:
+    - barman

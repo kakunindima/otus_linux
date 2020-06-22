@@ -271,7 +271,7 @@ drw-rwx---. root named unconfined_u:object_r:named_zone_t:s0 dynamic
 -rw-rw----. root named system_u:object_r:named_zone_t:s0 named.dns.lab.view1
 -rw-rw----. root named system_u:object_r:named_zone_t:s0 named.newdns.lab
 ```
-__Тестируем, результат +__
+__Тестируем, результат__ +
 
 ```
     [vagrant@client ~]$ nsupdate -k /etc/named.zonetransfer.key
