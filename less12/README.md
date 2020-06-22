@@ -5,7 +5,7 @@
 __ДЗ состоит из 2х частей__
 
 
-__Часть 1__
+### Часть 1
 
 __Запуск nginx на нестандартном порту 3мя способами__
 
@@ -196,3 +196,238 @@ LISTEN     0      128          *:8099                     *:*                   
 LISTEN     0      128         :::8099                    :::*                   users:(("nginx",pid=27325,fd=7),("nginx",pid=27324,fd=7))
 ```
 __В результате мы видим что все три механизма отрабатывают.__
+
+### Часть 2
+
+__исправление стенда [SELinux: проблема с удаленным обновлением зоны DNS](https://github.com/mbfx/otus-linux-adm/tree/master/selinux_dns_problems)__
+
+__Итак...__
+
+__Запустив стенд и сделав попытку внести изменения в зону ddns.lab безуспешно получаем ошибку ```Servfail```__
+
+```
+    [vagrant@client ~]$ nsupdate -k /etc/named.zonetransfer.key
+    > server 192.168.50.10
+    > zone ddns.lab
+    > update add www.ddns.lab. 60 A 192.168.50.15
+    > send
+    update failed: SERVFAIL
+
+```
+__Рассмотрим что настроено на ns01__
+
+__Смотрим директорию /etc/named, в которой находятся все конфиги зон__
+
+```
+[root@ns01 vagrant]# ls -Z /etc/named
+drw-rwx---. root named unconfined_u:object_r:etc_t:s0   dynamic
+-rw-rw----. root named system_u:object_r:etc_t:s0       named.50.168.192.rev
+-rw-rw----. root named system_u:object_r:etc_t:s0       named.dns.lab
+-rw-rw----. root named system_u:object_r:etc_t:s0       named.dns.lab.view1
+-rw-rw----. root named system_u:object_r:etc_t:s0       named.newdns.lab
+[root@ns01 vagrant]# ls -Z /etc/named/dynamic/
+-rw-rw----. named named system_u:object_r:etc_t:s0       named.ddns.lab
+-rw-rw----. named named system_u:object_r:etc_t:s0       named.ddns.lab.view1
+```
+__Использовав команду ```ls -Z /etc/named/*```, ```ls -Z /etc/named/*``` видим что контекст конфигов ```etc_t```__
+
+__Поискав на некоторых [ресурсах](https://linux.die.net/man/8/named_selinux) нашел что контекст конфигов может быть разным__
+
+__Причина не работоспособности - нет прав на изменения конфигурации для данного контекста.__
+
+__Решение проблемы:__
+
+__Протестировал 3 способа, результат дали 2__
+
+### Способ 0 - отключить selinux.... P.S. так не делайте)
+
+### Способ 1 - состояние permissive
+
+__Установить Selinux для named в состояние permissive__
+
+```
+    semanage permissive -a named_t
+```
+__Данная опция проблемы не решает а только убирает блокировку, в лог будут сыпаться ошибки, но результат + __
+
+### Способ 2 - контекст named_zone_t
+
+__данный контекс применяется для файлов зоны которые можно изменять__
+
+```
+[root@ns01 vagrant]# chcon -t named_zone_t /etc/named/dynamic/*
+[root@ns01 vagrant]# chcon -t named_zone_t /etc/named/*
+```
+__Меняем контекст и смотрим__
+```
+[root@ns01 vagrant]# ls -Z /etc/named/dynamic/
+-rw-rw----. named named system_u:object_r:named_zone_t:s0 named.ddns.lab
+-rw-rw----. named named system_u:object_r:named_zone_t:s0 named.ddns.lab.view1
+
+[root@ns01 vagrant]# ls -Z /etc/named/
+drw-rwx---. root named unconfined_u:object_r:named_zone_t:s0 dynamic
+-rw-rw----. root named system_u:object_r:named_zone_t:s0 named.50.168.192.rev
+-rw-rw----. root named system_u:object_r:named_zone_t:s0 named.dns.lab
+-rw-rw----. root named system_u:object_r:named_zone_t:s0 named.dns.lab.view1
+-rw-rw----. root named system_u:object_r:named_zone_t:s0 named.newdns.lab
+```
+__Тестируем, результат +__
+
+```
+    [vagrant@client ~]$ nsupdate -k /etc/named.zonetransfer.key
+    > server 192.168.50.10
+    > zone ddns.lab 
+    > update add www.ddns.lab. 60 A 192.168.50.15
+    > send
+```
+
+### Способ 3 Контекст named_conf_t
+
+__Данный контекст применяется для конфигурационных файлов в директории /etc/__
+
+__Здесь для успешной работы выполняем 3 действия__
+
+__1 Меняем контекст__
+
+```
+[root@ns01 vagrant]# chcon -t named_conf_t /etc/named/dynamic/*
+[root@ns01 vagrant]# chcon -t named_conf_t /etc/named/*
+[root@ns01 vagrant]# ls -Z /etc/named/dynamic/
+-rw-rw----. named named system_u:object_r:named_conf_t:s0 named.ddns.lab
+-rw-rw----. named named system_u:object_r:named_conf_t:s0 named.ddns.lab.view1
+
+[root@ns01 vagrant]# ls -Z /etc/named/
+drw-rwx---. root named unconfined_u:object_r:named_conf_t:s0 dynamic
+-rw-rw----. root named system_u:object_r:named_conf_t:s0 named.50.168.192.rev
+-rw-rw----. root named system_u:object_r:named_conf_t:s0 named.dns.lab
+-rw-rw----. root named system_u:object_r:named_conf_t:s0 named.dns.lab.view1
+-rw-rw----. root named system_u:object_r:named_conf_t:s0 named.newdns.lab
+```
+__Генерируем модуль для Selinux__
+```
+audit2why < /var/log/audit/audit.log 
+type=AVC msg=audit(1592819750.373:1911): avc:  denied  { search } for  pid=7132 comm="isc-worker0000" name="net" dev="proc" ino=33279 scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:sysctl_net_t:s0 tclass=dir permissive=0
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592819750.373:1912): avc:  denied  { search } for  pid=7132 comm="isc-worker0000" name="net" dev="proc" ino=33279 scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:sysctl_net_t:s0 tclass=dir permissive=0
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592820828.693:1946): avc:  denied  { create } for  pid=7132 comm="isc-worker0000" name="named.ddns.lab.view1.jnl" scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:etc_t:s0 tclass=file permissive=0
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592824195.277:1954): avc:  denied  { create } for  pid=7132 comm="isc-worker0000" name="named.ddns.lab.view1.jnl" scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:etc_t:s0 tclass=file permissive=0
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592824593.671:1955): avc:  denied  { create } for  pid=7132 comm="isc-worker0000" name="named.ddns.lab.view1.jnl" scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:etc_t:s0 tclass=file permissive=0
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592825365.690:1984): avc:  denied  { create } for  pid=7132 comm="isc-worker0000" name="named.ddns.lab.view1.jnl" scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:etc_t:s0 tclass=file permissive=0
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592825781.603:1988): avc:  denied  { create } for  pid=7132 comm="isc-worker0000" name="named.ddns.lab.view1.jnl" scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:etc_t:s0 tclass=file permissive=0
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592827035.417:2012): avc:  denied  { write } for  pid=7132 comm="isc-worker0000" name="dynamic" dev="sda1" ino=300 scontext=system_u:system_r:named_t:s0 tcontext=unconfined_u:object_r:named_exec_t:s0 tclass=dir permissive=1
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592827035.417:2012): avc:  denied  { add_name } for  pid=7132 comm="isc-worker0000" name="named.ddns.lab.view1.jnl" scontext=system_u:system_r:named_t:s0 tcontext=unconfined_u:object_r:named_exec_t:s0 tclass=dir permissive=1
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592827035.417:2012): avc:  denied  { create } for  pid=7132 comm="isc-worker0000" name="named.ddns.lab.view1.jnl" scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:named_exec_t:s0 tclass=file permissive=1
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592827035.417:2012): avc:  denied  { write } for  pid=7132 comm="isc-worker0000" path="/etc/named/dynamic/named.ddns.lab.view1.jnl" dev="sda1" ino=507402 scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:named_exec_t:s0 tclass=file permissive=1
+
+    Was caused by:
+	Unknown - would be allowed by active policy
+	Possible mismatch between this policy and the one under which the audit message was generated.
+
+	Possible mismatch between current in-memory boolean settings vs. permanent ones.
+
+type=AVC msg=audit(1592827826.716:2020): avc:  denied  { remove_name } for  pid=7132 comm="isc-worker0000" name="tmp-mjptBTGf5S" dev="sda1" ino=21315 scontext=system_u:system_r:named_t:s0 tcontext=unconfined_u:object_r:named_exec_t:s0 tclass=dir permissive=1
+
+    Was caused by:
+	Missing type enforcement (TE) allow rule.
+
+	You can use audit2allow to generate a loadable module to allow this access.
+
+type=AVC msg=audit(1592827826.716:2020): avc:  denied  { rename } for  pid=7132 comm="isc-worker0000" name="tmp-mjptBTGf5S" dev="sda1" ino=21315 scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:named_exec_t:s0 tclass=file permissive=1
+
+    Was caused by:
+	Missing type enforcement (TE) allow rule.
+
+	You can use audit2allow to generate a loadable module to allow this access.
+
+type=AVC msg=audit(1592827826.716:2020): avc:  denied  { unlink } for  pid=7132 comm="isc-worker0000" name="named.ddns.lab.view1" dev="sda1" ino=33563776 scontext=system_u:system_r:named_t:s0 tcontext=system_u:object_r:etc_t:s0 tclass=file permissive=1
+
+    Was caused by:
+	Missing type enforcement (TE) allow rule.
+
+	You can use audit2allow to generate a loadable module to allow this access.
+```
+__Создаем и устанавливаем модуль__
+```
+[root@ns01 vagrant]# ausearch -c 'isc-worker0000' --raw | audit2allow -M my-iscworker0000
+******************** IMPORTANT ***********************
+To make this policy package active, execute:
+
+semodule -i my-iscworker0000.pp
+
+[root@ns01 vagrant]# semodule -i my-iscworker0000.pp
+
+```
+__Проверив с клиента - также получаем воможность записать изменения.__
+
+### Вывод
+
+__Наиболее приемлимым и простым считаю вариант 2 - для файлов зоны назначить контекст named_zone_t__
