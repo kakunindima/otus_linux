@@ -1,0 +1,20 @@
+---
+- name: setup packages for ipa client
+  yum:
+    name: ipa-client
+    state: present
+
+- name: setup ipa client
+  command: >
+    ipa-client-install -U \
+      -p admin \
+      -w password \
+      --server={{ ipa_server_name }} \
+      --ip-address={{ ipa_server_ip }} \
+      --domain={{ ipa_domain }} \
+      --realm={{ ipa_realm }} \
+      --hostname={{ hostname }} \
+      --mkhomedir
+  args:
+    creates: /etc/ipa/default.conf
+...

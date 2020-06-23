@@ -1,0 +1,29 @@
+---
+- name: remove record {{ ansible_facts['nodename'] }} from /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    regexp: "{{ ansible_facts['nodename'] }}"
+    state: absent
+
+- name: install ipa-server dependencies
+  yum:
+    name:
+      - ipa-server
+      - ipa-server-dns
+      - bind-dyndb-ldap
+    state: present
+
+- name: install ipa-server
+  command: >
+    ipa-server-install -U \
+      -r {{ ipa_realm }} \
+      -n {{ ipa_domain }} \
+      -p password \
+      -a password \
+      --hostname={{ hostname }} \
+      --ip-address={{ ipa_server_ip }} \
+      --setup-dns \
+      --auto-forwarders \
+      --no-reverse
+  args:
+    creates: /etc/ipa/default.conf

@@ -1,0 +1,6 @@
+---
+# vars file for ldap_srv
+ipa_realm: TEST.LOCAL
+ipa_domain: test.local
+ipa_server_ip: 192.168.10.2
+hostname: ipaserver.test.local

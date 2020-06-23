@@ -1,0 +1,10 @@
+---
+- hosts: ldap
+  become: True
+  roles:
+    - ldap_srv
+
+- hosts: cli
+  become: True
+  roles:
+    - ldap_cli

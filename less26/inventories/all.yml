@@ -1,0 +1,11 @@
+all:
+  less26:
+
+less26:
+  hosts:
+    ldap:
+      ansible_host: 192.168.10.2
+      ansible_ssh_private_key_file: .vagrant/machines/ldap/virtualbox/private_key
+    cli:
+      ansible_host: 192.168.10.3
+      ansible_ssh_private_key_file: .vagrant/machines/cli/virtualbox/private_key
