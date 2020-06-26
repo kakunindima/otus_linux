@@ -54,4 +54,4 @@ __Создание БД__
 
 __Результат__
 
-![img](https://github.com/kakunindima/otus_linux/blob/master/less29/db.png/img/db.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less29/img/db.png)
