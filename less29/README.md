@@ -28,7 +28,7 @@ __Проверка streaming__
 
 __Результат:__
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less29/streaming.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less29/img/streaming.png)
 
 __Проверка конфигов barman__
 
@@ -39,7 +39,7 @@ __Проверка конфигов barman__
 
 __Результат:__
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less29/barman.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less29/img/barman.png)
 
 __Создание БД__
 ```
@@ -54,4 +54,4 @@ __Создание БД__
 
 __Результат__
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less29/db.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less29/db.png/img/db.png)
