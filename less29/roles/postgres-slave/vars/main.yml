@@ -1,0 +1,6 @@
+---
+# vars file for postgres-slave
+# network information
+slave_hostname: slave.local
+slave_ip: 192.168.10.3
+allowed_network: 192.168.10.0/24

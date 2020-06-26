@@ -3,18 +3,31 @@
   become: True
   roles:
     - add_hosts
+  tasks:
+    - name: incl_vars
+      include_vars: global_vars.yml
 
 - hosts: master
   become: True
   roles:
-    - 
+#    - barman
+    - barman-repo
+    - postgres-repo
+    - postgres-server
+    - postgres-master
 
-- hosts: master
+- hosts: slave
   become: True
   roles:
-    - 
+    - postgres-repo
+    - postgres-server
+    - postgres-slave
 
 - hosts: backup
   become: True
   roles:
+    - epel
+    - postgres-repo
+    - postgres-client
+    - barman-repo
     - barman

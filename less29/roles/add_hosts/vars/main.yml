@@ -1,0 +1,8 @@
+---
+# vars file for add_hosts
+m_ip: 192.168.10.2
+m_dns: master.local
+s_ip: 192.168.10.3
+s_dns: slave.local
+b_ip: 192.168.10.4
+b_dns: backup.local

@@ -1,4 +1,12 @@
 ---
+- name: pip install 
+  yum:
+    name: python-pip
+    state: present
+
+- name: inst_psycopg2
+  shell: pip install psycopg2-binary
+
 - name: install barman
   yum:
     name: barman

@@ -1,0 +1,6 @@
+---
+# vars file for postgres-master
+# network information
+master_hostname: master.local
+master_ip: 192.168.10.2
+allowed_network: 192.168.10.0/24

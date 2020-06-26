@@ -1,0 +1,24 @@
+---
+# tasks file for add_hosts
+- name: inst epel
+  yum:
+    name: epel-release
+    state: present
+
+- name: add line to hosts
+  lineinfile:
+    path: /etc/hosts
+    state: present
+    line: '{{ m_ip }} {{ m_dns }}'
+
+- name: add line to hosts
+  lineinfile:
+    path: /etc/hosts
+    state: present
+    line: '{{ s_ip }} {{ s_dns }}'
+
+- name: add line to hosts
+  lineinfile:
+    path: /etc/hosts
+    state: present
+    line: '{{ b_ip }} {{ b_dns }}'
