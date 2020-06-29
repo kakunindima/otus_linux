@@ -1,0 +1,6 @@
+---
+# tasks file for mysql-cluster
+- name: Start cluster docker-compose file
+#  docker_compose:
+#    project_src: /opt/sources/less33/
+  shell: cd /opt/sources/less33/ && docker-compose up -d

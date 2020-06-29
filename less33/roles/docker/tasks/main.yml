@@ -1,0 +1,37 @@
+---
+# tasks file for docker
+#- name: Add repository
+#  yum_repository:
+#    name: docker
+#    description: docker
+#    baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+- name: inst python
+  yum:
+    name: python
+    state: present
+
+- name: Add Docker repo
+  get_url:
+    url: https://download.docker.com/linux/centos/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
+ 
+- name: Install Docker
+  package:
+    name: docker
+    state: latest
+ 
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+    enabled: yes
+ 
+#- name: Add user vagrant to docker group
+#  user:
+#    name: vagrant
+#    groups: docker
+#    append: yes
+
+- name: docker-compose
+  shell: sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && sudo chmod +x /usr/local/bin/docker-compose && sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+  ignore_errors: yes

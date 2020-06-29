@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: True
+  roles:
+    - git
+    - docker
+    - mysql-cluster
+    - mysql
