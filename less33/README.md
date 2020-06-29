@@ -43,7 +43,7 @@ __1. Проверка состояния контейнеров__
 ```
 __Результат проверки:__
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less33/img/status.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less33/img/status.png)
 
 _Дополнительно можно просмотреть логи_
 
@@ -68,7 +68,7 @@ __3. Смотрим наличие таблиц на 3х нодах:__
 
 __Результат:__
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less33/img/tables_check.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less33/img/tables_check.png)
 
 __4. Тестируем отказоустойчивоть: стопаем node1__
 
@@ -82,7 +82,7 @@ __Узнаем ip-адрес mysql-router__
 ```
 __Результат__
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less33/img/n1_down.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less33/img/n1_down.png)
 
 __Проверяем доступность БД bet, подключившись к mysql-router со стенда и создав новую запись test в таблице bookmaker:__
 
@@ -95,9 +95,9 @@ __Проверяем доступность БД bet, подключившись
 
 __Результат:__
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less33/img/test1.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less33/img/test1.png)
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less33/img/test2.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less33/img/test2.png)
 
 __Проверяем, что запись test создалась на работающих нодах node2 и node3:__
 
@@ -115,7 +115,7 @@ _node2_
 
 __Результат:__
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less33/img/check.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less33/img/check.png)
 
 __5.Проверка статуса кластера__
 
@@ -145,4 +145,4 @@ __Запустить консоль mysql в контейнере mysql-shell м
 
 __Результат__
 
-![img](https://github.com/kakunindima/otus_linux/tree/master/less33/img/cluster_stat.png)
+![img](https://github.com/kakunindima/otus_linux/blob/master/less33/img/cluster_stat.png)
