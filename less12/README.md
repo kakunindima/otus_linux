@@ -428,6 +428,22 @@ semodule -i my-iscworker0000.pp
 ```
 __Проверив с клиента - также получаем воможность записать изменения.__
 
+__Cпособ 4 - контекст `named_cache_t`__
+
+__Выдержка из [статьи](https://www.systutorials.com/docs/linux/man/8-named/)__
+
+
+_The Red Hat BIND distribution and SELinux policy creates three directories where named is allowed to create and modify files: /var/named/slaves, /var/named/dynamic /var/named/data. By placing files you want named to modify, such as slave or DDNS updateable zone files and database / statistics dump files in these directories, named will work normally and no further operator action is required. Files in these directories are automatically assigned the_ __'named_cache_t'__ _file context, which SELinux allows named to write._
+
+_Для динамичесски обновлемой зоны необходим контекст_ `named_cache_t`_, а для конфигов_ `named_conf_t`
+_Изменяем контекст_
+```
+    chcon -t named_cache_t /etc/named/dynamic/*
+    chcon -t named_conf_t /etc/named/*
+```
+
+_Результат тестирования +_
+
 ### Вывод
 
-__Наиболее приемлимым и простым считаю вариант 2 - для файлов зоны назначить контекст named_zone_t__
+__Для динамически обновляемой зоны НЕОБХОДИМО устанавливать контекст  `named_cache_t`, что обезпечивает корректность работы, для конф файлов контекст__ `named-conf_t`
