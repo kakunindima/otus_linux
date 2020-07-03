@@ -1,40 +1,68 @@
 ---
-- name: pip install 
+- name: install pg-repo
   yum:
-    name: python-pip
+    name: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
     state: present
 
-- name: inst_psycopg2
-  shell: pip install psycopg2-binary
+- name: install pg-client
+  yum:
+    name: postgresql11
+    state: present
+
+- name: install epel repo
+  yum:
+    name: epel-release
+    state: present
+
+- name: download barman repo file
+  get_url:
+    url: https://dl.2ndquadrant.com/default/release/get/11/rpm
+    dest: /tmp/barman-repo.sh
+    mode: 0550
+
+- name: install barman repo
+  shell: /tmp/barman-repo.sh
+  args:
+    creates: /etc/yum.repos.d/2ndquadrant-dl-default-release-pg11.repo
 
 - name: install barman
   yum:
     name: barman
     state: present
 
-- name: store connection info for barman
-  template:
-    src: templates/var/lib/barman/.pgpass
+- name: copy pgpass
+  copy:
+    src: pgpass
     dest: /var/lib/barman/.pgpass
     mode: 0600
     owner: barman
     group: barman
 
-- name: set barman configuration
+- name: copy barman config
   copy:
-    src: files/etc/barman.conf
+    src: barman.conf
     dest: /etc/barman.conf
     mode: 0644
 
-- name: set backup configuration
-  template:
-    src: templates/etc/barman.d/pg.conf
-    dest: /etc/barman.d/master.local.conf
+- name: copy backup config
+  copy:
+    src: master.conf
+    dest: /etc/barman.d/master.conf
     mode: 0644
 
-- name: create replication slot
-  shell: >
-    barman receive-wal --create-slot {{ master_hostname }} &&
-    touch /var/log/barman/slot-created
-  args:
-    creates: /var/log/barman/slot-created
+- name: create ssh dir
+  file:
+    path: "/var/lib/barman/.ssh"
+    state: directory
+    owner: barman
+    group: barman
+
+- name: copy ssh keys
+  copy: src=files/ssh/{{ item }} dest=/var/lib/barman/.ssh/ mode=0600 owner=barman group=barman
+  with_items:
+    - id_rsa
+    - id_rsa.pub
+    - authorized_keys
+
+- name: create replica slot
+  shell: barman receive-wal --create-slot master

@@ -1,0 +1,41 @@
+---
+- name: install pg-repo
+  yum:
+    name: https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+    state: present
+
+- name: install pg-server 11
+  yum:
+    name: postgresql11-server
+    state: present
+
+- name: init db
+  shell: /usr/pgsql-11/bin/postgresql-11-setup initdb
+  args:
+    creates: /var/lib/pgsql/11/data/postgresql.conf
+
+- name: remove pgdata on slave
+  file:
+    path: "/var/lib/pgsql/11/data"
+    state: absent
+
+- name: create pgdata
+  file:
+    path: "/var/lib/pgsql/11/data"
+    state: directory
+    owner: postgres
+    group: postgres
+    mode: '0700'
+
+- name: copy db to slave
+  become_user: postgres
+  command: "pg_basebackup -X stream -h master -D /var/lib/pgsql/11/data/ -P -U replica"
+  notify: restart postgresql
+
+- name: copy recovery config
+  copy:
+    src: recovery.conf
+    dest: /var/lib/pgsql/11/data/recovery.conf
+    owner: postgres
+    group: postgres
+  notify: restart postgresql
