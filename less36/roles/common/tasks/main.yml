@@ -1,0 +1,25 @@
+---
+- name: firewalld start & enable
+  service: 
+    name: firewalld 
+    state: started 
+    enabled: yes
+
+- name: firewalld-rules for nfs 
+  firewalld:
+    service: "{{ item }}"
+    permanent: yes
+    state: enabled
+  with_items:
+    - nfs
+    - mountd
+    - rpc-bind
+
+- name: firewalld reload
+  shell: firewall-cmd --reload
+
+- name: install nfs-utils
+  yum:
+    name: nfs-utils
+    state: present
+

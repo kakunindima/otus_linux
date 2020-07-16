@@ -1,0 +1,23 @@
+---
+- name: create directory for nfs-share
+  file:
+    path: /share
+    owner: vagrant
+    group: vagrant
+    state: directory
+    mode: '0755'
+
+- name: mount nfs-share
+  mount:
+    path: /share
+    src: server:/stor
+    fstype: nfs
+    opts: noauto,x-systemd.automount,x-systemd.device-timeout=10,timeo=14
+    state: mounted
+
+- name: create upload directory
+  file:
+    path: /share/upload
+    state: directory
+  become_user: vagrant
+

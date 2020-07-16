@@ -1,0 +1,17 @@
+- name: common configs
+  hosts: all
+  become: yes
+  roles:
+    - common
+
+- name: config nfs-server
+  hosts: server
+  become: yes
+  roles:
+    - nfs-server
+
+- name: config nfs-client
+  hosts: client
+  become: yes
+  roles:
+    - nfs-client
